@@ -1,0 +1,3 @@
+[submodule "ellsworth"]
+	path = ellsworth
+	url = git@github.com:iamlemec/ellsworth.git
