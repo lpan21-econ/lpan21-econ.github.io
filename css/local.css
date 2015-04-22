@@ -1,0 +1,116 @@
+@import url("proxima-nova.css");
+
+body {
+  padding-bottom: 20px;
+  font-family: "proxima-nova";
+  font-size: 18px;
+  line-height: 28px;
+  background-color: #f7f7f7;
+}
+
+.navbar-inverse {
+  font-size: 16px;
+}
+
+.navbar.transparent {
+   background: rgba(0,0,0,0.8);
+}
+
+.navbar-inverse .navbar-brand {
+  font-weight: bold;
+}
+
+.page-header {
+  border-bottom-color: #ccc;
+}
+
+.mec-tpe-vista {
+  background-image: url('/images/jing_mei_shan.jpg');
+  background-position: 50% 55%;
+  background-size: cover;
+  height: 400px;
+  /*border-bottom: 1px solid #ccc;*/
+}
+
+.mec-title-box {
+  padding-top: 90px;
+  padding-bottom: 40px;
+  padding-left: 35px;
+  padding-right: 15px;
+  text-align: center;
+}
+
+.mec-title-text {
+  text-shadow: 1px 1px 4px black, 0 0 1em #aaa, 2px 2px 0.5em #666;
+  color: #EEE;
+}
+
+.mec-main {
+  max-width: 650px;
+}
+
+.mec-lectures {
+  max-width: 500px;
+}
+
+.mec-link-blank:link {
+  color:white;
+  text-decoration: none;
+}
+
+.mec-link-blank:visited {
+  color:white;
+  text-decoration: none;
+}
+
+.mec-link-blank:hover {
+  color:white;
+  text-decoration: none;
+}
+
+.mec-link-blank:active {
+  color:white;
+  text-decoration: none;
+}
+
+.mec-paper-title {
+  margin-top: 50px;
+}
+
+.mec-abstract {
+  font-size: 14px;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.mec-subsection-title {
+  margin-top: 40px;
+}
+
+canvas.edgebox {
+  cursor: none;
+  width: 70%;
+}
+
+.mec-footer {
+  margin-top: 60px;
+  margin-bottom: 50px;
+  /*border-top: 1px solid #ccc;*/
+}
+
+.page-header h1 {
+  font-weight: bold;
+}
+
+a.abstract-expander {
+  cursor: default;
+}
+
+a.abstract-expander:hover {
+  text-decoration: none;
+}
+
+.btn:focus,.btn:active:focus,.btn.active:focus,
+.btn.focus,.btn:active.focus,.btn.active.focus {
+    outline: none;
+}
