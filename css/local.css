@@ -5,7 +5,11 @@ body {
   font-family: "proxima-nova";
   font-size: 18px;
   line-height: 28px;
-  background-color: #f7f7f7;
+  /*background-color: #f7f7f7;*/
+}
+
+.mec-main p {
+  text-align: justify;
 }
 
 .navbar-inverse {
@@ -20,8 +24,11 @@ body {
   font-weight: bold;
 }
 
-.page-header {
-  border-bottom-color: #ccc;
+.mec-section-title {
+  font-weight: 700;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  /*border-bottom-color: #ccc;*/
 }
 
 .mec-tpe-vista {
@@ -46,7 +53,7 @@ body {
 }
 
 .mec-main {
-  max-width: 650px;
+  max-width: 700px;
 }
 
 .mec-lectures {
@@ -74,13 +81,16 @@ body {
 }
 
 .mec-paper-title {
-  margin-top: 50px;
+  margin-top: 30px;
+  margin-bottom: 0px;
+  line-height: 1.4;
 }
 
 .mec-abstract {
   font-size: 14px;
   line-height: 1.2;
-  margin-bottom: 15px;
+  margin-top: 5px;
+  margin-bottom: 0px;
 }
 
 .mec-subsection-title {
@@ -113,4 +123,51 @@ a.abstract-expander:hover {
 .btn:focus,.btn:active:focus,.btn.active:focus,
 .btn.focus,.btn:active.focus,.btn.active.focus {
     outline: none;
+}
+
+.popup {
+  display: none;
+  padding: 10px 10px 0px 0px;
+  margin-bottom: 0px;
+  text-align: justify;
+  font-size: 14px;
+  line-height: 120%;
+}
+
+table.paper-list {
+  width: 100%;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+table.paper-list > thead > tr {
+  border-bottom: 1px solid black;
+}
+
+table.paper-list > tbody > tr:nth-child(2n) {
+  background-color: #F2F2F2;
+}
+
+table.paper-list > tbody > tr > td {
+  padding: 10px 0px 10px 10px;
+}
+
+table.paper-list table {
+  width: 100%;
+}
+
+table.paper-list td td:first-child {
+  width: 80%;
+}
+
+table.paper-list td td:last-child {
+  width: 20%;
+}
+
+table.paper-list td {
+  vertical-align: top;
+}
+
+table.paper-list .paper-title {
+  cursor: pointer;
 }
