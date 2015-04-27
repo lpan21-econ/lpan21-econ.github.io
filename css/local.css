@@ -8,29 +8,6 @@ body {
   /*background-color: #f7f7f7;*/
 }
 
-.mec-main p {
-  text-align: justify;
-}
-
-.navbar-inverse {
-  font-size: 16px;
-}
-
-.navbar.transparent {
-   background: rgba(0,0,0,0.8);
-}
-
-.navbar-inverse .navbar-brand {
-  font-weight: bold;
-}
-
-.mec-section-title {
-  font-weight: 700;
-  margin-top: 50px;
-  margin-bottom: 20px;
-  /*border-bottom-color: #ccc;*/
-}
-
 .mec-tpe-vista {
   background-image: url('../images/jing_mei_shan.jpg');
   background-position: 50% 55%;
@@ -54,6 +31,17 @@ body {
 
 .mec-main {
   max-width: 700px;
+}
+
+.mec-main p {
+  text-align: justify;
+}
+
+.mec-section-title {
+  font-weight: 700;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  /*border-bottom-color: #ccc;*/
 }
 
 .mec-lectures {
@@ -168,6 +156,6 @@ table.paper-list td {
   vertical-align: top;
 }
 
-table.paper-list .paper-title {
+table.paper-list .popup-trigger {
   cursor: pointer;
 }

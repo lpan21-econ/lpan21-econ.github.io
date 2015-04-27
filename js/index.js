@@ -1,7 +1,8 @@
-plusminus = {'[+]': '[–]', '[–]': '[+]'};
-
 jQuery(document).ready(function($) {
-  $("a.abstract-expander").on('click', function() {
-    $(this).html(plusminus[$(this).html()]);
-  })
+  $('table.paper-list > tbody > tr').each(function () {
+    var row = $(this);
+    row.find('.popup-trigger').click(function () {
+      row.find('.popup').slideToggle('fast');
+    });
+  });
 });
