@@ -49,22 +49,22 @@ body {
 }
 
 .mec-link-blank:link {
-  color:white;
+  color: white;
   text-decoration: none;
 }
 
 .mec-link-blank:visited {
-  color:white;
+  color: white;
   text-decoration: none;
 }
 
 .mec-link-blank:hover {
-  color:white;
+  color: white;
   text-decoration: none;
 }
 
 .mec-link-blank:active {
-  color:white;
+  color: white;
   text-decoration: none;
 }
 
@@ -158,4 +158,14 @@ table.paper-list td {
 
 table.paper-list .popup-trigger {
   cursor: pointer;
+}
+
+figure figcaption {
+  font-size: 15px;
+  line-height: 150%;
+}
+
+.mec-subsection-title span.badge {
+  margin-top: -3px;
+  vertical-align: middle;
 }
