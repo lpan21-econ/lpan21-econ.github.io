@@ -129,15 +129,11 @@ table.paper-list {
 }
 
 table.paper-list > thead > tr {
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid black;
 }
 
-table.paper-list > tbody > tr {
-  border-bottom: 1px solid #CDCDCD;
-}
-
-table.paper-list > tbody > tr:last-child {
-  border-bottom: none;
+table.paper-list > tbody > tr:nth-child(2n) {
+  background-color: #F2F2F2;
 }
 
 table.paper-list > tbody > tr > td {
