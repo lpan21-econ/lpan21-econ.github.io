@@ -133,7 +133,7 @@ table.paper-list > thead > tr {
 }
 
 table.paper-list > tbody > tr:nth-child(2n) {
-  background-color: #F2F2F2;
+  background-color: #E0E0E0;
 }
 
 table.paper-list > tbody > tr > td {
