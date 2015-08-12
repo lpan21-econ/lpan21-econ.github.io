@@ -1,0 +1,322 @@
+<html>
+
+<head>
+<script type="text/javascript" src="/ellsworth/js/ellsworth_load.js"></script>
+<script type="text/x-mathjax-config">
+EllsworthConfig({
+  macros: {
+    fr: ['\\frac{#1}{#2}',2],
+    pr: ['\\left(#1\\right)',1],
+    br: ['\\left[#1\\right]',1],
+    cb: ['\\left\\{#1\\right\\}',1],
+    pfr: ['\\left(\\frac{#1}{#2}\\right)',2],
+    bfr: ['\\left[\\frac{#1}{#2}\\right]',2],
+    pder: ['\\frac{\\partial #1}{\\partial #2}',2]
+  },
+  environs: {
+    fact: ['<b>Fact {number}.</b> &nbsp; {content}','Fact {number}','{content}'],
+    proposition: ['<b>Proposition {number}.</b> &nbsp; {content}','Proposition {number}','{content}'],
+    proof: ['<b>Proof.</b> &nbsp; {content}','Proof {number}','{content}']
+  },
+  biblio: "bibliography.json"
+});
+</script>
+<link type='text/css' rel='stylesheet' href='/css/proxima-nova.css'>
+<style>
+body {
+  font-family: "proxima-nova";
+}
+h3.figure_title {
+  margin-bottom: 0px;
+}
+img.media {
+  margin-top: 5px;
+}
+div.proposition_box {
+  margin-top: 30px;
+}
+div.proposition_box div.item_box {
+  padding-top: 5px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<title>Lecture 2: Endogenous Growth</title>
+</header>
+
+<text>
+In this lecture we're going to go over some of the foundational theories of endogenous technological growth. These came around in earnest starting in the early nineties with <cite label="romer1990endogenous"></cite> and <cite label="aghion1992model"></cite>, as well as <cite label="grossman1991quality"></cite>, which provides an interesting synthesis of the two. A little later on <cite label="jones1995time"></cite> provides an insightful critique to this strand of literature, in addition to a bit of perspective.
+</text>
+
+<section title="Aggregate Framework">
+
+<text>
+How might we begin to think about technological growth in an economy? In the simplest representation, we can imagine there is an aggregate production for ideas and that this concept of ideas maps directly into what we've been discussing as total factor productivity ($A$). The rate of change of the stock ideas is then a function of the current stock of ideas and the amount of effort put into producing new ideas through, for example through research. We'll think of this in terms of labor, but you could also imagine capital playing an important role.
+</text>
+
+<text>
+Thus we have $\dot{A} = G(A,R)$ for some function $G$. This representation is a bit abstract, so we'll assume a fairly flexible functional form
+<equation>
+\dot{A} = G A^{\phi} R^{\eta}
+</equation>
+This captures the notion that as the state of knowledge advances, coming up with new and useful ideas becomes harder.
+Given this specification, the growth rate of ideas, which should have a strong bearing on the overall growth rate of the economy, is then
+<equation>
+g_A = \fr{\dot{A}}{A} = \fr{G R^{\eta}}{A^{1-\phi}}
+</equation>
+Let the fraction of labor devoted to research be $s$, so that $R = s L$, and suppose that $s$ is constant over time. In general we are looking for equilibria with constant growth rates. For this to be true we must have
+<equation>
+g_A^{\ast} = \fr{\eta n}{1-\phi}
+</equation>
+Thus assuming for now that $\phi \lt 1$, we find that the steady state growth rate of ideas is determined solely by population growth $n$.
+</text>
+
+<text>
+Some find this to be a depressing result, in the sense that policies, such as a research subsidy for instance, have no chance of affecting long-term growth rates. That doesn't mean they can't have substantive effects though. Policies which put "upward pressure" on the incentives for research will increase growth rates in the short term, but this will dissipated out into level effects over time.
+</text>
+
+<text>
+To see this consider the growth rate of $g_A$. I know that seems weird, but bear with me. Suppose that $s$ is constant over time, we have
+<equation>
+\fr{\dot{g}_A}{g_A} = \eta n - (1-\phi) g_A
+</equation>
+So in this case, $g_A$ actually follows a stable and corrective path over time whenever $\phi \lt 1$. Looking at this equation, we can also pretty decisively rule out the case where $\phi \gt 1$, as that would lead to divergent, and highly unstable and path-dependent growth rates. This doesn't seem to be the case anywhere I've seen.
+</text>
+
+<text>
+The only remaining case is the one where $\phi = 1$. In this setting, our expression for the growth rates becomes simply
+<equation>
+g = G R^{\eta}
+</equation>
+This is arguably more intuitive an expression, although it may seem to be a knife-edge case in the context of this presentation. The primary issue that arises though is that it predicts that growth should increase without bound so long as $n \gt 0$ and that larger economies should grow faster than small economies. These <b>scale effects</b> are clearly at least not the major drivers of growth. See <cite label="jones1995time"></cite> for a detailed discussion of these issues.
+</text>
+
+<text>
+Nonetheless, we'll be making this assumption ($\phi = 1$ and $n = 0$) for much of the remainder of the course, largely for the sake of analytic simplicity. There's no major obstacle to undoing this assumption in most models that we'll study, and in many it may not have major welfare or policy implications anyway.
+</text>
+
+</section>
+
+<section title="Microeconomic Foundations">
+
+<text>
+The major breakthrough associated with <cite label="romer1990endogenous"></cite> was that it gave us a way to think about the incentives for individual actors to undertake innovation that then maps into an aggregate picture. In this framework, which we refer to as the <b>expanding variety</b> setting, innovators conjure up new ideas and are granted exclusive rights to employ them in production.
+</text>
+
+<text>
+At this point, they can either undertake production themselves, if they have the means, or sell the idea to a producer. Each new idea produces a new and different type of product. All of these intermediate products are then aggregated into a single final product which is then sold to consumers. Let intermediate goods be denoted by $y_j$ for $j \in [0,A]$, and consider an aggregate production function of the form
+<equation label="final_production">
+Y = \br{\int_0^A x_j^{\fr{\varepsilon-1}{\varepsilon}} dj}^{\fr{\varepsilon}{\varepsilon-1}}
+</equation>
+This is known as the Dixit-Stiglitz (sometimes Armington) aggregator, and the parameter $\varepsilon$ is referred to the elasticity of substitution. The final good, whose price is normalized to $1$ in each period, is competitively produced by a continuum of firms. Meanwhile, the price of intermediate goods will be $p_j$. Consider the profit maximization problem of a final good producing firm
+<equation>
+\Pi = \max_{x_j} \br{\int_0^A x_j^{\fr{\varepsilon-1}{\varepsilon}} dj}^{\fr{\varepsilon}{\varepsilon-1}} - \int_0^A p_j x_j dj
+</equation>
+It can be verified that this results in an demand function of the form
+<equation label="intermediate_demand">
+x_j(p_j) = p_j^{-\varepsilon} \ Y
+</equation>
+With this result in hand, we can now turn to the problem of the intermediate producer. The intermediate firms operate as monopolists. You can think of this having been granted an infinite length patent on the idea they invented (or bought from an inventor). They produce $x_j$ using labor $\ell_j$, which can be hired at wage $w$, according to the linear production function $x_j = q \ell_j$. Their profit maximization problem is given by
+<equation>
+\pi_j = \max_{x_j} \cb  {p_j(x_j) x_j - w (x_j/q)}
+</equation>
+Using the demand function from <ref label="intermediate_demand"></ref>, we can derive the optimal production choices
+<equation label="intermediate_production">
+x = x_j = \br{\pr{\fr{\varepsilon-1}{\varepsilon}}\fr{q}{w}}^{\varepsilon} Y
+</equation>
+So in fact production is the same across all product lines, which should not be surprising as they were <i>ex ante</i> identical. The resulting profit accrued is
+<equation label="intermediate_profit">
+\pi = \pi_j = \fr{1}{\varepsilon} \br{\pr{\fr{\varepsilon-1}{\varepsilon}}\fr{q}{w}}^{\varepsilon-1} Y
+</equation>
+Mapping this back into the aggregate, and supposing that a fraction $P$ of workers engage in goods production, we find that
+<equation>
+Y = A^{\fr{\varepsilon}{\varepsilon-1}} x = A^{\fr{1}{\varepsilon-1}} q P
+</equation>
+which implies that $g = \pfr{1}{\varepsilon-1} g_A$. The breakdown of total output between profit and labor (there is no capital) is
+<equation label="output_shares">
+\fr{A\pi}{Y} = \fr{1}{\varepsilon} \qquad \text{and} \qquad
+\fr{wP}{Y} = \fr{\varepsilon-1}{\varepsilon}
+</equation>
+</text>
+
+<text>
+At this point, we've completely solved the equilibrium for static production side. The most important quantity to be used here is the profit of the intermediate good producing firms. This will determine the incentives for the creation of new products. The present value of owning a product line is given by
+<equation>
+rV = \pi + \dot{V}
+</equation>
+Why do we use $r$ as the discount rate for the firm, rather than $\rho$? You can also think of the above as a "no arbitrage" condition. Given $V$ dollars, you can either put it in the bank and get return $rV$ or you can buy a share of the firm for a short period, getting the flow profits and any change in value that occurs.
+</text>
+
+<text>
+From the above, we can see that $V$ and $\pi$ should grow at the same rate, which we can show using the above is equal to $(2-\varepsilon)g$, where $g$ is the growth rate of output $Y$. Thus we have
+<equation>
+V = \fr{\pi}{r+(\varepsilon-2)g}
+</equation>
+Now let's introduce some innovators. We'll assume that their costs are linear and scale invariant, so they can achieve a flow rate of innovation $A \tau$ by employing $c \tau$ units of research labor. Thus we can immediately see that we should have
+<equation label="free_entry">
+V A = w c
+</equation>
+This gives an aggregate research production function of the form
+<equation>
+(\varepsilon-1)g = g_A = \fr{\dot{A}}{A} = \fr{R}{c}
+</equation>
+As we saw in the last lecture, letting the intertemporal elasticity $\theta = 1$, the Euler equation of the consumer ensures that $r = \rho + g$. Substituting <ref label="output_shares"></ref> into <ref label="free_entry"></ref>, we find
+<equation>
+\fr{1/\varepsilon}{\rho+(\varepsilon-1)g} = \pr{\fr{\varepsilon-1}{\varepsilon}}\pr{\fr{c}{L-R}}
+</equation>
+When there is more research, growth will be faster, meaning future profits will be shared amongst a smaller set of firms, depressing current product line valuations. Meanwhile, there will be less labor for production, which will put upward pressure on wages. Thus there is either zero research or the above equation holds yielding growth rate of
+<equation>
+g^{\ast} = \fr{1}{\varepsilon}\br{\pr{\fr{1}{\varepsilon-1}}\fr{L}{c}-\rho}
+</equation>
+Notice that this is decreasing in $\varepsilon$. As $\varepsilon$ becomes larger, products are more substitutable, so the incentive to create the new ones falls, leading to a drop in the growth rate.
+</text>
+
+<subsection title="Optimality">
+
+<text>
+This model has some interesting optimality properties. Consider the problem of the social planner. In the most general setting, one must choose the levels of production for each product line $x_j$, as well as the split between goods production labor $P$ and research labor $R$. However, it is easy to show that any optimal choice still features $x_j = x$ for all $j$. Thus we need only make the choice between production and research. Given a constant growth rate, the path of output will be $Y(t) = Y(0) \exp(gt)$. This leads to welfare of
+<equation label="welfare">
+W &= \int_0^{\infty} \pr{\fr{\br{Y(0)\exp(gt)}^{1-\theta}-1}{1-\theta}} \exp(-\rho t) dt \\
+&= \pr{\fr{\rho}{\rho+(\theta-1)g}}\pr{\fr{1}{\rho}}\br{\fr{g}{\rho}+\fr{Y(0)^{1-\theta}-1}{1-\theta}}
+</equation>
+In our setting, we have
+<equation>
+Y(0) = q (L-R) \qquad \text{and} \qquad
+g = \pfr{1}{\varepsilon-1}\fr{R}{c}
+</equation>
+This is a fairly intricate problem in general, but for the special case where $\theta = 1$, meaning the instantaneous utility function is $\log(c)$, we arrive at
+<equation>
+g^S = \pr{\fr{1}{\varepsilon-1}}\fr{L}{c}-\rho
+</equation>
+which we can see now is strictly greater than $g^{\ast}$ for all $\varepsilon \gt 1$. So there is in general an underinvestment in research in this type of model.
+</text>
+
+</subsection>
+
+</section>
+
+<section title="Quality Ladders">
+
+<text>
+Next we'll discuss a related class of models called <b>quality ladder</b> models. These have a similar product market structure, but a slightly different source of growth. Instead of generating growth through the invention of new product lines, we improve an existing fixed set of product lines. When an innovator $f$ comes up with a new idea, a randomly chosen product line $j$ sees an improvement in productivity, meaning
+<equation>
+q_{jf}(t+\Delta) = \lambda q_{jf}(t)
+</equation>
+where $\lambda \gt 1$ is referred to as the innovation <b>step size</b>. At any given time, let the lead producer in a product line have productivity $q_j = \max_f \cb{q_{jf}}$.
+</text>
+
+<text>
+Suppose that we have the same product market setup as in the previous section, but fix the mass of products to $A = 1$ and let the elasticity of substitution be $\varepsilon = 1$. This results in the logarithmic form
+<equation>
+Y = \exp\br{\int_0^1 \log(x_j) dj}
+</equation>
+Additionally, let each product line have its own individual productivity $q_i$. Before, each intermediate producer operated as a monopolist. Here however, there will always be some trailing competition in the form of the person who you just edged out to become lead producer.
+</text>
+
+<text>
+We will assume that competing intermediate producers engage in Bertrand competition. The marginal cost of the lead producer is $w/q_j$, while that of the second best producer is $\lambda w/q_j$. Thus the lead producer will set his price equal to the next best producer's marginal cost meaning $p_j = \lambda w/q_j$. Using <ref label="intermediate_demand"></ref>, this results a production level of
+<equation label="ql_intermediate_production">
+x_j = \pfr{q_j}{\lambda w} Y
+</equation>
+The resulting profits and labor utilization are then
+<equation>
+\pi = \pr{1 - \lambda^{-1}} Y \qquad \text{and} \qquad
+P = \ell = \pfr{1}{\lambda w} Y
+</equation>
+Notice that the above two equations also characterize the breakdown of aggregate income into wages and firm profits.
+</text>
+
+<text>
+Now let's consider the value of acquiring a new product line. Let the aggregate rate of innovation be $\tau$. In this case, starting from the discrete time approximation, we'll have
+<equation>
+V(t) = \Delta \pi + \Delta \tau \cdot 0 + (1-\Delta\tau) \exp(-r \Delta) V(t+\Delta)
+</equation>
+Rearranging terms, we find
+<equation>
+\bfr{1-\exp(-r\Delta)}{\Delta} V(t) = \pi(\lambda q) - \tau \exp(-r\Delta) \br{V(t+\Delta) + \bfr{V(t+\Delta)-V(t)}{\Delta}}
+</equation>
+Taking the limit as $\Delta \rightarrow 0$ yields
+<equation>
+r V = \pi - \tau V + \dot{V}
+</equation>
+We can use the same trick we used in the previous model, or we can define a normalized value function $V = \tilde{V} Y$. Because $V$ will growing at the same rate as $Y$, $\tilde{V}$ will be time invariant and $\dot{V} = gV = g\tilde{V}Y$. In this case, we can derive
+<equation>
+\tilde{V} = \fr{1-\lambda^{-1}}{r-g+\tau}
+</equation>
+As before, assume that the innovation technology is linear. However, this time the innovator can achieve a flow rate of innovation $\tau$ by employing $c \tau$ units of research labor. This yields the no arbitrage condition $V = wc$. In normalized terms, this becomes $\tilde{V} = \tilde{w} c$.
+</text>
+
+<text>
+What will the aggregate growth rate in the economy be? That is a function of the step size $\lambda$ and the innovation rate $\tau$. Because product lines are targeted randomly and there is a unit mass of them, the probability that any given product line will receive an innovation is also $\tau$. Total output is
+<equation>
+Y &= \exp\pr{\int_0^1 \log(x_j) dj} = \exp\pr{\int_0^1 \br{\log(q_j)+\log(\ell_j)} dj} = Q P \\
+</equation>
+where
+<equation>
+Q \equiv \exp\pr{\int_0^1 \log(q_j) dj}
+</equation>
+As $P$ is constant on a balanced growth path, all growth will come from changes in $Q$, the aggregated productivity index. We can compute the growth rate using
+<equation>
+g = \fr{\dot{Q}}{Q} = \pder{\log(Q)}{t}
+</equation>
+This evolves according to
+<equation>
+\log(Q(t+\Delta)) &= \int_0^1 \log(q_j(t+\Delta)) dj = \int_0^1 \br{\Delta \tau \log(\lambda q_j(t)) + (1-\Delta\tau) \log(q_j(t))} \\
+&= \Delta \tau \log(\lambda) + \log(Q(t))
+</equation>
+Thus we arrive at the expression
+<equation>
+g = \tau \log(\lambda)
+</equation>
+Finally we arrive at an equation characterizing the equilibrium
+<equation>
+\fr{1-\lambda^{-1}}{\rho+\tau} = \fr{c}{\lambda(L-R)}
+</equation>
+So either we have $g = 0$ or we have the interior solution
+<equation>
+g = \fr{\log(\lambda)}{\lambda}\br{(\lambda-1)\fr{L}{c}-\rho}
+</equation>
+</text>
+
+<subsection title="Optimality">
+
+<text>
+We will now briefly discuss the optimality properties of this model. Using the expression from <ref label="welfare"></ref>, again using $\theta = 1$, and the conditions
+<equation>
+Y(0) = Q(0) (L-R) \qquad \text{and} \qquad
+g = \log(\lambda) (R/c)
+</equation>
+yields an analogous expression for the optimal growth rate in this model
+<equation>
+g^S = \log(\lambda)\pfr{L}{c}-\rho
+</equation>
+</text>
+
+<text>
+Now the question is, what forces are shaping the incentives to innovate and how do they differ from the considerations of the social planner. There are two distinct distortions at work here. First is the <b>consumer surplus effect</b>. Because each innovation builds upon the previous one, these increments last forever. However, the firm only enjoys the profits from them for a short period. This results in insufficient incentives for innovation. Second is the <b>business stealing effect</b>. When a firm improves the technology in a product line by 10%, they are rewarded with 110% of the original revenues.
+</text>
+
+<text>
+In the end, the innovation rate is too high for very small or very large values of $\lambda$, while it is too low for intermediate values. When $\lambda$ is small, it's clear that the rewards for innovation are far too large compared to the productivity increment. When $\lambda$ is large, the actual incidence of business stealing is large, meaning firms are rewarded only in a short time increment for a productivity improvement that lasts forever.
+</text>
+
+</subsection>
+
+<subsection title="Correspondence">
+
+<text>
+For relatively small values of $\lambda$, we have $\log(\lambda) \approx \lambda - 1$. In this case, if consider the expanding variety model with $\varepsilon = \fr{\lambda}{\lambda-1}$, the predictions are identical, both in terms of the equilibrium and optimal values for the growth rate and research labor allocation. Essentially, when $\varepsilon$ is high, products are highly substitutable, which is analogous to a low innovation step size environment. So the differences between these two classes of models may in the end be more a matter of interpretation than observational differences. See <cite label="grossman1991quality"></cite> for an interesting discussion of this notion.
+</text>
+
+</subsection>
+
+</section>
+
+<bibliography></bibliography>
+
+</body>
+
+</html>

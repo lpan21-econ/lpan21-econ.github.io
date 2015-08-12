@@ -1,0 +1,462 @@
+<html>
+
+<head>
+<script type="text/javascript" src="/ellsworth/js/ellsworth_load.js"></script>
+<script type="text/x-mathjax-config">
+EllsworthConfig({
+  macros: {
+    fr: ['\\frac{#1}{#2}',2],
+    pr: ['\\left(#1\\right)',1],
+    br: ['\\left[#1\\right]',1],
+    cb: ['\\left\\{#1\\right\\}',1],
+    pfr: ['\\left(\\frac{#1}{#2}\\right)',2],
+    bfr: ['\\left[\\frac{#1}{#2}\\right]',2],
+    pder: ['\\frac{\\partial #1}{\\partial #2}',2]
+  },
+  environs: {
+    fact: ['<b>Fact {number}.</b> &nbsp; {content}','Fact {number}','{content}'],
+    proposition: ['<b>Proposition {number}.</b> &nbsp; {content}','Proposition {number}','{content}'],
+    proof: ['<b>Proof.</b> &nbsp; {content}','Proof {number}','{content}']
+  },
+  biblio: "bibliography.json"
+});
+</script>
+<link type='text/css' rel='stylesheet' href='/css/proxima-nova.css'>
+<style>
+body {
+  font-family: "proxima-nova";
+}
+h3.figure_title {
+  margin-bottom: 0px;
+}
+img.media {
+  margin-top: 5px;
+}
+div.proposition_box {
+  margin-top: 30px;
+}
+div.proposition_box div.item_box {
+  padding-top: 5px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<title>Lecture 1: Neoclassical Growth</title>
+</header>
+
+<text>
+The aim of this course is to provide you with an understanding of the mechanisms behind modern economic growth. We'll focus mainly on developed or transitional economies. While there are many interesting links between growth and development (and we will discuss these), a full treatment of the latter is beyond the scope of this course.
+</text>
+
+<text>
+There will also be a strong focus on computational methods. Though the study of this topic can be quite interesting in its own right, our primary motivation here will be using the theoretical tools we will have developed in conjunction with computational techniques to generate detailed quantitative predictions. These can in turn help us estimate the parameters particular and refine our understanding of how realistic certain classes of models are.
+</text>
+
+<text>
+As a practical matter, one needs choose an environment in which to carry out computation. I'm personally OK with any choice you might make, but I would recommend using Python, as it's free, easy to use, and has a lot of support available both from me and online. In particular, there is a good deal of information on using Python for economics from Tom Sargent and John Stachurski at <a href="http://quant-econ.net/">Quantitative Economics</a>.
+</text>
+
+<section title="Conceptual Framework">
+
+<text>
+There will be theoretical, empirical, quantitative, and technical considerations covered for each topic we address. At this highest level we can decompose output, and consequently growth, into contributions from four sources:
+<enumerate>
+<item><b>[Physical] Capital</b> ($K$): This is a major driver of economic growth and has been <i>very</i> well studied in the field of economics. I'm going to assume you have some familiarity with the basic models of capital accumulation here.</item>
+<item><b>Human Capital</b> ($H$): Education, on-the-job learning, health, childhood development, etc. This is, oddly, somewhat more of a niche product. Nonetheless, it's very important and we'll be looking at it.</item>
+<item><b>Labor</b> ($L$): Here we speak mostly of population growth, but this can also include other factors such as hours worked. This may all wash out in per-capita terms, but there are important considerations here regarding scale effects, which we'll see in <cite label="jones1995time"></cite>.</item>
+<item><b>Total Factor Productivity</b> ($A$ or $z$): This is basically the leftovers, and it will be our primary focus. It captures  basic scientific knowledge, practical knowledge, methods, designs, managerial practices, and the like. We'll be trying to unpack this black box as the course moves along.</item>
+</enumerate>
+</text>
+
+<text>
+This gives us a structured way in which to think about the causes of economic growth. Of course, attributing a particular fraction of growth to capital accumulation only addresses the <b>proximate causes</b> of growth. Ideally, we would also be able to gain understanding of why this capital accumulation occurred in the first place. In this way, there will also be many dynamic linkages between each of these components.
+</text>
+
+<subsection title="Solow Growth Accounting">
+
+<text>
+The Solow model is a mathematical embodiment of the above decomposition. It assumes a single aggregate production function describing how inputs capital ($K$), labor ($L$), and technology ($A$) are combined to produce final good $Y$ according to
+<equation>
+Y = F(A,K,L)
+</equation>
+Even before we go into specifying agents and their incentives, this allows us to decompose changes in output into changes coming from each of the three inputs. Taking the total derivative, we find
+<equation>
+\dot{Y} = \dot{A} \pder{F}{A} + \dot{K} \pder{F}{K} + \dot{L} \pder{F}{L}
+</equation>
+where ``dot'' denotes the time derivative. We can get a bit more traction if we assume a functional form for production. Using a Cobb-Douglas production function given by
+<equation>
+F(A,K,L) = AK^{\alpha}L^{1-\alpha}
+</equation>
+we then arrive at a true growth rate decomposition
+<equation>
+\fr{\dot{Y}}{Y} = \fr{\dot{A}}{A} + \alpha \pfr{\dot{K}}{K} + (1-\alpha) \pfr{\dot{L}}{L}
+</equation>
+Alternatively, we can go with a more general constant elasticity of substitution (CES) production function given by
+<equation label="ces_production">
+F(A,K,L) = A \br{\alpha K^{\fr{\sigma-1}{\sigma}} + (1-\alpha) L^{\fr{\sigma-1}{\sigma}}}^{\fr{\sigma}{\sigma-1}}
+</equation>
+This nests multiple familiar functional forms
+<equation>
+\sigma \rightarrow 0 \quad &\Rightarrow \quad \text{Leontieff} \\
+\sigma \rightarrow 1 \quad &\Rightarrow \quad \text{Cobb-Douglas} \\
+\sigma \rightarrow \infty \quad &\Rightarrow \quad \text{Linear}
+</equation>
+Performing the same decomposition as before, we find
+<equation>
+\fr{\dot{Y}}{Y} = \fr{\dot{A}}{A} + \bar{\alpha} \pfr{\dot{K}}{K} + (1-\bar{\alpha}) \pfr{\dot{L}}{L}
+</equation>
+where
+<equation>
+\bar{\alpha} = \fr{\alpha K^{\fr{\sigma-1}{\sigma}}}{\alpha K^{\fr{\sigma-1}{\sigma}}+(1-\alpha)L^{\fr{\sigma-1}{\sigma}}}
+</equation>
+Thus the growth contribution from each factor will be determined jointly by the exogenous factor loadings and the potentially endogenous relative abundance of each factor.
+</text>
+
+<text>
+Often it will be useful to express this relationship in per capita terms. We say that a particular production does not feature <b>scale effects</b> if we can express
+<equation>
+y  = f(A,k)
+</equation>
+where lower case letters are used to denote per capita figures (note that $A$, being non-excludable, has no meaningful per capita analogue). In the general CES setting, this leads us to
+<equation>
+y = A \br{\alpha k^{\fr{\sigma-1}{\sigma}}+(1-\alpha)}^{\fr{\sigma}{\sigma-1}}
+</equation>
+</text>
+
+</subsection>
+
+</section>
+
+<section title="Neoclassical Growth Model">
+
+<text>
+The canonical model studied in computation macroeconomics is the neoclassical growth model. Of course, there are many other interesting models out there that are better suited to their phenomenon of study, but this one provides a basic understanding of issues that arise when doing dynamic optimization with a continuous state variable, which is in this case capital.
+</text>
+
+<text>
+Much of the basic structure of the Solow growth model is inherited here. We'll basically populate the economy with consumers and firms, then impose assumptions that allow us to meaningfully model the economy with an aggregate production function and representative consumers and firms.
+</text>
+
+<subsection title="Consumers">
+
+<text>
+One of the major simplifying assumptions we'll be making, at least initially, is that of a representative agent. Naturally, with homogeneous agents, this is not a major assumption. When we start introducing heterogeneity amongst agents, for instance between skilled and unskilled labor, this will be more of an issue since different agents can have different responses that do not aggregate linearly. Sometimes you'll see papers that have a single representative household with heterogeneity amongst the agents in the household.
+</text>
+
+<text>
+Let's say this agent has the instantaneous utility function $u(c)$ which is then aggregated over time with discount rate $\rho$
+<equation>
+U(\mathbf{c}) = \int_0^{\infty} u(c(t)) \exp(-\rho t) dt
+</equation>
+The consumer have access to a risk-free bond garnering interest rate $r$. Denote their holdings of this asset, which depreciates at rate $\delta$, be denoted by $a$ and the investment rate be $i$. They also have one unit of labor that they supply inelastically yielding wage $w$. The budget equation is then
+<equation>
+c + i = ra + w
+</equation>
+In general, we would also include income from firm profits ($\pi$), but because we assume constant returns to scale in production, firms will make zero profits anyway. We can now write down the optimization problem for the consumer. This constitutes the choice of a consumption path $\mathbf{c}$ and investment path $\mathbf{i}$ that maximizes $U(\mathbf{c})$.
+</text>
+
+<text>
+This infinite dimensional optimization is not a trivial one. I'm going to skip directly to the recursive formulation. I'll also take this opportunity to provide a little primer on working in continuous time, as opposed to discrete time. Let the current time be $t$ and the next "instant" in time be $t+\Delta$, where $\Delta$ is presumed to be small. Let the present value of having asset level $a$ at time $t$ be given by $V(a,t)$, then we have
+<equation>
+V(a,t) =& \max_{c,i} \cb{\Delta u(c) + \exp(-\Delta\rho) V(a+\Delta(i-\delta a),t+\Delta)} \\
+&\quad \text{subj. to } c + i = ra + w
+</equation>
+Subtracting $\exp(-\Delta\rho)V(a,t)/\Delta$ from both sides, we find
+<equation>
+\bfr{1-\exp(-\Delta\rho)}{\Delta} V(a,t) = u(c) + \exp(-\Delta\rho) \bfr{V(a+\Delta(i-\delta a),t+\Delta)-V(a,t)}{\Delta}
+</equation>
+Taking the limit as $\Delta \rightarrow 0$ yields
+<equation>
+\rho V = u(c) + (i-\delta a)V_a + \dot{V}
+</equation>
+where subscripts denote non-time derivatives. In this case the $\dot{V}$ will be zero, as there is no explicit time dependence. The agent's state can be fully described by $a$. So finally we have
+<equation>
+\rho V = u(c) + (i-\delta a)V_a
+</equation>
+</text>
+
+</subsection>
+
+<subsection title="Producers">
+
+<text>
+The final good is produced by a continuum of competitive firms. Because we will assume constant returns to scale, it is just as well to consider the case of a single firm that takes prices as given. We will ignore growth in $A$ for now. Because the population is fixed at $1$, aggregate and per capita variables will coincide, so we can just use lower case letters. As before, let the production function be $y = f(k,\ell)$.
+</text>
+
+<text>
+The producer faces the following static optimization problem in which they rent capital from consumers and hire them as laborers in order to produce
+<equation>
+\max_{k,\ell} \cb{f(k,\ell) - rk - w\ell}
+</equation>
+This yields these simple first order conditions
+<equation>
+f_k = r \qquad \text{and} \qquad f_{\ell} = w
+</equation>
+</text>
+
+</subsection>
+
+<subsection title="Optimization">
+
+<text>
+We can derive an analogous expression for the first-order condition in discrete time
+<equation>
+\Delta u_c(c) = \exp(-\Delta\rho) \Delta V(a+\Delta(i-\delta a),t+\Delta)
+</equation>
+Canceling terms and taking the limit as $\Delta \rightarrow 0$ yields simply
+<equation label="first_order_condition">
+u_c = V_a
+</equation>
+Not coincidentally, this is the same expression we would arrive at if we took the first order condition directly from the limiting equation
+<equation>
+\rho V = \max_{i} \cb{u(ra+w-i) + (i-\delta a)V_a}
+</equation>
+From this we can derive the <b>envelope condition</b>. Notice that, though we have dropped explicit dependence, the investment rate $i$ is a function of the asset level $a$. If we derivate the above with respect to $a$, we the find
+<equation>
+\rho V_a &= u_c \pr{r-i_a} + (i-\delta a)V_{aa} + (i_a-\delta) V_a \\
+&= r u_c - \delta V_a + (i-\delta a)V_{aa} - i_a \pr{u_c-V_a}
+</equation>
+Employing the first order condition, we finally arrive at
+<equation label="envelope_condition">
+(\rho+\delta)V_a = r u_c + (i-\delta a)V_{aa}
+</equation>
+</text>
+
+</subsection>
+
+<subsection title="Equilibrium">
+
+<text>
+Aggregate consistency requires that consumer assets be equal to the value of capital and that the labor market clears
+<equation>
+k = a \qquad \text{and} \qquad \ell = 1
+</equation>
+In addition the law of motion for capital, which is affected by investment and depreciation, takes the form
+<equation label="capital_lom">
+\dot{k} = i - \delta k
+</equation>
+Meanwhile, because firms must make zero profits, we have
+<equation>
+y = rk + w \ell = ra + w
+</equation>
+Interestingly, by plugging the above into the value function of the consumer and replacing $a$ with $k$
+<equation>
+\rho V = \max_{i} \cb{u(f(k)-i) + (i-\delta k)V_k}
+</equation>
+we see that the equilibrium is efficient, as this is exactly the social planner's problem.
+</text>
+
+</subsection>
+
+<subsection title="Steady State">
+
+<text>
+Let us indicate steady state values with a superscript $\ast$. In steady state, the value of $k$ is not changing, meaning $i^{\ast} = \delta k^{\ast}$. Combining this with the envelope condition in <ref label="envelope_condition"></ref> and the first order condition in <ref label="first_order_condition"></ref>, we find that the interest rate is
+<equation>
+r^{\ast} = \rho + \delta
+</equation>
+Then from the firm's first order condition for capital we know that $f^{\prime}(k^{\ast}) = r$ and finally consumption satisfies
+<equation>
+c^{\ast} = f(k^{\ast}) - \delta k^{\ast}
+</equation>
+</text>
+
+</subsection>
+
+<subsection title="Transition Dynamics">
+
+<text>
+This is where we really start having some fun. It turns out we can define a two variable dynamical system (i.e., a system of differential equations) to describe the solution outside of steady state. Define a new variable
+<equation>
+m(t) \equiv V_a(k(t)) = u_c(c(t))
+</equation>
+which is the marginal utility along the equilibrium path. With this we also have
+<equation>
+\dot{m} = \dot{k} V_{aa} = (i-\delta k) V_{aa}
+</equation>
+and expressions for the consumption and investment functions
+<equation>
+c(k,m) = u_c^{-1}(m) \qquad \text{and} \qquad i(k,m) = f(k) - u_c^{-1}(m)
+</equation>
+We can use the law of motion for capital from <ref label="capital_lom"></ref> and the envelope condition from <ref label="envelope_condition"></ref> to characterize the joint evolution of $(k,m)$
+<equation>
+\dot{k} &= f(k) - \delta k - u_c^{-1}(m) \\
+\dot{m} &= \br{\rho+\delta-f^{\prime}(k)} m
+</equation>
+Assuming a functional form for $u(\cdot)$ can make things slightly more intuitive. Suppose we have constant relative risk aversion (CRRA) utility
+<equation>
+u(c) = \fr{c^{1-\theta}-1}{1-\theta}
+</equation>
+In this case we have $u_c^{-1}(m) = c$ (by construction) and furthermore
+<equation>
+\fr{\dot{m}}{m} = -\theta \pfr{\dot{c}}{c}
+</equation>
+Thus the dynamical system can be expressed jointly as
+<equation>
+\dot{k} =& f(k) - \delta k - c \\
+\dot{c} =& (1/\theta) \br{f^{\prime}(k)-(\rho+\delta)} c
+</equation>
+</text>
+
+<text>
+The only remaining problem to solve is the initial condition. We have two state variables $(k,c)$ and two differential equations describing their evolution. We are given an initial value for the stock of capital $k(0)$, we just need to know $c(0)$, which is chosen optimally by the consumer.
+</text>
+
+<text>
+So if we derived a solution for this complex optimization problem, why don't we know $c(0)$ yet? It turns out there is a third and final condition (in addition to the first order condition and envelope condition) to ensure optimality, the dreaded <b>transversality condition</b>. This basically states that things shouldn't be blowing up in the limit, be they the capital stock of the marginal utility of consumption.
+</text>
+
+<text>
+It turns out that this system is highly unstable around the optimal path $c(k)$, which is called the <b>saddle path</b>. Even a slight divergence will send the capital stock either off to infinity or to zero. If we use the saddle path exactly, then we'll proceed in an orderly manner to $(k^{\ast},c^{\ast})$ in the limit and stay there forever. This means that satisfying the transversality condition is just a matter of riding the saddle path the steady state, but it also presents substantial numerical difficulties.
+</text>
+
+<figure title="Transition Paths" label="transition_paths">
+<media source="images/lecture_1_paths.png"></media>
+</figure>
+
+<text>
+Depicted in <ref label="transition_paths"></ref> is the state space over $(k,c)$. In solid black is the saddle path optimum function $c(k)$. The dotted lines delineate the various regions in terms of direction. To the left of the vertical dotted line (which is at $k^{\ast}$), consumption is increasing, and vice versa. Above the other dotted line, capital is decreasing, and vice versa. These can be computed from the laws of motion for each.
+</text>
+
+<text>
+The lines in reg, green, and blue depict various candidate values for $c(0)$. The red line is above the saddle path and skews left into an infeasible region. The blue line is below the saddle path and falls towards zero consumption. The green path is exactly the saddle path choice. Notice that even here, tiny numerical errors prevent us from truly reaching the steady state. This isn't a huge problem as the computed value of $c(0)$ is nonetheless quite accurate, and we can re-update along the path.
+</text>
+
+</subsection>
+
+<subsection title="Computation">
+
+<text>
+There are two ways to do this: the easy way and the hard way. We can do a brute force discrete time approximation, or we can be a bit clever and get the same results with much less work. First the brute force method. We've already seen that the equilibrium is efficient, so let's just cut straight to solving the social planner's problem. For a given small time step $\Delta$ we have
+<equation>
+V(k) = \max_{i} \cb{\Delta u(f(k)-i)+\exp(-\Delta\rho) V(k+(i-\delta k)\Delta)}
+</equation>
+An equivalent characterization would be choosing $k^{\prime}$ instead of $i$. Using the identity $k^{\prime} = k + \Delta i - \Delta\delta k$ we find
+<equation>
+V(k) = \max_{k^{\prime}} \cb{\Delta u(f(k)-(k^{\prime}-k)/\Delta-\delta k)+\exp(-\Delta\rho) V(k^{\prime})}
+</equation>
+Thus by constructing a grid over capital and starting with an initial guess $V_0(\cdot)$, the above provides a method for updating our guess. Applying this mapping repeatedly until we reach a fixed point is called <b>value function iteration</b>. It can be slow, but it gets the job done.
+</text>
+
+<text>
+Now on the the quicker method. The issue with choosing $c(0)$ to hit the steady state (the so called <b>shooting method</b>), as we saw in <ref label="transition_paths"></ref>, is that even double precision floating point precision is not up to the task. There is one way around this: we can reverse time. Systems that are unstable in forward time are often stable in backwards time. By doing this and starting at a point perturbed infinitesimally from the steady state, and using negated laws of motion, we will actually trace out the saddle path.
+</text>
+
+</subsection>
+
+</section>
+
+<section title="Technological Growth">
+
+<text>
+With the above framework, we can model and better understand economies undergoing periods of rapid transition, such as those seen in post-war South Korea, Taiwan, Singapore, and others. Interestingly, <cite label="young1995tyranny"></cite> undertakes a detailed analysis of this dynamic using the growth decomposition tools we've been looking at. He finds that in those countries, contrary to popular wisdom, the majority of output growth can be attributed not to overall productivity growth (TFP), but to capital accumulation.
+</text>
+
+<text>
+Indeed, sustained, long-term (and likely more modest) technological growth is another matter, but will be closely related to the neoclassical growth mechanism. We'll focus for now on the case of exogenous growth TFP. We'll spend much of the course studying the endogenous evolution of TFP, but this is fine for now.
+</text>
+
+<text>
+Suppose that the value of $A$ grows at a constant rate $g$ over time, while $L$ grows at rate $n$. That is, $\dot{A}/A = g$. Recall that the steady state capital level satisfied $f^{\prime}(k^{\ast}) = \delta + \rho$. Because the marginal productivity of capital is decreasing (i.e., $f$ is concave), the steady increase in $A$ must be offset by a concomitant increase in $k^{\ast}$. So $k^{\ast}$ will be growing without bound over time.
+</text>
+
+<text>
+Consider the CES production function that we defined in <ref label="ces_production"></ref>. Let's say we're looking a <b>balanced growth path</b> equilibrium in which the interest rate $r$ is stable, as is the fraction of output spent on capital investment, that is $rK/Y$. Jointly, these imply that $K$ and $Y$ must grow at the same rate. However, looking back to <ref label="ces_production"></ref>, we can see that $g_Y = g + g_K$ (assuming $g_K = g_w$), a contradiction when $g > 0$.
+</text>
+
+<text>
+What to do then? Let's try introducing factor specific technological terms $A_K$ and $A_L$ like so
+<equation>
+F(A,K,L) = \br{\alpha (A_K K)^{\fr{\sigma-1}{\sigma}} + (1-\alpha) (A_L L)^{\fr{\sigma-1}{\sigma}}}^{\fr{\sigma}{\sigma-1}}
+</equation>
+Following the same logic as before, we still find that we must have $g_{A_K} = 0$. But we can still have $g_{A_L} > 0$. In this case $g_Y = g_K = g_{A_L}$. Thus, at the risk of being excessively formal, we can state the following proposition
+</text>
+
+<proposition>
+With CES utility, one of the following must be true for a balanced growth path to exists
+<enumerate>
+<item>Technological change is purely labor augmenting, that is $g_{A_K} = 0$.</item>
+<item>Utility is Cobb-Douglas, that is $\sigma = 1$. In this case $A = A_K^{\alpha}A_L^{1-\alpha}$.</item>
+</enumerate>
+</proposition>
+
+<text>
+The last assertion in the second clause is left as an exercise to the reader. This is an important result in the study of directed technical change, which we will look at later in the course. In the meantime, interested readers can consult <cite label="acemoglu2002directed"></cite> for a more detailed treatment.
+</text>
+
+<subsection title="Exogenous Growth Model">
+
+<text>
+Let's consider only the simplest setting, in which the per-period utility function and production function are given by
+<equation>
+u(c) = \log(c) \qquad \text{and} \qquad f(A,k) = A k^{\alpha}
+</equation>
+This equilibrium will be efficient as before, so we'll cut straight to the social planner's problem. The value function can be expressed as
+<equation>
+\rho V = \max_{i} \cb{\log(Ak^\alpha-i)+(i-\delta k)V_k+gAV_A}
+</equation>
+Let $\sim$ denote variables normalized by $z^{\fr{1}{1-\alpha}}$. In addition, consider the normalized value function $\tilde{V}$ characterized by
+<equation>
+V(A,k) = \tilde{V}\pr{\fr{k}{A^{\fr{1}{1-\alpha}}},t} + \fr{1}{\rho}\pfr{1}{1-\alpha}\br{\log(A)+\fr{g}{\rho}}
+</equation>
+From this we find
+<equation>
+V_k &= A^{-\fr{1}{1-\alpha}} \tilde{V}_{\tilde{k}} \\
+V_A &= \fr{1}{A}\pfr{1}{1-\alpha}\pr{-\tilde{k} \tilde{V}_{\tilde{k}} + \fr{1}{\rho}}
+</equation>
+The reformulated value function equation is then
+<equation>
+\rho \tilde{V} = \max_{\tilde{i}}\cb{\log(\tilde{k}^{\alpha}-\tilde{i})+(\tilde{i}-\bar{\delta}\tilde{k})\tilde{V}_{\tilde{k}}}
+</equation>
+where $\bar{\delta} = \delta + \fr{g}{1-\alpha}$. The analogous first order conditions is
+<equation>
+\fr{1}{\tilde{c}} = \tilde{V}_{\tilde{k}}
+</equation>
+and the envelope condition becomes
+<equation>
+(\rho+\bar{\delta}) \tilde{V}_{\tilde{k}} = \fr{\alpha \tilde{k}^{\alpha-1}}{\tilde{c}} + (\tilde{i}-\bar{\delta}\tilde{k})\tilde{V}_{\tilde{k}\tilde{k}}
+</equation>
+The normalized budget equation is $\tilde{y} = \tilde{c} + \tilde{i}$. Focusing on the steady state, we find the familiar expression
+<equation>
+\dot{\tilde{k}} = \tilde{i}-\bar{\delta}\tilde{k} = 0
+</equation>
+Finally we arrive at an expression for the steady state normalized capital level
+<equation>
+\tilde{k}^{\ast} = \bfr{\alpha}{\rho+\bar{\delta}}^{\fr{1}{1-\alpha}}
+</equation>
+</text>
+
+<text>
+Outside of steady state, we can still make some headway. As before, define the function $m(t) = \tilde{V}_{\tilde{k}}(\tilde{k}(t))$, which is the value of the derivative along the optimum path. Consider the case of a known productivity path. Then we have
+<equation>
+\dot{m} = \dot{\tilde{k}} \tilde{V}_{\tilde{k}\tilde{k}} = (\tilde{i}-\bar{\delta}\tilde{k}) \tilde{V}_{\tilde{k}\tilde{k}}
+</equation>
+which leads to the characterization
+<equation>
+(\rho+\bar{\delta})m = \fr{\alpha \tilde{k}^{\alpha-1}}{\tilde{c}} + \dot{m}
+</equation>
+Thus the law of motion for the $(k,m)$ system is
+<equation>
+\dot{\tilde{k}} &= \tilde{k}^{\alpha} - \bar{\delta}\tilde{k} - \fr{1}{m} \\
+\dot{m} &= -\br{\alpha\tilde{k}^{\alpha-1}-(\rho+\bar{\delta})} m
+</equation>
+Finally, expressing the above system in terms of $\tilde{c}$ and $\tilde{k}$ yields
+<equation>
+\dot{\tilde{k}} &= \tilde{k}^{\alpha} - \bar{\delta}\tilde{k} - \tilde{c} \\
+\dot{\tilde{c}} &= \br{\alpha\tilde{k}^{\alpha-1} - (\rho+\bar{\delta})} \tilde{c}
+</equation>
+A very familiar expression. The only change really is that we are using $\bar{\delta}$ rather than $\delta$.
+</text>
+
+</subsection>
+
+</section>
+
+<bibliography></bibliography>
+
+</body>
+
+</html>

@@ -1,0 +1,294 @@
+<html>
+
+<head>
+<script type="text/javascript" src="/ellsworth/js/ellsworth_load.js"></script>
+<script type="text/x-mathjax-config">
+EllsworthConfig({
+  macros: {
+    fr: ['\\frac{#1}{#2}',2],
+    pr: ['\\left(#1\\right)',1],
+    br: ['\\left[#1\\right]',1],
+    cb: ['\\left\\{#1\\right\\}',1],
+    pfr: ['\\left(\\frac{#1}{#2}\\right)',2],
+    bfr: ['\\left[\\frac{#1}{#2}\\right]',2],
+    pder: ['\\frac{\\partial #1}{\\partial #2}',2]
+  },
+  environs: {
+    proposition: ['<b>Proposition {number}.</b> &nbsp; {content}','Proposition {number}','{content}'],
+  },
+  biblio: "bibliography.json"
+});
+</script>
+<link type='text/css' rel='stylesheet' href='/css/proxima-nova.css'>
+<style>
+body {
+  font-family: "proxima-nova";
+}
+h3.figure_title {
+  margin-bottom: 0px;
+}
+img.media {
+  margin-top: 5px;
+}
+div.enumerate_box div.item_box:before {
+  font-weight: bold;
+}
+div.enumerate_box {
+  padding-bottom: 15px;
+}
+div.proposition_box {
+  margin-top: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<title>Lecture 5: Firm Dynamics</title>
+</header>
+
+<text>
+This lecture will be a hybrid of both theoretical and empirical elements. We've already seen a number of growth models featuring basic theories of firm dynamics. Now we'll look at this problem in more detail from two angles.
+</text>
+
+<text>
+First, we'll investigate of model of firm dynamics proposed by <cite label="luttmer2011mechanics"></cite>. This paper starts with the following motivational trends:
+<enumerate>
+<item>The firm employment size distribution is Pareto with tail index $\zeta \approx 1.05$. This is close to the case of <b>Zipf's Law</b> where $\zeta = 1$.</item>
+<item>Average firm growth rates satisfy Gibrat's law approximately, in that they are invariant to firm size for all but the smallest firms. However, the variance of firm growth falls with firm size.</item>
+<item>The largest firms become so very fast. The median age of firms with more than 10,000 employees is 75 years.</item>
+</enumerate>
+Constructing a model to match the above trends is not a trivial task. The author here combines three elements: (1) Firm-level shocks to productivity. This departs from the Klette and Kortum framework and allows for the presence of very large firms. (2) Persistent (but not perfectly) heterogeneity in firm growth potential, which allows for these large firms to be relatively young. (3) Idiosyncratic product level shocks.
+</text>
+
+<section title="Model of Firm Dynamics">
+
+<text>
+I will follow the notation used in <cite label="luttmer2011mechanics"></cite> throughout, rather than that used in previous lectures. There is a mass of consumers $H$ that is growing at rate $\eta$. Outcomes are evaluated according to the "dynastic" CRRA utility function with parameter $\gamma$
+<equation>
+U(\vec{C}) = \int_0^{\infty} \exp(-\rho t) H(t) \bfr{(C(t)/H(t))^{1-\gamma}-1}{1-\gamma} dt
+</equation>
+Notice that this is simple the population weighted utility over per-capita consumption. We've derived many times the Euler equation for this type of economy, although usually without population growth. It can be shown that the implication for the interest rate is
+<equation>
+r = \rho + \theta(\dot{C}/C-\eta)
+</equation>
+Aggregate consumption is actually a composite of a continuum of differentiated goods with
+<equation>
+C = \br{\int_0^N C_j^{\fr{\sigma-1}{\sigma}} dj}^{\fr{\sigma}{\sigma-1}}
+</equation>
+If the composite good is produced competitively, this yields the demand function
+<equation>
+C_j = \pfr{p_j}{P}^{-\sigma} C
+</equation>
+where $p_j$ is the price of the intermediate $c_j$ and $P$ is the price of the composite. Furthermore, the prices of the differentiated goods will be equal in equilibrium, meaning
+<equation>
+C = N^{\fr{\sigma}{\sigma-1}} C_j
+</equation>
+which reflects gains from variety. It suffices to know that demand for each good is isoelastic with elasticity $\sigma$.
+</text>
+
+<subsection title="Firms">
+
+<text>
+As we have often assumed, differentiated goods producers can use $\ell$ units of labor to produce $Z \ell$ units of the commodity. Furthermore, $Z$ is growing over time at rate $\theta$. Thus the marginal cost is $w/Z$.
+Firms will charge a fixed markup over cost
+<equation>
+\fr{p_j}{P} = \pfr{\sigma}{\sigma-1} \fr{w}{Z}
+</equation>
+Finally we can use this to derive an expression for the wage
+<equation>
+w = \pfr{\sigma-1}{\sigma} Z N^{1/(\sigma-1)}
+</equation>
+We can also derive the labor utilization
+<equation>
+\ell = \br{\pfr{\sigma-1}{\sigma}\fr{Z}{w}}^{\sigma-1} \pfr{\sigma-1}{\sigma} \fr{C}{w}
+</equation>
+Additionally, the profits will be
+<equation>
+\pi = \fr{1}{\sigma} \br{\pfr{\sigma-1}{\sigma}\fr{Z}{w}}^{\sigma-1} C = \fr{w\ell}{\sigma-1}
+</equation>
+</text>
+
+<text>
+To produce a differentiated good, you need a blueprint. Blue prints depreciate in a <b>one-hoss-shay</b> fashion.<footnote>This terminology is in reference to the poem "The Deacon's Masterpiece; or The Wonderful One-Hoss Shay" by Oliver Wendell Holmes, Sr.</footnote> Furthermore, blue prints can be replicated from existing blueprints using labor ($\nu$) or created anew by entrepreneurs ($\mu$). Thus the number of blueprints $N$ grows (or shrinks) at rate $\nu+\mu-\lambda$.
+</text>
+
+<text>
+Employing $i$ labor on blueprint replication yields a rate $\mu = f(i)$ of success. Similarly, using $j$ labor on maintaining a blueprint yields a loss rate of $\lambda = g(j)$. Thus the value of a blueprint $q$ will satisfy
+<equation>
+r q = \max_{i,j} \cb{w \br{\fr{\ell}{\sigma-1}-(i+j)} + (f(i)-g(j))q + \dot{q}}
+</equation>
+This yields the first order condition
+<equation>
+q f^{\prime}(i) = -q g^{\prime}(j) = w
+</equation>
+</text>
+
+</subsection>
+
+<subsection title="Entrepreneurs">
+
+<text>
+Each agent is endowed with a two-dimensional skill vector $(x,y)$, which represent their ability to develop blueprints and do labor respectively. You can think of this as analogous to brains and brawn. There is some fixed distribution over these $T(x,y)$. Thus agents will choose entrepreneurship or wage work according to the relative values of $q x$ and $w y$. So in terms of worker decisions, we only really care about the distribution of $x/y$ as it relates to the ratio $q/w$.
+</text>
+
+<text>
+Here we can use a standard trick to simplify the outcome. We assume that $x$ and $y$ are independent and Frechet distributed. They have respective mean parameters $s_x$ and $s_y$ and a common shape parameter $\alpha$. One can show that under these assumptions
+<equation>
+E &= s_x \bfr{(s_x q)^{\sigma}}{(s_y w)^{\sigma}+(s_x q)^{\sigma}}^{\fr{\sigma-1}{\sigma}} \\
+L &= s_y \bfr{(s_y w)^{\sigma}}{(s_y w)^{\sigma}+(s_x q)^{\sigma}}^{\fr{\sigma-1}{\sigma}}
+</equation>
+Thus the ratio of these two values has constant elasticity with respect to $q/w$ and is given by
+<equation>
+\fr{E}{L} = \pfr{s_x}{s_y}^{\sigma} \pfr{q}{w}^{\sigma-1}
+</equation>
+Consistency with the rate of outside blueprint creation implies
+<equation>
+\nu N = H E(q/w)
+</equation>
+while on the labor market side we have
+<equation>
+(\ell+i+j) N = H L(q/w)
+</equation>
+</text>
+
+</subsection>
+
+<subsection title="Equilibrium">
+
+<text>
+Restricting attention to balanced growth paths, we can see that for constant $q/w$, the number of products $N$ will grow with the population growth rate $\eta$. Therefore we will have
+<equation>
+\eta = \nu + \mu - \lambda
+</equation>
+Per capita consumption can be expressed as $C/H = N^{1/(\sigma-1)} Z$ meaning it will grow at rate
+<equation>
+\kappa = \theta + \fr{\eta}{\sigma-1}
+</equation>
+Rearranging terms in the value function equation and noting that both $q$ and $w$ will grow at the same rate as per capita consumption, we find
+<equation>
+\fr{q}{w} = \fr{\fr{\ell}{\sigma-1}+(i+j)}{r-\kappa-(\mu-\lambda)}
+</equation>
+We now have six equations in the six unknowns $(i,j,\mu,\lambda,\ell,q/w)$. There are certain conditions under which an equilibrium is guaranteed to exist, but we will omit them here.
+</text>
+
+</subsection>
+
+<subsection title="Firm Size Distribution">
+
+<text>
+For this, we can proceed with the derivation in a manner similar to how we addressed the model from <cite label="klette2004innovating"></cite>. Let the mass of firms with $n$ products be $M_n$. Now the consistency equation is
+<equation>
+N = \sum_{n=1} n M_n
+</equation>
+We can write down a system of flow equations describing $M_n$ in steady state
+<equation>
+\text{Inflows} &= \text{Outflows} \\
+\nu N + 2 \lambda M_2 &= \mu M_1 + \lambda M_1 \\
+(n-1) \mu M_{n-1} + (n+1) \lambda M_{n+1} &= n \mu M_n + n \lambda M_n \qquad\qquad\qquad
+</equation>
+It is useful to define a normalized distribution as well, namely $P_n \equiv M_n / F$ where $F = \sum_{n=1}^{\infty} M_n$. In addition, we can define the share of product lines owned by size $n$ firms as $Q_n = n M_n / N$. In this case we can write down the flow equations
+<equation>
+\eta Q_1 &= \lambda Q_2 + \nu - (\mu+\lambda) Q_1 \\
+\fr{1}{n} \eta Q_n &= \mu Q_{n-1} + \lambda Q_{n+1} - (\mu+\lambda) Q_n
+</equation>
+It is actually possible to solve in closed form for the resulting distribution. However, it is sufficiently complicated to lack much clear intuition. However, the main result of the theorem establishes the general shape of the distribution.
+</text>
+
+<text>
+First note that this reduces to the Klette-Kortum distribution when there is no population growth, i.e. $\eta = 0$. We know that in this case, the distribution follows $P_n \propto (\mu/\lambda)^n/n$. Thus the distribution is thin-tailed in that case, contrary to what we see in the data. In the general setting, we have the following proposition to characterize the <b>tail index</b> of the distribution
+<proposition>
+Suppose that $\eta > \mu - \lambda > 0$. Then the right tail probabilities $R_n = \sum_{k=n}^{\infty} P_k$ of the stationary firm size distribution satisfy
+<equation>
+\lim_{n\to\infty} n \br{1 - \fr{R_{n+1}}{R_n}} = \zeta \equiv \fr{\eta}{\mu-\lambda}
+</equation>
+</proposition>
+For instance, if some generic distribution is Pareto, then the PDF satisfies $F_n = 1 - n^{-\zeta}$, meaning $R_n = n^{-\zeta}$, then it can be shown that $\zeta$ is simply the tail index as derived in the limit above. Meanwhile, doing the same for the Klette-Kortum distribution yields $\zeta = 0$, meaning it is thin-tailed.
+</text>
+
+<text>
+The firm entry rate as a fraction of the number of incumbent firms $\varepsilon$ in this economy should satisfy
+<equation>
+\varepsilon - \lambda P_1 = \eta
+</equation>
+Given a mass of firms $F$, the average number of blueprints per firm is $\bar{N} = N/F$ and satisfies
+<equation>
+Q_n = n P_n \cdot \fr{F}{N} = \fr{n}{\bar{N}} \cdot P_n
+</equation>
+Consistency of the firm entry rate and the blueprint creation rate implies $\varepsilon F = \nu N$, meaning $\bar{N} = \varepsilon/\nu$. We also know that $P_1 = \bar{N} Q_1 = (\varepsilon/\nu) Q_1$. From here we arrive at a closed form expression for the entry rate
+<equation>
+\varepsilon = \eta \pfr{\nu}{\nu-\lambda Q_1}
+</equation>
+</text>
+
+<text>
+Given that we have pretty good information on the entry rate ($\approx 10\%$), the population growth rate, and the tail index of firms, we can get fairly tight constraints on the parameters here. However, even with the best fit, the median firm is still older than the US. This shortcoming is what motivates the introduction of firms types.
+</text>
+
+</subsection>
+
+<subsection title="Firm Types">
+
+<text>
+Included is an extension of the basic model where there are two types of firms, high and low. The firms differ only in their level of productivity $Z_H$ and $Z_L$. Productivity growth for both is still $\theta$. Entering firms are of high quality with some probability $\alpha$, while the remainder are low quality. Over time, high quality firms degrade into low quality firms at rate $\delta_H$. One can show that in this case, under certain regularity conditions the tail index is given by
+<equation>
+\zeta = \min\cb{\fr{\eta+\delta_H}{[\mu_H-\lambda_H]^+},\fr{\eta+\delta_L}{[\mu_L-\lambda_L]^+}}
+</equation>
+Notice that we can generate a thick tail for the firm distribution even in the absence of population growth. With this new setup, one can do a pretty good job of matching the above mentioned targets, inclusive of the median age of very large firms.
+</text>
+
+<text>
+The only remaining question is how this affects Gibrat's Law. That is, will it be the case that high type firms will also be larger on average, producing the result that large firms grow faster? This would certainly problematic, as if Gibrat's Law is only approximately true, it breaks in the other direction, with smaller firms growing faster. It turns out that with a sufficiently large depreciation rate of high type firms (the rate at which they turn into low type), we can alleviate this problem.
+</text>
+
+</subsection>
+
+<section title="Mapping to Data">
+
+<text>
+There has been a considerable amount of effort put into understanding the dynamics of firm size and productivity in the data. The major source of information in this realm is the Longitudinal Business Database (LBD) put out by the US Census Bureau. For an overview of this literature, see <cite label="foster2001aggregate"></cite>. Also consult <cite label="bartelsman2000understanding"></cite> for a slightly more concise summary.
+</text>
+
+<text>
+One of the major conclusions of these analyses is that there is very large amount of idiosyncratic variation in plant-level outcomes, both in terms of levels and growth. Furthermore, reallocation of inputs (primarily labor) is a particularly salient force. Approximately 10% of jobs are created or destroyed each year, and the majority of these constitute movements within narrowly defined sectors. Of these movements, around 20% of the total can be accounted for by firm entry and exit.
+</text>
+
+<text>
+There are also interesting trends at the cyclical level. The general finding is that reallocation is more intense during downturns. This results in lower variability in productivity than what would otherwise be implied by within-firm variations. See -- for a detailed description.
+</text>
+
+<text>
+It is important to get a handle on what the source of changes in sectoral productivity are. To this end, there are various productivity growth decompositions one can utilize. At the highest level, we can decompose productivity into contributions from the various constituent firms or plants, which we can just call establishments
+<equation>
+P_{it} = \sum_{e \in I} s_{et} p_{et}
+</equation>
+where $s_{et}$ denotes the output share of establishment $e$ at time $t$. Next we can decompose changes in this value. One of the many methods available breaks down productivity changes into contributions from 5 sources: (1) within-plant, (2) between-plant from shares, (3) share covariance, (4) entry, and (5) exit:
+<equation>
+\Delta P_{it} = &\sum_{e \in C} s_{et-1} \Delta p_{et} + \sum_{e \in C} (p_{et-1}-P_{it-1}) \Delta s_{et} + \sum_{e \in C} \Delta p_{et} \Delta s_{et} \\
+&+ \sum_{e \in N} s_{et} (p_{et}-P_{it-1}) - \sum_{e \in X} s_{et-1} (p_{et-1}-P_{it-1})
+</equation>
+Here $C$ denotes the set of continuing firms, $N$ is the set of entrants, and $X$ is the set of exiting firms.
+</text>
+
+<text>
+In these decompositions, the shares are taken from variables such as output or employment. The productivities are calculated as either the value added per unit labor or something akin to Solow residual under the assumption of Cobb-Douglas production. That is
+<equation>
+\ln p_{et} = \ln Q_{et} - \alpha_K \ln K_{et} - \alpha_L \ln L_{et}
+</equation>
+Where $Q_{et}$ is output and the coefficients are calculated from input shares in each industry. One can also include other classes of inputs such as materials and structures.
+</text>
+
+<text>
+The results of these decomposition generally come down along the following lines. About half of productivity growth comes from changes within existing firms. Around one quarter comes from reallocation between plants, which here is the sum of the between-plant and covariance terms. Finally, the remaining quarter results from net entry, that is, the sum of contributions from entry and exit. Due to the variability from study to study, sometimes people just think of this as one third from each.
+</text>
+
+</subsection>
+
+</section>
+
+<bibliography></bibliography>
+
+</body>
+
+</html>

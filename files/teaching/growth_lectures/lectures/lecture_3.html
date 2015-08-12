@@ -1,0 +1,339 @@
+<html>
+
+<head>
+<script type="text/javascript" src="/ellsworth/js/ellsworth_load.js"></script>
+<script type="text/x-mathjax-config">
+EllsworthConfig({
+  macros: {
+    fr: ['\\frac{#1}{#2}',2],
+    pr: ['\\left(#1\\right)',1],
+    br: ['\\left[#1\\right]',1],
+    cb: ['\\left\\{#1\\right\\}',1],
+    pfr: ['\\left(\\frac{#1}{#2}\\right)',2],
+    bfr: ['\\left[\\frac{#1}{#2}\\right]',2],
+    pder: ['\\frac{\\partial #1}{\\partial #2}',2]
+  },
+  environs: {},
+  biblio: "bibliography.json"
+});
+</script>
+<link type='text/css' rel='stylesheet' href='/css/proxima-nova.css'>
+<style>
+body {
+  font-family: "proxima-nova";
+}
+h3.figure_title {
+  margin-bottom: 0px;
+}
+img.media {
+  margin-top: 5px;
+}
+div.enumerate_box div.item_box:before {
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<title>Lecture 3: Schumpeterian Framework</title>
+</header>
+
+<text>
+The Schumpeterian framework that was introduced in the last lecture provides a good framework in which to think about technological progress and how it relates to creative destruction. It also has fairly precise implications regarding the life cycle dynamics of the firm, that is, how they are created and destroyed and how they might expand or contract over time.
+</text>
+
+<text>
+Going down this path will bring us closer to certain industrial organization topics, such as firm entry and exit, competition, and market structure. These topics are interesting and worthy of understanding in their own right, but in broadening our scope, we also gain a better understanding of the overall growth picture.
+</text>
+
+<text>
+There is a wealth of empirical literature on US firm level data. Much of this is made possible by the extensive data available from the Census in the form of the Longitudinal Business Database. Additionally, for growth related topics, data on patenting is invaluable. In the case of publicly traded firms, one can also consult the more widely available Compustat database.
+</text>
+
+<text>
+A seminal work on this topic in terms of scope is <cite label="davis1998job"></cite>. One should also see <cite label="bartelsman2000understanding"></cite> for a shorter and slightly more recent overview. These papers attempt to shed light on the linkage between productivity growth at the aggregate level and productivity growth that can be observed at the firm level.
+</text>
+
+<section title="Theory of the Firm">
+
+<text>
+In this lecture, we will be focusing initially on theory. The primary source will be an important paper in this strand of the literature, <cite label="klette2004innovating"></cite>. At its core, the model featured in this paper inherits many features with the quality ladder model presented in lecture 2. The primary difference is the introduction of the notion of a firm, as well as the distinction between entrant and incumbent innovation.
+</text>
+
+<text>
+At any given time, a firm denoted by $f \in [0,F]$ owns some collection of $n_f$ product lines $\mathcal{J}_f = \{j_f^1,\ldots,j_f^n\} \in [0,1]^{n_f}$. At any given time, each product line $j$ is owned by some firm $f$. Incumbent firms can generate a flow rate of innovations $X_f$ using research labor $C_f$ according to the production function
+<equation>
+X_f = G(n_f,C_f) = \nu n_f^{1-\gamma} C_f^{\gamma}
+</equation>
+if we denote variables that are normalized by the number of products $n_f$ with lower case, this implies
+<equation>
+x_f = g(c_f) = \nu c_f^{\gamma}
+</equation>
+Thus an equivalent representation would be that each product line has an associated research lab that can generate innovations at rate $x_f$ using research labor $g(c_f)$. Inverting the above, the cost in terms of research labor for a particular flow rate $x_f$ is
+<equation>
+c_f = c(x_f) = \pfr{x_f}{\nu}^{\fr{1}{\gamma}}
+</equation>
+Now let's attempt to find the value of owning a particular product line. For a firm with $n$ product lines, the value function satisfies
+<equation>
+r V_n - \dot{V} = n \pi - n \tau \br{V_{n-1}-V_n} + n \ \max_{x} \cb{-wc(x)+x\br{V_{n+1}-V_n}}
+</equation>
+where by construction $V_0 = 0$. We can now posit a per-product line value of the form $\tilde{V}_n = n \tilde{V}$, which yields
+<equation>
+(r+\tau)V - \dot{V} = \pi + \max_{x} \cb{-w c(x)+x V} \equiv \pi + \Omega
+</equation>
+where $\Omega$ is referred to as the option value of innovation. Normalizing by the aggregate growth rate $g$, we then find
+<equation>
+(r+\tau-g) \tilde{V} = \tilde{\pi} + \max_{x} \cb{-\tilde{w}c(x)+x\tilde{V}} = \tilde{\pi} + \tilde{\Omega}
+</equation>
+The first order condition for the above is then simply
+<equation>
+\tilde{w} c^{\prime}(x) = \tilde{V}
+</equation>
+Recall the primary results from the production side equilibrium from the previous lecture
+<equation>
+\tilde{\pi} = 1 - \lambda^{-1} \qquad \text{and} \qquad
+\ell = \fr{\lambda^{-1}}{\tilde{w}}
+</equation>
+</text>
+
+<text>
+Innovation is undertaken by both incumbent firms and entrants. Suppose that there is a pool of entrants with a linear technology for producing innovation, whereby they can achieve an aggregate rate $e$ by spending $\chi e$ in terms of research labor. A successful entrant steals one product line from an existing incumbent firm. Thus we should have the condition
+<equation>
+\tilde{V} = \tilde{w} \chi
+</equation>
+Since there is a unit mass of product lines and the per-product innovation rate of incumbents is $x$, this is also the aggregate innovation rate by incumbents. Thus the overall aggregate innovation rate is
+<equation>
+\tau = x + e
+</equation>
+Finally, there is the labor market clearing condition with $L=1$
+<equation>
+1 = P + R = \fr{\lambda^{-1}}{\tilde{w}} + c(x) + \chi e
+</equation>
+</text>
+
+<section title="Firm Size Distribution">
+
+<text>
+We can now begin to characterize the firm size distribution resulting from this model. We will find the distribution over the number of products $n$. However, because everything is identical across firms and products at the product line level, these same results will hold proportionally for observables such as revenue, income, profit, and employment.
+</text>
+
+<text>
+For any given incumbent firm with $n$ product lines, it will gain products at the rate $nx$ and lose products at rate $n\tau = n(x+e)$. Thus in expectation each incumbent firm is shrinking at the rate
+<equation>
+\fr{\dot{n}}{n} = \fr{nx - n\tau}{n} = -e
+</equation>
+because some are being replaced by new entrants. Let $\mu_n$ be the mass of firms with $n$ product lines. Note that when a firm loses its last product line and reaches $n=0$, it is assumed without loss of generality that they exit, as they have no research capacity or sales. Thus the $\mu$ distribution should satisfy the flow equations
+<equation>
+\text{Inflows} &= \text{Outflows} \\
+e + 2 \tau \mu_2 &= x \mu_1 + \tau \mu_1 \\
+(n-1) x \mu_{n-1} + (n+1) \tau \mu_{n+1} &= n x \mu_n + n \tau \mu_n \qquad \text{for} \quad n \gt 1
+</equation>
+In addition, we will also have $\sum_{n=1}^{\infty} n \mu_n = 1$.
+</text>
+
+<text>
+Now let's guess that $\mu$ takes the form
+<equation>
+\mu_n = \fr{A B^{-n}}{n}
+</equation>
+Plugging this in to the $n \gt 1$ clause and canceling, we find
+<equation>
+x B + \tau B^{-1} = x + \tau
+</equation>
+which has the roots $B=1$, which we reject as non-summable, and $B = \tau/x$. Using this and the $n=1$ clause, we can then find that $A = e/x$. Thus full expression is
+<equation>
+\mu_n = \fr{1}{n}\pfr{e}{x}\pfr{x}{e+x}^{n} = \fr{\hat{e}}{n}\pfr{1}{1+\hat{e}}^{n}
+</equation>
+where $\hat{e} = e/x$ is the relative entry rate. This can be verified to satisfy the unit sum condition. We can also find the total mass of firms, which is simply $F = \sum_{n=1}^{\infty} \mu_n$. Here we use the identity
+<equation>
+\sum_{n=1}^{\infty} \fr{z^n}{n} = \ln\pfr{1}{1-z}
+</equation>
+which can be obtained by integrating both sides of the more familiar identity
+<equation>
+\sum_{n=0}^{\infty} z^n = \fr{1}{1-z}
+</equation>
+In our case $z = x/(e+x) = 1/(1+\hat{e})$, meaning the total mass of firms is equal to
+<equation>
+F = \hat{e} \ln\pr{1+\hat{e}^{-1}} \in [0,1]
+</equation>
+Note that $F$ is thus increasing in $\hat{e}$. Because there is a fixed unit mass of products, the average firm size is thus $\bar{n} = 1/F$ and is decreasing in $\hat{e}$. Using this, we can now find the true distribution of firms (rather than the mass) with $\tilde{\mu}_n = \mu_n/F$. This yields
+<equation>
+\tilde{\mu}_n = \fr{(1+\hat{e})^{-n}}{n\ln(1+\hat{e}^{-1})}
+</equation>
+The net effect of higher relative entry on the distribution is to concentrate more mass in one product line firms, while lower entry spreads the distribution out. <ref label="ndists"></ref> depicts this.
+<figure title="Product Line Distributions" label="ndists">
+<media source="images/lecture_3_ndist.png"></media>
+</figure>
+</text>
+
+</section>
+
+<section title="Goals of the Paper">
+
+<text>
+This paper is nice because it clearly sets out what trends in the data it wishes to explain.<footnote>These are often called "stylized facts," but I think this term is falling out of favor.</footnote> Furthermore, it manages to capture the bulk of them using a fairly simple and analytically tractable model. Some of the most relevant ones for are purposes are
+<enumerate>
+<item><b>Research intensity is independent of firm size.</b>
+<br>
+This is simply the ratio of research investment to revenue, which is constant as both values scale linearly with number of products.
+</item>
+<item><b>The distribution of research intensity is highly skewed, and a considerable fraction of firms report zero research.</b>
+<br>
+A highly skewed distribution of number of products yields the former, while the latter is not incorporated.
+</item>
+<item><b>Differences in research intensity across firms are highly persistent.</b>
+<br>
+The authors extend the model to include exogenous and persistent differences in innovation step size and cost. This gets the job done, but is somewhat <i>ad hoc</i>.
+</item>
+<item><b>Firm research investment follows essentially a geometric random walk.</b>
+<br>
+This arises because firms grow and shrink symmetrically by gaining and losing products, and this linearly affects research spending.
+</item>
+<item><b>The size distribution of firms is highly skewed.</b>
+<br>
+One could argue that this is true, however the distribution is still not fat tailed. Empirical studies have found the size distribution of firms to approximately Pareto.
+</item>
+<item><b>Smaller firms have a lower probability of survival, but those that survive tend to grow faster than larger firms. Among larger firms, growth rates are unrelated to past growth or to firm size.</b>
+<br>
+The first clause of this statement holds true because firms exit only by losing their last product line. Additionally, conditioning on not exiting preferentially selects for firms that have not lost products, meaning they have in net gained more products than average. This does not arise with large firms, where we are far away from exit through product loss.
+</item>
+</enumerate>
+</text>
+
+<text>
+One dimension where this model falls a bit short is in capturing the true extent of skewness in the observed firm size distribution, at least in the US. We might be able to approximate this using very low entry rates, but these would be implausibly so. Fundamentally, the resulting distribution does not have the right shape.
+</text>
+
+<text>
+<cite label="luttmer2011mechanics"></cite> notes that in order to achieve the proper level of skewness, one needs a different generating process as well as persistent heterogeneity in firm growth rates. In this model, firm growth rates are invariant to firm size, a result known as <b>Gibrat's Law</b>. This seems to be true in the data as well. However, growth rates are also not correlated over time for specific firms. This doesn't seem to be the case in the data, particularly when looking at firms that are now very large such as Walmart or GE.
+</text>
+
+<text>
+Another object which we have sort of lost track of at this point is the distribution of firm level productivity. Recall from lecture 2 that the aggregate productivity index is
+<equation>
+Q = \exp\pr{\int_0^1 \log(q_j) dj}
+</equation>
+Suppose that we define a normalized productivity $\hat{q}_j \equiv q_j/Q$. This helps us look only at the distribution, rather than the level which we know to be growing steadily over time. Over short time intervals, this evolves according to
+<equation>
+\hat{q}_j(t+\Delta) = \begin{cases}
+\fr{\lambda q_j(t)}{1+\Delta g} & \text{w.p. } \Delta\tau \\
+\fr{q_j(t)}{1+\Delta g} & \text{w.p. } 1-\Delta\tau
+\end{cases}
+</equation>
+Thus it follows an asymmetric random walk. The implication is then that the variance, both in terms of expectation and across product lines, increases without bound over time.
+</text>
+
+<text>
+This is not a problem in this specific setting because of the log-log aggregation. However, for general elasticities of substitution, this would be an issue. What is required is some kind of resetting process. For instance, there might be a lower bound on productivity below which firms either cease producing or are dragged along with the economy. Alternatively, new or existing products could draw their productivity from some average of the current distribution, as is done in <cite label="acemoglu2010innovation"></cite>.
+</text>
+
+</section>
+
+<section title="Firm Heterogeneity">
+
+<text>
+In addition to <i>ex post</i> heterogeneity in firms induced differential research outcomes, there can be other sources of firm growth and size variability. In particular, the above discussion treated all product lines as identical (both <i>ex ante</i> and <i>ex post</i>) as far sales, employment, and profitability go. This may very well not be the case.
+</text>
+
+<text>
+<cite label="klette2004innovating"></cite> introduce persistent differences at the firm level in terms of innovation step size. Certain firms simply produce larger innovations but must also employ more researchers in order to so. This yields persistent differences in innovation intensities, while avoiding persistent differences in growth rates (which would otherwise lead to larger firms being more research intensive and profitable, a trend that we do not observe in the data).
+</text>
+
+<text>
+Nonetheless, we do observe persistent differences in firm growth rates. Imagine, for example, the differences between a firm like Google and one like Xerox. However, squaring this with the fact that larger firms are on average no more profitable or research intensive than small firms requires a somewhat nuanced explanation. Roughly speaking though, one can imagine a firm life cycle in which some start out highly innovative, achieving rapid growth early on, but over time revert to innovative capacities more in line with or below the average firm.
+</text>
+
+<text>
+It is difficult to write down a closed-firm solution to many models featuring further firm heterogeneity, but we can get a bit of analytic traction by going down that path. To do so, we need to move away from the unit elasticity ($\varepsilon = 1$) setting. Recall from the previous lecture that the production level chosen by a monopolist with productivity $q_j$ is
+<equation>
+x_j^M = \br{\pfr{\varepsilon-1}{\varepsilon}\fr{q_j}{w}}^{\varepsilon} Y
+</equation>
+Now consider the limit pricing scenario. Here the firm will charge a price equal to the marginal cost of their competitor, namely $p_j = \lambda w/q_j$. This results in production of
+<equation>
+x_j^L = \br{\pfr{1}{\lambda}\fr{q_j}{w}}^{\varepsilon} Y
+</equation>
+The question arises then, which of these is larger? The monopoly solution is valid only when the other firm is sure not to enter. Thus the firm will choose the maximum of the two. The condition for $x^M_j > x^L_j$ is simply
+<equation>
+\lambda > \fr{\varepsilon}{\varepsilon-1}
+</equation>
+Let's assume that this holds so the firm will in fact always charge the monopoly price. We could also define $\bar{\lambda} = \min\cb{\lambda,\varepsilon/(\varepsilon-1)}$ and proceed accordingly. Note that we are implicitly assuming stationary strategies here (and throughout). The question of equilibrium when allowing for multi-period strategies is quite a bit more complicated.
+</text>
+
+<text>
+Now we can compute some observable outcomes at the product line level. In particular, the production level of the firm was computed to be
+<equation>
+x_j = \br{\pfr{\varepsilon-1}{\varepsilon}\fr{q_j}{w}}^{\varepsilon} Y
+</equation>
+Plugging this into the final goods production function, we find the identity
+<equation>
+\fr{w}{Q} = \fr{\varepsilon-1}{\varepsilon}
+</equation>
+where $Q$ is a productivity aggregate defined as
+<equation>
+Q^{\varepsilon-1} = \int_0^1 q_j^{\varepsilon-1} dj
+</equation>
+This will also satisfy $Y = QP$. Now let the relative productivity be $\hat{q}_j = q_j/Q$. By construction, we then have
+<equation>
+1 = \int_0^1 \hat{q}^{\varepsilon-1}_j dj
+</equation>
+We can further show that
+<equation>
+\pi(\hat{q}) = \pfr{1}{\varepsilon} \hat{q}^{\varepsilon-1} Y \qquad\text{and}\qquad
+w \ell(\hat{q}) = \pfr{\varepsilon-1}{\varepsilon} \hat{q}^{\varepsilon-1} Y
+</equation>
+</text>
+
+<text>
+When a firm successfully innovates, it improves the productivity of a random product line by a factor $\lambda$.<footnote>In reality, firms are likely to be able to target their research efforts. This assumption is made purely for tractability.</footnote> The <i>relative</i> productivity from then on is falling over time as other products in the economy are improved upon. Lets write down a value function that can capture this dynamic, letting $g$ be the growth rate of $Q$ (and hence $Y$)
+<equation>
+rV(\hat{q}) &= \pi(\hat{q}) + \max_x\cb{-wc(x)+x\bar{V}} - \tau V(\hat{q}) - g \hat{q} V_{\hat{q}}(\hat{q}) + \dot{V} \\
+&= \pi(\hat{q}) + \Omega - \tau V(\hat{q}) - g V_{\hat{q}}(\hat{q}) + \dot{V}
+</equation>
+where $\bar{V} = \mathbb{E}_{\hat{q}}\br{V(\hat{q})}$ is the expected return from innovation. Now suppose the value function takes the form
+<equation>
+V(\hat{q}) = \br{A+B\hat{q}^{\varepsilon-1}} Y
+</equation>
+This should satisfy
+<equation>
+(r-g+\tau)\br{A+B\hat{q}^{\varepsilon-1}} = \pfr{1}{\varepsilon}\hat{q}^{\varepsilon-1} + \tilde{\Omega} - g (\varepsilon-1) B \hat{q}^{\varepsilon-1}
+</equation>
+Equating term by term yields
+<equation>
+A = \fr{\tilde{\Omega}}{r-g+\tau} \qquad\text{and}\qquad
+B = \fr{1/\varepsilon}{r-g+\tau+(\varepsilon-1)g}
+</equation>
+Note that $\tilde{\Omega}$ is a function of $\tilde{V} = \bar{V}/Y$. Thus there is one more layer to solve there. Assuming a constant elasticity research cost function, one can solve for $\tilde{V}$ in closed form. From here the innovation rate $x$ can be found. The remaining task is to calculate the growth rate
+<equation>
+Q^{\varepsilon-1}(t+\Delta) &= \int_0^1 \br{\Delta\tau (\lambda q_j)^{\varepsilon-1} + (1-\Delta\tau)q_j^{\varepsilon-1} dj} \\
+&= Q^{\varepsilon-1}(t)(1+\Delta \tau \br{\lambda^{\varepsilon-1}-1})
+</equation>
+Thus the growth rate of $Q$ is simply
+<equation>
+g = \bfr{\lambda^{\varepsilon-1}-1}{\varepsilon-1} \tau
+</equation>
+</text>
+
+<text>
+At this point we run into issues of the existence of the distribution over $\hat{q}$, as discussed earlier. Nonetheless, we can write down flow equations for this. Let the distribution be denoted by $F(\cdot)$. This should then satisfy
+<equation>
+F(\hat{q},t+\Delta) = \Delta \tau F\pr{\fr{\hat{q}(1+\Delta g)}{\lambda},t} + (1-\Delta\tau) F(\hat{q}(1+\Delta g),t)
+</equation>
+Taking the limit as $\Delta \rightarrow 0$, we find a sort in inflow-outflow differential equation
+<equation>
+g\hat{q}f(\hat{q}) = \tau \br{F(\hat{q})-F(\hat{q}/\lambda)}
+</equation>
+</text>
+
+<text>
+For a very detailed version of the above model, with the addition of an <i>ex ante</i> distribution of product line shares, see <cite label="lentz2008empirical"></cite>. Note that in this work, the authors actually match the distribution of $\hat{q}$ to the data rather than use the steady state implied by the model, which doesn't exist.
+</text>
+
+</section>
+
+<bibliography></bibliography>
+
+</body>
+
+</html>

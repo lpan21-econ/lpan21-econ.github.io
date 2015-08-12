@@ -1,0 +1,202 @@
+<html>
+
+<head>
+<script type="text/javascript" src="/ellsworth/js/ellsworth_load.js"></script>
+<script type="text/x-mathjax-config">
+EllsworthConfig({
+  macros: {
+    fr: ['\\frac{#1}{#2}',2],
+    pr: ['\\left(#1\\right)',1],
+    br: ['\\left[#1\\right]',1],
+    cb: ['\\left\\{#1\\right\\}',1],
+    pfr: ['\\left(\\frac{#1}{#2}\\right)',2],
+    bfr: ['\\left[\\frac{#1}{#2}\\right]',2],
+    pder: ['\\frac{\\partial #1}{\\partial #2}',2]
+  },
+  environs: {},
+  biblio: "bibliography.json"
+});
+</script>
+<link type='text/css' rel='stylesheet' href='/css/proxima-nova.css'>
+<style>
+body {
+  font-family: "proxima-nova";
+}
+h3.figure_title {
+  margin-bottom: 0px;
+}
+img.media {
+  margin-top: 5px;
+}
+div.enumerate_box div.item_box:before {
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<title>Lecture 4: Directed Technical Change</title>
+</header>
+
+<text>
+In this lecture we will discuss the notion of directed technical change. Up until now, we have been treating the technology frontier as a unidimensional object, along which we progress at an endogenously determined rate. Now we will also treat the direction of technical change as endogenous. The exact nature of the possible directions we can take and the forces that will determine the outcome will vary based on application, but there are lessons we can learn from the general theory.
+</text>
+
+<text>
+The main source of material here will be <cite label="acemoglu2002directed"></cite>, whose notation we will for the most part follow. For a more explicit discussion of directed technological change and the skilled wage premium, consult <cite label="acemoglu1998new"></cite>.
+</text>
+
+<section title="Production Environment">
+
+<text>
+We'll be using the generalized CES production function once again in this setting out of necessity. There is one final good $Y$ and two intermediate goods $Y_L$ and $Y_Z$, which are combined according to
+<equation>
+Y = \br{\gamma Y_L^{\fr{\varepsilon-1}{\varepsilon}}+(1-\gamma) Y_Z^{\fr{\varepsilon-1}{\varepsilon}}}^{\fr{\varepsilon}{\varepsilon-1}}
+</equation>
+You can think about these as labor and capital, as low and high skill labor, or as the choice between two types of technology such as polluting and non-polluting (i.e., clean or dirty).
+</text>
+
+<text>
+Each intermediate is produced according to the so called <b>lab equipment</b> model. There are $N_L$ and $N_Z$ machine types that are used as inputs. Each is produced by a monopolist at constant marginal cost $\psi$ and rented to intermediate producers at respective prices $\chi_L^j$ and $\chi_Z^j$. The production functions are given by
+<equation label="final_demand">
+Y_L &= \fr{1}{1-\beta} \pr{\int_0^{N_L} \br{x_L^j}^{1-\beta} dj} L^{\beta} \\
+Y_Z &= \fr{1}{1-\beta} \pr{\int_0^{N_Z} \br{x_Z^j}^{1-\beta} dj} Z^{\beta}
+</equation>
+</text>
+
+<text>
+Let the price of the respective intermediates be $p_L$ and $p_Z$. Assuming competitive production of the final good, we can derive demand functions of the form
+<equation label="intermediate_demand">
+Y_L = \gamma p_L^{-\varepsilon} Y \qquad\text{and}\qquad
+Y_Z = (1-\gamma) p_Z^{-\varepsilon} Y
+</equation>
+On the intermediate production side, we similarly find for machine producers
+<equation label="machine_demand">
+x_L^j = \pfr{p_L}{\chi_L^j}^{1/\beta} L \qquad\text{and}\qquad
+x_Z^j = \pfr{p_Z}{\chi_Z^j}^{1/\beta} Z
+</equation>
+while for raw input producers, we arrive at values for the factor prices $w_L$ and $w_Z$
+<equation label="factor_prices">
+w_L &= \pfr{\beta}{1-\beta} p_L \pr{\int_0^{N_L} \br{x_L^j}^{1-\beta}} L^{\beta-1} \\
+w_Z &= \pfr{\beta}{1-\beta} p_Z \pr{\int_0^{N_Z} \br{x_Z^j}^{1-\beta}} L^{\beta-1}
+</equation>
+Now we'll employ a trick to simplify the algebra. We know by now that when facing a demand curve with elasticity $1/\beta$, a monopolist will charge a price of $1/(1-\beta)$ times its marginal cost. Letting the marginal cost simply be $\psi = 1-\beta$ then means the price will be $\chi_L^j = \chi_Z^j = 1$ and the profit margin will be $\beta$. Thus profits will ultimately be
+<equation>
+\pi_L = \beta p_L^{1/\beta} L \qquad\text{and}\qquad
+\pi_Z = \beta p_Z^{1/\beta} Z
+</equation>
+Assuming for the moment that we are in a stationary world, the present value of owning a machine line is simply
+<equation>
+V_L = \fr{\beta p_L^{1/\beta} L}{r} \qquad\text{and}\qquad
+V_Z = \fr{\beta p_Z^{1/\beta} Z}{r}
+</equation>
+</text>
+
+<text>
+Now that we've established that outcomes will be symmetric at the machine level, we can dispense with differentiation. Plugging <ref label="machine_demand"></ref> into <ref label="final_demand"></ref>, we find
+<equation>
+Y_L = \pfr{1}{1-\beta} p_L^{(1-\beta)/\beta} N_L L \qquad\text{and}\qquad
+Y_Z = \pfr{1}{1-\beta} p_Z^{(1-\beta)/\beta} N_Z Z
+</equation>
+Combining the above with <ref label="intermediate_demand"></ref>, one can find explicit values for $Y_L$, $Y_Z$, $p_L$, and $p_Z$, in addition to final output $Y$. We are however only interested in the relative values at this stage. Thus utilizing <ref label="intermediate_demand"></ref> again we find the relative price
+<equation>
+p \equiv \fr{p_Z}{p_L} = \pfr{1-\gamma}{\gamma}^{\beta\varepsilon/\sigma} \pfr{N_Z Z}{N_L L}^{-\beta/\sigma}
+</equation>
+where $\sigma \equiv \varepsilon - (\varepsilon-1)(1-\beta)$ is a measure of the output elasticity between $L$ and $Z$ and is greater or less than $1$ as $\varepsilon$ is greater or less than $1$. Finally, this allows us to express the relative present values as
+<equation label="value_ratio">
+\fr{V_Z}{V_L} = p^{1/\beta} \cdot \fr{Z}{L} = \pfr{1-\gamma}{\gamma}^{\varepsilon/\sigma} \pfr{N_Z}{N_L}^{-1/\sigma} \pfr{Z}{L}^{(\sigma-1)/\sigma}
+</equation>
+The above decomposition emphasizes two distinct channels: (1) the <b>price effect</b> whereby goods that demand a higher price pass on higher returns to their input machines, which results in increased incentives to innovation; and (2) the <b>market size effect</b> whereby innovations, being non-rival, are more profitable in larger markets. The final term represents an attempt to discern the net impact of these two effects.
+</text>
+
+<text>
+Of course, the above distinction could be said to be somewhat arbitrary given that intermediate prices are an endogenous object that are themselves functions of factor and machine prevalence. Nonetheless, it is a useful distinction to make in the real world. Additionally, one could instead decompose the effect into contributions from market size and factor prices. Combining <ref label="machine_demand"></ref> and <ref label="factor_prices"></ref>, we can find the analogous ratio
+<equation label="factor_price_ratio">
+\fr{w_Z}{w_L} = p^{1/\beta} \cdot \fr{N_Z}{N_L} = \pfr{1-\gamma}{\gamma}^{\varepsilon/\sigma} \pfr{N_Z}{N_L}^{(\sigma-1)/\sigma} \pfr{Z}{L}^{-1/\sigma}
+</equation>
+Here we can finally see the interpretation of $\sigma$ as the derived price elasticity between $Z$ and $L$. Additionally, we can discern the effect of changes in factor abundances on both the incentives for innovation and factor prices. In particular, so long as $\sigma > 1$, i.e. the two factors are gross substitutes, an increase in the relative abundance for $Z$ will increase the relative gains to innovation on $Z$-machines, at least in the short term.
+</text>
+
+<text>
+Turning to the factor price ratio, the short term effect of an increase in the relative abundance of $Z$ will be to decrease this quantity. However, the long-run effect will depend on the endogenous innovation response through it's effect on $N_Z/N_L$. So long as $\sigma > 1$, there will be some "rebound," but the net long-run change is of interest too. For that we need to be more specific about the innovation technology.
+</text>
+
+<text>
+Also of interest may be the share of income going to each of the factors. The ratio of these quantities will satisfy
+<equation>
+\fr{s_Z}{s_L} \equiv \fr{w_Z Z}{w_L L} = \pfr{1-\gamma}{\gamma}^{\varepsilon/\sigma} \pfr{N_Z Z}{N_L L}^{(\sigma-1)/\sigma}
+</equation>
+This again shows us the gross substitution effect and how things are pretty boring in the Cobb-Douglas ($\sigma=1$) world.
+</text>
+
+</section>
+
+<section title="Innovation Structure">
+
+<text>
+The paper raises some interesting points regarding state dependence in the path of innovation. That is, there is the possibility that doing innovation in a particular direction today changes the cost (or ease) of innovation in that or another direction tomorrow. However, for now we will focus on the base case of no path dependence. In particular, given research inputs $R_L$ and $R_Z$, let the respective rates of machine invention be
+<equation>
+\dot{N}_L = \eta_L R_L \qquad\text{and}\qquad
+\dot{N}_Z = \eta_Z R_Z
+</equation>
+this leads naturally to the condition on valuations $\eta_Z V_Z = \eta_L V_L$. Defining the innovation cost ratio $\eta \equiv \eta_Z/\eta_L$ and using <ref label="value_ratio"></ref> this leads to the condition
+<equation>
+\fr{N_Z}{N_L} = \eta^{\sigma} \pfr{1-\gamma}{\gamma}^{\varepsilon} \pfr{Z}{L}^{\sigma-1}
+</equation>
+This confirms what we should have expected from the valuation ratio equation, that whether innovation is directed towards more abundant factors is determined by the gross substitutability $\sigma$. We can now use the above in conjunction with <ref label="factor_price_ratio"></ref> to determine the long-run change in the relative factor prices
+<equation>
+\fr{w_Z}{w_L} = \eta^{\sigma-1} \pfr{1-\gamma}{\gamma}^{\varepsilon} \pfr{Z}{L}^{\sigma-2}
+</equation>
+Thus we arrive at the marquee result that the relative factor prices are in the long-run increasing in relative abundance when $\sigma > 2$, that is when the two factors are sufficiently substitutable. This can be expressed in an equivalent manner as a relationship between $\beta$ and $\varepsilon$, namely
+<equation>
+\varepsilon > 1 + \beta^{-1}
+</equation>
+A similar calculation allows us to find the long-run income shares which yields long-run implications identical to those in the short-run
+<equation>
+\fr{s_Z}{s_L} = \eta^{\sigma-1} \pfr{1-\gamma}{\gamma}^{\varepsilon} \pfr{Z}{L}^{\sigma-1}
+</equation>
+</text>
+
+<subsection title="State Dependence">
+
+<text>
+Allowing for path dependence calls for a slightly generalized functional form for the cost of innovation, which is now specified by
+<equation>
+\dot{N}_L = \eta_L N_L^{(1+\delta)/2} N_Z^{(1-\delta)/2} S_L \qquad\text{and}\qquad
+\dot{N}_Z = \eta_Z N_Z^{(1+\delta)/2} N_L^{(1-\delta)/2} S_Z
+</equation>
+where $S_L$ and $S_Z$ now represent scientists that are employed to undertake research. The return to innovation will be $V_L$ and $V_Z$, respectively. These will also be proportional to $\pi_L$ and $\pi_Z$ because each faces a common interest rate. Equating marginal returns to each type of innovation, we find
+<equation>
+\eta_L N_L^{\delta} \pi_L = \eta_Z N_Z^{\delta} \pi_Z
+</equation>
+As before, we can use this condition to precisely determine the relative numbers of machines of each type
+<equation>
+\fr{N_Z}{N_L} = \eta^{\fr{\sigma}{1-\delta\sigma}} \pfr{1-\gamma}{\gamma}^{\fr{\varepsilon}{1-\delta\sigma}} \pfr{Z}{L}^{\fr{\sigma-1}{1-\delta\sigma}}
+</equation>
+This leads to an expression for the factor price ratio
+<equation>
+\fr{w_Z}{w_L} = \eta^{\fr{\sigma-1}{1-\delta\sigma}} \pfr{1-\gamma}{\gamma}^{\fr{(1-\delta)\varepsilon}{1-\delta\sigma}} \pfr{Z}{L}^{\fr{\sigma-2+\delta}{1-\delta\sigma}}
+</equation>
+From this we can see directly that the new condition for increasing long-run prices (as a function of factor abundances) is
+<equation>
+\sigma > 2 - \delta
+</equation>
+Increased state dependence will amplify the innovation response. Thus making it easier for this component to overwhelm the short-term price effect.
+</text>
+
+<text>
+Furthermore, when considering possible outcomes for the economy, state-dependence introduces some degree of instability through positive feedback. It can be show that if $\delta > 1/\sigma$, this will result in an extreme outcome in which one type of good completely takes over. Otherwise, there will be an interior solution.
+</text>
+
+</subsection>
+
+</section>
+
+
+<bibliography></bibliography>
+
+</body>
+
+</html>
