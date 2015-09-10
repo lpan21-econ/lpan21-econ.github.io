@@ -1,0 +1,69 @@
+body {
+  font-family: "Source Sans Pro";
+  font-size: 17px;
+  line-height: 28px;
+}
+
+.title-box {
+  text-align: center;
+}
+
+.mec-main {
+  max-width: 700px;
+}
+
+.mec-lectures {
+  max-width: 700px;
+}
+
+.mec-link-blank:link {
+  color:white;
+  text-decoration: none;
+}
+
+.mec-link-blank:visited {
+  color:white;
+  text-decoration: none;
+}
+
+.mec-link-blank:hover {
+  color:white;
+  text-decoration: none;
+}
+
+.mec-link-blank:active {
+  color:white;
+  text-decoration: none;
+}
+
+h2.section-title {
+  font-size: 24px; 
+  text-align: center;
+}
+
+div.section-box {
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  padding: 10px;
+  min-height: 300px;
+}
+
+.table {
+  margin-bottom: 0px;
+}
+
+tr.midbreak > td {
+  border-top: 1px solid rgba(255,0,0,0.4) !important;
+}
+
+.footnote {
+  margin-left: 10px;
+}
+
+.footnote:before {
+  content: "*";
+  font-weight: bold;
+  margin-left: -10px;
+}
+
