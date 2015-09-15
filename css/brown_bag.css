@@ -2,8 +2,6 @@ body {
   font-family: "Source Sans Pro";
   font-size: 17px;
   line-height: 28px;
-  margin-top: 50px;
-  margin-bottom: 50px;
 }
 
 .title-box {
@@ -11,11 +9,11 @@ body {
 }
 
 .mec-main {
-  max-width: 850px;
+  max-width: 750px;
 }
 
 .mec-lectures {
-  max-width: 850px;
+  max-width: 750px;
 }
 
 .mec-link-blank:link {
@@ -59,12 +57,29 @@ div.section-box {
   min-width: 80px;
 }
 
-.table tr > td:nth-child(3) {
-  min-width: 270px;
+.table tr > td:nth-child(2) {
+  min-width: 150px;
 }
 
 tr.midbreak > td {
   border-top: 1px solid rgba(255,0,0,0.4) !important;
 }
 
+.footnote {
+  margin-left: 10px;
+}
+
+.footnote:before {
+  content: "*";
+  font-weight: bold;
+  margin-left: -10px;
+}
+
+tr.completed {
+  color: grey;
+}
+
+tr.next {
+  color: #428BCA;
+}
 
