@@ -22,9 +22,12 @@ html {
 }
 
 body {
-	font-size: 18pt;
+/*
 	width: 297mm;
 	height: 229mm;
+*/
+	width: 190.5mm;
+	height: 254mm;
 	margin: 0 auto !important;
 	border: 0;
 	padding: 0;
@@ -34,7 +37,7 @@ body {
 
 div.outer_box {
         margin: 0;
-        padding: 1.0in;
+        padding: 0.25in;
         max-width: none;
 }
 
@@ -59,7 +62,7 @@ div.inner_box {
 /* SECTION 3: Set body font face, size, and color.
    Consider using a serif font for readability. */
 body, p, td, li, div {
-	font-size: 18pt;
+	font-size: 12pt;
 }
 
 /* SECTION 5: Make hyperlinks more usable.
@@ -80,4 +83,14 @@ ul, ol, div, p {
 	display: block;
 	overflow: visible;
 	margin: auto;
+}
+
+/* specifics */
+* {
+ 	border: 0 !important;
+}
+
+div.inner_box, div.right_box {
+	padding-bottom: 5px;
+	padding-top: 0;
 }
