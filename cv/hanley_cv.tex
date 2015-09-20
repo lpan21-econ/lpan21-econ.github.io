@@ -1,0 +1,220 @@
+\documentclass{article}
+
+\usepackage[top=3.0cm,bottom=3.0cm,left=3cm,right=3cm]{geometry}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}
+\usepackage[none]{hyphenat}
+\usepackage{color}
+
+\linespread{1.1}
+
+\definecolor{light-gray}{gray}{0.85}
+
+\newlength{\lsep}
+\setlength{\lsep}{3.5cm}
+\newlength{\lmarg}
+\setlength{\lmarg}{0.7cm}
+\addtolength{\lmarg}{\lsep}
+
+\pagestyle{fancy}
+\fancyhead{}
+%\fancyfoot{}
+\fancyhead[L]{\hspace{0.45cm}Douglas Hanley}
+\fancyhead[R]{University of Pittsburgh\hspace{0.45cm}}
+\setlength\headsep{0.5in}
+\setlength\footskip{0.5in}
+\setlength\headheight{0cm}
+\renewcommand{\headrulewidth}{0.1mm}
+\renewcommand{\footrulewidth}{0pt}
+
+% Length to control the \fancyheadoffset and the calculation of \headline
+% simultaneously
+\newlength\FHoffset
+\setlength\FHoffset{0.45cm}
+
+\addtolength\headwidth{2\FHoffset}
+
+\fancyheadoffset{\FHoffset}
+
+% these lengths will control the headrule trimming to the left and right
+\newlength\FHleft
+\newlength\FHright
+
+% here the trimmings are controlled by the user
+\setlength\FHleft{0cm}
+\setlength\FHright{0cm}
+
+% The new definition of headrule that will take into acount the trimming(s)
+\newbox\FHline
+\setbox\FHline=\hbox{\hsize=\paperwidth%
+  \hspace*{\FHleft}%
+  \rule{\dimexpr\headwidth-\FHleft-\FHright\relax}{\headrulewidth}\hspace*{\FHright}%
+}
+\renewcommand\headrule{\vskip-.7\baselineskip\copy\FHline}
+
+\setlength{\parindent}{0cm}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\begin{center}
+{\LARGE \textbf{Douglas Hanley}}
+\end{center}
+
+\begin{center}
+\parbox{2.0in}{
+\begin{flushright}
+\href{mailto:doughanley@pitt.edu}{doughanley@pitt.edu}
+
+\href{http://doughanley.com/}{doughanley.com}
+
+(330) 536-3277
+\end{flushright}
+}
+\hspace{0.5cm}
+\parbox{2.0in}{
+University of Pittsburgh \\
+4712 W. W. Posvar Hall \\
+Pittsburgh, PA 15260
+}
+\end{center}
+
+\hspace{-0.025\textwidth}\rule{1.05\textwidth}{0.1mm}
+
+\vspace{0.3cm}
+
+
+\parbox{\textwidth}{
+\parbox[t]{0.28\textwidth}{ \textsc{ Employment } }
+\parbox[t]{0.72\textwidth}{ \raggedright
+
+Assistant Professor, Department of Economics, University of Pittsburgh, 2014-Present
+\vspace{0.27cm}
+
+}
+\textcolor{light-gray}{\hrule}
+}
+\vspace{0.3cm}
+
+\parbox{\textwidth}{
+\parbox[t]{0.28\textwidth}{ \textsc{ Education } }
+\parbox[t]{0.72\textwidth}{ \raggedright
+
+Ph.D., Economics, University of Pennsylvania, 2014
+\vspace{0.27cm}
+
+B.S., Economics, California Institute of Technology, 2006
+\vspace{0.27cm}
+
+}
+\textcolor{light-gray}{\hrule}
+}
+\vspace{0.3cm}
+
+\parbox{\textwidth}{
+\parbox[t]{0.28\textwidth}{ \textsc{ Research Interests } }
+\parbox[t]{0.72\textwidth}{ \raggedright
+
+Macroeconomics, Technological Change, Computational Methods, Climate Economics
+\vspace{0.27cm}
+
+}
+\textcolor{light-gray}{\hrule}
+}
+\vspace{0.3cm}
+
+\parbox{\textwidth}{
+\parbox[t]{0.28\textwidth}{ \textsc{ Publications } }
+\parbox[t]{0.72\textwidth}{ \raggedright
+
+Transition to Clean Technology (with Daron Acemoglu, Ufuk Akcigit, and William Kerr) \\
+\textit{Journal of Political of Economy}, accepted
+\vspace{0.27cm}
+
+}
+\textcolor{light-gray}{\hrule}
+}
+\vspace{0.3cm}
+
+\parbox{\textwidth}{
+\parbox[t]{0.28\textwidth}{ \textsc{ Working Papers } }
+\parbox[t]{0.72\textwidth}{ \raggedright
+
+Innovation, Technological Interdependence, and Economic Growth
+\vspace{0.27cm}
+
+Back to Basics: Basic Research Spillovers, Innovation Policy and Growth (with Ufuk Akcigit and Nicolas Serrano-Velarde) \\
+\textit{NBER Working Paper \#19473}
+\vspace{0.27cm}
+
+}
+\textcolor{light-gray}{\hrule}
+}
+\vspace{0.3cm}
+
+\parbox{\textwidth}{
+\parbox[t]{0.28\textwidth}{ \textsc{ Teaching } }
+\parbox[t]{0.72\textwidth}{ \raggedright
+
+Graduate: Computational Methods in Economics
+\vspace{0.27cm}
+
+Undergraduate: Intermediate Macroeconomics, Intermediate Microeconomics
+\vspace{0.27cm}
+
+}
+\textcolor{light-gray}{\hrule}
+}
+\vspace{0.3cm}
+
+\parbox{\textwidth}{
+\parbox[t]{0.28\textwidth}{ \textsc{ Seminars } }
+\parbox[t]{0.72\textwidth}{ \raggedright
+
+2015: U of Hong Kong, Sogang U, IIES, U of Nottingham, Barcelona GSE (Summer Forum)
+\vspace{0.27cm}
+
+2014: U of Toronto, USC (Marshall), U of Pittsburgh, U of North Carolina (Chapel Hill), CREI
+\vspace{0.27cm}
+
+2010-2013: Penn Money Macro Workshop, Society for Economic Dynamics Annual Meeting, Midwest Macroeconomic Meetings, Penn Money Macro Club, International Industrial Organization Conference
+\vspace{0.27cm}
+
+}
+\textcolor{light-gray}{\hrule}
+}
+\vspace{0.3cm}
+
+\parbox{\textwidth}{
+\parbox[t]{0.28\textwidth}{ \textsc{ Refereeing Service } }
+\parbox[t]{0.72\textwidth}{ \raggedright
+
+American Economic Review, Journal of Monetary Economics, European Economic Review, International Economic Review, Macroeconomic Dynamics, Review of Economic Dynamics, Journal of Comparative Economics, Journal of the European Economic Association, Journal of Mathematical Economics, Journal of Development Economics, Review of Economics and Statistics
+\vspace{0.27cm}
+
+}
+\textcolor{light-gray}{\hrule}
+}
+\vspace{0.3cm}
+
+\parbox{\textwidth}{
+\parbox[t]{0.28\textwidth}{ \textsc{ Other Employment } }
+\parbox[t]{0.72\textwidth}{ \raggedright
+
+Research Assistant, MIT, 2010-2013 \\
+Research Assistant, Caltech, 2005-2006 \\
+Research Assistant, CITA, Summer 2004 \\
+Software Developer, Cyplex Inc, 2006-2007 \\
+Software Developer, Lycoris Corp, Summer 2003 \\
+Software Developer, KDE Group, 2001-2002
+\vspace{0.27cm}
+
+}
+\textcolor{light-gray}{\hrule}
+}
+\vspace{0.3cm}
+
+
+\end{document}

@@ -1,0 +1,67 @@
+<html>
+
+<head>
+
+<title>{{ name }}</title>
+
+<link type='text/css' rel='stylesheet' href='/css/bootstrap.min.css'>
+<link type='text/css' rel='stylesheet' href='/css/source-sans-pro.css'>
+<link type='text/css' rel='stylesheet' href='cv.css'>
+
+</head>
+
+<body>
+
+<div class="outer_box container-fluid">
+
+<div class="row header_box">
+<div class="col-md-3 logo_box">
+<a href="{{ pdf_link }}"><img src="{{ pdf_icon }}"></a>
+</div>
+<div class="col-md-9 title_name inner_box">
+{{ name }}
+</div>
+</div>
+
+<!-- Spacer -->
+<div class="row row_box spacer">
+<div class="col-md-3 sidebar_box"></div>
+<div class="col-md-9 inner_box">
+</div>
+</div>
+
+<!-- Info -->
+<div class="row row_box">
+<div class="col-md-3 sidebar_box">{{ info_label }}</div>
+<div class="col-md-5 inner_box">
+<div class="item_box">
+{{ address|join('<br/>') }}
+</div>
+</div>
+<div class="col-md-4 right_box">
+<div class="item_box">
+{{ contact|join('<br/>') }}
+</div>
+</div>
+</div>
+
+{% for block in blocks %}
+<!-- {{ block.title }} -->
+<div class="row row_box">
+<div class="col-md-3 sidebar_box">{{ block.title }}</div>
+<div class="col-md-9 inner_box">
+{% for row in block.rows %}
+<div class="item_box">{{ row }}</div>
+{% endfor %}
+</div>
+</div>
+{% endfor %}
+
+</div>
+
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

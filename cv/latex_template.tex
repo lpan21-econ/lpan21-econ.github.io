@@ -1,0 +1,101 @@
+\documentclass{article}
+
+\usepackage[top=3.0cm,bottom=3.0cm,left=3cm,right=3cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}
+\usepackage[none]{hyphenat}
+\usepackage{color}
+
+\linespread{1.1}
+
+\definecolor{light-gray}{gray}{0.85}
+
+\newlength{\lsep}
+\setlength{\lsep}{3.5cm}
+\newlength{\lmarg}
+\setlength{\lmarg}{0.7cm}
+\addtolength{\lmarg}{\lsep}
+
+\pagestyle{fancy}
+\fancyhead{}
+%\fancyfoot{}
+\fancyhead[L]{\hspace{0.45cm}Douglas Hanley}
+\fancyhead[R]{University of Pittsburgh\hspace{0.45cm}}
+\setlength\headsep{0.5in}
+\setlength\footskip{0.5in}
+\setlength\headheight{0cm}
+\renewcommand{\headrulewidth}{0.1mm}
+\renewcommand{\footrulewidth}{0pt}
+
+% Length to control the \fancyheadoffset and the calculation of \headline
+% simultaneously
+\newlength\FHoffset
+\setlength\FHoffset{0.45cm}
+
+\addtolength\headwidth{2\FHoffset}
+
+\fancyheadoffset{\FHoffset}
+
+% these lengths will control the headrule trimming to the left and right
+\newlength\FHleft
+\newlength\FHright
+
+% here the trimmings are controlled by the user
+\setlength\FHleft{0cm}
+\setlength\FHright{0cm}
+
+% The new definition of headrule that will take into acount the trimming(s)
+\newbox\FHline
+\setbox\FHline=\hbox{\hsize=\paperwidth%
+  \hspace*{\FHleft}%
+  \rule{\dimexpr\headwidth-\FHleft-\FHright\relax}{\headrulewidth}\hspace*{\FHright}%
+}
+\renewcommand\headrule{\vskip-.7\baselineskip\copy\FHline}
+
+\setlength{\parindent}{0cm}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\begin{center}
+{\LARGE \textbf{Douglas Hanley}}
+\end{center}
+
+\begin{center}
+\parbox{2.0in}{
+\begin{flushright}
+\href{mailto:doughanley@pitt.edu}{doughanley@pitt.edu}
+
+\href{http://doughanley.com/}{doughanley.com}
+
+(330) 536-3277
+\end{flushright}
+}
+\hspace{0.5cm}
+\parbox{2.0in}{
+University of Pittsburgh \\
+4712 W. W. Posvar Hall \\
+Pittsburgh, PA 15260
+}
+\end{center}
+
+\hspace{-0.025\textwidth}\rule{1.05\textwidth}{0.1mm}
+
+\vspace{0.3cm}
+
+{% for block in blocks %}
+\parbox{\textwidth}{
+\parbox[t]{0.28\textwidth}{ \textsc{ {{ block.title }} } }
+\parbox[t]{0.72\textwidth}{ \raggedright
+{% for row in block.rows %}
+{{ row }}
+\vspace{0.27cm}
+{% endfor %}
+}
+\textcolor{light-gray}{\hrule}
+}
+\vspace{0.3cm}
+{% endfor %}
+
+\end{document}

@@ -1,0 +1,77 @@
+{
+  "name": "Douglas Hanley",
+  "pdf_link": "hanley_cv.pdf",
+  "pdf_icon": "mini_print.svg",
+  "info_label": "Personal Information",
+  "address": [
+    "University of Pittsburgh",
+    "4712 W. W. Posvar Hall",
+    "Pittsburgh, PA 15260"
+  ],
+  "contact": [
+    "<a href=\"mailto:dohan@as.pitt.edu\">dohan@as.pitt.edu</a>",
+    "<a href=\"http://doughanley.com/\">doughanley.com</a>",
+    "(330) 536-3277"
+  ],
+  "blocks": [
+    {
+      "title": "Employment",
+      "rows": [
+        "Assistant Professor, Department of Economics, University of Pittsburgh, 2014-Present"
+      ]
+    },
+    {
+      "title": "Education",
+      "rows": [
+        "Ph.D., Economics, University of Pennsylvania, 2014",
+        "B.S., Economics, California Institute of Technology, 2006"
+      ]
+    },
+    {
+      "title": "Research Interests",
+      "rows": [
+        "Macroeconomics, Technological Change, Computational Methods, Climate Economics"
+      ]
+    },
+    {
+      "title": "Publications",
+      "rows": [
+        "Transition to Clean Technology (with Daron Acemoglu, Ufuk Akcigit, and William Kerr)<br/><i>Journal of Political of Economy</i>, accepted"
+      ]
+    },
+    {
+      "title": "Working Papers",
+      "rows": [
+        "Innovation, Technological Interdependence, and Economic Growth",
+        "Back to Basics: Basic Research Spillovers, Innovation Policy and Growth (with Ufuk Akcigit and Nicolas Serrano-Velarde)<br/><i>NBER Working Paper #19473</i>"
+      ]
+    },
+    {
+      "title": "Teaching",
+      "rows": [
+        "Graduate: Computational Methods in Economics",
+        "Undergraduate: Intermediate Macroeconomics, Intermediate Microeconomics"
+      ]
+    },
+    {
+      "title": "Seminars",
+      "rows": [
+        "2015: U of Hong Kong, Sogang U, IIES, U of Nottingham, Barcelona GSE (Summer Forum)",
+        "2014: U of Toronto, USC (Marshall), U of Pittsburgh, U of North Carolina (Chapel Hill), CREI",
+        "2010-2013: Penn Money Macro Workshop, Society for Economic Dynamics Annual Meeting, Midwest Macroeconomic Meetings, Penn Money Macro Club, International Industrial Organization Conference"
+      ]
+    },
+    {
+      "title": "Refereeing Service",
+      "rows": [
+        "American Economic Review, Journal of Monetary Economics, European Economic Review, International Economic Review, Macroeconomic Dynamics, Review of Economic Dynamics, Journal of Comparative Economics, Journal of the European Economic Association, Journal of Mathematical Economics, Journal of Development Economics, Review of Economics and Statistics"
+      ]
+    },
+    {
+      "title": "Other Employment",
+      "rows": [
+        "Research Assistant, MIT, 2010-2013<br/>Research Assistant, Caltech, 2005-2006<br/>Research Assistant, CITA, Summer 2004<br/>Software Developer, Cyplex Inc, 2006-2007<br/>Software Developer, Lycoris Corp, Summer 2003<br/>Software Developer, KDE Group, 2001-2002"
+      ]
+    }
+  ]
+}
