@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import jinja2
 import json
 import sys
@@ -15,7 +17,7 @@ else:
         do_html = False
         do_latex = True
     else:
-        print 'Invalid task'
+        print('Invalid task')
         sys.exit(0)
 
 info_fname = 'cv_info.json'
@@ -34,7 +36,7 @@ def html_to_latex(e):
         return {html_to_latex(k):html_to_latex(v) for (k,v) in e.items()}
     elif t is list:
         return [html_to_latex(e1) for e1 in e]
-    elif t in (str,unicode):
+    elif t is str:
         s = e
         s = s.replace('#','\\#')
         s = s.replace('<br/>',' \\\\\n')
