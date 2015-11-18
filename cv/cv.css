@@ -14,8 +14,7 @@ div.outer_box {
 }
 
 div.logo_box {
-  /*padding-top: 37px;*/
-  padding-top: 52px;
+  padding-top: 46px;
   text-align: center;
   font-weight: 600;
   font-size: 28px;
@@ -25,6 +24,11 @@ div.logo_box {
 div.logo_box a {
   outline: none;
   text-decoration: none;
+}
+
+div.logo_box img {
+  width: 25px;
+  height: 25px;
 }
 
 div.header_box {

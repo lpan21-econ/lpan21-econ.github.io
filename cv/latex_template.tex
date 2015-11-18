@@ -86,7 +86,7 @@ Pittsburgh, PA 15260
 
 {% for block in blocks %}
 \parbox{\textwidth}{
-\parbox[t]{0.28\textwidth}{ \textsc{ {{ block.title }} } }
+\parbox[t]{0.28\textwidth}{ \raggedright \noindent \textsc{ {{ block.title }} } }
 \parbox[t]{0.72\textwidth}{ \raggedright
 {% for row in block.rows %}
 {{ row }}
