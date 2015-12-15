@@ -3,4 +3,4 @@
 	url = https://github.com/iamlemec/ellsworth.git
 [submodule "growth_lectures"]
 	path = growth_lectures
-	url = git@github.com:iamlemec/growth_lectures
+	url = https://github.com/iamlemec/growth_lectures.git
