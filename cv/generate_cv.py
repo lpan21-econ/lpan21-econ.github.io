@@ -39,6 +39,7 @@ def html_to_latex(e):
     elif t is str:
         s = e
         s = s.replace('#','\\#')
+        s = s.replace('&','\\&')
         s = s.replace('<br/>',' \\\\\n')
         s = re.sub(r'<a href=\"([^>]*)\">([^<]*)</a>',r'\\href{\1}{\2}',s)
         s = re.sub(r'<b>([^<]*)</b>',r'\\textbf{\1}',s)
