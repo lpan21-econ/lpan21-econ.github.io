@@ -1,3 +1,6 @@
 [submodule "ellsworth"]
 	path = ellsworth
 	url = https://github.com/iamlemec/ellsworth.git
+[submodule "elltwo"]
+	path = elltwo
+	url = https://github.com/iamlemec/elltwo.git
