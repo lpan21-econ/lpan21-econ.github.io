@@ -43,15 +43,16 @@
       "title": "Working Papers",
       "rows": [
         "Innovation, Technological Interdependence, and Economic Growth",
-        "Optimal Taxation and R&D Policies (with Ufuk Akcigit and Stefanie Stantcheva)",
-        "Back to Basics: Basic Research Spillovers, Innovation Policy and Growth (with Ufuk Akcigit and Nicolas Serrano-Velarde)<br/><i>NBER Working Paper #19473</i>"
+        "Optimal Taxation and R&D Policies (with Ufuk Akcigit and Stefanie Stantcheva)<br/><i>CEPR Discussion Paper 11707</i>",
+        "Back to Basics: Basic Research Spillovers, Innovation Policy and Growth (with Ufuk Akcigit and Nicolas Serrano-Velarde)<br/><i>NBER Working Paper 19473</i>"
       ]
     },
     {
       "title": "Research in Progress",
       "rows": [
-        "The Effect of Wikipedia on Scientific Progress (with Neil Thompson)",
+        "The Effect of Wikipedia on Scientific Progress (with Neil Thompson and Shane Greenstein)",
         "International Competition in the Race to Clean Technology (with Chengying Luo)",
+        "Assessing the Rate of Replication in Economics (with James Berry, Lucas Coffman, Rania Gihleb, and Alistair Wilson)",
         "Firm Clustering Using Machine Learning (with Tamara Broderick, Trevor Campbell, Jeffrey Kuhn, and Neil Thompson)"
       ]
     },
@@ -65,6 +66,7 @@
     {
       "title": "Seminars and Conferences",
       "rows": [
+        "2016: Peking U (PHBS, Shenzhen)",
         "2015: U of Hong Kong, Sogang U, IIES (Stockholm), Firm and Technology Dynamics: A Global Perspective (Nottingham), Barcelona GSE Summer Forum, Mini Conference on Economic Growth (Chicago)",
         "2014: U of Toronto, USC (Marshall), U of Pittsburgh, U of North Carolina (Chapel Hill), CREI",
         "2010-2013: Penn Money Macro Workshop, Society for Economic Dynamics Annual Meeting, Midwest Macroeconomic Meetings, Penn Money Macro Club, International Industrial Organization Conference"
