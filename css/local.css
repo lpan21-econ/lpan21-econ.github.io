@@ -78,7 +78,7 @@ body {
 
 canvas.edgebox {
   cursor: none;
-  width: 70%;
+  /*width: 70%;*/
 }
 
 .mec-footer {

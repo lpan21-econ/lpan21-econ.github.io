@@ -8,26 +8,9 @@ var parseDate = d3.timeParse("%Y-%m-%d");
 var idata;
 var itok = ['graphene', 'nanotube', 'crispr'];
 var margin = {top: 20, right: 120, bottom: 30, left: 45};
-
-var width, height, x, y, xAxis, yAxis;
+var outerHeight = 350;
 
 function resize() {
-    var outerWidth = $("svg").parent().width();
-    var outerHeight = 350;
-    console.log("resizing", outerWidth, outerHeight);
-
-    width = outerWidth - margin.left - margin.right;
-    height = outerHeight - margin.top - margin.bottom;
-
-    svg.attr("width", outerWidth);
-    svg.attr("height", outerHeight);
-
-    x = d3.scaleTime().range([0, width]);
-    y = d3.scaleLinear().range([height, 0]);
-
-    xAxis = d3.axisBottom(x);
-    yAxis = d3.axisLeft(y);
-
     if (idata == undefined) {
         plot_tokens(itok);
     } else {
@@ -39,11 +22,23 @@ var g = svg.append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 function plot_series(tokens, data) {
+    console.log('fuck you');
+
     itok = tokens;
     idata = data;
 
-    // clear old graph
-    g.selectAll('*').remove();
+    var outerWidth = $("svg").parent().width();
+    var width = outerWidth - margin.left - margin.right;
+    var height = outerHeight - margin.top - margin.bottom;
+
+    svg.attr("width", outerWidth);
+    svg.attr("height", outerHeight);
+
+    var x = d3.scaleTime().range([0, width]);
+    var y = d3.scaleLinear().range([height, 0]);
+
+    var xAxis = d3.axisBottom(x);
+    var yAxis = d3.axisLeft(y);
 
     // frequency ranges by token
     var maxs = {}
@@ -54,6 +49,9 @@ function plot_series(tokens, data) {
     // plot domain
     x.domain(d3.extent(data, function(d) { return d.date; }));
     y.domain([0, d3.max(d3.values(maxs))]);
+
+    // clear old graph
+    g.selectAll('*').remove();
 
     // draw lines
     // var cmap = ['#93c7ff', '#98f1ab', '#ffa09b', '#d1bcff', '#ffffa4', '#b1e1e7']; // pastel
@@ -138,6 +136,6 @@ getcsv.click(function() {
 });
 
 // initial
-$(document).ready(resize);
 $(window).resize(resize);
+$(document).ready(function() { plot_tokens(itok); });
 

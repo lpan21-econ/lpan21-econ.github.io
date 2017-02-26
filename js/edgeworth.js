@@ -71,6 +71,8 @@ function util(x,y,alpha) {
 }
 
 function draw() {
+  console.log(width,height);
+
   context.clearRect(0,0,width,height);
 
   context.lineWidth = 0.5;
@@ -186,17 +188,19 @@ function onMouseOut() {
 canvas = document.getElementById("edgeworth");
 context = canvas.getContext("2d");
 
-width = canvas.offsetWidth;
-height = canvas.offsetHeight;
-canvas.width = width;
-canvas.height = height;
-ptx = 0.3*width;
-pty = 0.3*height;
-
 canvas.onmousedown = onMouseDown;
 canvas.onmouseup = onMouseUp;
 canvas.onmousemove = onMouseMove;
 canvas.onmouseover = onMouseOver;
 canvas.onmouseout = onMouseOut;
 
-draw();
+$(window).ready(function() {
+  width = canvas.offsetWidth;
+  height = canvas.offsetHeight;
+  canvas.width = width;
+  canvas.height = height;
+  ptx = 0.3*width;
+  pty = 0.3*height;
+  draw();
+});
+
