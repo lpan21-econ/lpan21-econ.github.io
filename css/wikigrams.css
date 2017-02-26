@@ -1,0 +1,19 @@
+input:focus {
+    outline: none;
+}
+
+#tokens {
+    height: 25px;
+    width: 300px;
+    margin-left: 100px;
+}
+
+#wikigrams {
+    margin-left: 60px;
+}
+
+#getcsv {
+    padding-top: 2px;
+    height: 25px;
+}
+

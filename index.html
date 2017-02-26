@@ -7,10 +7,12 @@
     <title>Douglas Hanley</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/local.css" rel="stylesheet">
+    <link href="css/wikigrams.css" rel="stylesheet">
   </head>
 
   <body role="document">
@@ -121,6 +123,7 @@
       <table><tbody><tr>
         <td><span class="paper-title">The Effect of Wikipedia on Scientific Progress <br/> (with Neil Thompson)</span></td>
         <td></td>
+
       </tr></tbody></table>
       </td></tr>
 
@@ -159,6 +162,14 @@
       <p>I aim to produce a framework that can supplant LaTeX as the major tool for the promulgation of academic research. The benefits of such a framework will come both in the form of ease of use (for both the producer and consumer) and in an increased ability to integrate with existing web technologies.</p>
       <!-- <a class="btn btn-primary" href="https://github.com/iamlemec/ellsworth">GitHub</a> -->
       <!-- <a class="btn btn-default" href="files/ellsworth-v0.zip" role="button">Download ZIP</a> -->
+
+      <h3 class="mec-subsection-title">Wikigrams</h3>
+      <p>Below is a service that allows you to look at the cumulative relative editing activity for a large number of tokens (about 1.1M) appearing in Wikipedia. You can type in your own (single) words into the box below and see the results by pressing <strong>enter</strong>.</p>
+      <br/>
+      <input id="tokens"></input> <a id="getcsv" class="btn btn-primary" onclick="window.location.href = 'http://dohan.dyndns.org:9454/freq?token=' + $('#tokens').val();">Download (CSV)</a></span>
+      <svg id="wikigrams" width="600" height="300"></svg>
+      <br/><br/>
+      <p>If you'd like to download the full dataset of tokens, just send me an email and I can arrange it. Even finer data is available at the article editing level.</p>
 
       <h3 class="mec-subsection-title">Console <span class="badge"><a class="mec-link-blank" href="https://github.com/iamlemec/console">GitHub</a></span></h3>
       <p>In this project, I'm attempting to develop a framework for easy-to-use, real-time web plotting. The primary use case is for dashboards that display information on running calculations, but others are of course possible. The backend uses WebSockets and Tornado to interface with MATLAB/Matplotlib-style plotting commands. The frontend uses d3.js.</p>
@@ -288,9 +299,18 @@
     </div>
 
     <!-- Placed at the end of the document so the pages load faster -->
+    <!--
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    -->
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/wikigrams.js"></script>
     <script src="js/index.js"></script>
+
 
   </body>
 </html>
+
