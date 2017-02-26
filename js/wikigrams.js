@@ -88,8 +88,7 @@ function plot_tokens(tokens) {
 
 // hooks
 var tokin = $("#tokens");
-
-var itok = ['obama','clinton','trump'];
+var itok = ['graphene','nanotube','crispr'];
 tokin.val(itok);
 
 tokin.keypress(function(e) {
