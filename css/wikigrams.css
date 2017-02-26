@@ -4,15 +4,19 @@ input:focus {
 
 #tokens {
     height: 25px;
-    width: 300px;
-    margin-left: 100px;
+    width: 250px;
+    margin-left: 50px;
 }
 
 #wikigrams {
-    margin-left: 60px;
 }
 
 #getcsv {
+    padding-top: 2px;
+    height: 25px;
+}
+
+#doplot {
     padding-top: 2px;
     height: 25px;
 }

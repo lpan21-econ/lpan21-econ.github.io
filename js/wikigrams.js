@@ -1,22 +1,47 @@
 // wikigrams plotter
 
-var svg = d3.select("#wikigrams"),
-    margin = {top: 20, right: 150, bottom: 30, left: 70},
-    width = +svg.attr("width") - margin.left - margin.right,
-    height = +svg.attr("height") - margin.top - margin.bottom;
+
+var svg = d3.select("#wikigrams");
 
 var parseDate = d3.timeParse("%Y-%m-%d");
 
-var x = d3.scaleTime().range([0, width]),
+var idata;
+var itok = ['graphene', 'nanotube', 'crispr'];
+var margin = {top: 20, right: 120, bottom: 30, left: 45};
+
+var width, height, x, y, xAxis, yAxis;
+
+function resize() {
+    var outerWidth = $("svg").parent().width();
+    var outerHeight = 350;
+    console.log("resizing", outerWidth, outerHeight);
+
+    width = outerWidth - margin.left - margin.right;
+    height = outerHeight - margin.top - margin.bottom;
+
+    svg.attr("width", outerWidth);
+    svg.attr("height", outerHeight);
+
+    x = d3.scaleTime().range([0, width]);
     y = d3.scaleLinear().range([height, 0]);
 
-var xAxis = d3.axisBottom(x),
+    xAxis = d3.axisBottom(x);
     yAxis = d3.axisLeft(y);
+
+    if (idata == undefined) {
+        plot_tokens(itok);
+    } else {
+        plot_series(itok, idata);
+    }
+}
 
 var g = svg.append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 function plot_series(tokens, data) {
+    itok = tokens;
+    idata = data;
+
     // clear old graph
     g.selectAll('*').remove();
 
@@ -73,7 +98,7 @@ function type(d) {
         if (tok == "date") {
             d[tok] = parseDate(d[tok]);
         } else {
-            d[tok] = +d[tok];
+            d[tok] = 1000000*d[tok];
         }
     }
     return d;
@@ -86,21 +111,33 @@ function plot_tokens(tokens) {
     });
 }
 
-// hooks
 var tokin = $("#tokens");
-var itok = ['graphene','nanotube','crispr'];
-tokin.val(itok);
+function get_tokens() {
+    return $.map(tokin.val().split(','), function(tok) { return tok.trim(); });
+}
 
+// hooks
+tokin.val(itok);
 tokin.keypress(function(e) {
     if (e.keyCode == 13) {
         var text = tokin.val();
         if (text.length > 0) {
-            var tokens = $.map(tokin.val().split(','), function(tok) { return tok.trim(); });
-            plot_tokens(tokens);
+            plot_tokens(get_tokens());
         }
     }
 });
 
+var doplot = $("#doplot");
+doplot.click(function() {
+    plot_tokens(get_tokens());
+})
+
+var getcsv = $("#getcsv");
+getcsv.click(function() {
+    window.location.href = 'http://dohan.dyndns.org:9454/freq?token=' + get_tokens().join(',');
+});
+
 // initial
-plot_tokens(itok);
+$(document).ready(resize);
+$(window).resize(resize);
 
