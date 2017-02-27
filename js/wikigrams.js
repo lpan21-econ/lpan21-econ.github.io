@@ -22,8 +22,6 @@ var g = svg.append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 function plot_series(tokens, data) {
-    console.log('fuck you');
-
     itok = tokens;
     idata = data;
 
