@@ -43,10 +43,14 @@ function plot_series(tokens, data) {
     $.each(tokens, function(i, tok) {
         maxs[tok] = d3.max(data, function(d) { return d[tok]; });
     });
+    var ymax = d3.max(d3.values(maxs));
+
+    // terminal values
+    var ends = data[data.length-1];
 
     // plot domain
     x.domain(d3.extent(data, function(d) { return d.date; }));
-    y.domain([0, d3.max(d3.values(maxs))]);
+    y.domain([0, ymax]);
 
     // clear old graph
     g.selectAll('*').remove();
@@ -55,7 +59,7 @@ function plot_series(tokens, data) {
     // var cmap = ['#93c7ff', '#98f1ab', '#ffa09b', '#d1bcff', '#ffffa4', '#b1e1e7']; // pastel
     var cmap = ['#4c72b1', '#55a968', '#c54e52', '#8272b3', '#cdba74', '#64b6ce']; // deep
     // var cmap = ['#4878d0', '#6acd65', '#d75f5f', '#b57cc8', '#c5ae66', '#77bfdc']; // muted
-    var stokens = tokens.sort(function(a, b) { return maxs[a] < maxs[b]; });
+    var stokens = tokens.sort(function(a, b) { return ends[a] < ends[b]; });
     $.each(stokens, function(i, tok) {
         var col = cmap[i];
         var line = d3.line()
@@ -70,10 +74,12 @@ function plot_series(tokens, data) {
             .attr("stroke-width", 1.5)
             .attr("d", line);
 
+        var ypos = ends[tok];
+        console.log(ypos, height);
         g.append("text")
             .attr("class", "legend")
 	        .attr("x", width + 10)
-            .attr("y", 10 + 25*i)
+            .attr("y", 4 + height*(1-ypos/ymax))
             .attr("stroke", col)
 	        .text(tok);
     });
