@@ -8,7 +8,7 @@ input:focus {
     margin-left: 50px;
 }
 
-#wikigrams {
+#wikiplot {
 }
 
 #getcsv {
@@ -21,3 +21,20 @@ input:focus {
     height: 25px;
 }
 
+@media (max-device-width: 499px) {
+    #tokens {
+        width: 95%;
+        margin-left: 0px;
+    }
+
+    #wikiplot {
+    }
+
+    #getcsv {
+        display: none;
+    }
+
+    #doplot {
+        display: none;
+    }
+}

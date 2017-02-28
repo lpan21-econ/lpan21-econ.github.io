@@ -1,7 +1,7 @@
 // wikigrams plotter
 
 
-var svg = d3.select("#wikigrams");
+var svg = d3.select("#wikiplot");
 
 var parseDate = d3.timeParse("%Y-%m-%d");
 
