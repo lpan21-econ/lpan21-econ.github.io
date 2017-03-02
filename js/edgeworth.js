@@ -17,8 +17,8 @@ function drawFunc(func,xmin,xmax) {
 
   context.beginPath();
   context.moveTo(xmin,height-func(xmin));
-  for (x = delx; x <= xmax; x = x + delx) {
-    y = height-func(x);
+  for (var x = delx; x <= xmax; x = x + delx) {
+    var y = height-func(x);
     context.lineTo(x,y);
     context.moveTo(x,y);
   }
@@ -27,7 +27,7 @@ function drawFunc(func,xmin,xmax) {
   context.stroke();
 }
 
-function line(x1,y1,x2,y2) {
+function draw_line(x1,y1,x2,y2) {
   context.beginPath();
   context.moveTo(x1,y1);
   context.lineTo(x2,y2);
@@ -84,8 +84,8 @@ function draw() {
 
   context.lineWidth = 0.1;
   context.strokeStyle = 'red';
-  line(ptx,0,ptx,height);
-  line(0,pty,width,pty);
+  draw_line(ptx,0,ptx,height);
+  draw_line(0,pty,width,pty);
 
   rpx1 = ptx;
   rpy1 = height-pty;
@@ -144,8 +144,8 @@ function draw() {
   if (cron) {
     context.lineWidth = 0.7;
     context.strokeStyle = 'black';
-    line(crx-crsize,cry,crx+crsize,cry);
-    line(crx,cry-crsize,crx,cry+crsize);
+    draw_line(crx-crsize,cry,crx+crsize,cry);
+    draw_line(crx,cry-crsize,crx,cry+crsize);
   }
 }
 
