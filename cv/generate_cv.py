@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 
-import jinja2
-import json
-import sys
 import re
+import os
+import sys
+import json
+import jinja2
 
 if len(sys.argv) == 1:
     do_html = True
