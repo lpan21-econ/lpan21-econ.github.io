@@ -11,7 +11,7 @@ University of Pittsburgh
 
 **Abstract**
 
-*"I sometimes think that general and popular treatises are almost as important for the progress of science as original work." -- Charles Darwin, 1865*
+*"I sometimes think that general and popular treatises are almost as important for the progress of science as original work." — Charles Darwin, 1865*
 
 As the largest encyclopedia in the world, it is not surprising that Wikipedia *reflects* the state of scientific knowledge. However, Wikipedia is also one of the most accessed websites in the world, including by scientists, which suggests that it also has the potential to *shape* science. This paper shows that it does.
 
@@ -25,26 +25,26 @@ Our findings speak not only to the influence of Wikipedia, but more broadly to t
 
 # Introduction
 
-In a letter to fellow biologist T.H. Huxley in 1865, Charles Darwin wrote "I sometimes think that general and popular treatises are almost as important for the progress of science as original work" (Lightman 2007, p 355). And, tellingly, *On the Origin of Species* was both a seminal scientific work and a bestseller (Radford 2008).
+In a letter to fellow biologist T.H. Huxley in 1865, Charles Darwin wrote "I sometimes think that general and popular treatises are almost as important for the progress of science as original work" (@[lightman-science], p 355). And, tellingly, *On the Origin of Species* was both a seminal scientific work and a bestseller (@[darwin]).
 
-This paper asks whether "general and popular treatises" themselves feed back into science and help shape it. Rephrasing this into the language of economics, we ask whether the provision of known scientific knowledge in an open, accessible repository can shape the scientific discussion of those ideas -- and, in particular, whether Wikipedia already does. This is an important public policy question because it has been known since at least Samuelson (1954) that public goods, of which public repositories of knowledge are a good example, are underprovisioned in a market setting. They are thus good candidates for welfare-improving interventions by governments, organizations, and public-spirited individuals.
+This paper asks whether "general and popular treatises" themselves feed back into science and help shape it. Rephrasing this into the language of economics, we ask whether the provision of known scientific knowledge in an open, accessible repository can shape the scientific discussion of those ideas — and, in particular, whether Wikipedia already does. This is an important public policy question because it has been known since at least @[samuelson-public] that public goods, of which public repositories of knowledge are a good example, are underprovisioned in a market setting. They are thus good candidates for welfare-improving interventions by governments, organizations, and public-spirited individuals.
 
-Governments already embrace the role of providing public goods for science in a number of contexts by funding scientific repositories.  These include repositories of physical objects, like seed banks (NCGRP 2005) and model organism repositories (MMRRC 2017), and there is good evidence that this promotes scientific activity (Furman and Stern, 2011). Governments also fund some informational repositories, for example those related to the human genome project (NIH 2017). Many repositories are also run by organizations or individuals. For example, StackOverflow.com, is widely used question-and-answer repository for knowledge about computer programming.
+Governments already embrace the role of providing public goods for science in a number of contexts by funding scientific repositories.  These include repositories of physical objects, like seed banks (@[ncgrp]) and model organism repositories (@[mmrrc]), and there is good evidence that this promotes scientific activity (@[stern-giants]). Governments also fund some informational repositories, for example those related to the human genome project (@[nih-research]). Many repositories are also run by organizations or individuals. For example, StackOverflow.com, is widely used question-and-answer repository for knowledge about computer programming.
 
-Conversely, the most extensive repositories of scientific knowledge -- academic journals -- remain overwhelmingly financed by subscription fees, thereby restricting access. But what if many of the key insights from those journal articles were also available in an easily accessible public repository?
+Conversely, the most extensive repositories of scientific knowledge — academic journals — remain overwhelmingly financed by subscription fees, thereby restricting access. But what if many of the key insights from those journal articles were also available in an easily accessible public repository?
 
-Wikipedia is one of the largest informational public goods providers for science. It is freely available, easily accessible, and is the 5<sup>th</sup> most visited website in the world (Alexa 2017).  A wide variety of scientific topics are covered on Wikipedia, and a substantial fraction of Wikipedia articles are on scientific topics. Depending on the definition and methods used, Wikipedia has 0.5-1.0 million scientific articles, representing one article for every ~120 scientific journal articles. The scientific sophistication of these articles can be substantial. Based on spot testing in Chemistry, we find that Wikipedia covers more than 90% of the topics discussed at the undergraduate level at top-tier research universities, and about half of those covered at the introductory graduate level.
+Wikipedia is one of the largest informational public goods providers for science. It is freely available, easily accessible, and is the 5<sup>th</sup> most visited website in the world (@[alexa-ranking]).  A wide variety of scientific topics are covered on Wikipedia, and a substantial fraction of Wikipedia articles are on scientific topics. Depending on the definition and methods used, Wikipedia has 0.5-1.0 million scientific articles, representing one article for every ~120 scientific journal articles. The scientific sophistication of these articles can be substantial. Based on spot testing in Chemistry, we find that Wikipedia covers more than 90% of the topics discussed at the undergraduate level at top-tier research universities, and about half of those covered at the introductory graduate level.
 
 Given this extensive coverage, it is clear that Wikipedia reflects science. But does it also shape science? Do scientists read Wikipedia articles and encounter news ideas? Or perhaps scientists encounter ideas on Wikipedia that they are already aware of, but which are brought together in a way that influences how they think about them? One could imagine, for example, that in a broad academic field, a concept from one part of the literature might not have been encountered by people from another until it is seen on Wikipedia. ^[This happened to one of the authors (Thompson) with regard to the *many* flavors of t-tests. He was reminded of the panoply [here](https://en.wikipedia.org/wiki/Student's_t-test).] A further possibility is that a scientist could lack access to costly journals, and thus the appearance of an idea on Wikipedia could be that person's only access to that scientific knowledge.
 
-To assess the influence of Wikipedia we need a way to measure the impact that it is having on the academic literature. Traditionally, the most common way of measuring this would be to count academic citations, the acknowledgements that the scientists themselves make in their publications. Unfortunately, measuring the impact of Wikipedia using citations is difficult for two reasons. First, purported experts might be reluctant to admit that they referenced an encyclopedia for their knowledge, and thus not cite Wikipedia even if they used it. Indeed, university guidelines specifically discourage the citation of Wikipedia, as MIT citation guidelines make clear (MIT, 2017):
+To assess the influence of Wikipedia we need a way to measure the impact that it is having on the academic literature. Traditionally, the most common way of measuring this would be to count academic citations, the acknowledgements that the scientists themselves make in their publications. Unfortunately, measuring the impact of Wikipedia using citations is difficult for two reasons. First, purported experts might be reluctant to admit that they referenced an encyclopedia for their knowledge, and thus not cite Wikipedia even if they used it. Indeed, university guidelines specifically discourage the citation of Wikipedia, as MIT citation guidelines make clear (@[mit-sources]):
 
 "***Wikipedia is Not a Reliable Academic Source***
 *Many of us use Wikipedia as a source of information when we want a quick explanation of something. However, Wikipedia or other wikis, collaborative information sites contributed to by a variety of people, are not considered reliable sources for academic citation, and you should not use them as sources in an academic paper.*"
 
-A second challenge to measuring the impact of Wikipedia with citations is that, even if an author were willing to cite an encyclopedia, they might not feel a need to. As Princeton's Academic Integrity Statement advises (Princeton, 2017):
+A second challenge to measuring the impact of Wikipedia with citations is that, even if an author were willing to cite an encyclopedia, they might not feel a need to. As Princeton's Academic Integrity Statement advises (@[princeton-sources]):
 
-"*If the fact or information is generally known and accepted---for example, that Woodrow Wilson served as president of both Princeton University and the United States, or that Avogadro's number is $6.02x10^{23}$---you do not need to cite a source*"
+"*If the fact or information is generally known and accepted—for example, that Woodrow Wilson served as president of both Princeton University and the United States, or that Avogadro's number is $6.02 \times 10^{23}$—you do not need to cite a source*"
 
 It is quite plausible that a researcher, finding that a fact is present in an encyclopaedia, might conclude that the fact is "generally known" and therefore would not feel obliged to cite it. Together, these challenges suggest that citations will not be an accurate way to assess Wikipedia's impact.
 
@@ -54,11 +54,11 @@ To establish the *causal* impact of Wikipedia, we performed an experiment. We co
 
 # Public Goods in Science
 
-The underprovision problem of public goods is a well-researched topic.  Since at least Samuelson (1954), it has been known that private incentives are less than the welfare-maximizing level because they fail to capture the spillover benefits to others. Under these conditions, there is underprovision of the public good absent intervention by governments, organizations, or public-spirited individuals.  Underprovision of information goods is particularly worrisome, both because the detrimental effect when it occurs could be worse, and because the likelihood of it happening is greater. The effects can be worse because information goods can be costlessly copied and distributed. This means that underprovision could forego a "long-tail" of users that could collectively represent a substantial welfare loss. The underprovision problem might also be more likely with information goods because free-riding on informational goods may be easier than on other public goods, leading to fewer initial contributions.
+The underprovision problem of public goods is a well-researched topic.  Since at least @[samuelson-public], it has been known that private incentives are less than the welfare-maximizing level because they fail to capture the spillover benefits to others. Under these conditions, there is underprovision of the public good absent intervention by governments, organizations, or public-spirited individuals.  Underprovision of information goods is particularly worrisome, both because the detrimental effect when it occurs could be worse, and because the likelihood of it happening is greater. The effects can be worse because information goods can be costlessly copied and distributed. This means that underprovision could forego a "long-tail" of users that could collectively represent a substantial welfare loss. The underprovision problem might also be more likely with information goods because free-riding on informational goods may be easier than on other public goods, leading to fewer initial contributions.
 
 A common way of resolving public goods problems is to make information excludable, for example by putting information into for-pay journals. ^[In this case, the goods should technically be called "club goods"] Under these circumstances, those benefiting from positive spillovers will not be able to free-ride, potentially leading to better incentives for private provision, though at the cost of excluding some consumers from the market. For example, these restrictions could exclude either customers who don't value the good very much or those who value it highly but are budget constrained. The latter would be particularly worrisome since it would represent a larger welfare loss and exacerbate inequity.
 
-The challenge of informational public goods for the scientific literature is, however, worse than the analysis above might suggest.  This is because, absent actually reading a scientific article, it may be hard to assess its value to you -- that is, due to Arrow's Information Paradox (Arrow, 1962):
+The challenge of informational public goods for the scientific literature is, however, worse than the analysis above might suggest.  This is because, absent actually reading a scientific article, it may be hard to assess its value to you — that is, due to Arrow's Information Paradox (@[arrow-invention]):
 
 "*there is a fundamental paradox in the determination of demand for information; its value for the purchaser is not known until he has the information, but then he has in effect acquired it without cost*"
 
@@ -78,26 +78,26 @@ In this paper we directly test several of the implications about public goods in
 
 Wikipedia is a user-generated and edited online encyclopedia, currently the largest of its kind. It was founded by Jimmy Wales and Larry Sanger in early 2001 and has seen continual growth since that time. Though it was originally launched in English, it currently has wikis in over 250 languages. For the purposes of this study, we focus only on English-language Wikipedia. ^[For the experiment, we checked to see whether our articles were translated into other languages, which might have made looking at them interesting as well. We find virtually no evidence of this.]
 
-Wikipedia has 5.3 million articles. These were written and are edited by a total of about 30 million registered editors of whom roughly 120 thousand are currently active (Wikipedia). In the past decade, there has been a consistent average of 30 million edits per year (authors' calculation), which includes both the creation of new articles and development of existing ones. Not surprisingly, a small number of very active editors contribute an outsize share of edits. Suh et al. (2009) find that editors averaging more than 1000 edits per month account for only 1% of editors but make 55% of edits.
+Wikipedia has 5.3 million articles. These were written and are edited by a total of about 30 million registered editors of whom roughly 120 thousand are currently active (Wikipedia). In the past decade, there has been a consistent average of 30 million edits per year (authors' calculation), which includes both the creation of new articles and development of existing ones. Not surprisingly, a small number of very active editors contribute an outsize share of edits. @[suh-editors] find that editors averaging more than 1000 edits per month account for only 1% of editors but make 55% of edits.
 
 @! [wiki_monthly] Words and articles added to Wikipedia since its inception
 ![Words and articles added to Wikipedia since its inception](graphics/wiki_monthly.svg)
 
-Editors of Wikipedia are not representative of the general population. For example, there is the widely discussed gender gap. An opt-in survey of visitors done by Glott et al. (2010) found that only 31% of readers and 13% of editors are female. The Wikimedia Foundation (which operates Wikipedia) has taken steps to correct this but has thus far not succeeded to a substantial extent.
+Editors of Wikipedia are not representative of the general population. For example, there is the widely discussed gender gap. An opt-in survey of visitors done by @[glott-survey] found that only 31% of readers and 13% of editors are female. The Wikimedia Foundation (which operates Wikipedia) has taken steps to correct this but has thus far not succeeded to a substantial extent.
 
-The editing community enforces certain codified rules designed to ensure accuracy and prevent bias in articles. A study comparing the accuracy of various scientific topics in Wikipedia and Encyclopaedia Britannica found that while errors were not infrequent, they occurred at similar rates between the two (Giles, 2005). In particular, a Wikipedia science article contained an average of four "inaccuracies," while an Encyclopaedia Britannica article contained only three. For comparison, Encyclopaedia Britannica currently has about 65,000 articles totalling 40 million words (Wikipedia), while English Wikipedia has about 5.3 million articles totalling 1.8 billion words.
+The editing community enforces certain codified rules designed to ensure accuracy and prevent bias in articles. A study comparing the accuracy of various scientific topics in Wikipedia and Encyclopaedia Britannica found that while errors were not infrequent, they occurred at similar rates between the two (@[giles-encyclo]). In particular, a Wikipedia science article contained an average of four "inaccuracies," while an Encyclopaedia Britannica article contained only three. For comparison, Encyclopaedia Britannica currently has about 65,000 articles totalling 40 million words (Wikipedia), while English Wikipedia has about 5.3 million articles totalling 1.8 billion words.
 
 Wikipedia is very widely read. As of 2014, it served a total of 18 billion page views to 500 million unique visitors each month. According to Alexa, a major web analytics company, Wikipedia is the fifth most visited website on the internet, both globally and when restricting to only the US.
 
 The Wikimedia Foundation is a non-profit that operates Wikipedia, as well as numerous related projects such as Wikidata (for structured data), Wikisource (a repository for original sources), and Wiktionary (an open dictionary). It currently has over 200 employees. The website is run using open-source software, much of it developed in house in the form of the MediaWiki platform. This platform has come to be widely used by other wikis, including those not associated with the Wikimedia Foundation.
 
-In the 2015-2016 fiscal year, the Wikimedia foundation had \$82 million in revenue and \$66 million in expenses. To put these numbers into perspective, the American Type Culture Collection (a major biological research center) has a budget of \$92 million (GuideStar, 2017), and Addgene (the non-profit plasmid repository) has a budget of \$8.5 million (D&B Hoovers, 2017).
+In the 2015-2016 fiscal year, the Wikimedia foundation had \$82 million in revenue and \$66 million in expenses. To put these numbers into perspective, the American Type Culture Collection (a major biological research center) has a budget of \$92 million (GuideStar, 2017), and Addgene (the non-profit plasmid repository) has a budget of \$8.5 million (@[db-hoovers]).
 
 A wide variety of scientific topics are covered on Wikipedia, and a substantial fraction of Wikipedia articles are on scientific topics. Determining exactly which articles do or do not constitute science is somewhat subjective. Depending on the definition and methods used, roughly 10-20% of Wikipedia articles are on scientific topics (between 0.5-1.0 million out of a total of about 5 million). ^[To determine which articles are considered Chemistry, we rely on Wikipedia's user generated category system. This tends to pull in far too many articles though, so we take the additional steps of paring the category tree using a PageRank criterion and hand classifying a subsample of candidate Chemistry articles and using them to train a text-based Support Vector Classifier.] Based on spot testing in Chemistry, we observe that Wikipedia covers more than 90% of the topics discussed at the undergraduate level at top-tier research universities, but only about half of those covered at the introductory graduate level. There exists substantial interest in the open-source committee for continuing to deepen the scientific knowledge on Wikipedia (Shafee et al., 2017).
 
-Wikipedia is also used by professionals, for *scientific* information. For example, a 2009 study of junior physicians found that in a given week 70% checked Wikipedia *for medical information* and that those same physicians checked Wikipedia for 26% of their cases (Hughes et al, 2009).
+Wikipedia is also used by professionals, for *scientific* information. For example, a 2009 study of junior physicians found that in a given week 70% checked Wikipedia *for medical information* and that those same physicians checked Wikipedia for 26% of their cases (@[physician-wiki]).
 
-Previous research by Biasi and Moser on German textbooks in WWII (2017) showed that lowering the cost of scientific information (and thus making it more accessible) led to substantial changes in scientific publishing. Since Wikipedia is also making scientific information cheaper and more widely accessible, we would expect that it too would have an influence on the scientific literature. However, evidence of this effect is largely absent from the usual place where one would look for it: citations from the academic literature. Tomaszewski and MacDonald (2016) find that only 0.01% of scientific articles directly cite Wikipedia entries.
+Previous research by @[moser-books] on German textbooks in WWII showed that lowering the cost of scientific information (and thus making it more accessible) led to substantial changes in scientific publishing. Since Wikipedia is also making scientific information cheaper and more widely accessible, we would expect that it too would have an influence on the scientific literature. However, evidence of this effect is largely absent from the usual place where one would look for it: citations from the academic literature. @[wiki-cites] find that only 0.01% of scientific articles directly cite Wikipedia entries.
 
 We hypothesize that this is not because Wikipedia doesn't have an effect, but rather that academic citations are not capturing the effect that Wikipedia has. To test this, we develop a text-based measure, where we can measure this effect directly in the words used by scientists.
 
@@ -124,7 +124,7 @@ Every month thousands of new Wikipedia articles are created. @[field_hist] plots
 
 Each of the three time series show very similar profiles in terms of growth, but at different scales. Chemistry is a much more prominent field than econometrics, as can be seen by the 10x-100x higher numbers of articles and words being added each month.
 
-Generally speaking, new Wikipedia articles start out quite small and grow slowly over time. Roughly 70% of articles are less than 20 words long upon creation, reflecting the fact that many article begin as a "stub" -- a short article, perhaps just a title and single descriptive sentence, that is intended to be built upon in the future. @[edit_example] shows an example of an early edit of the Magnesium Sulfate stub, where new additions are underlined aneletions are struck through.
+Generally speaking, new Wikipedia articles start out quite small and grow slowly over time. Roughly 70% of articles are less than 20 words long upon creation, reflecting the fact that many article begin as a "stub" — a short article, perhaps just a title and single descriptive sentence, that is intended to be built upon in the future. @[edit_example] shows an example of an early edit of the Magnesium Sulfate stub, where new additions are underlined aneletions are struck through.
 
 @! [edit_example] Example of the early editing on the Magnesium Sulfate article.
 "Magnesium sulfate <span style="color: red; text-decoration: line-through;">,</span>" <span style="color: red; text-decoration: line-through;">MgSO<sub>4</sub>,</span> (commonly <span style="color: red; text-decoration: line-through;">known as</span> <span style="color: red; text-decoration: underline;">called"</span> Epsom <span style="color: red; text-decoration: line-through;">salts</span>  <span style="color: red; text-decoration: underline;">salt" in hydrated form)</span> is <span style="color: red; text-decoration: line-through;">used as a therapeutic bath</span> <span style="color: red; text-decoration: line-through;">a chemical compound with formula MgSO<sub>4</sub>,</span>
@@ -135,7 +135,7 @@ Generally speaking, new Wikipedia articles start out quite small and grow slowly
 @! [entry_size_dist] Size distribution of new articles longer than 20 words
 ![Size distribution of new articles longer than 20 words](graphics/entry_size_dist.svg)
 
-In @[field_hist] there was some evidence of tapering off in the number of chemistry and econometrics articles being created. This is likely because many of the most important topics in these fields has already been added. @[age_size_profile] shows corroborative evidence of this by plotting how articles grow on average. Interestingly, all three cohorts average approximately 250 words when first written. Article lengths expand significantly after this, but particularly so for the earlier cohort -- again suggesting that early Wikipedia articles were on broader, more important topics.
+In @[field_hist] there was some evidence of tapering off in the number of chemistry and econometrics articles being created. This is likely because many of the most important topics in these fields has already been added. @[age_size_profile] shows corroborative evidence of this by plotting how articles grow on average. Interestingly, all three cohorts average approximately 250 words when first written. Article lengths expand significantly after this, but particularly so for the earlier cohort — again suggesting that early Wikipedia articles were on broader, more important topics.
 
 @! [age_size_profile] Average size of articles conditional on age (daily)
 ![Average size of articles conditional on age (daily)](graphics/age_size_profile.svg)
@@ -266,19 +266,19 @@ Below are some examples of token frequency time series in the present vocabulary
 
 Naturally, coverage in Wikipedia does not always begin immediately, but for most tokens coverage begins between 2005 and 2007. In terms of trends, it is quite common to see a large amount of editing activity near when the token is first introduced, as a main article is built up, followed by a reduction. After this, there may or may not be future increases, presumably depending on whether the term enjoys more relevance to research in the future.
 
-We explore the co-occurrence of words in the two corpora in greater detail in Appendix @[frequency_analysis].
+We explore the co-occurrence of words in the two corpora in greater detail in Appendix B.
 
 ## [new_wiki] New Wikipedia Articles
 
 In this section we analyze how similar the scientific literature is to Wikipedia articles when they are created. Our hypothesis being that the scientific literature *after* the Wikipedia article will be more similar to it that the scientific literature *before*.
 
-We first look at the raw average effect -- are scientific articles published after the Wikipedia article more similar to it?
+We first look at the raw average effect — are scientific articles published after the Wikipedia article more similar to it?
 
 @| [wikipedia_creation_regression] Observational Effect of new Wikipedia Article (not accounting for language drift)
 | | Similarity |
 | - | - | - |
-| Intercept | <div>$0.1309$\*\*\*<br/>($0.0005$)</div> |
-| After | <div>$0.0014$\*\*\*<br/>($0.0003$)</div> |
+| Intercept | $0.1309$\*\*\*<br/>($0.0005$) |
+| After | $0.0014$\*\*\*<br/>($0.0003$) |
 | N | $705104$ |
 | $R^2$ | $0.0002$ |
 | Adjusted $R^2$ | $0.0002$ |
@@ -307,7 +307,7 @@ Although the correlations presented in this section are suggestive, they are not
 
 From 2013-2016 we ran an experiment to ascertain the *causal* impact of Wikipedia on academic science. New scientific articles were written by PhD students in those areas. Half of those articles were uploaded to Wikipedia, while half were held back. ^[At the end of the experiment, these were also uploaded to Wikipedia to deepen the knowledge available to the public.] We then considered the differential impact that adding these articles to Wikipedia had on the scientific literature.
 
-The experiment was run in two waves, first a wave in Chemistry (January 2015 - 43 articles created) and then in Econometrics (November 2015 - 45 articles created). The main text of this article concerns only the Chemistry wave. It turns out that the rest of the world was less excited by econometrics than the authors of this paper, and so the average views of the Chemistry articles were more than thirty times those of the Econometrics pages! With so few views by the Econometrics community the second experimental wave is underpowered and thus we do not discuss it here (although for the sake of full disclosure, we do report additional details in Appendix @[econ_analysis]).
+The experiment was run in two waves, first a wave in Chemistry (January 2015 - 43 articles created) and then in Econometrics (November 2015 - 45 articles created). The main text of this article concerns only the Chemistry wave. It turns out that the rest of the world was less excited by econometrics than the authors of this paper, and so the average views of the Chemistry articles were more than thirty times those of the Econometrics pages! With so few views by the Econometrics community the second experimental wave is underpowered and thus we do not discuss it here (although for the sake of full disclosure, we do report additional details in Appendix A.
 
 ## Article Creation
 
@@ -323,11 +323,11 @@ Using personal connections and online research we located textbooks and course s
 | Chemistry Topics in Wikipedia | |
 | - | - |
 | Upper-level undergraduate | $600 / 646 (93\%)$ |
-| Graduate -- Masters level | $64 / 136 (47\%)$ |
+| Graduate — Masters level | $64 / 136 (47\%)$ |
 
-Because we are interested in the effect of future deepening of the scientific content on Wikipedia, we focused the experiment on the graduate level topics -- which represent nearly all the opportunity for new scientific Wikipedia articles.
+Because we are interested in the effect of future deepening of the scientific content on Wikipedia, we focused the experiment on the graduate level topics — which represent nearly all the opportunity for new scientific Wikipedia articles.
 
-Within these potential articles, there were differences in the breadth of applicability: some represented a topic on their own, while others only covered a narrow aspect of a topic. We focused on broader topics since our journal-level analysis was also broad-based. ^[We have no reason to believe that the effect from narrower topics would be smaller, just that they would manifest in a narrower set of scientific articles -- which would be challenging to identify ahead of time.] Here are some examples of the graduate articles that were identified as missing from Wikipedia and which we targeted for article creation:
+Within these potential articles, there were differences in the breadth of applicability: some represented a topic on their own, while others only covered a narrow aspect of a topic. We focused on broader topics since our journal-level analysis was also broad-based. ^[We have no reason to believe that the effect from narrower topics would be smaller, just that they would manifest in a narrower set of scientific articles — which would be challenging to identify ahead of time.] Here are some examples of the graduate articles that were identified as missing from Wikipedia and which we targeted for article creation:
 
 @| [example_articles] Examples of New Wikipedia Articles Created
 | Chemistry |
@@ -351,7 +351,7 @@ The document similarities shown for the experimental article in @[similarity_dis
 
 To maximize the statistical power of the experiment, we stratified the at-risk set of articles with a block randomized design. We stratified on the following:
 
-- Article Author -- to control for differences in topic area / article quality / article readability
+- Article Author — to control for differences in topic area / article quality / article readability
 - Branch of knowledge (e.g. Organic vs. Inorganic Chemistry)
 - Types of topics (e.g. general chemical principles vs specific reactions)
 
@@ -384,7 +384,7 @@ As @[covariate_balance] shows, the covariate balance is excellent, for both sets
 
 The treatment articles were uploaded to Wikipedia in January 2015. ^[One article was uploaded earlier, in September 2014 as a pilot to test the review process.] All the articles were initially uploaded as unique pages. After this point, the self-governing, open-source nature of Wikipedia became important for these articles.  Based on the editors views these articles were variously (i) accepted, (ii) rejected for rewriting (e.g. for being too technical), (iii) added as sub-sections of other pages. Rejected articles were revised in light of the editor's comments and then re-submitted.
 
-Because the Wikipedia editor intervention happened after the randomization, it only applied to treatment articles, and thus it is impossible to establish the counter-factual effect that editor intervention would have had on the control articles. As a result, we estimate our effects as an intent-to-treat -- that is, we consider the timing and article content to be that from the initial upload. We do not include any changes due to the editors or our revisions based on editor comments.
+Because the Wikipedia editor intervention happened after the randomization, it only applied to treatment articles, and thus it is impossible to establish the counter-factual effect that editor intervention would have had on the control articles. As a result, we estimate our effects as an intent-to-treat — that is, we consider the timing and article content to be that from the initial upload. We do not include any changes due to the editors or our revisions based on editor comments.
 
 These articles (or the page that they were added to) received an enormous amount of interest, with each article averaging over 4,400 views *per month* since they were uploaded. In total, by February 2017 the pages from the experiment had accumulated over 2 million views. This makes it plausible that in the causal chain of interest to us (new Wikipedia article $\rightarrow$ scientists reading the articles $\rightarrow $ effect on the scientific literature) is sufficiently strong for our treatment articles to have an impact on the scientific literature.
 
@@ -405,7 +405,7 @@ Recall that our estimator for the treatment effect is a difference in difference
 @! [experimental_effect_split] Treatment and Control proportional density differentials
 ![experimental_effect_split:Treatment and Control proportional density differentials](graphics/experimental_effect_split.svg)
 
-Here we can see that there is a sizeable difference between the treatment and control response. For example, the control group has a peak between 0.20 and 0.25, reflecting that the share of scientific articles with cosine similarities to the Wikipedia articles between those values *rose* from the pre- to the post-period, increasing roughly 5%. The dips to the left and right show where the proportional losses were, from highly similar articles (0.3+) and to a lesser extent from articles with low similarity (<0.15).  Since the control articles were not actually uploaded to Wikipedia, this distribution represents the baseline of change in the scientific literature -- i.e. the natural evolution in the topics covered and words used in them.
+Here we can see that there is a sizeable difference between the treatment and control response. For example, the control group has a peak between 0.20 and 0.25, reflecting that the share of scientific articles with cosine similarities to the Wikipedia articles between those values *rose* from the pre- to the post-period, increasing roughly 5%. The dips to the left and right show where the proportional losses were, from highly similar articles (0.3+) and to a lesser extent from articles with low similarity (<0.15).  Since the control articles were not actually uploaded to Wikipedia, this distribution represents the baseline of change in the scientific literature — i.e. the natural evolution in the topics covered and words used in them.
 
 The treatment group shows a broadly similar pattern, but with notably different magnitudes, with much less of a drop in the highly similar articles. This analysis can be seen more clearly by looking only at the difference in the estimates (i.e. normalizing by the baseline represented by the control articles).
 
@@ -414,22 +414,22 @@ The treatment group shows a broadly similar pattern, but with notably different 
 
 @[experimental_effect] shows that the effect is concentrated in the high similarity region, as was true in the observational analysis.
 
-Having presented our results visually, we now present them in regression framework. It is important to note that running a simple OLS regression will not be sufficient to calculate the standard errors correctly as all data are dyadic: one Wikipedia article to one scientific literature article. This implies strong correlations between errors. To account for this, we use a two-way cluster robust estimator (Cameron and Miller, 2014) to calculate the (dyadic) standard errors for the mean effects. We bootstrap the standard errors for our quantile regressions.
+Having presented our results visually, we now present them in regression framework. It is important to note that running a simple OLS regression will not be sufficient to calculate the standard errors correctly as all data are dyadic: one Wikipedia article to one scientific literature article. This implies strong correlations between errors. To account for this, we use a two-way cluster robust estimator (@[cameron-dyadic]) to calculate the (dyadic) standard errors for the mean effects. We bootstrap the standard errors for our quantile regressions.
 
 @| [experimental_results_table] Experimental Results
 | | Similarity (OLS) | Similarity (q=25%) | Similarity (q=50%) | Similarity (q=75%) |
 | - | - | -  - | -  - | -  - | - |
-| Intercept | <div>$0.2237$\*\*\*<br/>($0.0089$)</div> | <div>$0.1601$\*\*\*<br/>($0.0094$)</div> | <div>$0.2149$\*\*\*<br/>($0.0102$)</div> | <div>$0.2811$\*\*\*<br/>($0.0126$)</div> |
-| Treated | <div>$-0.0049$<br/>($0.0118$)</div> | <div>$-0.0030$<br/>($0.0122$)</div> | <div>$-0.0045$<br/>($0.0135$)</div> | <div>$-0.0102$<br/>($0.0170$)</div> |
-| After | <div>$-0.0041$\*\*\*<br/>($0.0003$)</div> | <div>$0.0027$\*\*\*<br/>($0.0009$)</div> | <div>$-0.0007$<br/>($0.0008$)</div> | <div>$-0.0114$\*\*\*<br/>($0.0014$)</div> |
-| Treated x After | <div>$0.0033$\*\*\*<br/>($0.0011$)</div> | <div>$0.0002$<br/>($0.0013$)</div> | <div>$0.0011$<br/>($0.0015$)</div> | <div>$0.0072$\*\*<br/>($0.0028$)</div> |
+| Intercept | $0.2237$\*\*\*<br/>($0.0089$) | $0.1601$\*\*\*<br/>($0.0094$) | $0.2149$\*\*\*<br/>($0.0102$) | $0.2811$\*\*\*<br/>($0.0126$) |
+| Treated | $-0.0049$<br/>($0.0118$) | $-0.0030$<br/>($0.0122$) | $-0.0045$<br/>($0.0135$) | $-0.0102$<br/>($0.0170$) |
+| After | $-0.0041$\*\*\*<br/>($0.0003$) | $0.0027$\*\*\*<br/>($0.0009$) | $-0.0007$<br/>($0.0008$) | $-0.0114$\*\*\*<br/>($0.0014$) |
+| Treated x After | $0.0033$\*\*\*<br/>($0.0011$) | $0.0002$<br/>($0.0013$) | $0.0011$<br/>($0.0015$) | $0.0072$\*\*<br/>($0.0028$) |
 | N | $664790$ | $664790$ | $664790$ | $664790$ |
 | $R^2$ | $0.0006$ |  |  |  |
 | Adjusted $R^2$ | $0.0006$ |  |  |  |
 | F Statistic | $124.1791$ |  |  |  |
 *Note:* \*$p < 0.1$; \*\*$p < 0.05$; \*\*\*$p < 0.01$
 
-@[experimental_results_table] shows that, on average, articles have a cosine similarity to the potential Wikipedia articles in our sample of 0.2237, and that posting the article increases this by 0.0033***. This effect is a change in the cosine similarity, which is difficult to interpret. However, simulations that we have done suggests that for small changes this moves almost one-for-one with the fraction of meaningful words changed in a document. That is, we find that on average the presence of a Wikipedia article changes 0.33% (or about 1 in 300) of the meaningful words in the scientific article.
+@[experimental_results_table] shows that, on average, articles have a cosine similarity to the potential Wikipedia articles in our sample of 0.2237, and that posting the article increases this by 0.0033\*\*\*. This effect is a change in the cosine similarity, which is difficult to interpret. However, simulations that we have done suggests that for small changes this moves almost one-for-one with the fraction of meaningful words changed in a document. That is, we find that on average the presence of a Wikipedia article changes 0.33% (or about 1 in 300) of the meaningful words in the scientific article.
 
 As @[experimental_effect] showed, the treatment effect is concentrated in a smaller number of highly similar articles, where the effect is substantially larger. @[experimental_results_table] also shows this in regression form, with quantile regressions at the 25<sup>th</sup>, 50<sup>th</sup>, and 75<sup>th</sup> percentiles. It shows that for the least impacted 25<sup>th</sup> percentile of articles there is no statistically significant effect, whereas at the 50<sup>th</sup>
 percentile the effect rises to a statistically-insignificant 0.11%, and at the 75<sup>th</sup> percentile the effect rises to a highly-significant 0.72%.
@@ -446,10 +446,10 @@ We interpret this as supporting the earlier hypothesis, that new Wikipedia artic
 @| [impact_results] Experimental Treatment Results, by Journal Impact Factor Quartile
 | | Quartile 1 | Quartile 2 | Quartile 3 | Quartile 4 |
 | - | - | -  - | -  - | -  - | - |
-| Intercept | <div>$0.2515$\*\*\*<br/>($0.0102$)</div> | <div>$0.2121$\*\*\*<br/>($0.0080$)</div> | <div>$0.2399$\*\*\*<br/>($0.0102$)</div> | <div>$0.1987$\*\*\*<br/>($0.0079$)</div> |
-| Treated | <div>$-0.0084$<br/>($0.0140$)</div> | <div>$-0.0054$<br/>($0.0111$)</div> | <div>$-0.0019$<br/>($0.0131$)</div> | <div>$-0.0031$<br/>($0.0103$)</div> |
-| After | <div>$-0.0245$\*\*\*<br/>($0.0007$)</div> | <div>$-0.0114$\*\*\*<br/>($0.0006$)</div> | <div>$0.0104$\*\*\*<br/>($0.0007$)</div> | <div>$0.0025$\*\*\*<br/>($0.0005$)</div> |
-| Treated x After | <div>$0.0066$\*\*\*<br/>($0.0022$)</div> | <div>$0.0052$\*\*\*<br/>($0.0016$)</div> | <div>$0.0004$<br/>($0.0028$)</div> | <div>$0.0004$<br/>($0.0013$)</div> |
+| Intercept | $0.2515$\*\*\*<br/>($0.0102$) | $0.2121$\*\*\*<br/>($0.0080$) | $0.2399$\*\*\*<br/>($0.0102$) | $0.1987$\*\*\*<br/>($0.0079$) |
+| Treated | $-0.0084$<br/>($0.0140$) | $-0.0054$<br/>($0.0111$) | $-0.0019$<br/>($0.0131$) | $-0.0031$<br/>($0.0103$) |
+| After | $-0.0245$\*\*\*<br/>($0.0007$) | $-0.0114$\*\*\*<br/>($0.0006$) | $0.0104$\*\*\*<br/>($0.0007$) | $0.0025$\*\*\*<br/>($0.0005$) |
+| Treated x After | $0.0066$\*\*\*<br/>($0.0022$) | $0.0052$\*\*\*<br/>($0.0016$) | $0.0004$<br/>($0.0028$) | $0.0004$<br/>($0.0013$) |
 | N | $128141$ | $115868$ | $187698$ | $233083$ |
 | $R^2$ | $0.0143$ | $0.0029$ | $0.0034$ | $0.0008$ |
 | Adjusted $R^2$ | $0.0143$ | $0.0029$ | $0.0033$ | $0.0008$ |
@@ -462,26 +462,26 @@ Notwithstanding this revealed preference argument, as a public policy matter we 
 
 ## Indirect Citation Effects
 
-As already mentioned, Tamaszewski and MacDonald (2016) find that almost no authors cite Wikipedia directly. Despite this, it is possible that there are other indirect measures that authors leave when referencing Wikipedia. In particular, the academic research listed as a reference in the Wikipedia article might be cited instead of the Wikipedia article itself. This could be because Wikipedia was used to find that article, and then the article itself was read and referenced.  Alternatively, a less charitable interpretation would be that authors cite the underlying work having only read the Wikipedia article.  There is significant potential for this effect, as "Wikipedia is the 6<sup>th</sup> highest referrer of DOI links (the unique hyperlinks assigned to academic articles)" (AOASG, 2017). Despite the plausibility of this mechanism, we find no empirical support for it in our experiment.
+As already mentioned, @[wiki-cites] find that almost no authors cite Wikipedia directly. Despite this, it is possible that there are other indirect measures that authors leave when referencing Wikipedia. In particular, the academic research listed as a reference in the Wikipedia article might be cited instead of the Wikipedia article itself. This could be because Wikipedia was used to find that article, and then the article itself was read and referenced.  Alternatively, a less charitable interpretation would be that authors cite the underlying work having only read the Wikipedia article.  There is significant potential for this effect, as "Wikipedia is the 6<sup>th</sup> highest referrer of DOI links (the unique hyperlinks assigned to academic articles)" (AOASG, 2017). Despite the plausibility of this mechanism, we find no empirical support for it in our experiment.
 
 ## Distributional Effects
 
-One might imagine that public repositories of knowledge would be particularly valuable to those with less access to non-public repositories, in this case those with less access to formal journals.  We proxy for this by considering the GDP per capita of the modal home country of the scientific authors -- assuming that those with lower GDP will have less access. We then recalculate our treatment effect separately, running one regression for each quartile of the GDP per capita country distribution. Our results are presented in @[gdp_results].
+One might imagine that public repositories of knowledge would be particularly valuable to those with less access to non-public repositories, in this case those with less access to formal journals.  We proxy for this by considering the GDP per capita of the modal home country of the scientific authors — assuming that those with lower GDP will have less access. We then recalculate our treatment effect separately, running one regression for each quartile of the GDP per capita country distribution. Our results are presented in @[gdp_results].
 
 @| [gdp_results] Experimental Results (Distributional Effects)
 | | Quartile 1 | Quartile 2 | Quartile 3 | Quartile 4 |
 | - | - | -  - | -  - | -  - | - |
-| Intercept | <div>$0.2162$\*\*\*<br/>($0.0087$)</div> | <div>$0.2447$\*\*\*<br/>($0.0098$)</div> | <div>$0.2298$\*\*\*<br/>($0.0090$)</div> | <div>$0.2237$\*\*\*<br/>($0.0090$)</div> |
-| Treated | <div>$-0.0029$<br/>($0.0116$)</div> | <div>$-0.0083$<br/>($0.0135$)</div> | <div>$-0.0058$<br/>($0.0121$)</div> | <div>$-0.0043$<br/>($0.0118$)</div> |
-| After | <div>$-0.0035$\*\*\*<br/>($0.0013$)</div> | <div>$-0.0225$\*\*\*<br/>($0.0008$)</div> | <div>$-0.0041$\*\*\*<br/>($0.0004$)</div> | <div>$-0.0029$\*\*\*<br/>($0.0003$)</div> |
-| Treated x After | <div>$0.0005$<br/>($0.0026$)</div> | <div>$0.0089$\*\*\*<br/>($0.0025$)</div> | <div>$0.0039$\*\*\*<br/>($0.0012$)</div> | <div>$0.0034$\*\*<br/>($0.0014$)</div> |
+| Intercept | $0.2162$\*\*\*<br/>($0.0087$) | $0.2447$\*\*\*<br/>($0.0098$) | $0.2298$\*\*\*<br/>($0.0090$) | $0.2237$\*\*\*<br/>($0.0090$) |
+| Treated | $-0.0029$<br/>($0.0116$) | $-0.0083$<br/>($0.0135$) | $-0.0058$<br/>($0.0121$) | $-0.0043$<br/>($0.0118$) |
+| After | $-0.0035$\*\*\*<br/>($0.0013$) | $-0.0225$\*\*\*<br/>($0.0008$) | $-0.0041$\*\*\*<br/>($0.0004$) | $-0.0029$\*\*\*<br/>($0.0003$) |
+| Treated x After | $0.0005$<br/>($0.0026$) | $0.0089$\*\*\*<br/>($0.0025$) | $0.0039$\*\*\*<br/>($0.0012$) | $0.0034$\*\*<br/>($0.0014$) |
 | N | $4213$ | $46183$ | $288808$ | $277406$ |
 | $R^2$ | $0.0008$ | $0.0106$ | $0.0007$ | $0.0003$ |
 | Adjusted $R^2$ | $0.0001$ | $0.0106$ | $0.0007$ | $0.0003$ |
 | F Statistic | $1.0789$ | $165.4485$ | $71.7938$ | $30.2143$ |
 *Note:* \*$p < 0.1$; \*\*$p < 0.05$; \*\*\*$p < 0.01$
 
-We find, as predicted, that the poorer that a country is, the bigger is the treatment effect -- with the exception of the poorest quartile of countries, which have almost no publications and where the Wikipedia intervention seems to have no effect. This is presented graphically in @[gdp_regression].
+We find, as predicted, that the poorer that a country is, the bigger is the treatment effect — with the exception of the poorest quartile of countries, which have almost no publications and where the Wikipedia intervention seems to have no effect. This is presented graphically in @[gdp_regression].
 
 @! [gdp_regression] Effect of Wikipedia across Countries with varying access to other resources
 ![Effect of Wikipedia across Countries with varying access to other resources](graphics/gdp_regression.svg)
@@ -504,7 +504,7 @@ To calculate the benefits, we consider how the dissemination of knowledge influe
 
 A similar analysis can be done for the influence of the Wikipedia article. Based on the estimates from Section @[experimental_results], the average change in word frequency from our intervention was ~0.3%, implying an average change of 11.7 words per article. ^[This number is only a rough estimate since our 0.3% effect is calculated using a term frequency-inverse document frequency (TF-IDF) estimate. However we have done simulations to confirm that there is a reasonable equivalency between the two.] Of course, as our quantile estimates suggest, this effect is actually skewed, with a small percentage of articles changed more, and many articles being unchanged.
 
-Since there were 27,000 scientific articles in the test set, an average of 11.7 words changed per article implies that ~316,000 words were changed in total. ^[If we also extrapolated the effect to non-Elsevier journals, this effect would presumably be larger.] Since each Wikipedia article cost \$100 to write, this implies a cost per word of \$0.00032 -- or about 1/1700<sup>th</sup> of the cost of dissemination through traditional methods.
+Since there were 27,000 scientific articles in the test set, an average of 11.7 words changed per article implies that ~316,000 words were changed in total. ^[If we also extrapolated the effect to non-Elsevier journals, this effect would presumably be larger.] Since each Wikipedia article cost \$100 to write, this implies a cost per word of \$0.00032 — or about 1/1700<sup>th</sup> of the cost of dissemination through traditional methods.
 
 Our back-of-the-envelope analysis thus has stark conclusions: even with many conservative assumptions, dissemination through Wikipedia is ~1700x more cost-effective than traditional dissemination techniques. Thus, from a public policy perspective, funding the creation of content in public repositories of science like Wikipedia is compelling. We thus encourage governments, organizations, and publically-minded individuals to incorporate the creation of such articles into their activities and applaud those who are already advocating it (e.g. Shafee, 2017).
 
@@ -515,6 +515,214 @@ This paper documents the contribution of public informational good providers, li
 In general, the economics of public informational goods like Wikipedia strongly favor their underprovision: incentives are too low, free-riding is rampant, and Arrow's information paradox hinders market or contractual solutions. We therefore examine the case for public policy interventions in this area. We find that the dissemination of Science through Wikipedia is highly cost-effective and that it is equity-improving because it helps those with less access to traditional scientific outlets.
 
 In a very concrete sense, our paper shows that Darwin was right: "general and popular treatises are almost as important for the progress of science as the original work". But we can be more precise. We show that Wikipedia's contribution is not at the cutting edge (where Wikipedia articles don't yet exist), but in the dissemination of such discoveries to scientists doing follow-on work.  And for those doing the follow-on work, the impact is substantial.  It is our hope that by identifying this effect our research will spur increased investment in the development of these public resources to the benefit of scientists and society at large.
+
+#* References
+
+@@ [alexa-ranking]
+institution: Alexa
+title: The top 500 sites on the web
+note: Available online at https://www.alexa.com/topsites. Accessed Aug 22, 2017
+
+@@ [arrow-invention]
+authors: Kenneth J. Arrow
+year: 1962
+title: Economic Welfare and the Allocation of Resources for Invention
+journal: The Rate and Direction of Inventive Activity: Economic and Social Factors
+
+@@ [aoasg]
+institution: Australian Open Access Strategy Group
+shortname: AOASG
+title: Open access medical content and the world's largest encyclopedia
+note: Online at: https://aoasg.org.au/2017/09/05/open-access-medical-content-and-the-worlds-largest-encyclopedia/. Accessed September, 2017
+
+@@ [moser-books]
+authors: Barbara Biasi; Petra Moser
+title: Effects of Copyrights on Science: Evidence from the WWII Book Republication Program
+journal: Available at SSRN: https://ssrn.com/abstract=2542879 or http://dx.doi.org/10.2139/ssrn.2542879
+year: 2017
+
+@@ [cameron-dyadic]
+authors: Colin Cameron; Douglas Miller
+title: Robust Inferences for Dyadic Data
+journal: Presentation at the Winter North American Meetings of the Econometrics Society
+year: 2015
+
+@@ [clarivate]
+institution: Clarivate Analytics
+title: Web of Science
+journal: Online at http://www.webofknowledge.com. Accessed at various times in 2017
+
+@@ [db-hoovers]
+institution: D&B Hoovers
+title: Addgene Inc. Revenue and Financial Data
+journal: Online at http://www.hoovers.com/company-information/cs/revenue-financial.addgene_inc.b801fd5c8243ca53.html
+
+@@ [elsevier]
+authors: Elsevier
+title: ConSyn database
+note: Accessed from 2012-2017
+
+@@ [stern-giants]
+authors: Jeffrey Furman; Scott Stern
+title: Climbing Atop the Shoulders of Giants: The Impact of Institutions on Cumulative Knowledge Production
+journal: American Economic Review
+issue: 101
+number: 5
+pages: 1933-1963
+year: 2011
+
+@@ [gallus-wiki]
+authors: Jana Gallus
+title: Fostering public good contributions with symbolic awards: A large-scale natural field experiment at Wikipedia
+journal: Management Science
+year: 2016
+url: http://pubsonline.informs.org/doi/abs/10.1287/mnsc.2016.2540
+
+@@ [giles-encyclo]
+authors: Jim Giles
+title: Internet encyclopedias go head to head
+journal: Nature
+year: 2005
+volume: 438
+pages: 900-901
+
+@@ [glott-survey]
+authors: Ruediger Glott; Philipp Schmidt; Rishab Ghosh
+title: Wikipedia Survey – Overview of Results
+year: 2010
+
+@@ [greenstein-biased]
+authors: Shane Greenstein; Feng Zhu
+title: Is Wikipedia Biased?
+journal: American Economic Review: Papers and Proceedings
+year: May 2012
+issue: 102
+number: 3
+pages: 343-348
+
+@@ [physician-wiki]
+authors: Benjamin Hughes; Indra Joshi; Hugh Lemonde; Jonathan Wareham
+title: Junior physician's use of Web 2.0 for information seeking and medical education: A qualitative study
+journal: International Journal of Medical Informatics
+year: 2009
+volume: 78
+issue: 10
+pages: 645-655
+
+@@ [lightman-science]
+authors: Bernard Lightman
+title: Victorian Popularizers of Science: Designing Nature for New Audiences
+journal: University of Chicago Press
+year: 2007
+
+@@ [mit-sources]
+institution: MIT
+title: Citing Electronic Sources
+journal: Academic Integrity at MIT: A Handbook for Students
+note: Available online at https://integrity.mit.edu/handbook/citing-your-sources/citing-electronic-sources
+
+@@ [mmrrc]
+institution: Mutant Mouse Resource & Research Centers
+shortname: MMRRC
+note: Available at https://www.mmrrc.org/
+
+@@ [ncgrp]
+institution: National Center for Genetic Resources Preservation
+shortname: NCGRP
+year: 2005
+title: Annual Report
+
+@@ [nih-genome]
+institution: National Institutes of Health
+shortname: NIH
+title: National Human Genome Research Institute Official Website
+note: Available online at https://www.genome.gov/10001772/
+
+@@ [type-culture]
+authors: Diana Morgan
+year: 1990
+title: American Type Culture Collection Seeks To Expand Research Effort
+journal: The Scientist magazine, available online at http://www.the-scientist.com/?articles.view/articleNo/11292/title/American-Type-Culture-Collection-Seeks-To-Expand-Research-Effort/
+
+@@ [princeton-sources]
+institution: Princeton University
+title: When to Cite Sources
+journal: Academic Integrity at Princeton
+note: Available online at https://www.princeton.edu/pr/pub/integrity/pages/cite/
+
+@@ [darwin]
+authors: Tim Radford
+year: 2008
+title: The book that changed the world
+journal: The Guardian newspaper, Feb 8 2008. Available at https://www.theguardian.com/science/2008/feb/09/darwin.bestseller
+
+@@ [samuelson-public]
+authors: Paul Samuelson
+year: 1954
+title: The Pure Theory of Public Expenditure
+journal: The Review of Economics and Statistics
+
+@@ [wiki-model]
+authors: Thomas Shafee
+year: 2017
+title: Wikipedia-integrated publishing: A comparison of two successful models
+journal: Working paper
+
+@@ [wiki-academic]
+authors: Thomas Shafee; Daniel Mietchen; and Andrew I. Su
+year: 2017
+title: Academics can help shape Wikipedia
+journal: Science
+volume: 357
+issue: 6351
+pages: 557-558
+
+@@ [wiki-medical]
+authors: Thomas Shafee; Gwinyai Masukume; Lisa Kipersztok; Diptanshu Das; Mikael Haggstrom; and James Heilman
+year: 2016
+title: Evolution of Wikipedia's medical content: past, present and future
+journal: Journal of Epidemiology & Community Health, Published Online First: 28 August 2017
+doi: 10.1136/jech-2016-208601
+
+@@ [suh-editors]
+authors: Bongw Suh; Gregorio Convertino; Ed Chi; Peter Pirolli
+year: 2009
+title: The Singularity is Not Near: Slowing Growth of Wikipedia
+journal: WikiSym
+doi: 10.1145/1641309.1641322
+
+@@ [times-citations]
+institution: Times Higher Education
+title: Citation averages, 2000-2010, by fields and years
+note: March 31, 2011, available online at https://www.timeshighereducation.com/news/citation-averages-2000-2010-by-fields-and-years/415643.article
+
+@@ [wiki-cites]
+authors: Robert Tomaszewski; Karen I. MacDonald
+title: A Study of Citations to Wikipedia in Scholarly Publications
+year: 2016
+journal: Science & Technology Libraries
+
+@@ [nih-research]
+institution: U.S. Department of Health & Human Services
+shortname: HHS
+year: 2017
+title: NIH Research Portfolio Online Reporting Tools
+note: Online at https://report.nih.gov/fundingfacts/fundingfacts.aspx
+
+@@ [wikipedia]
+institution: Wikipedia
+year: Various Years
+title: Full edit history
+note: https://en.wikipedia.org/wiki/Wikipedia:Database_download
+
+@@ [team-production]
+authors: Stefan Wuchty; Benjamin Jones; Brian Uzzi
+year: 2007
+title: The Increasing Dominance of Teams in Production of Knowledge
+journal: Science
+volume: 316
+issue: 1036
+doi: 10.1126/science.1136099
 
 #* Appendix
 
@@ -606,9 +814,9 @@ As @[log_frequency_regression] shows, in levels, that a 100% increase in Wikiped
 @| [log_frequency_regression] Levels on levels regression of science on Wikipedia
 | | Log Science Frequency (t+1) |
 | - | - | - |
-| Intercept | <div>$-0.1729$\*\*\*<br/>($0.0126$)</div> |
-| Log Wikipedia Frequency (t) | <div>$0.0776$\*\*\*<br/>($0.0008$)</div> |
-| Log Science Frequency (t) | <div>$0.9167$\*\*\*<br/>($0.0006$)</div> |
+| Intercept | $-0.1729$\*\*\*<br/>($0.0126$) |
+| Log Wikipedia Frequency (t) | $0.0776$\*\*\*<br/>($0.0008$) |
+| Log Science Frequency (t) | $0.9167$\*\*\*<br/>($0.0006$) |
 | N | $442351$ |
 | $R^2$ | $0.9167$ |
 | Adjusted $R^2$ | $0.9167$ |
@@ -624,10 +832,10 @@ Of particular interest is the coefficient on the Wikipedia frequency level. @[dl
 @| [dlog_frequency_regression] Differences in differences and levels regression of science on Wikipedia
 | | $\Delta$ Log Science Frequency (t+1) |
 | - | - | - |
-| Intercept | <div>$-0.1118$\*\*\*<br/>($0.0114$)</div> |
-| Log Wikipedia Frequency (t) | <div>$0.0397$\*\*\*<br/>($0.0008$)</div> |
-| $\Delta$ Log Science Frequency (t) | <div>$-0.4407$\*\*\*<br/>($0.0014$)</div> |
-| Log Science Frequency (t) | <div>$-0.0436$\*\*\*<br/>($0.0006$)</div> |
+| Intercept | $-0.1118$\*\*\*<br/>($0.0114$) |
+| Log Wikipedia Frequency (t) | $0.0397$\*\*\*<br/>($0.0008$) |
+| $\Delta$ Log Science Frequency (t) | $-0.4407$\*\*\*<br/>($0.0014$) |
+| Log Science Frequency (t) | $-0.0436$\*\*\*<br/>($0.0006$) |
 | N | $412487$ |
 | $R^2$ | $0.2258$ |
 | Adjusted $R^2$ | $0.2258$ |
@@ -639,9 +847,9 @@ Since all regressions in log frequencies must condition on positivity, they only
 @| [bin_frequency_regression] Regression of the existence of tokens in science on Wikipedia
 | | Science Frequency $>$ 0 (t+1) |
 | - | - | - |
-| Intercept | <div>$0.1927$\*\*\*<br/>($0.0003$)</div> |
-| Wikipedia Frequency $>$ 0 (t) | <div>$0.2261$\*\*\*<br/>($0.0006$)</div> |
-| Science Frequency $>$ 0 (t) | <div>$0.4208$\*\*\*<br/>($0.0005$)</div> |
+| Intercept | $0.1927$\*\*\*<br/>($0.0003$) |
+| Wikipedia Frequency $>$ 0 (t) | $0.2261$\*\*\*<br/>($0.0006$) |
+| Science Frequency $>$ 0 (t) | $0.4208$\*\*\*<br/>($0.0005$) |
 | N | $2836926$ |
 | $R^2$ | $0.2733$ |
 | Adjusted $R^2$ | $0.2733$ |
