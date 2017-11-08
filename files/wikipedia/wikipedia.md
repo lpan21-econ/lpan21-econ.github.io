@@ -103,7 +103,7 @@ We hypothesize that this is not because Wikipedia doesn't have an effect, but ra
 
 # Data
 
-This paper relies on four major sources of data. The first is a complete edit history of Wikipedia, that is all changes to all Wikipedia pages since its inception. The second is a full-text version of all articles since 1995 across more than 2,061 Elsevier journals, which we use to represent the state of the scientific literature. The third is data on citations to academic journals, which we get from Web of Science. These three sources are described in this Section. The fourth data source is a set of Wikipedia articles created as part of the randomized control experiment. We discuss these as part of the experimental design in @[experimental_design].
+This paper relies on four major sources of data. The first is a complete edit history of Wikipedia, that is all changes to all Wikipedia pages since its inception. The second is a full-text version of all articles since 1995 across more than 2,061 Elsevier journals, which we use to represent the state of the scientific literature. The third is data on citations to academic journals, which we get from Web of Science. These three sources are described in this section. The fourth data source is a set of Wikipedia articles created as part of the randomized control experiment. We discuss these as part of the experimental design in @[experimental_design].
 
 ## Wikipedia
 
@@ -185,7 +185,7 @@ The data on academic citations is provided by Web of Science. It provides direct
 
 # Observational Analysis Methodology
 
-The purpose of this first analysis is to establish the broad correlations between word usage in Wikipedia and word usage in the scientific literature. The intent in this section is *not* to establish causation, but rather to observe in general how contemporaneous these changes are across many different areas in Wikipedia. In Sections @[new_wiki] and @[experimental_results], we assess how much of these effects are attributable to a causal effect of Wikipedia on Science.
+The purpose of this first analysis is to establish the broad correlations between word usage in Wikipedia and word usage in the scientific literature. The intent in this section is *not* to establish causation, but rather to observe in general how contemporaneous these changes are across many different areas in Wikipedia. In @[new_wiki] and @[experimental_results], we assess how much of these effects are attributable to a causal effect of Wikipedia on Science.
 
 ## Word Co-occurrence
 
@@ -502,7 +502,7 @@ A second approach asks if the creation of a Wikipedia article is cost effective 
 
 To calculate the benefits, we consider how the dissemination of knowledge influences later research. For this, we want to calculate a measure of how much an average scientific paper influences later ones.  For simplicity, assume that this can be measured accurately by citations (although that won't actually be required for the argument). Then, if our paper generates $N$ citations ^[According to Thomson Reuters, a typical 2000 paper in Chemistry receives ~19 citations over a ten-year period (Times Higher Education, 2011).], we should attribute some fraction of each of those papers, $s$, as influence due to our paper. Thus, our measure for its impact should be $N\ast s$. But what is $s$? If we assume that there are the same number of papers giving and receiving citations, it must be at most $\frac{1}{N}$, because any number larger than that would imply that the contributions of all the papers receiving citations totalled than 100% of the value of all those giving them! ^[In actual practice the number of papers giving and receiving citations are not equal because of the growth of the number of publications over time. But this effect would not materially change our conclusions, so we omit it from our calculations for simplicity.] ^[Of course, multiple pieces of research could influence some particular set of words, but once credit was apportioned, this statement would continue to be true. Similarly, research could provide influence without receiving a citation, but such influence would need to be subtracted from other articles, so again this statement would remain true.] And thus we conclude something which is fairly intuitive: an average paper cannot influence more than $\left(\frac{N\ast {1}}{N}\right)=1$ other papers. We could also represent this effect in words. In our sample the average Chemistry article in our sample has ~3,900 words, and thus 3,900 words of influence is the maximum influence that an article could have. We now have both the cost of disseminating information and the influence is has, and thus we get our (rough) estimate of the cost as $\frac{\$220,000\ast 1}{3,900}=\$0.56$ per word. ^[This number could be an over- or under-estimate for many reasons. It could be an underestimate because NIH-funded work is more important than general work. The number of papers is also rising over time, which would also cause this to be an underestimate. In contrast, it could be an over-estimate because it ignores citations accruing to old work or because (presumably) new works have substantial original content. While these factors could influence the result of our calculation, it is implausible that any of these changes would impact the clear policy conclusion that follows.]
 
-A similar analysis can be done for the influence of the Wikipedia article. Based on the estimates from Section @[experimental_results], the average change in word frequency from our intervention was ~0.3%, implying an average change of 11.7 words per article. ^[This number is only a rough estimate since our 0.3% effect is calculated using a term frequency-inverse document frequency (TF-IDF) estimate. However we have done simulations to confirm that there is a reasonable equivalency between the two.] Of course, as our quantile estimates suggest, this effect is actually skewed, with a small percentage of articles changed more, and many articles being unchanged.
+A similar analysis can be done for the influence of the Wikipedia article. Based on the estimates from @[experimental_results], the average change in word frequency from our intervention was ~0.3%, implying an average change of 11.7 words per article. ^[This number is only a rough estimate since our 0.3% effect is calculated using a term frequency-inverse document frequency (TF-IDF) estimate. However we have done simulations to confirm that there is a reasonable equivalency between the two.] Of course, as our quantile estimates suggest, this effect is actually skewed, with a small percentage of articles changed more, and many articles being unchanged.
 
 Since there were 27,000 scientific articles in the test set, an average of 11.7 words changed per article implies that ~316,000 words were changed in total. ^[If we also extrapolated the effect to non-Elsevier journals, this effect would presumably be larger.] Since each Wikipedia article cost \$100 to write, this implies a cost per word of \$0.00032 — or about 1/1700<sup>th</sup> of the cost of dissemination through traditional methods.
 
@@ -521,7 +521,8 @@ In a very concrete sense, our paper shows that Darwin was right: "general and po
 @@ [alexa-ranking]
 institution: Alexa
 title: The top 500 sites on the web
-note: Available online at https://www.alexa.com/topsites. Accessed Aug 22, 2017
+url: https://www.alexa.com/topsites
+note: Accessed Aug 22, 2017
 
 @@ [arrow-invention]
 authors: Kenneth J. Arrow
@@ -533,12 +534,13 @@ journal: The Rate and Direction of Inventive Activity: Economic and Social Facto
 institution: Australian Open Access Strategy Group
 shortname: AOASG
 title: Open access medical content and the world's largest encyclopedia
-note: Online at: https://aoasg.org.au/2017/09/05/open-access-medical-content-and-the-worlds-largest-encyclopedia/. Accessed September, 2017
+url: https://aoasg.org.au/2017/09/05/open-access-medical-content-and-the-worlds-largest-encyclopedia/
+note: Accessed September, 2017
 
 @@ [moser-books]
 authors: Barbara Biasi; Petra Moser
 title: Effects of Copyrights on Science: Evidence from the WWII Book Republication Program
-journal: Available at SSRN: https://ssrn.com/abstract=2542879 or http://dx.doi.org/10.2139/ssrn.2542879
+doi: 10.2139/ssrn.2542879
 year: 2017
 
 @@ [cameron-dyadic]
@@ -550,12 +552,13 @@ year: 2015
 @@ [clarivate]
 institution: Clarivate Analytics
 title: Web of Science
-journal: Online at http://www.webofknowledge.com. Accessed at various times in 2017
+url: http://www.webofknowledge.com
+journal: Accessed at various times in 2017
 
 @@ [db-hoovers]
 institution: D&B Hoovers
 title: Addgene Inc. Revenue and Financial Data
-journal: Online at http://www.hoovers.com/company-information/cs/revenue-financial.addgene_inc.b801fd5c8243ca53.html
+url: http://www.hoovers.com/company-information/cs/revenue-financial.addgene_inc.b801fd5c8243ca53.html
 
 @@ [elsevier]
 authors: Elsevier
@@ -619,12 +622,12 @@ year: 2007
 institution: MIT
 title: Citing Electronic Sources
 journal: Academic Integrity at MIT: A Handbook for Students
-note: Available online at https://integrity.mit.edu/handbook/citing-your-sources/citing-electronic-sources
+url: https://integrity.mit.edu/handbook/citing-your-sources/citing-electronic-sources
 
 @@ [mmrrc]
 institution: Mutant Mouse Resource & Research Centers
 shortname: MMRRC
-note: Available at https://www.mmrrc.org/
+url: https://www.mmrrc.org/
 
 @@ [ncgrp]
 institution: National Center for Genetic Resources Preservation
@@ -636,25 +639,28 @@ title: Annual Report
 institution: National Institutes of Health
 shortname: NIH
 title: National Human Genome Research Institute Official Website
-note: Available online at https://www.genome.gov/10001772/
+url: https://www.genome.gov/10001772/
 
 @@ [type-culture]
 authors: Diana Morgan
 year: 1990
 title: American Type Culture Collection Seeks To Expand Research Effort
-journal: The Scientist magazine, available online at http://www.the-scientist.com/?articles.view/articleNo/11292/title/American-Type-Culture-Collection-Seeks-To-Expand-Research-Effort/
+journal: The Scientist
+url: http://www.the-scientist.com/?articles.view/articleNo/11292/title/American-Type-Culture-Collection-Seeks-To-Expand-Research-Effort/
 
 @@ [princeton-sources]
 institution: Princeton University
 title: When to Cite Sources
 journal: Academic Integrity at Princeton
-note: Available online at https://www.princeton.edu/pr/pub/integrity/pages/cite/
+url: https://www.princeton.edu/pr/pub/integrity/pages/cite/
 
 @@ [darwin]
 authors: Tim Radford
 year: 2008
 title: The book that changed the world
-journal: The Guardian newspaper, Feb 8 2008. Available at https://www.theguardian.com/science/2008/feb/09/darwin.bestseller
+journal: The Guardian
+url: https://www.theguardian.com/science/2008/feb/09/darwin.bestseller
+note: Accessed Feb 8, 2008
 
 @@ [samuelson-public]
 authors: Paul Samuelson
@@ -694,7 +700,8 @@ doi: 10.1145/1641309.1641322
 @@ [times-citations]
 institution: Times Higher Education
 title: Citation averages, 2000-2010, by fields and years
-note: March 31, 2011, available online at https://www.timeshighereducation.com/news/citation-averages-2000-2010-by-fields-and-years/415643.article
+url: https://www.timeshighereducation.com/news/citation-averages-2000-2010-by-fields-and-years/415643.article
+note: Accessed March 31, 2011
 
 @@ [wiki-cites]
 authors: Robert Tomaszewski; Karen I. MacDonald
@@ -707,13 +714,13 @@ institution: U.S. Department of Health & Human Services
 shortname: HHS
 year: 2017
 title: NIH Research Portfolio Online Reporting Tools
-note: Online at https://report.nih.gov/fundingfacts/fundingfacts.aspx
+url: https://report.nih.gov/fundingfacts/fundingfacts.aspx
 
 @@ [wikipedia]
 institution: Wikipedia
 year: Various Years
 title: Full edit history
-note: https://en.wikipedia.org/wiki/Wikipedia:Database_download
+url: https://en.wikipedia.org/wiki/Wikipedia:Database_download
 
 @@ [team-production]
 authors: Stefan Wuchty; Benjamin Jones; Brian Uzzi
