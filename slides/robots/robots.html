@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+
+<title>Robots</title>
+
+<meta name="description" content="Robots">
+<meta name="author" content="Douglas Hanley">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="stylesheet" href="/reveal.js/css/reveal.css">
+<link rel="stylesheet" href="/reveal.js/css/theme/white.css" id="theme">
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="/reveal.js/lib/css/zenburn.css">
+
+<!-- local lecture style -->
+<link rel="stylesheet" href="reveal.css">
+
+<script>
+if (window.location.search.match(/print-pdf/gi)) {
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = '/reveal.js/css/print/pdf.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+}
+</script>
+
+<style>
+.reveal .slides img[alt=sample_freqs] {
+    width: 90%;
+}
+.reveal .slides img[alt=results] {
+    width: 90%;
+}
+.reveal .slides img[alt=windows] {
+    width: 100%;
+}
+</style>
+
+<!--[if lt IE 9]>
+<script src="revealjs/lib/js/html5shiv.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+
+<div class="reveal">
+
+<div class="slides">
+
+<section data-markdown data-separator="^---$">
+<script type="text/template">
+## Should We Fear the Robot Revolution?
+## (The Correct Answer is Yes)
+
+<br/><br/>
+
+#### Discussion by
+#### Douglas Hanley (Pitt)
+
+<br/>
+
+#### Carnegie-Rochester-NYU 2017
+
+---
+
+# Motivation
+
+How would a large improvement in robotics technology affect wages and inequality in the short and long run?
+
+This paper models robots as a new type of capital that is potentially strongly substitutable for labor
+
+A variety of different model configurations and parameterizations are explored
+
+Analytic results for the short run and simulation for the long run
+
+---
+
+# Baseline Model (Uber?)
+
+![Model 1](model_1.svg) <!-- .element: style="width: 50%;" -->
+
+Very clever derivation of laws of motion for this CES system
+
+As we've learned: elasticity of substitution is key!
+
+---
+
+# Substitutes
+
+![Tesla Assembly Line](tesla_assembly_line.jpg) <!-- .element: style="width: 90%;" -->
+
+---
+
+# Complements
+
+![Exoskeleton](exoskeleton.jpg) <!-- .element: style="width: 90%;" -->
+
+---
+
+# Results
+
+Wage law of motion for small proportional changes denoted by hats
+$$\hat{w} = \left(\frac{1}{\sigma_2}-\frac{\theta_K}{\sigma_1}\right) \alpha_z (\hat{b}+\hat{Z}) + \frac{\theta_K}{\sigma_1} \hat{K}$$
+
+Capital is a double edged sword, inducing initial wage drop but generating wage boost in the long run
+
+Given substantial changes in $b$ and resulting transition dynamics, not sure about a linearized approach, particularly in the long run. Also why initial jump?
+
+---
+
+# Inequality
+
+Given long adjustment processes at play, long-term predictions are not enough. Even medium-term covers the bulk of current generation's lifespan
+
+A stark divide -- workers and capitalists -- means that inequality is determined by interest rate to wage ratio
+
+Would be nice to see paths of formal measures of inequality
+$$\hat{r}_k - \hat{w} = \left(\frac{1}{\sigma_1}-\frac{1}{\sigma_2}\right) \alpha_z (\hat{b}+\hat{Z}) - \frac{1}{\sigma_1} \hat{K}$$
+$$\hat{r}_z - \hat{w} = \hat{b} - \frac{1}{\sigma_2} (\alpha_L+\alpha_Z) (\hat{b}+\hat{Z})$$
+
+---
+
+# Interpretation
+
+Without capital, immediate wage response is $\frac{\alpha_z}{\sigma_2} \hat{b} > 0$ since supply is fixed and output rises
+
+This $bZ$ structure renders $Z$ a general purpose technology: changes in $b$ can be utilized immediately
+
+Alternative is a vintage capital model in which changes in $b$ would have no immmdiate effect
+
+Is $b$ software and $Z$ haredware? Hardware and software get less coupled over time. Same happened with computers in 80's and 90's
+
+---
+
+# Separate Sectors
+
+![Model 2](model_2.svg)
+
+Labor freely mobile across sectors
+
+Results qualitatively similar
+
+---
+
+# Skilled Labor
+
+![Model 3](model_3.svg)
+
+Reminiscent of Autor, Levy, and Murnane (2003) in which software is perfectly substitutable for routine tasks but not for others
+
+---
+
+# Related Work
+
+Acemoglu and Restrepo (2017a) allow endogenous choice between manual and automated for each product
+
+![Rise Of The Machines](acemoglu_restrepo.svg) <!-- .element: style="width: 50%;" -->
+
+---
+
+# Related Work
+
+A-R have endogenous investment in new tasks for which labor has a comparative advantage
+
+Familiar implications
+- Long-run wage rises, but there may be a lengthy dip
+- Labor share falls for sure
+
+Hemous and Olson (2016) study a similar model and find
+- Wages still grow, but skill premium diverges
+- Low-skill share converges to zero
+
+---
+
+# Role of Technology
+
+Interesting to think of the role of non-excludable technology such as (perhaps) software in this setting
+
+Depending on the microstructure, open source software and other informational public goods could "level the playing field" with regards to AI and capital ownership
+
+This is an explicit goal of Elon Musk and Sam Altman's OpenAI research outfit
+
+Much of ML research happens at universities or is publicly released by firms such as Google or Facebook (very different for self driving cars)
+
+---
+
+# Role of Software
+
+Benzell, Kotlikoff, LaGarda, and Sachs (2016) consider robots as a combination of both hardware and software
+
+![Sachs Software](sachs_software.svg) <!-- .element: style="width: 50%;" -->
+
+More software leads to immiseration through a reduction in investment
+
+---
+
+# Proliferation of Models
+
+Many different production and elasticity structures in the literature, without a lot of agreement
+
+Might be better to focus on the quantitative fit of one particular model, rather than working through many different variants
+
+---
+
+# Empirical Evidence
+
+Acemoglu and Restrepo (2017b) look at changes in industrial robot adoption across commuting zones in US
+
+Instrumenting for industry level robot adoption by European countries, they find significant effects on wages and employment
+
+Comparable to the short-run effect of robots in this paper
+- Reduction in wages
+- Reduction in labor
+
+---
+
+# Validation
+
+The process of automation is and has been underway for some time in some form or another
+
+It should be possible to constraint the parameters of the model using the last decade or two
+
+This would allow one to at least extrapolate from past experience, perhaps providing a lower bound for the scale of the transition
+
+---
+
+<br/><br/>
+
+# Thanks!
+
+</script>
+</section>
+
+</div>
+
+</div>
+
+<script src="/reveal.js/lib/js/head.min.js" type="text/javascript"></script>
+<script src="/reveal.js/js/reveal.js" type="text/javascript"></script>
+
+<script>
+
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+  controls: false,
+  progress: true,
+  history: true,
+  center: false,
+  slideNumber: true,
+  width: 800,
+  minScale: 0.1,
+
+  transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+  // Parallax scrolling
+  // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+  // parallaxBackgroundSize: '2100px 900px',
+
+  math: {
+      mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js',
+      // mathjax: '/MathJax/MathJax.js',
+      config: 'TeX-AMS_HTML-full'
+  },
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+    { src: '/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+    { src: '/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+    { src: '/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+    { src: '/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: '/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: '/reveal.js/plugin/math/math.js', async: true }
+  ]
+});
+
+</script>
+
+</body>
+
+</html>
