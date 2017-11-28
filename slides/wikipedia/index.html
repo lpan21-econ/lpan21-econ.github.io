@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+
+<title>Wikipedia</title>
+
+<meta name="description" content="Wikipedia">
+<meta name="author" content="Douglas Hanley">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="stylesheet" href="/reveal.js/css/reveal.css">
+<link rel="stylesheet" href="/reveal.js/css/theme/white.css" id="theme">
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="/reveal.js/lib/css/zenburn.css">
+
+<!-- local lecture style -->
+<link rel="stylesheet" href="index.css">
+
+<script>
+if (window.location.search.match(/print-pdf/gi)) {
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = '/reveal.js/css/print/pdf.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+}
+</script>
+
+<style>
+.reveal .slides img[alt=sample_freqs] {
+    width: 90%;
+}
+.reveal .slides img[alt=results] {
+    width: 90%;
+}
+.reveal .slides img[alt=windows] {
+    width: 100%;
+}
+</style>
+
+<!--[if lt IE 9]>
+<script src="revealjs/lib/js/html5shiv.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+
+<div class="reveal">
+
+<div class="slides">
+
+<section data-markdown data-separator="^---$">
+<script type="text/template">
+# Science is Shaped by Wikipedia
+
+#### Evidence From a Randomized Control Trial
+
+<br/><br/>
+
+##### Douglas Hanley (Pitt)
+##### Neil Thompson (MIT/Sloan)
+
+---
+
+# Wikipedia
+
+Since 2001, we've seen the creation of a free, searchable, crowd-sourced, online encyclopedia
+
+Wikipedia is the 5th most-visited website on the Internet
+
+Aggregate statistics
+- 13 million articles
+- 18 billion page views/month
+- 500 million unique visitors/month
+
+---
+
+# Rise of Wikipedia
+
+![growth](graphics/wiki_monthly.svg) <!-- .element style="width: 100%;" -->
+
+---
+
+# Motivation
+
+A large proliferation of *theories* of knowledge diffusion recently
+- Lucas and Moll (2014)
+- Perla and Tonetti (2014)
+- Benhabib, Perla, and Tonetti (2014)
+- Buera and Oberfield (2017)
+
+Little direct evidence on diffusion and its mechanisms
+- We want to undertand Wikipedia but also use it as a tool to understand diffusion
+
+---
+
+# Agenda
+
+Question: What is the effect of Wikipedia on scientific progress and on economic growth?
+
+We take both an observational and experimental approach to answering this question.
+
+Today's talk:
+- Observational results from editing history
+- Description of experimental approach
+- Estimation of causal impact of Wikipedia
+- Discussion of possible mechanisms
+
+---
+
+# Causality
+
+We are interested in the direct causal effect of Wikipedia, but with observational data we can frame the magnitude of the effect
+
+![causality](graphics/causality.png) <!-- .element: style="width: 70%;" -->
+
+---
+
+# Distinctions
+
+What makes Wikipedia different from the hyperlinked WWW in general?
+- freely editable and branchable (mostly)
+- accuracy through consensus
+- concision and uniform presentation
+- culture encouraging citations <sup>[<span style="color: blue;">citation needed</span>]</sup>
+- full history available (for researchers)
+
+Goal is to measure effect of Wikipedia over and above baseline WWW
+
+---
+
+# Observation
+
+The rise of Wikipedia could have at least three effects
+- more knowledge utilization within one's own field
+- more cross-fertilization of ideas across (sub)fields
+- more knowledge diffusion between people or countries
+
+Relationship with science is bidirectional
+- science ➞ Wikipedia: can be observed through citations
+- Wikipedia ➞ science: measure with document similarities
+
+---
+
+# Datasets
+
+Full editing history of all **Wikipedia** articles (353 million edits, 20 TB)
+- username of editor and date/time of edit
+- full article text after each edit
+- user-generated category structure
+- daily page views since 2007
+
+Metadata and text of all **Elsevier** journal articles (2,061 journals)
+- authors and publication date
+- journal, volume, issue number
+- full article text
+
+---
+
+# Wikipedia editing
+
+![editing-sample](graphics/neil_edit_example.png) <!-- .element: style="width: 100%;" -->
+
+---
+
+# Document Statistics
+
+We look at all Wikipedia articles and scientific articles after 2000, with special focus on the field of chemistry.
+
+|               | Wikipedia Total | Science Total | Wikipedia Chemistry | Science Chemistry |
+| ------------- |:---------------:|:-------------:|:-------------------:|:-----------------:|
+| Journals      |          -      |         2K    |            -        |          49       |
+| Issues        |          -      |        ~1M    |            -        |          19K      |
+| Articles      |          13M    |         8.5M  |            150K     |          290K     |
+| Words         |          18B    |        ~3B    |            1B       |          636M     |
+
+---
+
+# Wikipedia Effect
+
+![doc-evolution](graphics/neil_timeline.png) <!-- .element: style="width: 100%;" -->
+
+---
+
+# Document Similarity
+
+How can we quantify the similarity between two documents? We use the **cosine similarity metric**
+
+Convert each document into a word frequency vector. If there are $N$ possible words, each document is an $N$ dimensional vector
+
+The similarity between two documents is simply their normalized vector product
+`$$ d(v_1,v_2) = \sqrt{\frac{v_1 \cdot v_2}{||v_1|| \ ||v_2||}} \in [0,1]$$`
+where $||v|| = \sqrt{v \cdot v}$
+
+---
+
+# Cosine Distance
+
+![cosine-distance](graphics/neil_cosine_distance.png) <!-- .element: style="width: 100%;" -->
+
+---
+
+# Metric Refinements
+
+What about very common words like "the" or "and"? We downweight words by the fraction of documents that they appear in (TF-IDF)
+`$$ w_i = \log\left(\frac{D+1}{d_i+1}\right) + 1 \ge 1 $$`
+
+Errors and misspellings are unavoidable for such a large dataset. We ignore words that appear in fewer than 5 documents in total
+- Otherwise mispellings would be highly weighted
+
+---
+
+# Two Approaches
+
+Naive observational
+- Look at organic creation of articles over entire history
+- Will confound causal effect and selection on "hot" topics
+
+Experimental
+- Publish our own Wikipedia articles
+- Yields causal effect of "marginal" Wikipedia articles
+
+---
+
+# Observational
+
+Identify all chemistry articles in Wikipedia and extract their text 3 months after they are "born"
+- delay is due to fact that many articles start as tiny "stubs"
+
+Focus on top 50 ranked chemistry journals in our Elsevier sample
+
+What is the "effect" of the introdution of a Wikipedia article?
+
+---
+
+# Fields and Categories
+
+What constitutes a chemistry article? We use the built-in category hierarchy of Wikipedia.
+
+Chemistry ➞ Organic chemistry ➞ Organic compounds <br/> ➞ Aromatic compounds ➞ Graphene
+
+Additional filtration required
+- pare down category tree with PageRank (cycles)
+- train SVM classifier on hand-categorized pages
+
+---
+
+# Observational similarity
+
+![similarity-observational](graphics/similarity_distribution.svg) <!-- .element: style="width: 80%;" -->
+
+---
+
+# Quantile changes
+
+![effects-observational-diff](graphics/observational_effect_diff.svg) <!-- .element: style="width: 80%;" -->
+
+---
+
+# Proportional changes
+
+![effects-observational-growth](graphics/observational_effect_growth.svg) <!-- .element: style="width: 80%;" -->
+
+---
+
+# Experiment
+
+To get issues of causality, we take a randomized control trial (RCT) approach
+
+Identify 43 topics in chemistry that could use Wikipedia entries, but don't currently have them (look at graduate syllabi)
+
+Contract out writing of summaries on these topics to chemistry grad students and publish a random subsample of them
+
+---
+
+# Experimental Design
+
+![treatment-diagram](graphics/neil_treatment.png) <!-- .element: style="width: 90%;" -->
+
+---
+
+# Sample Treatment Article
+
+![sample-article](graphics/neil_sample_article.png) <!-- .element: style="width: 100%;" -->
+
+---
+
+# Basline results
+
+Results are bootstrapped at the Wikipedia article level
+
+![experimental-effect-split](graphics/experimental_effect_split.svg) <!-- .element: style="width: 80%;" -->
+
+---
+
+# Nature of effect
+
+Published Wikipedia articles show a distinct pattern not present in non-published ones
+
+Both show a "negative" trend, but in treated articles it is shallower
+- science is constantly advancing and Wikipedia tries to keeps up
+
+What is the observational analogue to the control articles?
+- we do simulations of natural drifts in word usage frequency patterns and find find effects similar to our control
+
+---
+
+# Observation windows
+
+We look at a pre and post windows of length 90, 180, and 360 days. Also have a 90 day post-delay for publication
+
+![results](graphics/treatment_control.svg)
+
+---
+
+# Why the fast decay?
+
+Chemistry has a very rapid publish cycle (lucky them!). Articles are usually accepted within 2 months of submissions
+
+After article submission, self-editing nature of Wikipedia takes over. This limits the *observability* of the effect over time
+- Because of this we use only the text of the orginal submission ("intent to treat")
+
+---
+
+# Regression design
+
+Diff-in-diff on treatment vs non-treatment and before vs after window
+`$$
+\text{Similarity}_{ws} \sim 1 + \text{Treat}_w + \text{After}_s + \text{Treat}_w \times \text{After}_s
+$$`
+
+Because our unit of observation is a Wikipedia-science article pair, standard errors may be correlated
+- This is particularly problemat given the number of Wikipedia articles (43)
+
+We use the dyadic clustering method of Cameron and Miller (2015) for standard errors and boostrapping at Wikipedia level
+
+---
+
+# Regression results
+
+Below are estimates for OLS and various quantiles
+
+| | Similarity (OLS) | Similarity (q=25%) | Similarity (q=50%) | Similarity (q=75%) |
+| - | - | -  - | -  - | -  - | - |
+| Intercept | $0.2237$\*\*\*<br/>($0.0089$) | $0.1601$\*\*\*<br/>($0.0094$) | $0.2149$\*\*\*<br/>($0.0102$) | $0.2811$\*\*\*<br/>($0.0126$) |
+| Treated | $-0.0049$<br/>($0.0118$) | $-0.0030$<br/>($0.0122$) | $-0.0045$<br/>($0.0135$) | $-0.0102$<br/>($0.0170$) |
+| After | $-0.0041$\*\*\*<br/>($0.0003$) | $0.0027$\*\*\*<br/>($0.0009$) | $-0.0007$<br/>($0.0008$) | $-0.0114$\*\*\*<br/>($0.0014$) |
+| Treated x After | $0.0033$\*\*\*<br/>($0.0011$) | $0.0002$<br/>($0.0013$) | $0.0011$<br/>($0.0015$) | $0.0072$\*\*<br/>($0.0028$) |
+<!-- .element: class="reg-table" -->
+
+---
+
+# Country effects
+
+Using modal institution of science authors, we can include GDP per capita of the country as a regressor.
+
+![gdp_regression](graphics/gdp_regression.svg) <!-- .element: style="width: 60%;" -->
+
+---
+
+# Journal quality
+
+Similarly, we can utilize the ranking of the journal of publication
+
+![gdp_regression](graphics/impact_regression.svg) <!-- .element: style="width: 60%;" -->
+
+---
+
+# Page views
+
+We can see page view counts for all our articles, with controls naturally given zero views
+
+Suprisingly, we see no effect of page views on similarity
+- could be that people are glimpsing at Google preview
+- presumably only a small fraction of people are paper writers, hence a noisy measure
+
+---
+
+# Citations
+
+We can also look at the effect on citations of articles that are mentioned in a treated Wikipedia entry. Effect seems to be stronger for those with already high citations.
+
+| | Citations Growth (%) |
+| - | - | - |
+| Intercept | $-15.7676$<br/>($10.8078$) |
+| Cites Pre | $0.2224$<br/>($0.2693$) |
+| Treated | $56.0418$\*\*<br/>($27.3931$) |
+| Log Views | $-7.6745$\*<br/>($4.4475$) |
+
+---
+
+# Article sections
+
+Typical chemistry article layout (very common)
+- introduction $\rightarrow$ methods $\rightarrow$ results $\rightarrow$ conclusion
+
+Where does the effect seem to be concentrated?
+- introduction, results, and conclusion have similar effects
+- methods section shows no effect
+
+Wikipedia may not determine which experiments are done, but could affect how people interpret them and understand them within existing literature
+
+---
+
+# Econometrics
+
+We also performed a similar experiment on econometrics
+- there was no effect!
+
+What might be beind this?
+- publications lags are much longer (we've waited two years since publications)
+- economics has a strong working paper culture (thanks RePeC!) while chemistry is legally restricted
+
+---
+
+# Interpretation
+
+What is the ultimate impact of these effects? One might worry that researchers are focusing on certain topics at the expense of others (with no change in total research)
+
+Presumably if one changes their action in response to new information, this makes them (weakly) better off
+
+Could be a public downside if there is some inefficiency in research efforts, say between incremental and radical innovation
+
+---
+
+# Conclusion
+
+Observational component has shown the existence a baseline dynamic between Wikipedia and science
+
+Randomized trial data clarifies issuess of causality
+- Wikipedia not only reflects the current state of science -- it helps shape it
+
+Wikipedia could be a cost-effective way to promote knowledge diffusion
+
+---
+
+# Future work
+
+Could eventually look at relationship with other text sources such as patents (link to productivity)
+
+Look at other public knowledge repositories such as Github or StackExchange
+
+How important is cross-field knowledge diffusion? Do fields have something like an input-output matrix or a hierarchy?
+
+Theory can provide roadmap for investigating interdisciplinary effect of Wikipedia
+
+<!-- BEGIN THEORY SECTION -->
+
+---
+
+# Theory
+
+How can we incorporate Wikipedia effect into existing growth models?
+
+Standard Jones (1995) framework looks like
+`$$ \dot{A} = A^{\phi} R^{\lambda} = A^{\phi} (s_R L)^{\lambda} $$`
+A - technology, $\phi$ - feedback, R/s_R - researchers/share, <br/>L - population
+
+On a balanced growth path, this leads to
+`$$ g \equiv \frac{\dot{A}}{A} = \frac{(s_R L)^{\lambda}}{A^{1-\phi}} = \frac{\lambda n}{1-\phi} $$`
+
+---
+
+# Multi-field
+
+Critical parameter is $\phi$, which determines how existing knowledge affects the generation of new knowledge
+
+Effect may be not only within fields but across fields, so consider multiple interacting fields
+`$$ \dot{A}_i = \left[ \prod_j A_j^{\delta_{ij}} \right]^{\phi_i} (s_i L)^{\lambda_i} $$`
+
+The matrix $\delta$ determines the strength of between-field interactions, $\phi$ vector determines overall effects
+
+---
+
+# Knowledge Growth
+
+Can express the growth rate as combination of pure effects and interactions
+`$$ \frac{\dot{A}_i}{A_i} = \left[ \prod_j \left(\frac{A_j}{A_i}\right)^{\delta_{ij}} \right]^{\phi_i} \times \frac{(s_i L)^{\lambda_i}}{A_i^{1-\phi_i}} $$`
+
+On a balanced growth path, growth rates satisfy
+`$$ g_i = \phi_i \sum_j \delta_{ij} g_j + \lambda_i n $$`
+Whenever `$\phi_i < 1$` and `$\sum_j \delta_{ij} = 1$` (WLOG), this is a contraction mapping.
+
+---
+
+# Diffusion Matrix
+
+We can express the solution using linear algebra
+`$$\begin{align*}
+g &= \delta_{\phi} g + \lambda n \\
+\Rightarrow\ g &= \left[I-\delta_{\phi}\right]^{-1} \lambda n
+\end{align*}$$`
+where `$(\delta_{\phi})_{ij} \equiv \phi_i \delta_{ij}$`
+
+**Proposition**: Whenever $\delta = I$ or $\phi_i = \phi$ and $\lambda_i = \lambda$ for <br/>all $i$, the resulting growth rates are separeble
+`$$ g_i = \frac{\lambda_i n}{1-\phi_i} $$`
+
+---
+
+# Asymmetries
+
+We require systematic differences across fields for $\delta_{\phi}$ to be important. Some classes of matrices
+
+`$$ \text{Symmetric} \qquad
+\delta_{\phi} = \left[\begin{array}{cc}
+\delta & 1-\delta \\
+1-\delta & \delta
+\end{array}\right]$$`
+
+`$$ \text{Hierarchical} \qquad
+\delta_{\phi} = \left[\begin{array}{cc}
+\delta & 1-\delta \\
+0 & 1
+\end{array}\right]$$`
+
+---
+
+# Hierarchical
+
+Growth rate in the hierarchical case
+`$$
+g = \frac{\lambda n}{1-\phi} \left[\begin{array}{c}
+1 - \frac{\phi_1-\phi_1\delta}{1-\phi_1\delta} \frac{\phi_1-\phi_2}{1-\phi_2} \\
+0
+\end{array}\right]
+$$`
+
+Thus with output $y = \alpha a$, we will have
+`$$ \frac{\partial g_y}{\partial \delta} > 0 \quad \Leftrightarrow \quad \frac{\partial g_1}{\partial \delta} > 0 \quad \Leftrightarrow \quad \phi_1 > \phi_2 $$`
+
+Might think that Wikipedia effect is unambiguously positive, but could be a matter of time allocation
+
+<!-- BEGIN THEORY SECTION -->
+
+<!-- BEGIN WORD FREQUENCY SLIDES -->
+
+---
+
+# Word Frequency
+
+Final output of Wikipedia data is stream of **new** words being added through edits
+
+Aggregate this to monthly word frequency vectors over 1.3M words appearing 3 or more times in corpus.
+
+Analogous monthly series of frequency vectors over words appearing in published scientific articles (chemistry)
+
+---
+
+# Word Frequency ([wikigrams](http://doughanley.com#wikigrams))
+
+![sample_freqs](graphics/sample_freqs.svg)
+
+---
+
+# Wikipedia $\rightarrow$ Science
+
+Logs on logs, assuming positive $(R^2 =  0.9167)$
+
+| Science(t+1) |     coef |  std err |  p-value |
+| ------------ | -------- | -------- | -------- |
+| Wikipedia(t) |   0.0776 |   0.0008 |   0.0000 |
+| Science(t)   |   0.9167 |   0.0006 |   0.0000 |
+
+Binary outcome model $(R^2 =  0.2733)$
+
+| Science(t+1) > 0 |     coef |  std err |  p-value |
+| ---------------- | -------- | -------- | -------- |
+| Intercept        |   0.1927 |   0.0000 |   0.0000 |
+| Wikipedia(t) > 0 |   0.2261 |   0.0001 |   0.0000 |
+| Science(t) > 0   |   0.4208 |   0.0001 |   0.0000 |
+
+---
+
+# Adoption Dynamics
+
+Might be worried about pretrends in literature frequency. Controlling for levels and changes at $t$ takes care of adoption curve dynamics.
+
+Wikipedia ➞ Science: diffs on diffs (logs) $(R^2 = 0.2258)$
+
+| ΔScience(t+1)    |     coef |  std err |  p-value |
+| ---------------- | -------- | -------- | -------- |
+| Wikipedia(t)     |   0.0397 |   0.0008 |   0.0000 |
+| ΔScience(t)      |  -0.4407 |   0.0014 |   0.0000 |
+| Science(t)       |  -0.0436 |   0.0006 |   0.0000 |
+
+---
+
+# Science $\rightarrow$ Wikipedia
+
+Diffs on diffs, assuming positive (logs) $(R^2 = 0.2061)$
+
+| ΔWikipedia(t+1)  |     coef |  std err |  p-value |
+| ---------------- | -------- | -------- | -------- |
+| Science(t)       |   0.0904 |   0.0007 |   0.0000 |
+| ΔWikipedia(t)    |  -0.2588 |   0.0016 |   0.0000 |
+| Wikipedia(t)     |  -0.1844 |   0.0011 |   0.0000 |
+
+Binary outcome model $(R^2 = 0.4346)$
+
+| Wikipedia(t+1) > 0 |     coef |  std err |  p-value |
+| ------------------ | -------- | -------- | -------- |
+| Intercept          |   0.0623 |   0.0003 |   0.0000 |
+| Science(t) > 0     |   0.1443 |   0.0004 |   0.0000 |
+| Wikipedia(t) > 0   |   0.6052 |   0.0005 |   0.0000 |
+
+---
+
+# Emails!
+
+Consider the effect of a large, exogenous change in the vocabulary used in both Wikipedia and science
+
+![email](graphics/email.svg)
+
+<!-- END WORD FREQUENCY SLIDES -->
+
+</script>
+</section>
+
+</div>
+
+</div>
+
+<script src="/reveal.js/lib/js/head.min.js" type="text/javascript"></script>
+<script src="/reveal.js/js/reveal.js" type="text/javascript"></script>
+
+<script>
+
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+  controls: false,
+  progress: true,
+  history: true,
+  center: false,
+  slideNumber: true,
+  width: 800,
+  minScale: 0.1,
+
+  transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+  // Parallax scrolling
+  // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+  // parallaxBackgroundSize: '2100px 900px',
+
+  math: {
+      // mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
+      mathjax: '/MathJax/MathJax.js',
+      config: 'TeX-AMS_HTML-full'
+  },
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+    { src: '/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+    { src: '/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+    { src: '/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+    { src: '/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: '/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: '/reveal.js/plugin/math/math.js', async: true }
+  ]
+});
+
+</script>
+
+</body>
+
+</html>
