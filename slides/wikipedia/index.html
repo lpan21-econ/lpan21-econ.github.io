@@ -69,6 +69,10 @@ if (window.location.search.match(/print-pdf/gi)) {
 ##### Douglas Hanley (Pitt)
 ##### Neil Thompson (MIT/Sloan)
 
+<br/><br/>
+
+#### EIEF 2018
+
 ---
 
 # Wikipedia
@@ -87,6 +91,20 @@ Aggregate statistics
 # Rise of Wikipedia
 
 ![growth](graphics/wiki_monthly.svg) <!-- .element style="width: 100%;" -->
+
+---
+
+# Collaboration
+
+Wikipedia was an early player in the open collaboration
+- open source software (GNU/Linux, etc)
+- GitHub
+- StackExchange
+- Quora
+- Polymath*
+
+Open both in the acceptance of contributions and in the dissemination of results
+- stark difference from old coprorate lab model and academic lab model
 
 ---
 
@@ -125,25 +143,12 @@ We are interested in the direct causal effect of Wikipedia, but with observation
 
 ---
 
-# Distinctions
-
-What makes Wikipedia different from the hyperlinked WWW in general?
-- freely editable and branchable (mostly)
-- accuracy through consensus
-- concision and uniform presentation
-- culture encouraging citations <sup>[<span style="color: blue;">citation needed</span>]</sup>
-- full history available (for researchers)
-
-Goal is to measure effect of Wikipedia over and above baseline WWW
-
----
-
 # Observation
 
-The rise of Wikipedia could have at least three effects
-- more knowledge utilization within one's own field
-- more cross-fertilization of ideas across (sub)fields
-- more knowledge diffusion between people or countries
+The rise of Wikipedia could have various effects
+- diffusion of frontier research or reviving old ideas
+- diffusion between different fields or subfields
+- diffusion between people or countries
 
 Relationship with science is bidirectional
 - science ➞ Wikipedia: can be observed through citations
@@ -166,22 +171,24 @@ Metadata and text of all **Elsevier** journal articles (2,061 journals)
 
 ---
 
-# Wikipedia editing
-
-![editing-sample](graphics/neil_edit_example.png) <!-- .element: style="width: 100%;" -->
-
----
-
 # Document Statistics
 
 We look at all Wikipedia articles and scientific articles after 2000, with special focus on the field of chemistry.
 
-|               | Wikipedia Total | Science Total | Wikipedia Chemistry | Science Chemistry |
-| ------------- |:---------------:|:-------------:|:-------------------:|:-----------------:|
-| Journals      |          -      |         2K    |            -        |          49       |
-| Issues        |          -      |        ~1M    |            -        |          19K      |
-| Articles      |          13M    |         8.5M  |            150K     |          290K     |
-| Words         |          18B    |        ~3B    |            1B       |          636M     |
+|               | Wikipedia Total | Wikipedia Chemistry | Science Total | Science Chemistry |
+| ------------- |:---------------:|:-------------------:|:-------------:|:-----------------:|
+| Journals      |          -      |            -        |         2K    |          50       |
+| Issues        |          -      |            -        |        ~1M    |          19K      |
+| Articles      |          13M    |            150K     |         8.5M  |          290K     |
+| Words         |          18B    |            1B       |        ~3B    |          636M     |
+
+Average chemistry publication lag: **8 weeks**
+
+---
+
+# Wikipedia editing
+
+![editing-sample](graphics/neil_edit_example.png) <!-- .element: style="width: 100%;" -->
 
 ---
 
@@ -260,15 +267,9 @@ Additional filtration required
 
 ---
 
-# Quantile changes
+# Distributional changes
 
 ![effects-observational-diff](graphics/observational_effect_diff.svg) <!-- .element: style="width: 80%;" -->
-
----
-
-# Proportional changes
-
-![effects-observational-growth](graphics/observational_effect_growth.svg) <!-- .element: style="width: 80%;" -->
 
 ---
 
@@ -294,6 +295,20 @@ Contract out writing of summaries on these topics to chemistry grad students and
 
 ---
 
+# Experimental Balance
+
+|                           | Treatment (mean) | Control (mean) | T-test (p-value) | KS-test (p-value) |
+|---------------------------|------------------|----------------|------------------|-------------------|
+| # words                   | 241              | 243            | 0.47             | 0.16              |
+| # links                   | 11.1             | 10.9           | 0.82             | 0.99              |
+| # figures                 | 1.9              | 1.9            | 0.98             | 1.00              |
+| # academic references     | 3.0              | 2.4            | 0.26             | 0.99              |
+| # google hits (millions)  | 1.9              | 4.3            | 0.32             | 0.08*             |
+
+Observational articles: average starting length is **226 words**
+
+---
+
 # Basline results
 
 Results are bootstrapped at the Wikipedia article level
@@ -306,7 +321,7 @@ Results are bootstrapped at the Wikipedia article level
 
 Published Wikipedia articles show a distinct pattern not present in non-published ones
 
-Both show a "negative" trend, but in treated articles it is shallower
+Control shows a "negative" trend in distributional shift
 - science is constantly advancing and Wikipedia tries to keeps up
 
 What is the observational analogue to the control articles?
@@ -351,17 +366,17 @@ Below are estimates for OLS and various quantiles
 
 | | Similarity (OLS) | Similarity (q=25%) | Similarity (q=50%) | Similarity (q=75%) |
 | - | - | -  - | -  - | -  - | - |
-| Intercept | $0.2237$\*\*\*<br/>($0.0089$) | $0.1601$\*\*\*<br/>($0.0094$) | $0.2149$\*\*\*<br/>($0.0102$) | $0.2811$\*\*\*<br/>($0.0126$) |
-| Treated | $-0.0049$<br/>($0.0118$) | $-0.0030$<br/>($0.0122$) | $-0.0045$<br/>($0.0135$) | $-0.0102$<br/>($0.0170$) |
-| After | $-0.0041$\*\*\*<br/>($0.0003$) | $0.0027$\*\*\*<br/>($0.0009$) | $-0.0007$<br/>($0.0008$) | $-0.0114$\*\*\*<br/>($0.0014$) |
-| Treated x After | $0.0033$\*\*\*<br/>($0.0011$) | $0.0002$<br/>($0.0013$) | $0.0011$<br/>($0.0015$) | $0.0072$\*\*<br/>($0.0028$) |
+| Intercept | $11.2404$\*\*\*<br/>($0.3778$) | $8.0502$\*\*\*<br/>($0.3456$) | $10.4781$\*\*\*<br/>($0.3719$) | $13.6000$\*\*\*<br/>($0.3934$) |
+| Treated | $-0.1367$<br/>($0.5859$) | $-0.2383$<br/>($0.3982$) | $-0.4068$<br/>($0.4865$) | $-0.4743$<br/>($0.6423$) |
+| After | $-0.0768$\*\*\*<br/>($0.0192$) | $-0.0499$\*\*<br/>($0.0201$) | $-0.0715$\*\*\*<br/>($0.0253$) | $-0.1103$\*\*\*<br/>($0.0399$) |
+| Treated x After | $0.1181$\*\*\*<br/>($0.0358$) | $0.0804$\*\*\*<br/>($0.0263$) | $0.1041$\*\*<br/>($0.0412$) | $0.1815$\*\*\*<br/>($0.0604$) |
 <!-- .element: class="reg-table" -->
 
 ---
 
 # Country effects
 
-Using modal institution of science authors, we can include GDP per capita of the country as a regressor.
+Using modal institution of science authors, we can include GDP per capita of the country as a covariate
 
 ![gdp_regression](graphics/gdp_regression.svg) <!-- .element: style="width: 60%;" -->
 
@@ -425,10 +440,24 @@ What might be beind this?
 # Interpretation
 
 What is the ultimate impact of these effects? One might worry that researchers are focusing on certain topics at the expense of others (with no change in total research)
+- if one changes their action in response to new information, this makes them (weakly) better off?
 
-Presumably if one changes their action in response to new information, this makes them (weakly) better off
+Could be a public downside if there is some inefficiency in research efforts
+- diffusion $\rightarrow$ escape competition vs dilution of returns
+- choice between incremental and radical innovation
 
-Could be a public downside if there is some inefficiency in research efforts, say between incremental and radical innovation
+---
+
+# Pratical effect
+
+Hard to disentangle **intensive** and **extensive** margin of effect of Wikipedia
+
+Suppose this intervention affected 1% of chemistry articles
+- then each article changed by 10% (10% x 1% = 0.1%)
+- total of 600 articles affected (30 per treatment entry)
+
+Note that changes are in importance weighted words
+- simulations show that 10% similarity change $\approx$ 10% random words changed
 
 ---
 
@@ -450,8 +479,6 @@ Could eventually look at relationship with other text sources such as patents (l
 Look at other public knowledge repositories such as Github or StackExchange
 
 How important is cross-field knowledge diffusion? Do fields have something like an input-output matrix or a hierarchy?
-
-Theory can provide roadmap for investigating interdisciplinary effect of Wikipedia
 
 <!-- BEGIN THEORY SECTION -->
 
