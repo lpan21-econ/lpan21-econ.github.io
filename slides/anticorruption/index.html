@@ -289,7 +289,15 @@ Question becomes how to allocate researchers across industries
 # Infinite Horizon
 
 Model is more complete but less tractible with forward looking firms
+`$$
+H = \pi(q) - d(\lambda_i) + \mu_i \lambda_i q_i
+$$`
 
+This yields the coupled system of equations
+`$$\begin{align*}
+\dot{\lambda}_i &= r \lambda_i - \frac{1-\alpha}{d} \cdot s_i (1-s_i) \\
+\dot{s}_i &= s_i \left[ \lambda_i - \sum_j \lambda_j s_j \right]
+\end{align*}$$`
 
 
 ---
