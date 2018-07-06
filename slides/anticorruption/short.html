@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+
+<title>Corruption and Innovation</title>
+
+<meta name="description" content="Wikipedia">
+<meta name="author" content="Douglas Hanley">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="stylesheet" href="/reveal.js/css/reveal.css">
+<link rel="stylesheet" href="/reveal.js/css/theme/white.css" id="theme">
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="/reveal.js/lib/css/zenburn.css">
+
+<!-- local lecture style -->
+<link rel="stylesheet" href="anticorruption.css">
+
+<script>
+if (window.location.search.match(/print-pdf/gi)) {
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = '/reveal.js/css/print/pdf.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+}
+</script>
+
+<style>
+.reveal .slides img[alt=sample_freqs] {
+    width: 90%;
+}
+.reveal .slides img[alt=results] {
+    width: 90%;
+}
+.reveal .slides img[alt=windows] {
+    width: 100%;
+}
+</style>
+
+<!--[if lt IE 9]>
+<script src="revealjs/lib/js/html5shiv.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+
+<div class="reveal">
+
+<div class="slides">
+
+<section data-markdown data-separator="^---$">
+<script type="text/template">
+# Theory and Evidence on
+## Corruption and Innovation
+
+<br/><br/>
+
+##### Mingqin Wu (SCNU)
+##### Douglas Hanley (Pitt)
+
+<br/><br/>
+
+#### Workshop on Chinese Politics and Society
+#### Shanghai Jiao Tong Universiy, 2018
+
+---
+
+# Motivation
+
+Corruption is a serious issue affecting most economies, but particularly those that are "middle income"
+
+Countries in transition (like China) can't rely only on allocation/accumulation of physical capital
+- need to generate new knowledge and ideas through innovation
+
+Corruption affects allocation of profits amongst firms and hence incentives for innovation
+
+---
+
+# Corruption and Innovation
+
+We propose a theory higher industry concentration results in less innovation
+
+Under the assumption that corruption exacerbates concentration, this yields a theory where corruption lowers innovation
+
+`$$
+\text{Corruption} \quad \longrightarrow \quad \text{Concentration} \quad \longrightarrow \quad \text{(Less) Innovation}
+$$`
+
+---
+
+# Empirical Strategy
+
+The 2012 anticorruption campaign affords a good opportunity to study efforts to reduce corruption
+- but many things happened at that time!
+
+Following Gianetti et al (2017) we use heterogeneity in prevalence of corrupt activity to generate variation
+- industries with more corruption will see larger effect of campaign
+
+Proxy industry corruption with level of entertainment expenses compared to sales
+
+---
+
+# Model Primitives
+
+Fixed industry size with $N$ separate firms
+
+Each firm has a particular productivity/knowledge stock $q_i$
+
+Firms combine knowledge and labor (Cobb-Douglas) to produce output
+- industry's pool of labor is fixed
+- labor could stand in for any fixed factor
+
+Firms invest innovation to improve their productivity
+
+---
+
+# Innovation Cycle
+
+![firm_profits](graphics/profits.svg)
+
+---
+
+# Production Decisions
+
+The production function is given by
+`$$
+y_i = q_i^{1-\alpha} \ell_i^{\alpha}
+$$`
+
+We assume that firms take output price and wage as given
+`$$
+\pi_i = p y_i - w \ell_i
+$$`
+
+Optimal output is then linear in Productivity
+`$$
+y_i = q_i \left(\frac{\alpha p}{w}\right)^{\frac{\alpha}{1-\alpha}}
+$$`
+
+---
+
+# Labor Market
+
+Labor market clearing yields the equilibrum wage rate
+`$$
+w = \alpha p \left[ \sum_i q_i \right]^{1-\alpha} \equiv \alpha p Q^{1-\alpha}
+$$`
+
+Thus profits are also linear in Productivity
+`$$
+\pi_i = \frac{(1-\alpha)p}{Q^{\alpha}} \cdot q_i
+$$`
+
+Other firms' productivities drive up wages, thus cutting into firm profits
+
+---
+
+# Tullock Contest
+
+Assuming constant spending share on industry yields
+`$$
+p = \frac{Z}{Y} = \frac{Z}{Q^{1-\alpha}}
+$$`
+
+Thus the ultimate profit function is then
+`$$
+\pi_i = (1-\alpha) Z \cdot \frac{q_i}{Q}
+$$`
+
+This functional form is that of the well known **Tullock contest**
+
+---
+
+# Innovation Incentives
+
+Firms invest continuously in innovation by choosing a proportional **step size** $\lambda_i$ with cost $d(\lambda_i)$ researcher workers and law of motion
+`$$
+\dot{q}_i = \lambda_i q_i
+$$`
+
+This type of cumulative investment technology differentiates knowledge capital from physical capital
+
+Marginal profit incentives
+`$$
+q_i \frac{\partial\pi_i}{\partial q_i} = (1-\alpha) Z \cdot \frac{q_i}{Q} \left( 1 - \frac{q_i}{Q} \right) = (1-\alpha) Z \cdot s_i ( 1 - s_i )
+$$`
+
+---
+
+# One-shot Model
+
+For intuition, consider setting with short-sighted firms
+`$$
+\max_{\lambda_i} \pi_i (q_i (1+\Delta \lambda _{i})); q_{-i}) - \nu \Delta d(\lambda_i)
+$$`
+
+Further assume quadratic costs $d(\lambda) = \frac{1}{2} d \lambda^2$
+`$$
+\lambda_i = \frac{1-\alpha}{\tilde{\nu}} \cdot s_i \left( 1 - s_i \right)
+$$`
+
+Firm innovation is first increasing, then decreasing after
+`$$
+s_i^{\ast} = \frac{1}{2}
+$$`
+
+---
+
+# Innovation Rates
+
+We may be interested in the average innovation rate (number of patents) in a positive sense
+`$$
+\bar{\lambda} = \frac{1}{N} \sum_i \lambda_i = \frac{1}{N} \frac{1-\alpha}{\tilde{\nu} d} \left( 1 - H \right)
+$$`
+
+Where $H$ is the Herfindal index of industry concentration (also known as a **diversity index** of order 2)
+`$$
+H = \sum_i s_i^2 = D^2
+$$`
+
+---
+
+# Corruption
+
+What form does corruption take? We model it as a direct shifter of the productivity: $q_i \ \longrightarrow \ q_i^{\prime} = e_i q_i$
+- this can be shown to be equivalent to an input cost subsidy
+
+Large firms get more favor from officals so the effective productivity is
+`$$
+e_i = q_i^{\delta} \quad \Rightarrow \quad q_i^{\prime} = q_i^{1+\delta}
+$$`
+
+---
+
+# Effect of Corruption
+
+![concentration](graphics/concentration.svg) <!-- .element: style="width: 80%;" -->
+
+Pushes market shares towards $0$/$1$ and away from $1/2$, which reduces innovation rates
+
+---
+
+# Data Sources
+
+Chinese firms from Annual Tax Survey, 2007-2015
+- balance sheet: sales, cost, profits
+- R&D investment
+- business entertainment expenses
+- various taxes paid
+
+Chinese patent data from SIPO, 1985-2016
+- merged by firm name with firm level data
+
+Industrial R&D investment in US by industry, 2007-2014
+
+---
+
+# Entertainment Expenses
+
+`$$
+\text{EE Share} = \frac{\text{EE Spending}}{\text{Total Sales}} \qquad \text{Average} = 0.9\%
+$$`
+
+![ee_summary](graphics/ee_summary.svg)
+
+---
+
+# Anticorruption
+
+Anecdotal evidence on effect on entertainment
+
+![baijou](graphics/baijou.jpg)
+
+---
+
+# Patent Regressions
+
+Patent count data is both discrete and highly non-normal, so we use GLM with Poisson kernel
+`$$
+y_i \sim \text{Poisson}(\mu_i) \qquad \log(\mu_i) = \mathbf{\beta} \cdot \mathbf{X_i}
+$$`
+
+Alternative specifications such as Negative Binomial and/or zero inflation generally yield qualitatively similar results
+
+---
+
+# Diff-in-diff
+
+Across industry: median/Herfindahl industry EE spending <br/>
+Across time: pre/post 2012 anticorruption campaign
+
+| | Log Poisson Rate |
+| - | - | - |
+| Log Sales | $0.3918$\*\*\*<br/>($0.0013$) |
+| Post x Median EE/Sales | $26.7869$\*\*\*<br/>($0.5259$) |
+| Post x EE Herfindahl | $3.1091$\*\*\*<br/>($0.0873$) |
+| Controls | Year, Province, Industry |
+| N | $75172$ |
+
+---
+
+# Year Dummies
+
+Mean industry EE share interaction shows a strong jump in 2013, after the 2012 campaign
+![patreg_dummy](graphics/patreg_dummy.svg) <!-- .element: style="width: 100%;" -->
+Herfindahl EE share shows a positive trend, but is gradual and starts before 2012
+
+---
+
+# R&D Investment
+
+Secular trend in R&D investment rates, but no clear relation to pre/post anticorruption
+![rndreg_dummy](graphics/rndreg_dummy.svg) <!-- .element: style="width: 100%;" -->
+May be that time-scale of R&D projects is too long
+
+---
+
+# Realized Enforcement (Patents)
+
+We can also look at *realized* anticorruption enforcement by tracking the number crimes per public official at the provincial level
+
+| | Log Poisson Rate |
+| - | - | - |
+| Log Sales | $0.3926$\*\*\*<br/>($0.0014$) |
+| Criminal Cases | $0.0336$\*\*\*<br/>($0.0011$) |
+| Crime x Median EE/Sales | $0.1264$\*\*<br/>($0.0517$) |
+| Crime x EE Herfindahl | $0.1565$\*\*\*<br/>($0.0068$) |
+| Controls | Year, Province, Industry |
+
+---
+
+# Realized Enforcement (R&D)
+
+Now we see a positive effect for patent as well as R&D investment
+
+| | Log R&D Spending |
+| - | - | - |
+| Log Sales | $0.5273$\*\*\*<br/>($0.0045$) |
+| Criminal Cases | $0.0096$\*\*\*<br/>($0.0036$) |
+| Crime x Median EE/Sales | $0.7099$\*\*\*<br/>($0.2426$) |
+| Crime x EE Herfindahl | $0.0071$<br/>($0.0270$) |
+| Controls | Year, Province, Industry |
+
+---
+
+# Market Concentration
+
+Main mechanism in our model is that corruption affects innovation through industry concentration
+
+We find evidence that market concentration is reduced in industries with high median EE share
+
+| | Sales Herfindahl |
+| - | - | - |
+| Post x Median EE/Sales | $-0.4292$\*\*<br/>($0.1987$) |
+| Controls | Year, Province, Industry |
+
+---
+
+# Protection Substitution
+
+Evidence on R&D spending is somewhat mixed
+
+One interpretation is firms switching from informal modes of protection (corruption) to formal ones (patenting)
+
+Benefit would be that protection rewards new technology rather than connections
+- may encourage knowledge diffusion through patents
+
+However, connected firms may understand institutions better (Ang and Jia, 2014)
+
+---
+
+# Possible Extensions
+
+Consider entry/exit margin in addition to concentration as it relates to anticorruption (would need panel)
+
+Examine implications of switching to formal modes of protection from competition (more or less secrecy?)
+
+Investigate efficiency considerations theoretically, including knowledge diffusion dimension
+
+---
+
+<br/><br/><br/>
+
+## Thanks! <!-- .element: style="text-align: center;" -->
+
+</script>
+</section>
+
+</div>
+
+</div>
+
+<script src="/reveal.js/lib/js/head.min.js" type="text/javascript"></script>
+<script src="/reveal.js/js/reveal.js" type="text/javascript"></script>
+
+<script>
+
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+  controls: false,
+  progress: true,
+  history: true,
+  center: false,
+  slideNumber: true,
+  width: 800,
+  minScale: 0.1,
+
+  transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+  // Parallax scrolling
+  // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+  // parallaxBackgroundSize: '2100px 900px',
+
+  math: {
+      mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
+      // mathjax: '/MathJax/MathJax.js',
+      config: 'TeX-AMS_HTML-full'
+  },
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+    { src: '/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+    { src: '/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+    { src: '/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+    { src: '/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: '/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: '/reveal.js/plugin/math/math.js', async: true }
+  ]
+});
+
+</script>
+
+</body>
+
+</html>
