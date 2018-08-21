@@ -59,6 +59,10 @@ body {
   text-decoration: none;
 }
 
+.fun-badge {
+  background-color: rgb(51, 122, 183);
+}
+
 .mec-paper-title {
   margin-top: 30px;
   margin-bottom: 0px;
