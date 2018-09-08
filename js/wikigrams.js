@@ -97,11 +97,21 @@ function plot_series(tokens, data) {
         .style("stroke", function(d) { return z(d.tok); });
 
     // draw text
+    posv = [];
     tokens.append("text")
         .datum(function(d) { return {tok: d.tok, value: d.values[d.values.length - 1]}; })
         .attr("transform", function(d) { return "translate(" + x(d.value.date) + "," + y(d.value.freq) + ")"; })
         .attr("x", 3)
-        .attr("dy", "0.25em")
+        .attr("dy", function(d, i) {
+          var val = d.value.freq
+          var mov = 0;
+          for (x of posv) {
+            var df = x - val;
+            mov += 0.1*(2*(df>0)-1)*Math.exp(-0.5*(20*df)^2);
+          }
+          posv.push(val);
+          return mov + "em";
+        })
         .style("stroke", function(d) { return z(d.tok); })
         .text(function(d) { return d.tok; });
 
@@ -116,13 +126,6 @@ function plot_series(tokens, data) {
 
     var d0 = new Date(2001, 0, 1),
         d1 = new Date(2016, 9, 1);
-
-    // Gratuitous intro zoom!
-    svg.call(zoom).transition()
-        .duration(1500)
-        .call(zoom.transform, d3.zoomIdentity
-            .scale(width / (x(d1) - x(d0)))
-            .translate(-x(d0), 0));
 }
 
 // type converter
@@ -187,4 +190,3 @@ function resize() {
 // initial
 $(window).resize(resize);
 $(document).ready(function() { plot_tokens(itok); });
-
