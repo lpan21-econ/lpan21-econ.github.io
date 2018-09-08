@@ -1,10 +1,13 @@
 jQuery(document).ready(function($) {
-  $('table.paper-list > tbody > tr').each(function () {
-    var row = $(this);
-    row.find('.popup-trigger').click(function () {
-      row.find('.popup').slideToggle('fast');
+    $('.paper').click(function(event) {
+        var text = window.getSelection().toString();
+        var tag = event.target.tagName;
+        if ((text.length == 0) && (tag != 'a')) {
+            paper = $(this);
+            paper.find('.popup').slideToggle('fast');
+            paper.toggleClass('expanded');
+        }
     });
-  });
 });
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

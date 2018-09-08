@@ -1,198 +1,114 @@
-@import url("proxima-nova.css");
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body {
-  padding-bottom: 20px;
-  font-family: "proxima-nova";
-  font-size: 18px;
-  line-height: 28px;
-  /*background-color: #f7f7f7;*/
-}
-
-.mec-tpe-vista {
-  background-image: url('../images/jing_mei_shan.jpg');
-  background-size: cover;
-}
-
-.mec-title-box {
-  padding-bottom: 40px;
-  padding-right: 15px;
-  text-align: center;
-}
-
-.mec-title-text {
-  text-shadow: 1px 1px 4px black, 0 0 1em #aaa, 2px 2px 0.5em #666;
-  color: #EEE;
+    padding-top: 20px;
+    padding-bottom: 100px;
+    font-family: 'Roboto';
+    font-size: 18px;
+    line-height: 28px;
 }
 
 .mec-main {
-  max-width: 700px;
+    margin: auto;
+    max-width: 700px;
 }
 
-.mec-section-title {
-  font-weight: 700;
-  margin-top: 50px;
-  margin-bottom: 20px;
-  /*border-bottom-color: #ccc;*/
+/* links */
+
+a:focus {
+    outline: 0;
 }
 
-.mec-lectures {
-  max-width: 500px;
+a {
+    color: blue;
+    text-decoration: none;
 }
 
-.mec-link-blank:link {
-  color: white;
-  text-decoration: none;
+a:visited {
+    color: blue;
 }
 
-.mec-link-blank:visited {
-  color: white;
-  text-decoration: none;
+/* title */
+
+.mec-title-box {
+    font-size: 20px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid black;
+    padding-left: 1px;
+    padding-right: 1px;
 }
 
-.mec-link-blank:hover {
-  color: white;
-  text-decoration: none;
+.mec-title-text {
 }
 
-.mec-link-blank:active {
-  color: white;
-  text-decoration: none;
+.mec-title-right {
+    float: right;
 }
 
-.fun-badge {
-  background-color: rgb(51, 122, 183);
+/* paper list */
+
+.paper-list {
+    margin-top: 30px;
 }
 
-.mec-paper-title {
-  margin-top: 30px;
-  margin-bottom: 0px;
-  line-height: 1.4;
+.paper-list-title {
+    font-size: 16px;
+    border-bottom: 1px dashed black;
 }
 
-.mec-abstract {
-  font-size: 14px;
-  line-height: 1.2;
-  margin-top: 5px;
-  margin-bottom: 0px;
+.paper {
+    margin-top: 10px;
 }
 
-.mec-subsection-title {
-  margin-top: 40px;
+.paper > .popup {
+    display: none;
+    margin: 0;
+    padding: 5px;
+    text-align: left;
+    font-size: 14px;
+    line-height: 120%;
 }
+
+.paper.expanded {
+    margin: 7px -3px -3px -3px;
+    padding: 3px;
+    background-color: #EEE;
+    border-radius: 3px;
+}
+
+/* projects */
+
+.project {
+    margin-top: 30px;
+}
+
+.project-title {
+    border-bottom: 1px dashed black;
+}
+
+.project p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* courses */
+
+.course {
+    margin-top: 30px;
+}
+
+.course-title {
+    border-bottom: 1px dashed black;
+}
+
+.course > p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* edgeworth */
 
 canvas.edgebox {
-  cursor: none;
-  /*width: 70%;*/
-}
-
-.mec-footer {
-  margin-top: 60px;
-  margin-bottom: 50px;
-  /*border-top: 1px solid #ccc;*/
-}
-
-.page-header h1 {
-  font-weight: bold;
-}
-
-a.abstract-expander {
-  cursor: default;
-}
-
-a.abstract-expander:hover {
-  text-decoration: none;
-}
-
-.btn:focus,.btn:active:focus,.btn.active:focus,
-.btn.focus,.btn:active.focus,.btn.active.focus {
-    outline: none;
-}
-
-.popup {
-  display: none;
-  padding: 10px 10px 0px 0px;
-  margin-bottom: 0px;
-  text-align: justify;
-  font-size: 14px;
-  line-height: 120%;
-}
-
-table.paper-list {
-  width: 100%;
-  font-size: 16px;
-  margin-top: 20px;
-}
-
-table.paper-list > thead > tr {
-  border-bottom: 1px solid black;
-}
-
-table.paper-list > tbody > tr:nth-child(2n) {
-  background-color: #E0E0E0;
-}
-
-table.paper-list > tbody > tr > td {
-  padding: 10px 0px 10px 10px;
-}
-
-table.paper-list table {
-  width: 100%;
-}
-
-table.paper-list td td:first-child {
-  width: 80%;
-}
-
-table.paper-list td td:last-child {
-  width: 20%;
-}
-
-table.paper-list td {
-  vertical-align: top;
-}
-
-table.paper-list .popup-trigger {
-  cursor: pointer;
-}
-
-figure figcaption {
-  font-size: 15px;
-  line-height: 150%;
-}
-
-.mec-subsection-title span.badge {
-  margin-top: -3px;
-  vertical-align: middle;
-}
-
-@media (min-device-width: 500px) {
-  .mec-tpe-vista {
-    background-position: 50% 55%;
-    height: 400px;
-  }
-
-  .mec-title-box {
-    padding-top: 90px;
-    padding-left: 35px;
-  }
-
-  .mec-main p {
-    text-align: left;
-  }
-}
-
-@media (max-device-width: 499px) {
-  .mec-tpe-vista {
-    background-position: 50% 100%;
-    height: 240px;
-  }
-
-  .mec-title-box {
-    padding-top: 27px;
-    padding-left: 18px;
-  }
-
-  .mec-main p {
-    text-align: left;
-  }
+    cursor: none;
 }
