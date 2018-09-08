@@ -25,7 +25,7 @@
 
 <!-- Research -->
 
-<p>I focus mainly on knowledge, innovation, and economic growth. In particular, I study how knowledge is accumulated and diffused, how innovation occurs at the individual and firm level, and how these map into outcomes at a societal level.</p>
+<p>I'm an economist at the University of Pittsburgh studying knowledge, innovation, and economic growth. These days, I'm quite interested in Wikipedia and other such open platforms. I'm also working on a number of open-source software projects.</p>
 
 <div class="paper-list">
 
@@ -130,7 +130,7 @@ Cited: <a href="https://obamawhitehouse.archives.gov/sites/default/files/docs/ER
 <span class="project-title">Wikigrams</span>
 <p>Below is a service that allows you to look at the cumulative relative editing activity for a large number of tokens (about 1.1M) appearing in Wikipedia. You can type in your own (single) words into the box below, separated by commas, and see the results by pressing <strong>enter</strong>. You can also download the results in CSV form by clicking the button.</p>
 
-<input id="tokens"></input> <button id="doplot">Plot</button> <button id="getcsv" onclick="window.location.href = 'http://dohan.dyndns.org:9454/freq?token=' + $('#tokens').val();">Download</button>
+<div id="wikibox">Terms: <input id="tokens"></input> <button id="doplot">Plot</button> <button id="getcsv" onclick="window.location.href = 'http://dohan.dyndns.org:9454/freq?token=' + $('#tokens').val();">Download</button></div>
 <svg id="wikiplot" width="600" height="300"></svg>
 
 <p>If you'd like to download the full dataset of tokens, just send me an email and I can arrange it. Even finer data is available at the article editing level.</p>
