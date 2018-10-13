@@ -2,8 +2,8 @@
 
 // display
 var svg = d3.select("#wikiplot"),
-    margin = {top: 20, right: 150, bottom: 30, left: 140},
-    aspect = 0.4;
+    margin = {top: 20, right: 100, bottom: 20, left: 40},
+    aspect = 0.5;
 
 // tools
 var parseDate = d3.timeParse("%Y-%m-%d");
