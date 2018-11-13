@@ -3,7 +3,7 @@
 import re
 import os
 import sys
-import json
+import pytoml as toml
 import jinja2
 
 if len(sys.argv) == 1:
@@ -21,7 +21,7 @@ else:
         print('Invalid task')
         sys.exit(0)
 
-info_fname = 'cv_info.json'
+info_fname = 'cv_info.toml'
 
 html_in_name = 'html_template.html'
 html_out_name = 'hanley_cv.html'
@@ -29,7 +29,7 @@ html_out_name = 'hanley_cv.html'
 latex_in_name = 'latex_template.tex'
 latex_out_name = 'hanley_cv.tex'
 
-info_html = json.load(open(info_fname))
+info_html = toml.load(open(info_fname))
 
 def html_to_latex(e):
     t = type(e)
