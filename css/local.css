@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body {
-    padding-top: 20px;
-    padding-bottom: 100px;
     font-family: 'Roboto';
     font-size: 18px;
     line-height: 28px;
@@ -10,7 +8,6 @@ body {
 
 .mec-main {
     margin: auto;
-    max-width: 700px;
 }
 
 /* links */
@@ -30,10 +27,15 @@ a:visited {
 
 /* title */
 
+.mec-bio-box {
+    font-size: 20px;
+    border-bottom: 2px solid black;
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
 .mec-title-box {
     font-size: 20px;
-    margin-top: 50px;
-    margin-bottom: 30px;
     border-bottom: 2px solid black;
     padding-left: 1px;
     padding-right: 1px;
@@ -47,10 +49,6 @@ a:visited {
 }
 
 /* paper list */
-
-.paper-list {
-    margin-top: 30px;
-}
 
 .paper-list-title {
     font-size: 16px;
@@ -79,24 +77,11 @@ a:visited {
 
 /* projects */
 
-.project {
-    margin-top: 30px;
-}
-
 .project-title {
     border-bottom: 1px dashed black;
 }
 
-.project p {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
 /* courses */
-
-.course {
-    margin-top: 30px;
-}
 
 .course-title {
     border-bottom: 1px dashed black;
@@ -152,4 +137,74 @@ a:visited {
 
 canvas.edgebox {
     cursor: none;
+}
+
+/* mobile only rules */
+
+@media (max-width: 700px) {
+    .img-responsive {
+        width: 100%;
+    }
+
+    p {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .mec-bio-box {
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
+    .mec-title-box {
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+
+    .paper-list {
+        margin-top: 15px;
+    }
+
+    .project {
+        margin-top: 15px;
+    }
+
+    .course {
+        margin-top: 15px;
+    }
+}
+
+/* non-mobile rules */
+
+@media (min-width: 700px) {
+    body {
+        padding-top: 20px;
+        padding-bottom: 100px;
+    }
+
+    .mec-main {
+        max-width: 700px;
+    }
+
+    .mec-bio-box {
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+
+    .mec-title-box {
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+
+    .paper-list {
+        margin-top: 30px;
+    }
+
+    .project {
+        margin-top: 30px;
+    }
+
+    .course {
+        margin-top: 30px;
+    }
 }

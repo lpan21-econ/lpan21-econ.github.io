@@ -2,10 +2,6 @@ input:focus {
     outline: none;
 }
 
-.axis {
-    font-size: 16px;
-}
-
 .line {
     fill: none;
     clip-path: url(#clip);
@@ -20,13 +16,6 @@ input:focus {
     margin-top: 10px;
 }
 
-#wikibox {
-    margin-left: 150px;
-}
-
-#wikiplot {
-}
-
 #getcsv {
     padding-top: 2px;
     height: 25px;
@@ -37,13 +26,36 @@ input:focus {
     height: 25px;
 }
 
-@media (max-device-width: 499px) {
+@media (min-device-width: 700px) {
+    #wikibox {
+        margin-left: 150px;
+    }
+
+    #wikiplot {
+        transform: scale(0.8);
+    }
+
+    .axis {
+        font-size: 16px;
+    }
+}
+
+@media (max-device-width: 700px) {
     #tokens {
         width: 95%;
         margin-left: 0px;
     }
 
+    #wikibox {
+        margin-left: 10px;
+    }
+
     #wikiplot {
+        transform: scale(1.0);
+    }
+
+    .axis {
+        font-size: 14px;
     }
 
     #getcsv {
