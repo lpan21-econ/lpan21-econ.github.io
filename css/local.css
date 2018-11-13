@@ -107,6 +107,47 @@ a:visited {
   margin-bottom: 10px;
 }
 
+/* elltwo */
+
+#ellbox {
+    border: 1px solid black;
+    padding: 10px;
+    height: 50px;
+}
+
+#elltwo {
+    width: 95%;
+    float: left;
+}
+
+#input {
+    width: 100%;
+    font-family: monospace;
+    font-size: 18px;
+    line-height: 1.5;
+    border: 0;
+}
+
+#cell {
+    width: 100%;
+}
+
+#elltwo.render #input {
+    display: none;
+}
+
+#elltwo:not(.render) #cell {
+    display: none;
+}
+
+#render {
+    margin-left: 15px;
+}
+
+#cell > p {
+    margin: 0;
+}
+
 /* edgeworth */
 
 canvas.edgebox {

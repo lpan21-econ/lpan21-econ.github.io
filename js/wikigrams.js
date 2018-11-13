@@ -96,22 +96,34 @@ function plot_series(tokens, data) {
         .attr("d", function(d) { return line(d.values); })
         .style("stroke", function(d) { return z(d.tok); });
 
+    // force simulation
+    const labelHeight = 18;
+    const labels = freqs.map(function(d) {
+        var last = d.values[d.values.length-1];
+        return {
+            tok: d.tok,
+            fx: 0, // this ensures a purely vertical layout
+            x0: x(last.date) + 4, // for plotting later
+            y0: y(last.freq) + 4 // target position
+        };
+    });
+
+    // collision force vs original position force
+    const force = d3.forceSimulation()
+        .nodes(labels)
+        .force('collide', d3.forceCollide(labelHeight/2))
+        .force('y', d3.forceY(function(d) { return d.y0; }).strength(1))
+        .stop();
+
+    // let things settle down
+    for (let i = 0; i < 300; i++) { force.tick(); }
+    ymap = d3.map(labels, function(d) { return d.tok; });
+
     // draw text
-    posv = [];
     tokens.append("text")
-        .datum(function(d) { return {tok: d.tok, value: d.values[d.values.length - 1]}; })
-        .attr("transform", function(d) { return "translate(" + x(d.value.date) + "," + y(d.value.freq) + ")"; })
-        .attr("x", 3)
-        .attr("dy", function(d, i) {
-          var val = d.value.freq
-          var mov = 0;
-          for (x of posv) {
-            var df = x - val;
-            mov += 0.1*(2*(df>0)-1)*Math.exp(-0.5*(20*df)^2);
-          }
-          posv.push(val);
-          return mov + "em";
-        })
+        .datum(function(d) { return {tok: d.tok, value: ymap.get(d.tok)}; })
+        .attr("x", function(d) { return d.value.x0; })
+        .attr("y", function(d) { return d.value.y; })
         .style("stroke", function(d) { return z(d.tok); })
         .text(function(d) { return d.tok; });
 
