@@ -27,11 +27,18 @@ a:visited {
 
 /* title */
 
-.mec-bio-box {
+.mec-name-box {
     font-size: 20px;
     border-bottom: 2px solid black;
-    padding-left: 1px;
-    padding-right: 1px;
+}
+
+.mec-jumbo-tron {
+    width: 100%;
+    overflow: hidden;
+}
+
+.mec-jumbo-tron > img {
+    width: 100%;
 }
 
 .mec-title-box {
@@ -92,6 +99,47 @@ a:visited {
   margin-bottom: 10px;
 }
 
+/* elltwo */
+
+#ellbox {
+    border: 1px solid black;
+    padding: 10px;
+    height: 50px;
+}
+
+#elltwo {
+    width: 95%;
+    float: left;
+}
+
+#input {
+    width: 100%;
+    font-family: monospace;
+    font-size: 18px;
+    line-height: 1.5;
+    border: 0;
+}
+
+#cell {
+    width: 100%;
+}
+
+#elltwo.render #input {
+    display: none;
+}
+
+#elltwo:not(.render) #cell {
+    display: none;
+}
+
+#render {
+    margin-left: 15px;
+}
+
+#cell > p {
+    margin: 0;
+}
+
 /* edgeworth */
 
 canvas.edgebox {
@@ -101,6 +149,10 @@ canvas.edgebox {
 /* mobile only rules */
 
 @media (max-width: 700px) {
+    body {
+        margin: 0px;
+    }
+
     .img-responsive {
         width: 100%;
     }
@@ -108,6 +160,17 @@ canvas.edgebox {
     p {
         margin-top: 5px;
         margin-bottom: 5px;
+    }
+
+    .mec-main {
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .mec-jumbo-tron {
+        max-height: 280px;
+        margin-top: -80px;
     }
 
     .mec-bio-box {
@@ -137,16 +200,22 @@ canvas.edgebox {
 
 @media (min-width: 700px) {
     body {
-        padding-top: 20px;
-        padding-bottom: 100px;
+        padding: 0;
+        margin: 0;
     }
 
     .mec-main {
         max-width: 700px;
+        margin-bottom: 40px;
     }
 
-    .mec-bio-box {
-        margin-top: 50px;
+    .mec-jumbo-tron {
+        max-height: 850px;
+        margin-top: -280px;
+    }
+
+    .mec-name-box {
+        margin-top: 40px;
         margin-bottom: 30px;
     }
 
