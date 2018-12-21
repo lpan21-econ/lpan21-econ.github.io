@@ -1,11 +1,14 @@
 jQuery(document).ready(function($) {
-    $('.paper').click(function(event) {
+    $('.paper.expand').click(function(event) {
         var text = window.getSelection().toString();
         var tag = event.target.tagName;
         if ((text.length == 0) && (tag != 'a')) {
             paper = $(this);
-            paper.find('.popup').slideToggle('fast');
-            paper.toggleClass('expanded');
+            var popup = paper.find('.popup');
+            if (popup.length > 0) {
+                popup.slideToggle('fast');
+                paper.toggleClass('expanded');
+            }
         }
     });
 });

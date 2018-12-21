@@ -66,6 +66,10 @@ a:visited {
     margin-top: 10px;
 }
 
+.paper.expand {
+    cursor: pointer;
+}
+
 .paper > .popup {
     display: none;
     margin: 0;
