@@ -154,7 +154,7 @@ canvas.edgebox {
 /* jumbo sizing */
 :root {
     --jumbo-top-cut: 25%;
-    --jumbo-bottom-cut: 18%;
+    --jumbo-bottom-cut: 23.9%;
 }
 
 /* mobile only rules */
@@ -181,7 +181,7 @@ canvas.edgebox {
 
     /* need a 1% differential */
     .mec-jumbo-tron {
-      margin: calc(0% - var(--jumbo-top-cut)) 0% calc(2.9% - var(--jumbo-bottom-cut)) 0%;
+      margin: calc(0% - var(--jumbo-top-cut)) 0% calc(3.8% - var(--jumbo-bottom-cut)) 0%;
     }
 
     .mec-jumbo-tron > img {
@@ -227,7 +227,7 @@ canvas.edgebox {
 
     /* need a 3.7% differential */
     .mec-jumbo-tron {
-      margin: calc(0% - var(--jumbo-top-cut)) 0% calc(3.7% - var(--jumbo-bottom-cut)) 0%;
+      margin: calc(0% - var(--jumbo-top-cut)) 0% calc(5.4% - var(--jumbo-bottom-cut)) 0%;
     }
 
     .mec-jumbo-tron > img {
