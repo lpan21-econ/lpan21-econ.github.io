@@ -7,7 +7,8 @@ body {
 }
 
 .mec-main {
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* links */
@@ -150,6 +151,12 @@ canvas.edgebox {
     cursor: none;
 }
 
+/* jumbo sizing */
+:root {
+    --jumbo-top-cut: 25%;
+    --jumbo-bottom-cut: 18%;
+}
+
 /* mobile only rules */
 
 @media (max-width: 700px) {
@@ -167,14 +174,18 @@ canvas.edgebox {
     }
 
     .mec-main {
-        margin-top: 10px;
+        margin-top: 5px;
         margin-left: 10px;
         margin-right: 10px;
     }
 
+    /* need a 1% differential */
     .mec-jumbo-tron {
-        max-height: 280px;
-        margin-top: -80px;
+      margin: calc(0% - var(--jumbo-top-cut)) 0% calc(2.9% - var(--jumbo-bottom-cut)) 0%;
+    }
+
+    .mec-jumbo-tron > img {
+      clip-path: inset(0% 0% var(--jumbo-bottom-cut) 0%);
     }
 
     .mec-bio-box {
@@ -210,16 +221,20 @@ canvas.edgebox {
 
     .mec-main {
         max-width: 660px;
+        margin-top: 40px;
         margin-bottom: 40px;
     }
 
+    /* need a 3.7% differential */
     .mec-jumbo-tron {
-        max-height: 700px;
-        margin-top: -300px;
+      margin: calc(0% - var(--jumbo-top-cut)) 0% calc(3.7% - var(--jumbo-bottom-cut)) 0%;
+    }
+
+    .mec-jumbo-tron > img {
+      clip-path: inset(0% 0% var(--jumbo-bottom-cut) 0%);
     }
 
     .mec-name-box {
-        margin-top: 40px;
         margin-bottom: 30px;
     }
 
