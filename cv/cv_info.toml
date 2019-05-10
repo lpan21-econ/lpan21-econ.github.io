@@ -48,18 +48,17 @@ rows = [
 	"Innovation and Patent Policy with Interdependent Technology",
 	"Science is Shaped by Wikipedia: Evidence from a Randomized Control Trial (with Neil Thompson)",
 	"Optimal Taxation and R&D Policies (with Ufuk Akcigit and Stefanie Stantcheva) <br/> <i>NBER Working Paper 22908</i> <br/> <i>Revise and Resubmit, Econometrica</i>",
-	"Back to Basics: Basic Research Spillovers, Innovation Policy and Growth (with Ufuk Akcigit and Nicolas Serrano-Velarde) <br/> <i>CEPR Discussion Paper 11707</i> <br/> <i>Revise and Resubmit, Review of Economic Studies</i> <br/> Cited in the <a href=\"https://www.gpo.gov/fdsys/pkg/ERP-2016/pdf/ERP-2016.pdf\">Economic Report of the President 2016</a>"
+	"Back to Basics: Basic Research Spillovers, Innovation Policy and Growth (with Ufuk Akcigit and Nicolas Serrano-Velarde) <br/> <i>CEPR Discussion Paper 11707</i> <br/> <i>Revise and Resubmit, Review of Economic Studies</i> <br/> Cited in the <a href=\"https://www.gpo.gov/fdsys/pkg/ERP-2016/pdf/ERP-2016.pdf\">Economic Report of the President 2016</a>",
+	"From Patents to Products: Innovation and Firm Performance (with David Argente, Salomé Baslandze, and Sara Moreira)",
+	"International Competition in the Race to Clean Technology (with Chengying Luo)",
 ]
 
 [[blocks]]
 title = "Research in Progress"
 rows = [
-	"From Patents to Products: Innovation and Firm Performance (with David Argente, Salomé Baslandze, and Sara Moreira)",
-	"International Competition in the Race to Clean Technology (with Chengying Luo)",
-	"Geographic Clustering of Firms in China (with Cheingying Luo and Mingqin Wu)",
+	"Geographic Clustering of Firms in China (with Chengying Luo and Mingqin Wu)",
 	"Theory and Evidence on the Relationship Between Corruption and Innovation (with Mingqin Wu)",
 	"Yellow Fever and the Growth of American Cities (with Sean McCoy and Werner Troesken)",
-	"Firm Clustering Using Machine Learning (with Tamara Broderick, Trevor Campbell, Jeffrey Kuhn, and Neil Thompson)"
 ]
 
 [[blocks]]
@@ -72,7 +71,8 @@ rows = [
 [[blocks]]
 title = "Seminars and Conferences"
 rows = [
-	"2017: Workshop on Innovation and Entrepreneurship (ISET-TSU, Tbilisi), Seoul National University, Computational Social Sciences Retreat (Pitt), Carnegie-Rochester-NYU Conference on Public Policy (CMU)",
+	"2018: Computational Social Sciences Retreat (Pitt), Einaudi Institute for Economics and Finance (Rome), Econometrics Society Asia Meetings (Seoul), South China Normal University (Guangzhou), 4th Workshop on Chinese Politics and Society (Shanghai), World Bank",
+	"2017: Workshop on Innovation and Entrepreneurship (ISET-TSU, Tbilisi), Seoul National University, Carnegie-Rochester-NYU Conference on Public Policy (CMU)",
 	"2016: Peking U (PHBS, Shenzhen)", "2015: U of Hong Kong, Sogang U, IIES (Stockholm), Firm and Technology Dynamics: A Global Perspective (Nottingham), Barcelona GSE Summer Forum, Society for Economic Dynamics Annual Meeting (Warsaw), Mini Conference on Economic Growth (Chicago)",
 	"2014: U of Toronto, USC (Marshall), U of Pittsburgh, U of North Carolina (Chapel Hill), CREI",
 	"2010-2013: Penn Money Macro Workshop, Society for Economic Dynamics Annual Meeting, Midwest Macroeconomic Meetings, Penn Money Macro Club, International Industrial Organization Conference"
@@ -81,13 +81,13 @@ rows = [
 [[blocks]]
 title = "Refereeing Service"
 rows = [
-	"American Economic Review, Econometrica, Review of Economic Studies, Journal of Monetary Economics, European Economic Review, American Economic Journal: Macroeconomics, International Economic Review, Macroeconomic Dynamics, Review of Economic Dynamics, Journal of Comparative Economics, Journal of the European Economic Association, Journal of Mathematical Economics, Journal of Development Economics, Review of Economics and Statistics, Journal of Economic Theory, RAND Journal of Economics"
+	"American Economic Review, Econometrica, Review of Economic Studies, Journal of Monetary Economics, European Economic Review, American Economic Journal: Macroeconomics, Journal of Public Economics, International Economic Review, Macroeconomic Dynamics, Review of Economic Dynamics, Journal of Comparative Economics, Journal of the European Economic Association, Journal of Mathematical Economics, Journal of Development Economics, Review of Economics and Statistics, Journal of Economic Theory, RAND Journal of Economics, The Economic Journal"
 ]
 
 [[blocks]]
 title = "Departmental Service"
 rows = [
-	"Hiring: Sustainability (Junior and Postdoc, 2015-16), International Trade (Junior, 2016-17), Development (Junior, 2016-17)",
+	"Hiring: Sustainability (Junior and Postdoc, 2015-16), International Trade (Junior, 2016-17), Development (Junior, 2016-17), International Macro (Junior, 2018-19)",
 	"Committees: Website Committee (2016-)"
 ]
 
