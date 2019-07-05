@@ -1,7 +1,7 @@
 jQuery(document).ready(function($) {
     $('.paper.expand').click(function(event) {
         var text = window.getSelection().toString();
-        var tag = event.target.tagName;
+        var tag = event.target.tagName.toLowerCase();
         if ((text.length == 0) && (tag != 'a')) {
             paper = $(this);
             var popup = paper.find('.popup');
