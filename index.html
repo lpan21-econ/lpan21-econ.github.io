@@ -25,26 +25,30 @@
 </div>
 -->
 
-<div class="mec-main" role="main">
+<div id="outer">
 
-<div class="mec-bio-box">
+<div id="inner">
+
+<div id="left">
 
 <div class="mec-portrait-box"><img src="images/me_goat_hat_small.jpg"/></div>
 
 <div class="mec-name-box">
   <span class="mec-name-text">Douglas Hanley</span><br/>
-  <span>University of Pittsburgh</span>
+  <span>Univ. of Pittsburgh</span>
 </div>
 
 <div class="mec-stats-box">
   <span class="mec-stats-line"><a href="cv/hanley_cv.html"><span class="cv">🗎</span> C.V.</a></span><br/>
   <span class="mec-stats-line"><a href="https://twitter.com/iamlemec"><img src="images/twitter.svg" class="twitter"/> Twitter</a></span><br/>
-  <span class="mec-stats-line"><a href="https://github.com/iamlemec"><img src="images/github.png" class="github"/> GitHub</a></span>
+  <span class="mec-stats-line"><a href="https://github.com/iamlemec"><img src="images/github_white.png" class="github"/> GitHub</a></span>
 </div>
 
 </div>
 
-<div class="mec-content-box">
+<div id="right">
+
+<div id="output">
 
 <p class="mec-greetings">Hi! I'm an economist at the University of Pittsburgh studying knowledge, innovation, and economic growth. These days, I'm quite interested in Wikipedia and other such open platforms. I'm also working on a number of open-source software projects.</p>
 
@@ -183,7 +187,7 @@ Cited: <a href="https://obamawhitehouse.archives.gov/sites/default/files/docs/ER
 <div class="project">
 <span class="project-title">Competetive Conway's Game of Life [<a href="files/complife-0.2.tar.gz">TGZ</a>]</span>
 <p>This project is quite old. The goal was to investigate the evolution of cellular automata entities in a competitive setting. Below is the progress of a randomly generated trial run:</p>
-<img class="img-responsive" src="images/complife1.png"/>
+<img class="conway" src="images/complife1.png"/>
 </div>
 
 <!-- Teaching -->
@@ -231,16 +235,10 @@ Cited: <a href="https://obamawhitehouse.archives.gov/sites/default/files/docs/ER
 <p>Advances in computing are critical for expanding the set of models that we can feasibly investigate quantitatively. GPU's are highly parallelized processing units, originally designed for use in video games, but increasingly finding their way into high performance computing. I gave a lecture in 2011 at Penn detailing how economists might use these in their research. The field is of course evolving rapidly on both the hardware and software fronts, so this may not incorporate all recent changes.</p>
 </div>
 
-<!-- Other stuff -->
+<p><br/></p>
 
-<div class="mec-title-box">
-<span class="mec-title-text">Other</span>
 </div>
 
-<div class="project">
-<span class="project-title">Edgeworth Box</span>
-<p>This was on my old website and I felt bad about abandoning it.</p>
-<canvas id="edgeworth" class="edgebox"></canvas>
 </div>
 
 </div>
@@ -259,7 +257,6 @@ Cited: <a href="https://obamawhitehouse.archives.gov/sites/default/files/docs/ER
 
 <script src="js/index.js"></script>
 <script src="js/wikigrams.js"></script>
-<script src="js/edgeworth.js"></script>
 
 </body>
 

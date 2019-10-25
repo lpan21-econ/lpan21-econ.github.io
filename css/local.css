@@ -1,9 +1,74 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+html::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: 'Roboto';
-    font-size: 18px;
-    line-height: 28px;
+    /* font-family: 'Roboto'; */
+    /* font-size: 16px; */
+    /* line-height: 28px; */
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 0;
+    margin: 0;
+    background: #070908;
+    color: #B7B3BD;
+    /* background: white; */
+    /* color: black; */
+}
+
+#outer {
+    margin: auto;
+    margin-top: 50px;
+    padding: 4px;
+    width: 910px;
+    height: 585px;
+    border: 2px solid #717c75;
+    border-radius: 3px;
+}
+
+#inner {
+    border: 1px solid #2f3c35;
+    border-radius: 1px;
+    height: 100%;
+}
+
+#left {
+    float: left;
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+#right {
+    float: left;
+    width: 69%;
+    height: 100%;
+    position: relative;
+    border-left: 1px solid #2f3c35;
+}
+
+#output {
+    overflow-y: scroll;
+    margin: 0px;
+    padding: 40px;
+    height: 100%;
+}
+
+#output::-webkit-scrollbar {
+    display: none;
+}
+
+#output {
+    scrollbar-width: none;
 }
 
 .mec-main {
@@ -18,32 +83,23 @@ a:focus {
 }
 
 a {
-    color: blue;
+    color: #4C72B0;
     text-decoration: none;
 }
 
 a:visited {
-    color: blue;
+    color: #4C72B0;
 }
 
 /* title */
 
 .mec-name-box {
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
+    border-top: 2px solid #B7B3BD;
+    border-bottom: 2px solid #B7B3BD;
 }
 
 .mec-name-text {
-    font-size: 30px;
-}
-
-.mec-jumbo-tron {
-    width: 100%;
-    overflow: hidden;
-}
-
-.mec-jumbo-tron > img {
-    width: 100%;
+    font-size: 20px;
 }
 
 .mec-title-box {
@@ -55,7 +111,8 @@ a:visited {
 
 .cv {
     margin-left: 1px;
-    color: black;
+    /* color: black; */
+    color: white;
     margin-right: 5px;
 }
 
@@ -63,6 +120,7 @@ a:visited {
     position: relative;
     top: 3px;
     left: -5px;
+    margin-top: -4px;
     margin-right: -5px;
     margin-bottom: -2px;
     height: 25px;
@@ -70,7 +128,7 @@ a:visited {
 
 .github {
     position: relative;
-    top: 0px;
+    top: 2px;
     left: -2px;
     margin-right: 2px;
     height: 18px;
@@ -117,7 +175,7 @@ a:visited {
 .paper.expanded {
     margin: 7px -3px -3px -3px;
     padding: 3px;
-    background-color: #EEE;
+    background-color: #333333;
     border-radius: 3px;
 }
 
@@ -179,141 +237,45 @@ a:visited {
     margin: 0;
 }
 
-/* edgeworth */
-
-canvas.edgebox {
-    cursor: none;
-}
-
-/* jumbo sizing */
-:root {
-    --jumbo-top-cut: 25%;
-    --jumbo-bottom-cut: 23.9%;
-}
-
-/* mobile only rules */
-
-@media (max-width: 700px) {
-    body {
-        margin: 0px;
-    }
-
-    .img-responsive {
-        width: 100%;
-    }
-
-    p {
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-
-    .mec-main {
-        margin-top: 5px;
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
-    /* need a 1% differential */
-    .mec-jumbo-tron {
-      margin: calc(0% - var(--jumbo-top-cut)) 0% calc(3.8% - var(--jumbo-bottom-cut)) 0%;
-    }
-
-    .mec-jumbo-tron > img {
-      clip-path: inset(0% 0% var(--jumbo-bottom-cut) 0%);
-    }
-
-    .mec-bio-box {
-        margin-top: 5px;
-        margin-bottom: 10px;
-    }
-
-    .mec-title-box {
-        margin-top: 30px;
-        margin-bottom: 10px;
-    }
-
-    .paper-list {
-        margin-top: 15px;
-    }
-
-    .project {
-        margin-top: 15px;
-    }
-
-    .course {
-        margin-top: 15px;
-    }
+.conway {
+    margin-top: 15px;
+    width: 95%;
 }
 
 /* non-mobile rules */
 
-@media (min-width: 700px) {
-    body {
-        padding: 0;
-        margin: 0;
-    }
 
-    .mec-main {
-        max-width: 900px;
-        margin-top: 40px;
-        margin-bottom: 40px;
-    }
+.mec-name-box {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 
-    /* need a 3.7% differential */
-    .mec-jumbo-tron {
-      margin: calc(0% - var(--jumbo-top-cut)) 0% calc(5.4% - var(--jumbo-bottom-cut)) 0%;
-    }
+.mec-stats-box {
+}
 
-    .mec-jumbo-tron > img {
-      clip-path: inset(0% 0% var(--jumbo-bottom-cut) 0%);
-    }
+.mec-greetings {
+    margin-top: 0px;
+}
 
-    .mec-bio-box {
-        float: left;
-        width: 250px;
-        margin-right: 50px;
-        position: fixed;
-        top: 59px;
-    }
+.mec-stats-line {
+    font-size: 20px;
+}
 
-    .mec-content-box {
-      float: right;
-      max-width: 600px;
-      margin-bottom: 50px;
-    }
+.mec-title-box {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
 
-    .mec-name-box {
-        margin-top: 20px;
-        margin-bottom: 20px;
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
+.paper-list {
+    margin-top: 30px;
+}
 
-    .mec-stats-box {
-    }
+.project {
+    margin-top: 30px;
+}
 
-    .mec-greetings {
-        margin-top: 20px;
-    }
-
-    .mec-stats-line {
-        font-size: 20px;
-    }
-
-    .mec-title-box {
-        margin-top: 50px;
-        margin-bottom: 30px;
-    }
-
-    .paper-list {
-        margin-top: 30px;
-    }
-
-    .project {
-        margin-top: 30px;
-    }
-
-    .course {
-        margin-top: 30px;
-    }
+.course {
+    margin-top: 30px;
 }

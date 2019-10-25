@@ -26,43 +26,25 @@ input:focus {
     height: 35px;
 }
 
-@media (min-device-width: 700px) {
-    #wikibox {
-        margin-left: 50px;
-    }
-
-    #wikiplot {
-        transform: scale(0.8);
-    }
-
-    .axis {
-        font-size: 16px;
-    }
+#wikiplot .axis text {
+    stroke: white;
 }
 
-@media (max-device-width: 700px) {
-    #tokens {
-        width: 95%;
-        margin-left: 0px;
-    }
+#wikiplot .axis path {
+    stroke: white;
+}
 
-    #wikibox {
-        margin-left: 10px;
-    }
+#wikiplot .axis .tick line {
+    stroke: white;
+}
 
-    #wikiplot {
-        transform: scale(1.0);
-    }
+#wikibox {
+}
 
-    .axis {
-        font-size: 14px;
-    }
+#wikiplot {
+    transform: scale(0.8);
+}
 
-    #getcsv {
-        display: none;
-    }
-
-    #doplot {
-        display: none;
-    }
+.axis {
+    font-size: 16px;
 }
