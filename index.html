@@ -19,23 +19,34 @@
 
 <body role="document">
 
+<!--
 <div class="mec-jumbo-tron">
   <img src="images/jing_mei_shan.jpg"/>
 </div>
+-->
 
 <div class="mec-main" role="main">
 
-<div class="mec-name-box">
-  <span class="mec-title-text">Douglas Hanley</span>
-  <span class="mec-title-right"><a href="cv/hanley_cv.html">CV</a> | <a href="https://twitter.com/iamlemec">Twitter</a> | <a href="https://github.com/iamlemec">GitHub</a>
-  </span>
-</div>
-
 <div class="mec-bio-box">
 
-<p>Hi! I'm an economist at the University of Pittsburgh studying knowledge, innovation, and economic growth. These days, I'm quite interested in Wikipedia and other such open platforms. I'm also working on a number of open-source software projects.</p>
+<div class="mec-portrait-box"><img src="images/me_goat_hat_small.jpg"/></div>
+
+<div class="mec-name-box">
+  <span class="mec-name-text">Douglas Hanley</span><br/>
+  <span>University of Pittsburgh</span>
+</div>
+
+<div class="mec-stats-box">
+  <span class="mec-stats-line"><a href="cv/hanley_cv.html"><span class="cv">🗎</span> C.V.</a></span><br/>
+  <span class="mec-stats-line"><a href="https://twitter.com/iamlemec"><img src="images/twitter.svg" class="twitter"/> Twitter</a></span><br/>
+  <span class="mec-stats-line"><a href="https://github.com/iamlemec"><img src="images/github.png" class="github"/> GitHub</a></span>
+</div>
 
 </div>
+
+<div class="mec-content-box">
+
+<p class="mec-greetings">Hi! I'm an economist at the University of Pittsburgh studying knowledge, innovation, and economic growth. These days, I'm quite interested in Wikipedia and other such open platforms. I'm also working on a number of open-source software projects.</p>
 
 <!-- Research -->
 
@@ -166,7 +177,7 @@ Cited: <a href="https://obamawhitehouse.archives.gov/sites/default/files/docs/ER
 
 <div class="project">
 <span class="project-title">Console [<a href="https://github.com/iamlemec/console">GitHub</a>]</span>
-<p>In this project, I'm attempting to develop a framework for easy-to-use, real-time web plotting. The primary use case is for dashboards that display information on running calculations, but others are of course possible. The backend uses WebSockets and Tornado to interface with MATLAB/Matplotlib-style plotting commands. The frontend uses d3.js.</p>
+<p>In this project, I'm attempting to develop a framework for easy-to-use, real-time web plotting. The primary use case is for dashboards that display information on running calculations, but others are of course possible. The backend uses WebSockets and Tornado to interface with Matplotlib-style plotting commands. The frontend uses d3.js.</p>
 </div>
 
 <div class="project">
@@ -230,6 +241,8 @@ Cited: <a href="https://obamawhitehouse.archives.gov/sites/default/files/docs/ER
 <span class="project-title">Edgeworth Box</span>
 <p>This was on my old website and I felt bad about abandoning it.</p>
 <canvas id="edgeworth" class="edgebox"></canvas>
+</div>
+
 </div>
 
 </div>

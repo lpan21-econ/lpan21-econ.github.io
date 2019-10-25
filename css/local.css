@@ -29,8 +29,12 @@ a:visited {
 /* title */
 
 .mec-name-box {
-    font-size: 20px;
+    border-top: 2px solid black;
     border-bottom: 2px solid black;
+}
+
+.mec-name-text {
+    font-size: 30px;
 }
 
 .mec-jumbo-tron {
@@ -49,11 +53,41 @@ a:visited {
     padding-right: 1px;
 }
 
+.cv {
+    margin-left: 1px;
+    color: black;
+    margin-right: 5px;
+}
+
+.twitter {
+    position: relative;
+    top: 3px;
+    left: -5px;
+    margin-right: -5px;
+    margin-bottom: -2px;
+    height: 25px;
+}
+
+.github {
+    position: relative;
+    top: 0px;
+    left: -2px;
+    margin-right: 2px;
+    height: 18px;
+}
+
 .mec-title-text {
 }
 
 .mec-title-right {
     float: right;
+}
+
+.mec-portrait-box {
+}
+
+.mec-portrait-box > img {
+    width: 100%;
 }
 
 /* paper list */
@@ -220,7 +254,7 @@ canvas.edgebox {
     }
 
     .mec-main {
-        max-width: 660px;
+        max-width: 900px;
         margin-top: 40px;
         margin-bottom: 40px;
     }
@@ -234,8 +268,36 @@ canvas.edgebox {
       clip-path: inset(0% 0% var(--jumbo-bottom-cut) 0%);
     }
 
+    .mec-bio-box {
+        float: left;
+        width: 250px;
+        margin-right: 50px;
+        position: fixed;
+        top: 59px;
+    }
+
+    .mec-content-box {
+      float: right;
+      max-width: 600px;
+      margin-bottom: 50px;
+    }
+
     .mec-name-box {
-        margin-bottom: 30px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .mec-stats-box {
+    }
+
+    .mec-greetings {
+        margin-top: 20px;
+    }
+
+    .mec-stats-line {
+        font-size: 20px;
     }
 
     .mec-title-box {
