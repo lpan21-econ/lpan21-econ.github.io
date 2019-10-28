@@ -8,6 +8,10 @@ html::-webkit-scrollbar {
     box-sizing: border-box;
 }
 
+*:focus {
+    outline: 0;
+}
+
 /*
 :root {
     --main-bg-color: white;
@@ -110,13 +114,6 @@ a.tag {
     background-color: #4284F2;
     color: white;
     border-radius: 4px;
-}
-
-a:focus {
-    outline: 0;
-}
-
-a:visited {
 }
 
 /* title */
