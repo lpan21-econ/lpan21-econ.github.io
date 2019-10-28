@@ -15,6 +15,7 @@ html::-webkit-scrollbar {
     --main-md-color: #EEEEEE;
     --main-inner-color: black;
     --main-outer-color: black;
+    --main-link-color: #4C72B0;
     --main-font-family: monospace;
     --main-font-size: 15px;
     --main-line-height: 20px;
@@ -27,6 +28,7 @@ html::-webkit-scrollbar {
     --main-md-color: #444444;
     --main-inner-color: #2F3C35;
     --main-outer-color: #717C75;
+    --main-link-color: #4C72B0;
     --main-font-family: monospace;
     --main-font-size: 14px;
     --main-line-height: 18px;
@@ -72,7 +74,7 @@ body {
     width: 69%;
     height: 100%;
     position: relative;
-    border-left: 1px solid #2f3c35;
+    border-left: 1px solid var(--main-inner-color);
 }
 
 #output {
@@ -102,12 +104,12 @@ a:focus {
 }
 
 a {
-    color: #4C72B0;
+    color: var(--main-link-color);
     text-decoration: none;
 }
 
 a:visited {
-    color: #4C72B0;
+    color: var(--main-link-color);
 }
 
 /* title */
