@@ -1,41 +1,54 @@
+:root {
+    --soft-white: #B7B3BD;
+}
+
 input:focus {
     outline: none;
 }
 
-.line {
-    fill: none;
-    clip-path: url(#clip);
-    stroke: steelblue;
-    stroke-width: 1.5px;
+#wikibox {
+    margin-top: 25px;
 }
 
 #tokens {
-    font-size: 16px;
+    font-size: 14px;
+    font-family: monospace;
     width: 200px;
-    line-height: 1.25;
-    margin-top: 10px;
 }
 
 #getcsv {
-    padding-top: 2px;
-    height: 35px;
+    font-family: monospace;
 }
 
 #doplot {
-    padding-top: 2px;
-    height: 35px;
+    font-family: monospace;
 }
 
 #wikiplot .axis text {
-    stroke: white;
+    stroke: var(--soft-white);
+    fill: white;
+    font-family: monospace;
+    font-size: 14px;
+    font-weight: 100;
 }
 
 #wikiplot .axis path {
-    stroke: white;
+    stroke: var(--soft-white);
+    stroke-width: 1.5px;
 }
 
 #wikiplot .axis .tick line {
-    stroke: white;
+    stroke: var(--soft-white);
+}
+
+#wikiplot .token path {
+    fill: none;
+    clip-path: url(#clip);
+    stroke-width: 2.5px;
+}
+
+#wikiplot .token text {
+    font-family: monospace;
 }
 
 #wikibox {
@@ -43,8 +56,4 @@ input:focus {
 
 #wikiplot {
     transform: scale(0.8);
-}
-
-.axis {
-    font-size: 16px;
 }

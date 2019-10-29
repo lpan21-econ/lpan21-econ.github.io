@@ -12,20 +12,6 @@ html::-webkit-scrollbar {
     outline: 0;
 }
 
-/*
-:root {
-    --main-bg-color: white;
-    --main-fg-color: black;
-    --main-md-color: #EEEEEE;
-    --main-inner-color: black;
-    --main-outer-color: black;
-    --main-link-color: #4C72B0;
-    --main-font-family: monospace;
-    --main-font-size: 15px;
-    --main-line-height: 20px;
-}
-*/
-
 :root {
     --main-bg-color: #070908;
     --main-fg-color: #B7B3BD;
@@ -33,6 +19,7 @@ html::-webkit-scrollbar {
     --main-inner-color: #2F3C35;
     --main-outer-color: #717C75;
     --main-link-color: #4C72B0;
+    --main-cool-blue: #4284F2;
     --main-font-family: monospace;
     --main-font-size: 14px;
     --main-line-height: 18px;
@@ -111,9 +98,10 @@ a {
 a.tag {
     padding-left: 3px;
     padding-right: 3px;
-    background-color: #4284F2;
+    background-color: var(--main-cool-blue);
     color: white;
     border-radius: 4px;
+    opacity: 70%;
 }
 
 /* title */
@@ -135,16 +123,15 @@ a.tag {
 }
 
 .cv {
-    margin-left: 1px;
     color: var(--main-fg-color);
-    margin-right: 5px;
+    margin-right: -2px;
 }
 
 .twitter {
     position: relative;
     top: 2px;
     left: -2px;
-    margin-right: 2px;
+    margin-right: -6px;
     height: 18px;
 }
 
@@ -152,7 +139,7 @@ a.tag {
     position: relative;
     top: 2px;
     left: -2px;
-    margin-right: 2px;
+    margin-right: -6px;
     height: 18px;
 }
 
@@ -225,13 +212,14 @@ a.tag {
 /* non-mobile rules */
 
 .mec-name-box {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
 .mec-stats-box {
+    margin-left: 3px;
 }
 
 .mec-greetings {

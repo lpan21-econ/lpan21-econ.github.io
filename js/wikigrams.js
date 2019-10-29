@@ -111,7 +111,7 @@ function plot_series(tokens, data) {
     // collision force vs original position force
     const force = d3.forceSimulation()
         .nodes(labels)
-        .force('collide', d3.forceCollide(labelHeight/2))
+        .force("collide", d3.forceCollide(labelHeight/2))
         .force('y', d3.forceY(function(d) { return d.y0; }).strength(1))
         .stop();
 
@@ -125,6 +125,7 @@ function plot_series(tokens, data) {
         .attr("x", function(d) { return d.value.x0; })
         .attr("y", function(d) { return d.value.y; })
         .style("stroke", function(d) { return z(d.tok); })
+        .style("fill", function(d) { return z(d.tok); })
         .text(function(d) { return d.tok; });
 
     g.append("g")
