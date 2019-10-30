@@ -8,6 +8,7 @@ input:focus {
 
 #wikibox {
     margin-top: 25px;
+    opacity: 0.8;
 }
 
 #tokens {

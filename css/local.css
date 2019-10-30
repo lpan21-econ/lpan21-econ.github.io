@@ -105,6 +105,10 @@ a {
     opacity: 0.8;
 }
 
+.tag:hover {
+    opacity: 0.65;
+}
+
 /* title */
 
 .mec-name-box {
@@ -246,6 +250,10 @@ a {
     padding-bottom: 3px;
 }
 
+.mec-stats-line:hover {
+    opacity: 0.7;
+}
+
 .mec-stat-tag {
     padding-left: 0px;
     padding-right: 5px;
@@ -273,4 +281,5 @@ a {
 
 .small {
     width: 70%;
+    opacity: 0.8;
 }
