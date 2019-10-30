@@ -15,7 +15,7 @@ html::-webkit-scrollbar {
 :root {
     --main-bg-color: #070908;
     --main-fg-color: #B7B3BD;
-    --main-md-color: #444444;
+    --main-md-color: #222222;
     --main-inner-color: #2F3C35;
     --main-outer-color: #717C75;
     --main-link-color: #4C72B0;
@@ -95,7 +95,7 @@ a {
     text-decoration: none;
 }
 
-a.tag {
+.tag {
     padding-left: 3px;
     padding-right: 3px;
     background-color: var(--main-cool-blue);
@@ -122,6 +122,10 @@ a.tag {
     padding-right: 1px;
 }
 
+.icon {
+    padding-right: 9px;
+}
+
 .cv {
     position: relative;
     font-size: 22px;
@@ -132,7 +136,7 @@ a.tag {
 
 .twitter {
     position: relative;
-    top: 2px;
+    top: 3px;
     left: -2px;
     margin-right: -4px;
     height: 18px;
@@ -140,7 +144,7 @@ a.tag {
 
 .github {
     position: relative;
-    top: 2px;
+    top: 3px;
     left: -2px;
     margin-right: -4px;
     height: 18px;
@@ -230,8 +234,19 @@ a.tag {
 }
 
 .mec-stats-line {
-    font-size: 18px;
-    font-variant: small-caps;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.mec-stat-tag {
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 2px;
+    padding-top: 2px;
+    border-radius: 4px;
+    background-color: var(--main-cool-blue);
+    color: white;
+    opacity: 70%;
 }
 
 .mec-title-box {
