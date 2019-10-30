@@ -123,15 +123,18 @@ a.tag {
 }
 
 .cv {
+    position: relative;
+    font-size: 22px;
     color: var(--main-fg-color);
-    margin-right: -2px;
+    margin-right: -1px;
+    top: 2px;
 }
 
 .twitter {
     position: relative;
     top: 2px;
     left: -2px;
-    margin-right: -6px;
+    margin-right: -4px;
     height: 18px;
 }
 
@@ -139,7 +142,7 @@ a.tag {
     position: relative;
     top: 2px;
     left: -2px;
-    margin-right: -6px;
+    margin-right: -4px;
     height: 18px;
 }
 
@@ -227,7 +230,8 @@ a.tag {
 }
 
 .mec-stats-line {
-    font-size: 20px;
+    font-size: 18px;
+    font-variant: small-caps;
 }
 
 .mec-title-box {
@@ -247,6 +251,6 @@ a.tag {
     margin-top: 30px;
 }
 
-.conway {
-    width: 90%;
+.small {
+    width: 70%;
 }
