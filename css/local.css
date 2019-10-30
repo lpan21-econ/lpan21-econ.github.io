@@ -19,6 +19,7 @@ html::-webkit-scrollbar {
     --main-inner-color: #2F3C35;
     --main-outer-color: #717C75;
     --main-link-color: #4C72B0;
+    --main-cool-white: #D1D1D1;
     --main-cool-blue: #4284F2;
     --main-font-family: monospace;
     --main-font-size: 14px;
@@ -101,7 +102,7 @@ a {
     background-color: var(--main-cool-blue);
     color: white;
     border-radius: 4px;
-    opacity: 70%;
+    opacity: 0.8;
 }
 
 /* title */
@@ -128,16 +129,17 @@ a {
 
 .cv {
     position: relative;
-    font-size: 22px;
-    color: var(--main-fg-color);
+    font-size: 20px;
+    color: white;
     margin-right: -1px;
+    left: 1px;
     top: 2px;
 }
 
 .twitter {
     position: relative;
     top: 3px;
-    left: -2px;
+    left: -1px;
     margin-right: -4px;
     height: 18px;
 }
@@ -145,9 +147,10 @@ a {
 .github {
     position: relative;
     top: 3px;
-    left: -2px;
+    left: -1px;
     margin-right: -4px;
     height: 18px;
+    opacity: 0.7;
 }
 
 .mec-title-text {
@@ -162,7 +165,7 @@ a {
 
 .mec-portrait-box > img {
     width: 100%;
-    opacity: 90%;
+    opacity: 0.9;
 }
 
 /* paper list */
@@ -219,34 +222,36 @@ a {
 /* non-mobile rules */
 
 .mec-name-box {
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 35px;
+    margin-bottom: 35px;
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
-.mec-stats-box {
-    margin-left: 3px;
+.mec-greetings {
+    margin-top: 2px;
 }
 
-.mec-greetings {
-    margin-top: 0px;
+.mec-stats-box {
+    line-height: 28px;
 }
 
 .mec-stats-line {
     font-size: 16px;
     margin-bottom: 5px;
+    border-radius: 4px;
+    background-color: var(--main-md-color);
+    padding-left: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 
 .mec-stat-tag {
-    padding-left: 3px;
-    padding-right: 3px;
-    padding-top: 2px;
-    padding-top: 2px;
-    border-radius: 4px;
-    background-color: var(--main-cool-blue);
-    color: white;
-    opacity: 70%;
+    padding-left: 0px;
+    padding-right: 5px;
+    color: var(--main-cool-white);
+    font-size: 20px;
+    font-variant: small-caps;
 }
 
 .mec-title-box {
