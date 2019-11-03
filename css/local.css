@@ -76,6 +76,7 @@ img.small {
 
 .mec-name-text {
     font-size: 20px;
+    margin-bottom: 5px;
 }
 
 .mec-title-box {
@@ -240,13 +241,13 @@ img.small {
 
 /* desktop rules */
 
-@media (min-width: 700px) {
+@media (min-width: 960px) {
     #outer {
         margin: auto;
         margin-top: 50px;
         padding: 4px;
-        width: 910px;
-        height: 585px;
+        width: 960px;
+        height: 650px;
         border: 2px solid var(--main-outer-color);
         border-radius: 3px;
     }
@@ -291,7 +292,7 @@ img.small {
 
 /* mobile rules */
 
-@media (max-width: 700px) {
+@media (max-width: 960px) {
     #left {
         padding: 10px;
     }
