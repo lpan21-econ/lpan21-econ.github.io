@@ -1,7 +1,7 @@
 \documentclass{article}
 \usepackage{tikz}
 
-\usetikzlibrary{shapes,arrows,decorations.markings}
+\usetikzlibrary{shapes,arrows,decorations.markings,calc,positioning}
 
 \tikzset{every node/.style={circle},
          strike through/.append style={
@@ -12,10 +12,11 @@
 
 \tikzstyle{block} = [rectangle, draw, fill=blue!20,
     text width=5em, text centered, rounded corners, minimum height=4em]
-\tikzstyle{line} = [draw, -latex']
-\tikzstyle{xline} = [draw, strike out, -latex']
+\tikzstyle{line} = [draw, -triangle 45, >=triangle 45]
 
 \begin{document}
+
+\pagestyle{empty}
 
 \begin{tikzpicture}[node distance = 3cm, auto]
     \node [block] (wind) {State Windfall};
@@ -24,10 +25,11 @@
     \node [block, below of=wind] (other) {Other Factors};
     \node [block, right of=other] (pats) {Patents};
     \path [line] (wind) edge (invtot);
-    \path [line] (wind) edge [strike through] (other);
+    \path [line, -] (wind) edge [strike through] (other);
     \path [line] (other) edge (pats);
     \path [line] (invtot) edge (pats);
     \path [line] (invfed) edge (invtot);
+    \path [line] (other.south) |- node[left]{}($(pats)!-0.5!(invtot)$) -| (invfed.south);
 \end{tikzpicture}
 
 \end{document}
