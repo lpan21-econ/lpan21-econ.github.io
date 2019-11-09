@@ -57,21 +57,27 @@ if (window.location.search.match(/print-pdf/gi)) {
 
 <br/>
 
-REER 2019
+REER 2019, Georgia Tech
 <br/>
 [doughanley.com/slides/reer2019](http://doughanley.com/slides/reer2019)
 
 ---
 
-## Great paper
+## Great paper!
+
+
+
+---
+
+## Source of randomization
+
+![state graph](images/state_map.png) <!-- .element class="full" -->
 
 ---
 
 ## Identification strategy
 
 ![causal graph](tex/causal.svg)
-
-Gotta love those DAGs
 
 ---
 
@@ -90,69 +96,113 @@ Classes ranked in top $\bar{s}$ in terms of similarity *ranking* get even split 
 
 ## Using intensity information
 
+The text similarity matrix (between FOA topic and tech class) contains lots of rich information
+- could set an minimum absolute threshhold $\underline{s}$ (or not)
+- FOA funds allocated to tech classes based on relative similarity
+
+Could add in some additional text sources
+- actual CPC description text
+- upweight title and category info
+
 ---
 
-## Text analysis methods
+## Text categorization
 
-Could add in some additional text sources, such as actual CPC description text (quite a bit if you're aggregating to CPC-4). Might want to upweight those and title.
+If CPC isn't designed for research, why are we using it? One option would be to make your own groups
+- Could K-means cluster document vectors for patents into similar groups.
+- This would naturally be conducive to the FOA classification.
 
-If CPC isn't designed for research, why are we using it? One option would be to make your own groups. You could K-means cluster (or other) the document vectors for patents into similar groups. This would naturally be conducive to the FOA classification.
+Same method could be used to cluster FOAs into a new topic categorization and/or used to validate FOA topic use
 
 ---
 
 ## Constructing validation set
+
+Always great (and fun!) to construct a validation set to assess quality of match
+- Is it always crystal clear to a human what the correct categorization is?
+- Is there always exactly one tech class that a particular FOA topic matches to?
+- How does the algorithm itself perform relative to human assessment?
 
 ---
 
 ## Construction of windfall instrument
 
 Might be some issues with the intercept and independence between windfall and federal funding.
+`$$
+\text{arcsinh}(K^{\text{loc}}_{jt}) = \Gamma \log(K^{\text{fed}}_{jt}) + \mu_{jt}
+$$`
+
+Would be great to have intercept so `$\mathbb{E}[\log(K^{\text{fed}}_{jt}) \mu_{jt}] = 0$`
+
+Might be even better to reformulate in linear terms, at least for instrument
+`$$
+K^{\text{loc}}_{jt} = \alpha + \beta K^{\text{fed}}_{jt} + \mu_{jt}
+$$`
 
 ---
 
 ## Substitution between private and public
 
-Fundamentally, we need to be aware here that with these grants, we're merely adding funding to existing operations. True, these are small businesses, but they already do lots of research presumably, and money is pretty fungible in this case. There are conceptual issues here relating to how firms internal investment responds to grant receipt (could go up or down, they might collaborate with university or lab), which would affect the cost estimates. But also, on the empirical side, you'd want to try to have something like class-level fixed effects.
+Fundamentally, we need to be aware here that with these grants, we're merely adding funding to existing operations.
+- These are small businesses, but they already do lots of research presumably, and money is pretty fungible in this case.
+
+There are conceptual issues here relating to how firms internal investment responds to grant receipt (could go up or down, they might collaborate with university or lab), which would affect the cost estimates.
+
+On the empirical side, you'd want to try to have something like class-level fixed effects.
 
 ---
 
-Thinking about Cobb-Douglas and baseline investment levels, let $K_j$ be internal investment and $X_j$ be the grant
-$$
-\log(y) = \alpha \log(K_1) + \beta \log(K_2)
-$$
+## Existing private investment
 
-But maybe more like
-$$
-\log(y) = \alpha \log(P_1+K_1) + \beta \log(P_2+K_2)
-$$
-
----
-
-For option (2), if we look at
-
-$$
-\frac{\partial\log(y)}{\partial\log(K_1)} = \alpha \left(\frac{K_1}{P_1+K_1}\right)
-$$
-
-If funding is proportional, in which case $X_1 = \gamma_1 K_1$, we get
-
-$$
+Thinking about Cobb-Douglas and baseline investment levels, let $B_j$ be baseline private investment and $K_j$ be the public grant
+`$$
+\log(y) = \alpha \log(B_1+K_1) + \beta \log(B_2+K_2)
+$$`
+The marginal effect of the studied regression would be
+`$$
+\frac{\partial\log(y)}{\partial\log(K_1)} = \alpha \left(\frac{K_1}{B_1+K_1}\right)
+$$`
+If funding is proportional, in which case $K_1 = \gamma_1 B_1$, we get
+`$$
 \frac{\partial\log(y)}{\partial\log(X_1)} = \alpha \left(\frac{\gamma_1}{1+\gamma_1}\right)
-$$
+$$`
 
 ---
 
-## Reallocation of scientists
+## Data on private investment
 
-At the end of the day, we know that the stock of scientists is a pretty slow moving object. In the short-run, rather fixed. The question then is how much of the effects that we see here are due to reallocation of scientists/effort from one area of research to another? Depends on how easy it is for scientists to switch areas. The more difficult it is, the more plausible these results seems taken at face value. Thinking about finance/physics/aerospace here.
+Would it be possible to bring in, at least expositionally, some of the BRDS data from NSF? You'd need a NAICS/CPC crosswalk, which might exist, but could also be done using patents/Compustat.
+
+Then at least you could control for something like the average $\gamma$ per class.
+- Or just class fixed effects?
 
 ---
 
 ## Interpretation of results
 
-We're not really getting full costs, because we don't see the private investment response of the firms. Particularly with financial and cash flow considerations, this might be important? This is true in a static setting, but probably even more important in a dynamic setting, where firms get multiple rounds of grants over years.
+We're not really getting full costs, because we don't see the private investment response of the firms.
 
-Would it be possible to bring in, at least expositionally, some of the BRDS data from NSF? You'd need a NAICS/CPC crosswalk, which might exist, but could also be done using patents/Compustat. Then at least you could control for something like the average $\gamma$ per class. Or just class fixed effects?
+Particularly with financial and cash flow considerations, this might be important?
+- This is true in a static setting, but probably even more important in a dynamic setting, where firms get multiple rounds of grants over years.
+
+---
+
+## Reallocation of scientists
+
+At the end of the day, we know that the stock of scientists is a pretty slow moving object. In the short-run, rather fixed
+
+ The question then is how much of the effects that we see here are due to reallocation of scientists/effort from one area of research to another?
+
+ Depends on how easy it is for scientists to switch areas.
+ - The more difficult it is, the more plausible these results seems taken at face value.
+
+---
+
+## Big implications
+
+You construct this huge machine, but the follow through needs more
+- What are the big implications of these trends?
+- Do more to quantify effects: how much does incrementally more tech class targeting cost?
 
 </script>
 </section>
