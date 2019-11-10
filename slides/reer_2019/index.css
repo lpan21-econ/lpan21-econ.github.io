@@ -60,6 +60,10 @@
   text-transform: none;
 }
 
+.reveal h1 {
+    font-size: 80px;
+}
+
 .reveal {
   font-family: 'Ubuntu Mono';
 }

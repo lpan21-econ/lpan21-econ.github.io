@@ -59,19 +59,23 @@ if (window.location.search.match(/print-pdf/gi)) {
 
 REER 2019, Georgia Tech
 <br/>
-[doughanley.com/slides/reer2019](http://doughanley.com/slides/reer2019)
+[doughanley.com/slides/reer_2019](http://doughanley.com/slides/reer_2019)
 
 ---
 
 ## Great paper!
 
+Excellent use of state-of-the-art text analysis methods to construct match between grant topics and technology classes
 
+Critically important question in research and innovation policy: what is the nature of spillovers across field and across space?
+
+Clever identification strategy to generate exogenous variation in field-level research funding.
 
 ---
 
 ## Source of randomization
 
-![state graph](images/state_map.png) <!-- .element class="full" -->
+![state map](images/state_map.png) <!-- .element class="full" -->
 
 ---
 
@@ -80,6 +84,12 @@ REER 2019, Georgia Tech
 ![causal graph](latex/causal.svg)
 
 Gotta love those causal graphs
+
+---
+
+<!-- .slide: class="center" -->
+
+# Methods
 
 ---
 
@@ -143,14 +153,19 @@ $$`
 
 ---
 
+<!-- .slide: class="center" -->
+
+# Specification
+
+---
+
 ## Substitution between private and public
 
 Fundamentally, we need to be aware here that with these grants, we're merely adding funding to existing operations.
 - These are small businesses, but they already do lots of research presumably, and money is pretty fungible in this case.
 
-There are conceptual issues here relating to how firms internal investment responds to grant receipt (could go up or down, they might collaborate with university or lab), which would affect the cost estimates.
-
-On the empirical side, you'd want to try to have something like class-level fixed effects.
+There are conceptual issues here relating to how firms internal investment responds to grant receipt, which would affect the cost estimates.
+- Could go up or down, they might collaborate with university or lab
 
 ---
 
@@ -164,7 +179,7 @@ The marginal effect of the studied regression would be
 `$$
 \frac{\partial\log(y)}{\partial\log(K_1)} = \alpha \left(\frac{K_1}{B_1+K_1}\right)
 $$`
-If funding is proportional, in which case $K_1 = \gamma_1 B_1$, we get
+If funding is proportional, so that $K_1 = \gamma_1 B_1$, we get
 `$$
 \frac{\partial\log(y)}{\partial\log(X_1)} = \alpha \left(\frac{\gamma_1}{1+\gamma_1}\right)
 $$`
@@ -177,6 +192,12 @@ Would it be possible to bring in, at least expositionally, some of the BRDS data
 
 Then at least you could control for something like the average $\gamma$ per class.
 - Or just class fixed effects?
+
+---
+
+<!-- .slide: class="center" -->
+
+# Interpretation
 
 ---
 
