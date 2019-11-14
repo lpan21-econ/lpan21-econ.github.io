@@ -1,4 +1,4 @@
-/*@import url('https://fonts.googleapis.com/css?family=Roboto');*/
+/* top level */
 
 * {
     box-sizing: border-box;
@@ -22,6 +22,8 @@
     --main-line-height: 18px;
 }
 
+/* layout */
+
 body {
     font-family: var(--main-font-family);
     font-size: var(--main-font-size);
@@ -30,6 +32,24 @@ body {
     color: var(--main-fg-color);
     padding: 0;
     margin: 0;
+}
+
+#header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+
+#portrait {
+    flex-basis: 25%;
+}
+
+#biograph {
+    flex-basis: 72%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #output::-webkit-scrollbar {
@@ -67,11 +87,21 @@ img.small {
     opacity: 0.8;
 }
 
-/* title */
+/* bio */
+
+#portrait > img {
+    width: 100%;
+    opacity: 0.9;
+}
 
 .mec-name-box {
-    border-top: 2px solid var(--main-fg-color);
-    border-bottom: 2px solid var(--main-fg-color);
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* border-top: 1px solid var(--main-fg-color); */
+    border-bottom: 1px solid var(--main-fg-color);
 }
 
 .mec-name-text {
@@ -86,6 +116,34 @@ img.small {
     padding-right: 1px;
 }
 
+.mec-stats-box {
+    margin-left: 5px;
+    line-height: 28px;
+}
+
+.mec-stats-line {
+    font-size: 16px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    border-radius: 4px;
+    background-color: var(--main-md-color);
+    padding-left: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.mec-stats-line:hover {
+    opacity: 0.7;
+}
+
+.mec-stat-tag {
+    padding-left: 0px;
+    padding-right: 5px;
+    color: var(--main-cool-white);
+    font-size: 20px;
+    font-variant: small-caps;
+}
+
 .icon {
     padding-right: 9px;
 }
@@ -93,6 +151,7 @@ img.small {
 .cv {
     position: relative;
     color: white;
+    font-size: 15px;
 }
 
 .twitter {
@@ -112,19 +171,11 @@ img.small {
     opacity: 0.7;
 }
 
-.mec-title-text {
-}
+/* headings */
 
-.mec-title-right {
-    float: right;
-}
-
-.mec-portrait-box {
-}
-
-.mec-portrait-box > img {
-    width: 100%;
-    opacity: 0.9;
+.mec-title-box {
+    margin-top: 50px;
+    margin-bottom: 30px;
 }
 
 /* paper list */
@@ -197,153 +248,36 @@ img.small {
 
 /* biographical info */
 
-.mec-name-box {
-    margin-top: 35px;
-    margin-bottom: 35px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.mec-greetings {
-    margin-top: 2px;
-}
-
-.mec-stats-box {
-    line-height: 28px;
-}
-
-.mec-stats-line {
-    font-size: 16px;
-    margin-bottom: 5px;
-    border-radius: 4px;
-    background-color: var(--main-md-color);
-    padding-left: 5px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-}
-
-.mec-stats-line:hover {
-    opacity: 0.7;
-}
-
-.mec-stat-tag {
-    padding-left: 0px;
-    padding-right: 5px;
-    color: var(--main-cool-white);
-    font-size: 20px;
-    font-variant: small-caps;
-}
-
-.mec-title-box {
-    margin-top: 50px;
-    margin-bottom: 30px;
-}
-
 /* desktop rules */
 
-@media (min-width: 960px) {
+@media (min-width: 695px) {
     #outer {
+        max-width: 680px;
         margin: auto;
-        margin-top: 50px;
-        padding: 4px;
-        width: 960px;
-        height: 650px;
-        border: 2px solid var(--main-outer-color);
-        border-radius: 3px;
+        padding-left: 2px;
+        padding-right: 2px;
+        border-left: 2px solid var(--main-outer-color);
+        border-right: 2px solid var(--main-outer-color);
     }
 
     #inner {
-        border: 1px solid var(--main-inner-color);
-        border-radius: 1px;
-        height: 100%;
-    }
-
-    #left {
-        float: left;
-        height: 100%;
-        width: 30%;
-        display: flex;
-        flex-direction: column;
-        padding: 40px;
-    }
-
-    #right {
-        float: left;
-        width: 69%;
-        height: 100%;
-        position: relative;
         border-left: 1px solid var(--main-inner-color);
-    }
-
-    #output {
-        overflow-y: scroll;
-        margin: 0px;
-        padding: 40px;
-        height: 100%;
-    }
-
-    .cv {
-        top: 1px;
-        left: -1px;
-        margin-right: -4px;
-        font-size: 18px;
+        border-right: 1px solid var(--main-inner-color);
+        padding-top: 30px;
+        padding-bottom: 15px;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 }
 
 /* mobile rules */
 
-@media (max-width: 960px) {
-    #left {
-        padding: 10px;
-    }
-
-    #right {
-        padding: 10px;
-    }
-
-    .mec-portrait-box {
-        /* display: none; */
-        width: 25%;
-        float: left;
+@media (max-width: 695px) {
+    #outer {
+        margin: 10px;
     }
 
     #project-wikigrams {
         display: none;
-    }
-
-    .mec-name-box {
-        width: 70%;
-        float: right;
-        margin-left: 5px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-
-    .mec-stats-box {
-        width: 70%;
-        float: right;
-        margin-left: 5px;
-    }
-
-    .mec-stats-br {
-        display: none;
-    }
-
-    .mec-stats-line {
-        margin-right: 5px;
-    }
-
-    .cv {
-        top: 0px;
-        left: -2px;
-        margin-right: -5px;
-        font-size: 15px;
-    }
-
-    .mec-greetings {
-        clear: both;
-        padding-top: 20px;
     }
 }
