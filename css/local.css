@@ -43,6 +43,7 @@ body {
 
 #portrait {
     flex-basis: 25%;
+    flex-grow: 0;
 }
 
 #biograph {
@@ -275,6 +276,26 @@ img.small {
 @media (max-width: 695px) {
     #outer {
         margin: 10px;
+    }
+
+
+    #header {
+        padding-bottom: 0px;
+    }
+
+    #biograph {
+        justify-content: flex-start;
+    }
+
+    .mec-stat-tag {
+        font-size: 18px;
+    }
+
+    .cv {
+        top: 0px;
+        left: -2px;
+        margin-right: -5px;
+        font-size: 15px;
     }
 
     #project-wikigrams {
