@@ -4,7 +4,6 @@
 
 <title>Wikigrams</title>
 
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <link href="css/wikigrams.css" rel="stylesheet">
 
 <style>
@@ -21,15 +20,14 @@
 
 <div class="outer">
 
-<input id="tokens"></input> <a id="doplot" class="btn btn-primary">Plot</a> <a id="getcsv" class="btn btn-primary" onclick="window.location.href = 'http://dohan.dyndns.org:9454/freq?token=' + $('#tokens').val();">Download</a></span>
+<div id="wikibox"><input id="tokens"></input> <button id="doplot">Plot</button> <button id="getcsv" onclick="window.location.href = 'http://dohan.dyndns.org:9454/freq?token=' + $('#tokens').val();">Download</button></div>
 
 <svg id="wikiplot" width="600" height="300"></svg>
 
 </div>
 
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/d3.v4.min.js"></script>
 <script src="js/wikigrams.js"></script>
 
 </body>
