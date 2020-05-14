@@ -46,10 +46,10 @@ rows = [
 [[blocks]]
 title = "Working Papers"
 rows = [
-	"Innovation and Patent Policy with Interdependent Technology",
-	"Science is Shaped by Wikipedia: Evidence from a Randomized Control Trial (with Neil Thompson)",
 	"Optimal Taxation and R&D Policies (with Ufuk Akcigit and Stefanie Stantcheva) <br/> <i>NBER Working Paper 22908</i> <br/> <i>Revise and Resubmit, Econometrica</i>",
+	"Science is Shaped by Wikipedia: Evidence from a Randomized Control Trial (with Neil Thompson)",
 	"From Patents to Products: Innovation, Product Creation, and Firm Growth (with David Argente, Salomé Baslandze, and Sara Moreira)",
+	"Innovation and Patent Policy with Interdependent Technology",
 	"International Competition in the Race to Clean Technology (with Chengying Luo)",
 ]
 
@@ -64,13 +64,14 @@ rows = [
 [[blocks]]
 title = "Teaching"
 rows = [
-	"Graduate: Computational Methods in Economics, Advanced Macroeconomic Theory I/II",
-	"Undergraduate: Intermediate Macroeconomics, Intermediate Microeconomics (Penn), Macroeconomics Proseminar"
+	"Graduate: Computational Methods in Economics, Advanced Economic Growth, Advanced Macroeconomic Theory I/II",
+	"Undergraduate: Macroeconomics Proseminar, Economic Growth Elective, Intermediate Macroeconomics, Intermediate Microeconomics (Penn)"
 ]
 
 [[blocks]]
 title = "Seminars and Conferences"
 rows = [
+	"2019: Federal Reserve Bank of Cleveland, Seoul National University Policy Forum, South China Normal University (Guangzhou), SED Conference 2019 (Washington University, St. Louis), Korea Economic Review International Conference (Seoul), Econometrics Society China (Jinan University, Guangzhou), Roundtable for Engineering Entrepreneurship Research (Georgia Tech, discussant), NBER Innovation Summer Institute (Cambridge, MA, attended), European Midwest Micro/Macro Conference (Univ of Chicago, attended)",
 	"2018: Computational Social Sciences Retreat (Pitt), Einaudi Institute for Economics and Finance (Rome), Econometrics Society Asia Meetings (Seoul), South China Normal University (Guangzhou), 4th Workshop on Chinese Politics and Society (Shanghai), World Bank",
 	"2017: Workshop on Innovation and Entrepreneurship (ISET-TSU, Tbilisi), Seoul National University, Carnegie-Rochester-NYU Conference on Public Policy (CMU)",
 	"2016: Peking U (PHBS, Shenzhen)", "2015: U of Hong Kong, Sogang U, IIES (Stockholm), Firm and Technology Dynamics: A Global Perspective (Nottingham), Barcelona GSE Summer Forum, Society for Economic Dynamics Annual Meeting (Warsaw), Mini Conference on Economic Growth (Chicago)",
@@ -81,13 +82,13 @@ rows = [
 [[blocks]]
 title = "Refereeing Service"
 rows = [
-	"American Economic Review, Econometrica, Review of Economic Studies, Journal of Monetary Economics, European Economic Review, American Economic Journal: Macroeconomics, Journal of Public Economics, International Economic Review, Macroeconomic Dynamics, Review of Economic Dynamics, Journal of Comparative Economics, Journal of the European Economic Association, Journal of Mathematical Economics, Journal of Development Economics, Review of Economics and Statistics, Journal of Economic Theory, RAND Journal of Economics, The Economic Journal"
+	"American Economic Review, Econometrica, Review of Economic Studies, Journal of Political Economy, Journal of Monetary Economics, European Economic Review, American Economic Journal: Macroeconomics, Journal of Public Economics, International Economic Review, Macroeconomic Dynamics, Review of Economic Dynamics, Journal of Comparative Economics, Journal of the European Economic Association, Journal of Mathematical Economics, Journal of Development Economics, Review of Economics and Statistics, Journal of Economic Theory, RAND Journal of Economics, The Economic Journal"
 ]
 
 [[blocks]]
 title = "Departmental Service"
 rows = [
-	"Hiring: Sustainability (Junior and Postdoc, 2015-16), International Trade (Junior, 2016-17), Development (Junior, 2016-17), International Macro (Junior, 2018-19)",
+	"Hiring: Sustainability (Junior and Postdoc, 2015-16), International Trade (Junior, 2016-17), Development (Junior, 2016-17), International Macro (Junior, 2018-19), Econometrics (Junior, 2019-20)",
 	"Committees: Website Committee (2016-)"
 ]
 
