@@ -1,5 +1,7 @@
 /* top level */
 
+@import url('source-sans-pro.css');
+
 * {
     box-sizing: border-box;
 }
@@ -9,17 +11,16 @@
 }
 
 :root {
-    --main-bg-color: #070908;
-    --main-fg-color: #B7B3BD;
-    --main-md-color: #222222;
-    --main-inner-color: #2F3C35;
-    --main-outer-color: #717C75;
+    --main-bg-color: #212121;
+    --main-fg-color: #BBBBBB;
+    --main-md-color: #333333;
+    --main-inner-color: #BBBBBB33;
     --main-link-color: #4C72B0;
     --main-cool-white: #D1D1D1;
     --main-cool-blue: #4284F2;
-    --main-font-family: monospace;
-    --main-font-size: 14px;
-    --main-line-height: 18px;
+    --main-font-family: 'Source Sans Pro';
+    --main-font-size: 17px;
+    --main-line-height: 21px;
 }
 
 /* layout */
@@ -69,6 +70,8 @@ a {
 }
 
 .tag {
+    font-size: 15px;
+    font-weight: bold;
     padding-left: 3px;
     padding-right: 3px;
     background-color: var(--main-cool-blue);
@@ -111,7 +114,7 @@ img.small {
 }
 
 .mec-title-box {
-    font-size: 20px;
+    font-size: 25px;
     border-bottom: 1px solid var(--main-fg-color);
     padding-left: 1px;
     padding-right: 1px;
@@ -251,29 +254,25 @@ img.small {
 
 /* desktop rules */
 
-@media (min-width: 695px) {
+@media (min-width: 800px) {
     #outer {
-        max-width: 680px;
+        max-width: 700px;
         margin: auto;
-        padding-left: 2px;
-        padding-right: 2px;
-        border-left: 2px solid var(--main-outer-color);
-        border-right: 2px solid var(--main-outer-color);
     }
 
     #inner {
         border-left: 1px solid var(--main-inner-color);
         border-right: 1px solid var(--main-inner-color);
-        padding-top: 30px;
-        padding-bottom: 15px;
-        padding-left: 30px;
-        padding-right: 30px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
     }
 }
 
 /* mobile rules */
 
-@media (max-width: 695px) {
+@media (max-width: 800px) {
     #outer {
         margin: 10px;
     }
