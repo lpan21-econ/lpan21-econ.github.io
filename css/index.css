@@ -14,13 +14,13 @@
     --main-bg-color: #212121;
     --main-fg-color: #BBBBBB;
     --main-md-color: #333333;
-    --main-inner-color: #BBBBBB33;
+    --main-inner-color: #D1D1D133;
     --main-link-color: #4C72B0;
     --main-cool-white: #D1D1D1;
     --main-cool-blue: #4284F2;
     --main-font-family: 'Source Sans Pro';
-    --main-font-size: 17px;
-    --main-line-height: 21px;
+    --main-font-size: 19px;
+    --main-line-height: 25px;
 }
 
 /* layout */
@@ -109,7 +109,7 @@ img.small {
 }
 
 .mec-name-text {
-    font-size: 20px;
+    font-size: 22px;
     margin-bottom: 5px;
 }
 
@@ -186,7 +186,7 @@ img.small {
 
 .paper-list-title {
     padding-bottom: 1px;
-    font-size: 16px;
+    font-size: 19px;
     border-bottom: 1px dashed var(--main-fg-color);
 }
 
@@ -256,13 +256,15 @@ img.small {
 
 @media (min-width: 800px) {
     #outer {
-        max-width: 700px;
+        max-width: 750px;
         margin: auto;
     }
 
     #inner {
-        border-left: 1px solid var(--main-inner-color);
-        border-right: 1px solid var(--main-inner-color);
+        /*
+        border-left: 5px solid var(--main-inner-color);
+        border-right: 5px solid var(--main-inner-color);
+        */
         padding-top: 50px;
         padding-bottom: 50px;
         padding-left: 50px;
