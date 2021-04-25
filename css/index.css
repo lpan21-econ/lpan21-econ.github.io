@@ -149,20 +149,20 @@ img.small {
 }
 
 .icon {
-    padding-right: 9px;
+    padding-right: 5px;
 }
 
-.cv {
+.vita {
     position: relative;
-    color: white;
-    font-size: 15px;
+    height: 18px;
+    top: 3px;
+    left: -1px;
 }
 
 .twitter {
     position: relative;
     top: 3px;
     left: -1px;
-    margin-right: -4px;
     height: 18px;
 }
 
@@ -170,7 +170,6 @@ img.small {
     position: relative;
     top: 3px;
     left: -1px;
-    margin-right: -4px;
     height: 18px;
     opacity: 0.7;
 }
