@@ -38,7 +38,7 @@ rows = [
 [[blocks]]
 title = "Publications"
 rows = [
-	"Back to Basics: Basic Research Spillovers, Innovation Policy and Growth (with Ufuk Akcigit and Nicolas Serrano-Velarde) <br/> <i>Forthcoming, Review of Economic Studies</i> <br/> Cited in the <a href=\"https://www.gpo.gov/fdsys/pkg/ERP-2016/pdf/ERP-2016.pdf\">Economic Report of the President 2016</a>",
+	"Back to Basics: Basic Research Spillovers, Innovation Policy and Growth (with Ufuk Akcigit and Nicolas Serrano-Velarde) <br/> <i>Review of Economic Studies</i>, 2021 <br/> Cited in the <a href=\"https://www.gpo.gov/fdsys/pkg/ERP-2016/pdf/ERP-2016.pdf\">Economic Report of the President 2016</a>",
 	"Assessing the Rate of Replication in Economics (with James Berry, Lucas Coffman, Rania Gihleb, and Alistair Wilson)<br/><i>American Economic Review (Papers and Proceedings)</i>, 2017",
 	"Transition to Clean Technology (with Daron Acemoglu, Ufuk Akcigit, and William Kerr)<br/><i>Journal of Political of Economy</i>, 2016"
 ]
@@ -49,15 +49,16 @@ rows = [
 	"Optimal Taxation and R&D Policies (with Ufuk Akcigit and Stefanie Stantcheva) <br/> <i>NBER Working Paper 22908</i> <br/> <i>Revise and Resubmit, Econometrica</i>",
 	"Science is Shaped by Wikipedia: Evidence from a Randomized Control Trial (with Neil Thompson)",
 	"From Patents to Products: Innovation, Product Creation, and Firm Growth (with David Argente, Salomé Baslandze, and Sara Moreira)",
+	"High-speed Rail and Collaborative Innovation (with Mingqin Wu), <i>Revise and Resubmit, Regional Science and Urban Economics</i>",
 	"Innovation and Patent Policy with Interdependent Technology",
-	"International Competition in the Race to Clean Technology (with Chengying Luo)",
 ]
 
 [[blocks]]
 title = "Research in Progress"
 rows = [
-	"Geographic Clustering of Firms in China (with Chengying Luo and Mingqin Wu)",
+	"Spatial Clustering of Firms: A Machine Learning Approach (with Chengying Luo and Mingqin Wu)",
 	"Theory and Evidence on the Relationship Between Corruption and Innovation (with Mingqin Wu)",
+	"International Competition in the Race to Clean Technology (with Chengying Luo)",
 	"Yellow Fever and the Growth of American Cities (with Sean McCoy and Werner Troesken)",
 ]
 
@@ -89,7 +90,7 @@ rows = [
 title = "Departmental Service"
 rows = [
 	"Hiring: Sustainability (Junior and Postdoc, 2015-16), International Trade (Junior, 2016-17), Development (Junior, 2016-17), International Macro (Junior, 2018-19), Econometrics (Junior, 2019-20)",
-	"Committees: Website Committee (2016-)"
+	"Committees: Website Committee (2016-), Department Chair Selection Committee (2021), Diversity Committee (2021)"
 ]
 
 [[blocks]]

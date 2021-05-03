@@ -3,7 +3,7 @@
 import re
 import os
 import sys
-import pytoml as toml
+import toml
 import jinja2
 
 if len(sys.argv) == 1:
