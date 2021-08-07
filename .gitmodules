@@ -2,7 +2,7 @@
 	path = ellsworth
 	url = https://github.com/iamlemec/ellsworth.git
 [submodule "elltwo"]
-	path = elltwo
+	path = ellone
 	url = https://github.com/iamlemec/ellone.git
 [submodule "reveal.js"]
 	path = reveal.js
