@@ -7,49 +7,50 @@ info_label = "Personal Information"
 address = [
 	"230 S. Bouquet St.",
 	"4507 W. W. Posvar Hall",
-	"Pittsburgh, PA 15260"
+	"Pittsburgh, PA 15260",
 ]
 contact = [
 	"<a href=\"mailto:doughanley@pitt.edu\">doughanley@pitt.edu</a>",
 	"<a href=\"http://doughanley.com/\">doughanley.com</a>",
-	"(330) 536-3277"
+	"(330) 536-3277",
 ]
 
 [[blocks]]
 title = "Employment"
 rows = [
 	"Assistant Professor, Department of Economics, University of Pittsburgh, 2014-Present",
-	"Visiting Scholar, Federal Reserve Bank of St. Louis, 2017 (short term)"
+	"Visiting Scholar, Federal Reserve Bank of St. Louis, 2017 (short term)",
 ]
 
 [[blocks]]
 title = "Education"
 rows = [
 	"Ph.D., Economics, University of Pennsylvania, 2014",
-	"B.S., Economics, California Institute of Technology, 2006"
+	"B.S., Economics, California Institute of Technology, 2006",
 ]
 
 [[blocks]]
 title = "Research Interests"
 rows = [
-	"Macroeconomics, Knowledge Diffusion, Technological Change, Computational Methods, Climate Economics"
+	"Macroeconomics, Knowledge Diffusion, Technological Change, Computational Methods, Climate Economics",
 ]
 
 [[blocks]]
 title = "Publications"
 rows = [
-	"Back to Basics: Basic Research Spillovers, Innovation Policy and Growth (with Ufuk Akcigit and Nicolas Serrano-Velarde) <br/> <i>Review of Economic Studies</i>, 2021 <br/> Cited in the <a href=\"https://www.gpo.gov/fdsys/pkg/ERP-2016/pdf/ERP-2016.pdf\">Economic Report of the President 2016</a>",
-	"Assessing the Rate of Replication in Economics (with James Berry, Lucas Coffman, Rania Gihleb, and Alistair Wilson)<br/><i>American Economic Review (Papers and Proceedings)</i>, 2017",
-	"Transition to Clean Technology (with Daron Acemoglu, Ufuk Akcigit, and William Kerr)<br/><i>Journal of Political of Economy</i>, 2016"
+	"Optimal Taxation and R&D Policies (with Ufuk Akcigit and Stefanie Stantcheva), <i>Econometrica</i>, Forthcoming",
+	"High-speed Rail and Collaborative Innovation (with Mingqin Wu), <i>Regional Science and Urban Economics</i>, Forthcoming",
+	"Back to Basics: Basic Research Spillovers, Innovation Policy and Growth (with Ufuk Akcigit and Nicolas Serrano-Velarde), <i>Review of Economic Studies</i>, 2020 <br/> Cited in the <a href=\"https://www.gpo.gov/fdsys/pkg/ERP-2016/pdf/ERP-2016.pdf\">Economic Report of the President 2016</a>",
+	"Assessing the Rate of Replication in Economics (with James Berry, Lucas Coffman, Rania Gihleb, and Alistair Wilson), <i>American Economic Review (Papers and Proceedings)</i>, 2017",
+	"Transition to Clean Technology (with Daron Acemoglu, Ufuk Akcigit, and William Kerr), <i>Journal of Political of Economy</i>, 2016",
 ]
 
 [[blocks]]
 title = "Working Papers"
 rows = [
-	"Optimal Taxation and R&D Policies (with Ufuk Akcigit and Stefanie Stantcheva) <br/> <i>NBER Working Paper 22908</i> <br/> <i>Revise and Resubmit, Econometrica</i>",
 	"Science is Shaped by Wikipedia: Evidence from a Randomized Control Trial (with Neil Thompson)",
+	"Economics and Epidemics: Evidence from an Estimated Spatial Econ-SIR Model (with Mark Bognanni, Daniel Kolliner, and Kurt Mitman)",
 	"From Patents to Products: Innovation, Product Creation, and Firm Growth (with David Argente, Salomé Baslandze, and Sara Moreira)",
-	"High-speed Rail and Collaborative Innovation (with Mingqin Wu), <i>Revise and Resubmit, Regional Science and Urban Economics</i>",
 	"Innovation and Patent Policy with Interdependent Technology",
 ]
 
@@ -66,35 +67,36 @@ rows = [
 title = "Teaching"
 rows = [
 	"Graduate: Computational Methods in Economics, Advanced Economic Growth, Advanced Macroeconomic Theory I/II",
-	"Undergraduate: Macroeconomics Proseminar, Economic Growth Elective, Intermediate Macroeconomics, Intermediate Microeconomics (Penn)"
+	"Undergraduate: Macroeconomics Proseminar, Economic Growth Elective, Intermediate Macroeconomics, Intermediate Microeconomics (Penn)",
 ]
 
 [[blocks]]
 title = "Seminars and Conferences"
 rows = [
+	"2021: Taiwan Symposium on Innovation Economics and Entrepreneurship (National Tsing Hua University)",
 	"2019: Federal Reserve Bank of Cleveland, Seoul National University Policy Forum, South China Normal University (Guangzhou), SED Conference 2019 (Washington University, St. Louis), Korea Economic Review International Conference (Seoul), Econometrics Society China (Jinan University, Guangzhou), Roundtable for Engineering Entrepreneurship Research (Georgia Tech, discussant), NBER Innovation Summer Institute (Cambridge, MA, attended), European Midwest Micro/Macro Conference (Univ of Chicago, attended)",
 	"2018: Computational Social Sciences Retreat (Pitt), Einaudi Institute for Economics and Finance (Rome), Econometrics Society Asia Meetings (Seoul), South China Normal University (Guangzhou), 4th Workshop on Chinese Politics and Society (Shanghai), World Bank",
 	"2017: Workshop on Innovation and Entrepreneurship (ISET-TSU, Tbilisi), Seoul National University, Carnegie-Rochester-NYU Conference on Public Policy (CMU)",
 	"2016: Peking U (PHBS, Shenzhen)", "2015: U of Hong Kong, Sogang U, IIES (Stockholm), Firm and Technology Dynamics: A Global Perspective (Nottingham), Barcelona GSE Summer Forum, Society for Economic Dynamics Annual Meeting (Warsaw), Mini Conference on Economic Growth (Chicago)",
 	"2014: U of Toronto, USC (Marshall), U of Pittsburgh, U of North Carolina (Chapel Hill), CREI",
-	"2010-2013: Penn Money Macro Workshop, Society for Economic Dynamics Annual Meeting, Midwest Macroeconomic Meetings, Penn Money Macro Club, International Industrial Organization Conference"
+	"2010-2013: Penn Money Macro Workshop, Society for Economic Dynamics Annual Meeting, Midwest Macroeconomic Meetings, Penn Money Macro Club, International Industrial Organization Conference",
 ]
 
 [[blocks]]
 title = "Refereeing Service"
 rows = [
-	"American Economic Review, Econometrica, Review of Economic Studies, Journal of Political Economy, Journal of Monetary Economics, European Economic Review, American Economic Journal: Macroeconomics, Journal of Public Economics, International Economic Review, Macroeconomic Dynamics, Review of Economic Dynamics, Journal of Comparative Economics, Journal of the European Economic Association, Journal of Mathematical Economics, Journal of Development Economics, Review of Economics and Statistics, Journal of Economic Theory, RAND Journal of Economics, The Economic Journal"
+	"American Economic Review, Econometrica, Review of Economic Studies, Journal of Political Economy, Journal of Monetary Economics, European Economic Review, American Economic Journal: Macroeconomics, Journal of Public Economics, International Economic Review, Macroeconomic Dynamics, Review of Economic Dynamics, Journal of Comparative Economics, Journal of the European Economic Association, Journal of Mathematical Economics, Journal of Development Economics, Review of Economics and Statistics, Journal of Economic Theory, RAND Journal of Economics, The Economic Journal",
 ]
 
 [[blocks]]
 title = "Departmental Service"
 rows = [
 	"Hiring: Sustainability (Junior and Postdoc, 2015-16), International Trade (Junior, 2016-17), Development (Junior, 2016-17), International Macro (Junior, 2018-19), Econometrics (Junior, 2019-20)",
-	"Committees: Website Committee (2016-), Department Chair Selection Committee (2021), Diversity Committee (2021)"
+	"Committees: Website Committee (2016-), Department Chair Selection Committee (2021), Diversity Committee (2021)",
 ]
 
 [[blocks]]
 title = "Other Employment"
 rows = [
-	"Research Assistant, MIT, 2010-2013<br/>Research Assistant, Caltech, 2005-2006<br/>Research Assistant, CITA, Summer 2004<br/>Software Developer, Cyplex Inc, 2006-2007<br/>Software Developer, Lycoris Corp, Summer 2003<br/>Software Developer, KDE Group, 2001-2002"
+	"Research Assistant, MIT, 2010-2013<br/>Research Assistant, Caltech, 2005-2006<br/>Research Assistant, CITA, Summer 2004<br/>Software Developer, Cyplex Inc, 2006-2007<br/>Software Developer, Lycoris Corp, Summer 2003<br/>Software Developer, KDE Group, 2001-2002",
 ]
