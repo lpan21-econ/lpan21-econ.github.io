@@ -16,6 +16,7 @@
     --fg-color: #E7F3FD;
     --bg-color: #212121;
     --md-color: #666666;
+    --ps-color: #BBBBBB;
     --hv-color: #333333;
     --tg-color: #1F6FE7;
 }
@@ -60,16 +61,15 @@ body {
 
 .title-box {
     text-align: center;
-    margin-bottom: 40px;
 }
 
 .section-title {
+    margin-top: 40px;
     text-align: center;
 }
 
 .section-box {
-    margin-top: 10px;
-    margin-bottom: 40px;
+    margin-top: 20px;
 }
 
 table {
@@ -89,24 +89,45 @@ table > tbody > tr {
     border-bottom: 1px solid var(--md-color);
 }
 
-table > tbody > tr:hover {
-    background-color: var(--hv-color);
-}
-
 table > tbody > tr > td {
     vertical-align: top;
 }
 
 table > tbody > tr > td:nth-child(1) {
-    min-width: 75px;
+    min-width: 15%;
 }
 
 table > tbody > tr > td:nth-child(2) {
-    min-width: 150px;
+    min-width: 30%;
 }
 
 table > tbody > tr > td:nth-child(4) {
-    min-width: 100px;
+    min-width: 10%;
+}
+
+table > tbody > tr.past {
+    color: var(--ps-color);
+}
+
+table > tbody > tr.next {
+    background-color: var(--hv-color);
+}
+
+@media only screen and (max-device-width: 815px) {
+
+body {
+    margin: 0;
+    padding: 20px 20px;
+}
+
+h1 {
+    margin-top: 0px;
+}
+
+.outer-box {
+    width: 100%;
+}
+
 }
 
 </style>
@@ -127,59 +148,33 @@ Brown bag = Wed — 12:00pm → 1:00pm
 
 <h2 class="section-title">Seminar</h2>
 
-<div id="seminar" class="section-box">
-
-<table>
-
-<thead>
-
-<tr>
-    <th>Date</th>
-    <th>Speaker</th>
-    <th>Title</th>
-    <th>Links</th>
-</tr>
-
-</thead>
-
-<tbody>
-
-</tbody>
-
-</table>
-
-</div>
+<div id="seminar" class="section-box"></div>
 
 <h2 class="section-title">Brown Bag</h2>
 
-<div id="brown-bag" class="section-box">
-
-<table>
-
-<thead>
-
-<tr>
-    <th>Date</th>
-    <th>Speaker</th>
-    <th>Title</th>
-    <th>Links</th>
-</tr>
-
-</thead>
-
-<tbody>
-
-</tbody>
-
-</table>
-
-</div>
+<div id="brown-bag" class="section-box"></div>
 
 </div>
 
 <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
 
 <script type="text/javascript">
+
+let now = new Date();
+
+let table_template = `
+<table>
+<thead>
+<tr>
+    <th>Date</th>
+    <th>Speaker</th>
+    <th>Title</th>
+    <th>Links</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+`.trim();
 
 function make_tag(tag) {
     return `<span class="tag"><a href="${tag['url']}">${tag['text']}</a></span>`;
@@ -193,13 +188,26 @@ function make_row(cells) {
     return $('<tr>').append(cells.map(make_cell));
 }
 
-function make_table(rows) {
-    return rows.map(row => {
-        return make_row([
-            row['date'], row['speaker'], row['title'],
-            row['links'].map(make_tag).join('\n'),
-        ]);
-    });
+function make_entry(data, time) {
+    let date = data['date'];
+    let speak = data['speaker'];
+    let title = data['title'];
+    let links = data['links'].map(make_tag).join('\n');
+    let tr = make_row([date, speak, title, links]);
+
+    let [month, day] = date.split('/');
+    let year = (month <= 6) ? '2022' : '2021';
+    let dobj = new Date(`${date}/${year} ${time}`);
+    tr.addClass((dobj < now) ? 'past' : 'future');
+
+    return tr;
+}
+
+function make_table(rows, time) {
+    let table = $(table_template)
+    table.append(rows.map(data => make_entry(data, time)));
+    table.find('tr.future').first().addClass('next');
+    return table;
 }
 
 let seminar = [
@@ -212,13 +220,13 @@ let seminar = [
     {
         'date': '4/1',
         'speaker': 'Maximiliano Dvorkin',
-        'title': 'TBD',
+        'title': '',
         'links': [],
     },
     {
         'date': '4/22',
         'speaker': 'Berthold Herrendorf',
-        'title': 'TBD',
+        'title': '',
         'links': [],
     },
 ];
@@ -310,8 +318,8 @@ let brown_bag = [
     },
 ];
 
-$('#seminar > table > tbody').append(make_table(seminar));
-$('#brown-bag > table > tbody').append(make_table(brown_bag));
+$('#seminar').append(make_table(seminar, '13:00'));
+$('#brown-bag').append(make_table(brown_bag, '17:00'));
 
 </script>
 
