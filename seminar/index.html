@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Pitt Macro</title>
+
+<link href="/css/source-sans-pro.css" rel="stylesheet">
+
+<style>
+
+:root {
+    --fg-color: #E7F3FD;
+    --bg-color: #212121;
+    --md-color: #666666;
+    --ps-color: #BBBBBB;
+    --hv-color: #333333;
+    --tg-color: #1F6FE7;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--fg-color);
+    margin-top: 60px;
+    margin-bottom: 60px;
+    font-family: 'Source Sans Pro';
+    font-size: 19px;
+    line-height: 25px;
+}
+
+a {
+    color: var(--tg-color);
+    text-decoration: none;
+}
+
+.tag {
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: 1px;
+    background-color: var(--tg-color);
+    border-radius: 4px;
+    vertical-align: middle;
+    font-size: 15px;
+}
+
+.tag:hover {
+    opacity: 1.0;
+}
+
+.tag > a {
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.outer-box {
+    width: 50%;
+    margin: auto;
+}
+
+.title-box {
+    text-align: center;
+}
+
+.section-title {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.section-box {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table > thead > tr {
+    border-bottom: 2px solid var(--fg-color);
+}
+
+table > thead > tr > th {
+    text-align: left;
+}
+
+table > tbody > tr {
+    border-bottom: 1px solid var(--md-color);
+}
+
+table > tbody > tr > td {
+    vertical-align: top;
+    width: auto;
+}
+
+table > tbody > tr > td:nth-child(1) {
+    width: 10%;
+}
+
+table > tbody > tr > td:nth-child(2) {
+    width: 10%;
+}
+
+table > tbody > tr > td:nth-child(3) {
+    width: 30%;
+}
+
+table > tbody > tr > td:nth-child(5) {
+    width: 10%;
+}
+
+table > tbody > tr.past {
+    color: var(--ps-color);
+}
+
+table > tbody > tr.next {
+    background-color: var(--hv-color);
+}
+
+#brown-bag > table > tbody > tr > td:nth-child(2),
+#brown-bag > table > thead > tr > th:nth-child(2) {
+    display: none;
+}
+
+@media only screen and (max-device-width: 815px) {
+
+body {
+    margin: 0;
+    padding: 20px 20px;
+}
+
+h1 {
+    margin-top: 0px;
+}
+
+.outer-box {
+    width: 100%;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="outer-box">
+
+<div class="title-box">
+<h1>Pitt Macro Schedule</h1>
+<p>
+Zoom (PITT) = <a href="https://pitt.zoom.us/j/93531481723">935 3148 1723</a><br/>
+Seminar = Fri — 3:30pm → 5:00pm<br/>
+Brown bag = Wed — 12:00pm → 1:00pm
+</p>
+<p>
+<span class="tag"><a href="/document.html?src=/seminar/syllabus.md">Syllabus</a></span>
+</p>
+</div>
+
+<h2 class="section-title">Seminar</h2>
+
+<div id="seminar" class="section-box"></div>
+
+<h2 class="section-title">Brown Bag</h2>
+
+<div id="brown-bag" class="section-box"></div>
+
+</div>
+
+<script src="/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+let now = new Date();
+
+let table_template = `
+<table>
+<thead>
+<tr>
+    <th>Date</th>
+    <th>Team</th>
+    <th>Speaker</th>
+    <th>Title</th>
+    <th>Links</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+`.trim();
+
+function make_tag(tag) {
+    return `<span class="tag"><a href="${tag['url']}">${tag['text']}</a></span>`;
+}
+
+function make_cell(html) {
+    return $('<td>', {html: html});
+}
+
+function make_row(cells) {
+    return $('<tr>').append(cells.map(make_cell));
+}
+
+function make_entry(data, time, sem) {
+    let date = data['date'];
+    let team = data['team'];
+    let speak = data['speaker'];
+    let title = data['title'];
+    let links = data['links'].map(make_tag).join('\n');
+    let tr = make_row([date, team, speak, title, links]);
+
+    let [month, day] = date.split('/');
+    let year = (month <= 6) ? '2022' : '2021';
+    let dobj = new Date(`${date}/${year} ${time}`);
+    tr.addClass((dobj < now) ? 'past' : 'future');
+
+    return tr;
+}
+
+function make_table(rows, time, sem) {
+    let table = $(table_template)
+    table.append(rows.map(data => make_entry(data, time, sem)));
+    table.find('tr.future').first().addClass('next');
+    return table;
+}
+
+let seminar = [
+    {
+        'date': '09/17',
+        'team': 'PITT',
+        'speaker': 'B. Ravikumar',
+        'title': 'Technology adoption, mortality and population dynamics',
+        'links': [
+            {
+                'text': 'Paper',
+                'url': '/seminar/papers/seminar_2021_ravi.pdf',
+            },
+        ],
+    },
+    {
+        'date': '09/24',
+        'team': 'PITT',
+        'speaker': 'Ruben Gaetani',
+        'title': 'Cities and Technological Waves',
+        'links': [
+            {
+                'text': 'Paper',
+                'url': '/seminar/papers/seminar_2021_ruben.pdf',
+            },
+        ],
+    },
+    {
+        'date': '10/08',
+        'team': 'CMU',
+        'speaker': 'Ezra Oberfield',
+        'title': 'Plants in Space',
+        'links': [],
+    },
+    {
+        'date': '10/29',
+        'team': 'PITT',
+        'speaker': 'Kyle Herkenhoff',
+        'title': '',
+        'links': [],
+    },
+    {
+        'date': '11/05',
+        'team': 'PITT',
+        'speaker': 'Can Tian',
+        'title': 'Dynamic Formation of Knowledge Networks and Innovating Firms',
+        'links': [],
+    },
+    {
+        'date': '11/19',
+        'team': 'PITT',
+        'speaker': 'Sarada',
+        'title': '',
+        'links': [],
+    },
+    {
+        'date': '11/19',
+        'team': 'CMU',
+        'speaker': 'Veronica Guerrieri',
+        'title': '',
+        'links': [],
+    },
+    {
+        'date': '12/03',
+        'team': 'PITT',
+        'speaker': 'Tommaso Porzio',
+        'title': '',
+        'links': [],
+    },
+    {
+        'date': '12/10',
+        'team': 'CMU',
+        'speaker': 'Todd Schoellman',
+        'title': '',
+        'links': [],
+    },
+    {
+        'date': '12/17',
+        'team': 'CMU',
+        'speaker': 'Albert Marcet',
+        'title': '',
+        'links': [],
+    },
+    {
+        'date': '02/25',
+        'team': 'CMU',
+        'speaker': 'Jennifer La\'O',
+        'title': '',
+        'links': [],
+    },
+    {
+        'date': '03/04',
+        'team': 'PITT',
+        'speaker': 'Corina Boar',
+        'title': '',
+        'links': [],
+    },
+    {
+        'date': '04/01',
+        'team': 'PITT',
+        'speaker': 'Maximiliano Dvorkin',
+        'title': '',
+        'links': [],
+    },
+    {
+        'date': '04/08',
+        'team': 'CMU',
+        'speaker': 'Yongseok Shin',
+        'title': '',
+        'links': [],
+    },
+    {
+        'date': '04/22',
+        'team': 'PITT',
+        'speaker': 'Berthold Herrendorf',
+        'title': '',
+        'links': [],
+    },
+];
+
+let brown_bag = [
+    {
+        'date': '09/01',
+        'speaker': '',
+        'title': '',
+        'links': [],
+    },
+    {
+        'date': '09/08',
+        'speaker': '',
+        'title': '',
+        'links': [],
+    },
+    {
+        'date': '09/15',
+        'speaker': '',
+        'title': '',
+        'links': [],
+    },
+    {
+        'date': '09/22',
+        'speaker': '',
+        'title': '',
+        'links': [],
+    },
+    {
+        'date': '09/29',
+        'speaker': '',
+        'title': '',
+        'links': [],
+    },
+    {
+        'date': '10/06',
+        'speaker': '',
+        'title': '',
+        'links': [],
+    },
+    {
+        'date': '10/13',
+        'speaker': '',
+        'title': '',
+        'links': [],
+    },
+    {
+        'date': '10/20',
+        'speaker': 'Mikhail Zavarzin',
+        'title': 'Local Housing Bubbles and Spatial Misallocation',
+        'links': [],
+    },
+    {
+        'date': '10/27',
+        'speaker': 'Gregory Scala',
+        'title': 'Innovation Decisions of Pharmaceutical Firms',
+        'links': [],
+    },
+    {
+        'date': '11/03',
+        'speaker': 'Yucheng Wang',
+        'title': 'Understanding Temporarily Migration in the Developing World: A Structural Model Approach',
+        'links': [],
+    },
+    {
+        'date': '11/10',
+        'speaker': '',
+        'title': '',
+        'links': [],
+    },
+    {
+        'date': '11/17',
+        'speaker': '',
+        'title': '',
+        'links': [],
+    },
+    {
+        'date': '12/01',
+        'speaker': '',
+        'title': '',
+        'links': [],
+    },
+    {
+        'date': '12/08',
+        'speaker': '',
+        'title': '',
+        'links': [],
+    },
+];
+
+$('#seminar').append(make_table(seminar, '17:00'));
+$('#brown-bag').append(make_table(brown_bag, '13:00'));
+
+</script>
+
+</body>
+
+</html>
