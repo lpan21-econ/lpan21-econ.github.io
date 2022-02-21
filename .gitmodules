@@ -10,6 +10,7 @@
 [submodule "elltwo"]
 	path = elltwo
 	url = https://github.com/iamlemec/elltwo
+	branch = stable
 [submodule "gum.js"]
 	path = gum.js
 	url = https://github.com/iamlemec/gum.js
