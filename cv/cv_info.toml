@@ -49,14 +49,15 @@ rows = [
 title = "Working Papers"
 rows = [
 	"Science is Shaped by Wikipedia: Evidence from a Randomized Control Trial (with Neil Thompson)",
-	"Economics and Epidemics: Evidence from an Estimated Spatial Econ-SIR Model (with Mark Bognanni, Daniel Kolliner, and Kurt Mitman)",
 	"From Patents to Products: Innovation, Product Creation, and Firm Growth (with David Argente, Salomé Baslandze, and Sara Moreira)",
+	"Economics and Epidemics: Evidence from an Estimated Spatial Econ-SIR Model (with Mark Bognanni, Daniel Kolliner, and Kurt Mitman)",
 	"Innovation and Patent Policy with Interdependent Technology",
 ]
 
 [[blocks]]
 title = "Research in Progress"
 rows = [
+	"Unleashing the Dragon: The Case for Patent Reform in China (with Lee Branstetter and Huiyan Zhang)",
 	"Spatial Clustering of Firms: A Machine Learning Approach (with Chengying Luo and Mingqin Wu)",
 	"Theory and Evidence on the Relationship Between Corruption and Innovation (with Mingqin Wu)",
 	"International Competition in the Race to Clean Technology (with Chengying Luo)",
@@ -71,15 +72,42 @@ rows = [
 ]
 
 [[blocks]]
-title = "Seminars and Conferences"
+title = "Seminars"
+rows = [
+	"2019: Federal Reserve Bank of Cleveland, Seoul National University, South China Normal University (Guangzhou)",
+	"2018: World Bank, Einaudi Institute for Economics and Finance (Rome), South China Normal University (Guangzhou)",
+	"2017: Seoul National University",
+	"2015: U of Hong Kong, Sogang U (Seoul), IIES (Stockholm)",
+	"2014: U of Toronto, USC (Marshall), U of Pittsburgh, U of North Carolina (Chapel Hill), CREI (Barcelona)",
+]
+
+[[blocks]]
+title = "Conferences"
 rows = [
 	"2021: Taiwan Symposium on Innovation Economics and Entrepreneurship (National Tsing Hua University)",
-	"2019: Federal Reserve Bank of Cleveland, Seoul National University Policy Forum, South China Normal University (Guangzhou), SED Conference 2019 (Washington University, St. Louis), Korea Economic Review International Conference (Seoul), Econometrics Society China (Jinan University, Guangzhou), Roundtable for Engineering Entrepreneurship Research (Georgia Tech, discussant), NBER Innovation Summer Institute (Cambridge, MA, attended), European Midwest Micro/Macro Conference (Univ of Chicago, attended)",
-	"2018: Computational Social Sciences Retreat (Pitt), Einaudi Institute for Economics and Finance (Rome), Econometrics Society Asia Meetings (Seoul), South China Normal University (Guangzhou), 4th Workshop on Chinese Politics and Society (Shanghai), World Bank",
-	"2017: Workshop on Innovation and Entrepreneurship (ISET-TSU, Tbilisi), Seoul National University, Carnegie-Rochester-NYU Conference on Public Policy (CMU)",
-	"2016: Peking U (PHBS, Shenzhen)", "2015: U of Hong Kong, Sogang U, IIES (Stockholm), Firm and Technology Dynamics: A Global Perspective (Nottingham), Barcelona GSE Summer Forum, Society for Economic Dynamics Annual Meeting (Warsaw), Mini Conference on Economic Growth (Chicago)",
-	"2014: U of Toronto, USC (Marshall), U of Pittsburgh, U of North Carolina (Chapel Hill), CREI",
-	"2010-2013: Penn Money Macro Workshop, Society for Economic Dynamics Annual Meeting, Midwest Macroeconomic Meetings, Penn Money Macro Club, International Industrial Organization Conference",
+	"2019: SED Annual Meeting (St. Louis), Korea Economic Review International Conference (Seoul), Econometrics Society China (Jinan University, Guangzhou), Roundtable for Engineering Entrepreneurship Research (Georgia Tech, discussant)",
+	"2018: Computational Social Sciences Retreat (Pitt), Econometrics Society Asia Meetings (Seoul), 4th Workshop on Chinese Politics and Society (Shanghai)",
+	"2017: Workshop on Innovation and Entrepreneurship (ISET-TSU, Tbilisi), Carnegie-Rochester-NYU Conference on Public Policy (CMU, discussant)",
+	"2016: Chinese Economists Society China Meeting(PHBS, Shenzhen)",
+	"2015: Firm and Technology Dynamics: A Global Perspective (Nottingham), Barcelona GSE Summer Forum, SED Annual Meeting (Warsaw), Mini Conference on Economic Growth (Chicago)",
+	"2010-2013: Penn Money Macro Workshop, SED Annual Meeting, Midwest Macroeconomic Meetings, Penn Money Macro Club, International Industrial Organization Conference",
+]
+
+[[blocks]]
+title = "Students Supervized"
+rows = [
+	"Ying-Kai Huang (Ph.D. 2021): Applied Research Scientist - Economist, Snap Inc",
+]
+
+[[blocks]]
+title = "Thesis Committees"
+rows = [
+	"Domonkos Vamossy (Ph.D. 2020): Economist, Amazon Web Services",
+	"Tianyi Wang (Ph.D. 2020): Postdoctoral Research Associate, Princeton",
+	"Jiyeon Kim (Ph.D. 2020): Economist, Korea Development Institute",
+	"Chengying Luo (Ph.D. 2019): Senior Data Scientist, Instacart",
+	"Hao Feng (Ph.D. 2018): Assistant Professor, Shanghai University of International Business and Economics",
+	"Richard Svoboda (Ph.D. 2017): Senior Economist, Amazon",
 ]
 
 [[blocks]]
@@ -92,7 +120,7 @@ rows = [
 title = "Departmental Service"
 rows = [
 	"Hiring: Sustainability (Junior and Postdoc, 2015-16), International Trade (Junior, 2016-17), Development (Junior, 2016-17), International Macro (Junior, 2018-19), Econometrics (Junior, 2019-20)",
-	"Committees: Website Committee (2016-), Department Chair Selection Committee (2021), Diversity Committee (2021)",
+	"Committees: Website Committee (2016-2020), Department Chair Selection Committee (2021), Diversity Committee (2021), Graduate Admissions Committee (2022)",
 ]
 
 [[blocks]]
