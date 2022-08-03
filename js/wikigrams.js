@@ -32,7 +32,7 @@ function plot_series(tokens, data) {
         };
     });
 
-    var outerWidth = $("svg").parent().width();
+    var outerWidth = $("#wikiplot").parent().width();
     var outerHeight = aspect*outerWidth;
     var width = outerWidth - margin.left - margin.right;
     var height = outerHeight - margin.top - margin.bottom;

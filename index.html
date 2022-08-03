@@ -166,19 +166,25 @@ Spatial Econ-SIR Model (with Mark Bognanni, Daniel Kolliner, and Kurt Mitman)</s
 </div>
 
 <div class="project">
+<span class="project-title">
+<svg viewbox="0 0 250 62.3262133052443" xmlns="http://www.w3.org/2000/svg" id="fastreg-svg">
+<text x="2.5" y="48.6144463780905" font-size="64.245226566316px" stroke="black" font-family="Montserrat" font-weight="400">fast</text>
+<line x1="131.68108931822" y1="0.6232621330525" x2="131.68108931822" y2="48.6144463780905" stroke="black" />
+<text x="143.6788853794795" y="48.6144463780905" font-size="65.8315284568424px" stroke="black" font-family="Montserrat" font-weight="400">reg</text>
+</svg>
+<a href="https://github.com/iamlemec/fastreg" class="tag">GitHub</a></span>
+<p>Fastreg is a Python library for running high-dimensional regressions quickly using sparse matrix representations. It works quite well for regular old regressions too. Regression specifications can be described using a powerful new "Pythonic" syntax, in addition to the usual R-style syntax. Supported methods include OLS (with clustered standard errors), GLM, Poisson, maximum likelihood for arbitrary models, and more. See the GitHub link for examples and documentation.</p>
+</div>
+
+<div class="project">
+<span class="project-title">Fastpat <a href="https://github.com/iamlemec/fastpat" class="tag">GitHub</a></span>
+<p>This is a fully-featured USPTO patent data fetcher and parser written in Python. It can handle applications, grants, assignments, and maintenance events in all formats. Additionally, it can cluster firm names into groups that are suffiently similar. The clustering algorithm first filters potential matches using locality-sensitive hashing then generates clusters from the components of a graph induced by a given Levenshtein distance threshhold.</p>
+</div>
+
+<div class="project">
 <span class="project-title">Speedcam <a href="https://github.com/iamlemec/speedcam" class="tag">GitHub<a/> <a href="blogs/?src=speedcam/speedcam.md" class="tag">Blog</a></span>
 <p>Cars can be pretty dangerous to bicyclists and pedestians! So I like to keep a close eye on them. With Speedcam, you can use a regular webcam as a speedometer. It will track cars in real time using YOLOv5 object detection combined with a Kalman filter and report their estimated speed. Check out the blog post above and go to the GitHub link to try it out on your own. Here's an example track:</p>
 <p style="align: center;"><img src="blogs/speedcam/car_track.gif" class="small" /></p>
-</div>
-
-<div class="project">
-<span class="project-title">Fuzzy <a href="https://github.com/iamlemec/fuzzy" class="tag">GitHub</a> <a href="http://dohan.io/fuzzy" class="tag">Demo</a></span>
-<p>Due to a preternaturally poor memory, I am an avid note taker. There are many, many note-taking apps out there, but not all focus on the other side of the equation: note-getting. Fuzzy is optimized for rapidly inputting <i>and</i> searching through notes, which comprise a title, a body of text, and a list of tags. The interface is web-based, but can be operated using only a keyboard.</p>
-</div>
-
-<div class="project">
-<span class="project-title">Fastpat<a href="https://github.com/iamlemec/fastpat" class="tag">GitHub</a></span>
-<p>This is a fully-featured USPTO patent data fetcher and parser written in Python. It can handle applications, grants, assignments, and maintenance events in all formats. Additionally, it can cluster firm names into groups that are suffiently similar. The clustering algorithm first filters potential matches using locality-sensitive hashing then generates clusters from the components of a graph induced by a given Levenshtein distance threshhold.</p>
 </div>
 
 <div class="project">
@@ -189,6 +195,11 @@ Spatial Econ-SIR Model (with Mark Bognanni, Daniel Kolliner, and Kurt Mitman)</s
 </div>
 </div>
 
+<div class="project">
+<span class="project-title">Fuzzy <a href="https://github.com/iamlemec/fuzzy" class="tag">GitHub</a> <a href="http://dohan.io/fuzzy" class="tag">Demo</a></span>
+<p>Due to a preternaturally poor memory, I am an avid note taker. There are many, many note-taking apps out there, but not all focus on the other side of the equation: note-getting. Fuzzy is optimized for rapidly inputting <i>and</i> searching through notes, which comprise a title, a body of text, and a list of tags. The interface is web-based, but can be operated using only a keyboard.</p>
+</div>
+
 <div class="project" id="project-wikigrams">
 <span class="project-title">Wikigrams</span>
 <p>Below is a service that allows you to look at the cumulative relative editing activity for a large number of tokens (about 1.1M) appearing in Wikipedia. You can type in your own (single) words into the box below, separated by commas, and see the results by pressing <strong>enter</strong>. You can also download the results in CSV form by clicking the button.</p>
@@ -197,11 +208,6 @@ Spatial Econ-SIR Model (with Mark Bognanni, Daniel Kolliner, and Kurt Mitman)</s
 <svg id="wikiplot" width="600" height="300"></svg>
 
 <p>If you'd like to download the full dataset of tokens, just send me an email and I can arrange it. Even finer data is available at the article editing level.</p>
-</div>
-
-<div class="project">
-<span class="project-title">Console <a href="https://github.com/iamlemec/console" class="tag">GitHub</a></span>
-<p>In this project, I'm attempting to develop a framework for easy-to-use, real-time web plotting. The primary use case is for dashboards that display information on running calculations, but others are of course possible. The backend uses WebSockets and Tornado to interface with Matplotlib-style plotting commands. The frontend uses d3.js.</p>
 </div>
 
 <div class="project">

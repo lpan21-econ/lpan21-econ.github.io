@@ -248,6 +248,17 @@ img.small {
   margin-bottom: 10px;
 }
 
+#fastreg-svg {
+    width: 85px;
+    height: auto;
+    margin-bottom: -5px;
+}
+
+#fastreg-svg line, #fastreg-svg text {
+    stroke: var(--main-fg-color);
+    fill: var(--main-fg-color);
+}
+
 /* biographical info */
 
 /* desktop rules */
