@@ -76,8 +76,7 @@ title = "Seminars"
 rows = [
 	"2019: Federal Reserve Bank of Cleveland, Seoul National University, South China Normal University (Guangzhou)",
 	"2018: World Bank, Einaudi Institute for Economics and Finance (Rome), South China Normal University (Guangzhou)",
-	"2017: Seoul National University",
-	"2015: U of Hong Kong, Sogang U (Seoul), IIES (Stockholm)",
+	"2015-2017: Seoul National University, U of Hong Kong, Sogang U (Seoul), IIES (Stockholm)",
 	"2014: U of Toronto, USC (Marshall), U of Pittsburgh, U of North Carolina (Chapel Hill), CREI (Barcelona)",
 ]
 
@@ -88,9 +87,9 @@ rows = [
 	"2019: SED Annual Meeting (St. Louis), Korea Economic Review International Conference (Seoul), Econometrics Society China (Jinan University, Guangzhou), Roundtable for Engineering Entrepreneurship Research (Georgia Tech, discussant)",
 	"2018: Computational Social Sciences Retreat (Pitt), Econometrics Society Asia Meetings (Seoul), 4th Workshop on Chinese Politics and Society (Shanghai)",
 	"2017: Workshop on Innovation and Entrepreneurship (ISET-TSU, Tbilisi), Carnegie-Rochester-NYU Conference on Public Policy (CMU, discussant)",
-	"2016: Chinese Economists Society China Meeting(PHBS, Shenzhen)",
+	"2016: Chinese Economists Society China Meeting (PHBS, Shenzhen)",
 	"2015: Firm and Technology Dynamics: A Global Perspective (Nottingham), Barcelona GSE Summer Forum, SED Annual Meeting (Warsaw), Mini Conference on Economic Growth (Chicago)",
-	"2010-2013: Penn Money Macro Workshop, SED Annual Meeting, Midwest Macroeconomic Meetings, Penn Money Macro Club, International Industrial Organization Conference",
+	"2010-2014: Penn Money Macro Workshop, SED Annual Meeting, Midwest Macroeconomic Meetings, Penn Money Macro Club, International Industrial Organization Conference",
 ]
 
 [[blocks]]
