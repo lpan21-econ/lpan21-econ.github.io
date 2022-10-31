@@ -1,0 +1,22 @@
+body,
+.reveal .slide-number
+{
+    background-color: white;
+}
+
+.reveal p,
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6,
+.reveal li,
+.reveal .slide-number
+{
+    color: black;
+}
+
+.reveal h2 {
+    border-bottom: 3px solid black;
+}

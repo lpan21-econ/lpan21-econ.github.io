@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+
+<title>Econ 3750B</title>
+
+<meta name="description" content="Lecture">
+<meta name="author" content="Douglas Hanley">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="stylesheet" href="/reveal.js/dist/reveal.css">
+<link rel="stylesheet" href="/reveal.js/dist/theme/white.css" id="theme">
+<link rel="stylesheet" href="/KaTeX/katex.min.css">
+<link rel="stylesheet" href="css/index.css">
+
+<!--[if lt IE 9]>
+<script src="/revealjs/lib/js/html5shiv.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+
+<div class="reveal">
+
+<div class="slides">
+
+<section data-separator="^---$"></section>
+
+</div>
+
+</div>
+
+<script src="/KaTeX/katex.min.js"></script>
+<script src="/KaTeX/contrib/auto-render.min.js"></script>
+
+<script type="module">
+
+import Reveal from '/reveal.js/dist/reveal.esm.js';
+import Markdown from '/reveal.js/plugin/markdown/markdown.esm.js';
+import { injectImages, injectScripts } from '/gum.js/dist/js/gum.js';
+
+// parse url args
+let urlParams = new URLSearchParams(window.location.search);
+let deck = urlParams.get('deck');
+let lecture = urlParams.has('lecture');
+let print_pdf = urlParams.has('print-pdf');
+
+// link in markdown source
+let [content, ..._] = document.getElementsByTagName('section');
+content.setAttribute('data-markdown', `${deck}/index.md`);
+
+// hide navbar for lecture
+let navbar = document.getElementById('navbar');
+if (lecture || print_pdf) {
+    console.log('lecture mode');
+    navbar.style.display = 'none';
+}
+
+// toggle navbar
+function toggleNavbar(state) {
+    if (state ?? navbar.style.display == 'none') {
+        console.log('browse mode');
+        navbar.style.display = '';
+    } else {
+        console.log('lecture mode');
+        navbar.style.display = 'none';
+    }
+}
+
+document.addEventListener('keyup', evt => {
+    if (evt.ctrlKey && evt.key == 'Enter') {
+        toggleNavbar();
+    }
+});
+
+// katex config
+let delim = [
+    {left: "$", right: "$", display: false},
+    {left: "\\[", right: "\\]", display: true}
+];
+
+// autorender function
+function renderMath(elem) {
+    renderMathInElement(elem, {
+        'delimiters': delim,
+        'macros': {
+            '\\eps': '\\varepsilon',
+            '\\p': '\\prime',
+            '\\fr': '\\frac{#1}{#2}',
+            '\\pfr': '\\left(\\frac{#1}{#2}\\right)',
+            '\\bfr': '\\left[\\frac{#1}{#2}\\right]',
+            '\\cfr': '\\left\\{\\frac{#1}{#2}\\right\\}',
+            '\\der': '\\frac{d#1}{d#2}',
+            '\\pder': '\\frac{\\partial #1}{\\partial #2}',
+            '\\eder': '\\frac{\\varepsilon #1}{\\varepsilon #2}',
+            '\\E': '\\mathbb{E}\\br{#1}',
+            '\\gr': '\\frac{\\dot{#1}}{#1}',
+            '\\Ra': '\\Rightarrow',
+            '\\ra': '\\rightarrow',
+            '\\Ras': '\\ \\Rightarrow\\ ',
+            '\\ras': '\\ \\rightarrow\\ ',
+            '\\Raq': '\\quad\\Rightarrow\\quad',
+            '\\raq': '\\quad\\rightarrow\\quad',
+            '\\pr': '\\left(#1\\right)',
+            '\\br': '\\left[#1\\right]',
+            '\\cb': '\\left\\{#1\\right\\}',
+            '\\qand': '\\quad\\text{and}\\quad',
+            '\\where': '\\quad\\text{where}\\quad',
+            '\\st': '\\text{s.t.}'
+        }
+    });
+}
+
+// process equations in slides when they turn visible
+Reveal.addEventListener('slidechanged', function(event) {
+    renderMath(event.currentSlide);
+    injectImages(event.currentSlide);
+    injectScripts(event.currentSlide);
+});
+
+function makeLink(href) {
+    let link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = href;
+    return link;
+}
+
+// add in print styling
+if (print_pdf) {
+    let head = document.getElementsByTagName('head')[0];
+    let link2 = makeLink('css/pdf.css');
+    head.appendChild(link2);
+    toggleNavbar(false);
+    Reveal.addEventListener('ready', function() {
+        autoRender(document.body);
+    });
+}
+
+Reveal.initialize({
+    controls: false,
+    progress: true,
+    history: true,
+    center: false,
+    slideNumber: true,
+    minScale: 0.1,
+    margin: 0.1,
+    transition: 'none',
+    plugins: [ Markdown ],
+});
+
+</script>
+
+</body>
+
+</html>
