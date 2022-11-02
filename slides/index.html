@@ -5,9 +5,9 @@
 
 <meta charset="utf-8">
 
-<title>Econ 3750B</title>
+<title>Slides</title>
 
-<meta name="description" content="Lecture">
+<meta name="description" content="Slides">
 <meta name="author" content="Douglas Hanley">
 
 <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -122,7 +122,6 @@ function renderMath(elem) {
 // process equations in slides when they turn visible
 Reveal.addEventListener('slidechanged', function(event) {
     renderMath(event.currentSlide);
-    injectImages(event.currentSlide);
     injectScripts(event.currentSlide);
 });
 

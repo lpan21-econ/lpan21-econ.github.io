@@ -2,6 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
 @import url("montserrat.css");
+@import url("ibmplexsans.css");
 
 *:focus {
     outline: 0;
@@ -247,4 +248,8 @@ IMAGES
 
 .reveal .slides img.huge {
     width: 80%;
+}
+
+.reveal .slides img.full {
+    width: 100%;
 }
