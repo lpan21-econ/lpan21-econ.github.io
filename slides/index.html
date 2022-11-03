@@ -50,36 +50,11 @@ import { injectImages, injectScripts } from '/gum.js/dist/js/gum.js';
 // parse url args
 let urlParams = new URLSearchParams(window.location.search);
 let deck = urlParams.get('deck');
-let lecture = urlParams.has('lecture');
 let print_pdf = urlParams.has('print-pdf');
 
 // link in markdown source
 let [content, ..._] = document.getElementsByTagName('section');
 content.setAttribute('data-markdown', `${deck}/index.md`);
-
-// hide navbar for lecture
-let navbar = document.getElementById('navbar');
-if (lecture || print_pdf) {
-    console.log('lecture mode');
-    navbar.style.display = 'none';
-}
-
-// toggle navbar
-function toggleNavbar(state) {
-    if (state ?? navbar.style.display == 'none') {
-        console.log('browse mode');
-        navbar.style.display = '';
-    } else {
-        console.log('lecture mode');
-        navbar.style.display = 'none';
-    }
-}
-
-document.addEventListener('keyup', evt => {
-    if (evt.ctrlKey && evt.key == 'Enter') {
-        toggleNavbar();
-    }
-});
 
 // katex config
 let delim = [
@@ -138,9 +113,8 @@ if (print_pdf) {
     let head = document.getElementsByTagName('head')[0];
     let link2 = makeLink('css/pdf.css');
     head.appendChild(link2);
-    toggleNavbar(false);
     Reveal.addEventListener('ready', function() {
-        autoRender(document.body);
+        renderMath(document.body);
     });
 }
 
