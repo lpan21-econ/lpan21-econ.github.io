@@ -1,9 +1,9 @@
 [submodule "reveal.js"]
-	path = reveal.js
+	path = prod/reveal.js
 	url = https://github.com/hakimel/reveal.js.git
 [submodule "elltwo"]
-	path = elltwo
+	path = prod/elltwo
 	url = https://github.com/iamlemec/elltwo
 [submodule "gum.js"]
-	path = gum.js
+	path = prod/gum.js
 	url = https://github.com/iamlemec/gum.js
