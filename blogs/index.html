@@ -5,12 +5,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="icon" href="/elltwo/static/favicon/elltwo.svg" />
+<link rel="icon" href="/prod/elltwo/static/favicon/elltwo.svg" />
 
-<link rel="stylesheet" href="/elltwo/dist/css/article.css" />
-<link rel="stylesheet" href="/elltwo/dist/themes/white.css" />
+<link rel="stylesheet" href="/prod/elltwo/dist/css/article.css" />
+<link rel="stylesheet" href="/prod/elltwo/dist/themes/white.css" />
 
-<script src="/elltwo/dist/libs/jquery.min.js" ></script>
+<script src="/prod/elltwo/dist/libs/jquery.min.js" ></script>
 
 <title>Blogs</title>
 
@@ -34,7 +34,7 @@
 
 <script type="module">
 
-import { loadMarkdown } from '/elltwo/dist/js/extern.js'
+import { loadMarkdown } from '/prod/elltwo/dist/js/extern.js'
 
 let urlParams = new URLSearchParams(window.location.search);
 let src = urlParams.get('src') ?? 'index.md';
