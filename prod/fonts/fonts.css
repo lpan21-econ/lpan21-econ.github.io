@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'Yanone Kaffeesatz';
+    src: url('YanoneKaffeesatz-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: 'Droid Serif';
+    src: url('DroidSerif-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Droid Serif';
+    font-weight: bold;
+    src: url('DroidSerif-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Droid Serif';
+    font-style: italic;
+    src: url('DroidSerif-Italic.ttf');
+}
+
+@font-face {
+    font-family: 'Droid Serif';
+    font-weight: bold;
+    font-style: italic;
+    src: url('DroidSerif-BoldItalic.ttf');
+}
