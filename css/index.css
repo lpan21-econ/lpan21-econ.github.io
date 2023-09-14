@@ -107,7 +107,6 @@ img.small {
     margin-bottom: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
-    /* border-bottom: 1px solid var(--main-fg-color); */
 }
 
 .mec-name-text {
@@ -205,6 +204,10 @@ img.small {
     padding: 5px;
     border-radius: 3px;
     background-color: var(--main-md-color);
+}
+
+.paper.expanded {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 .paper-caret {
