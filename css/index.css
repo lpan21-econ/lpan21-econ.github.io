@@ -11,15 +11,15 @@
 }
 
 :root {
-    --main-bg-color: #212121;
-    --main-fg-color: #BBBBBB;
-    --main-md-color: #333333;
+    --main-bg-color: #1D1E20;
+    --main-fg-color: #C4C4C5;
+    --main-md-color: #2E2E33;
     --main-inner-color: #D1D1D133;
     --main-link-color: #4C72B0;
     --main-cool-white: #D1D1D1;
     --main-cool-blue: #4284F2;
-    --main-font-family: 'Source Sans Pro';
-    --main-font-size: 19px;
+    --main-font-family: 'Cantarell';
+    --main-font-size: 17px;
     --main-line-height: 25px;
 }
 
@@ -131,9 +131,9 @@ img.small {
     margin-right: 5px;
     border-radius: 4px;
     background-color: var(--main-md-color);
-    padding-left: 5px;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-left: 7px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .mec-stats-line:hover {
@@ -194,15 +194,20 @@ img.small {
 }
 
 .paper {
-    margin-top: 10px;
+    margin-top: 15px;
+}
+
+.paper:hover, .paper.expanded {
+    margin: 10px -5px -5px -5px;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: var(--main-md-color);
 }
 
 .paper-caret {
     padding-left: 2px;
     padding-right: 4px;
-}
-
-.paper.expand {
+    color: white;
 }
 
 .paper > .popup {
@@ -212,13 +217,6 @@ img.small {
     text-align: left;
     font-size: 14px;
     line-height: 120%;
-}
-
-.paper.expanded {
-    margin: 7px -3px -3px -3px;
-    padding: 3px;
-    background-color: var(--main-md-color);
-    border-radius: 3px;
 }
 
 /* projects */
@@ -265,7 +263,7 @@ img.small {
 
 @media (min-width: 800px) {
     #outer {
-        max-width: 750px;
+        max-width: 800px;
         margin: auto;
     }
 
