@@ -1,17 +1,19 @@
-jQuery(document).ready(function($) {
-    $('.paper.expand').click(function(event) {
-        var text = window.getSelection().toString();
-        var tag = event.target.tagName.toLowerCase();
-        if ((text.length == 0) && (tag != 'a')) {
-            paper = $(this);
-            var popup = paper.find('.popup');
-            if (popup.length > 0) {
-                popup.slideToggle('fast');
-                paper.toggleClass('expanded');
+addEventListener("DOMContentLoaded", _ => {
+    const expand = document.querySelectorAll('.expand');
+    expand.forEach(elem => {
+        elem.addEventListener('click', event => {
+            const text = window.getSelection().toString();
+            const tag = event.target.tagName.toLowerCase();
+            if ((text.length == 0) && (tag != 'a')) {
+                expand.forEach(elem1 => {
+                    if (elem1 != elem) {
+                        elem1.classList.remove('expanded');
+                    }
+                });
+                elem.classList.toggle('expanded');
             }
-        }
+        });
     });
-    $('#output').focus();
 });
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

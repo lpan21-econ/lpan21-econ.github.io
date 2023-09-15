@@ -32,7 +32,8 @@ function plot_series(tokens, data) {
         };
     });
 
-    var outerWidth = $("#wikiplot").parent().width();
+    var wikiPlot = document.querySelector("#wikiplot");
+    var outerWidth = wikiPlot.parentElement.scrollWidth;
     var outerHeight = aspect*outerWidth;
     var width = outerWidth - margin.left - margin.right;
     var height = outerHeight - margin.top - margin.bottom;
@@ -162,16 +163,16 @@ function plot_tokens(tokens) {
 }
 
 // input
-var tokin = $("#tokens");
+var tokin = document.querySelector("#tokens");
 function get_tokens() {
-    return $.map(tokin.val().split(','), function(tok) { return tok.trim(); });
+    return tokin.value.split(',').map(tok => tok.trim());
 }
 
 // hooks
-tokin.val(itok);
-tokin.keypress(function(e) {
-    if (e.keyCode == 13) {
-        var text = tokin.val();
+var itok = tokin.value = ['graphene', 'nanotube', 'crispr'];
+tokin.addEventListener('keypress', event => {
+    if (event.keyCode == 13) {
+        var text = tokin.value.trim();
         if (text.length > 0) {
             plot_tokens(get_tokens());
         }
@@ -179,19 +180,18 @@ tokin.keypress(function(e) {
 });
 
 // buttons
-var doplot = $("#doplot");
-doplot.click(function() {
+var doplot = document.querySelector("#doplot");
+doplot.addEventListener('click', _ => {
     plot_tokens(get_tokens());
-})
+});
 
-var getcsv = $("#getcsv");
-getcsv.click(function() {
+var getcsv = document.querySelector("#getcsv");
+getcsv.addEventListener('click', _ => {
     window.location.href = 'http://dohan.dyndns.org:9454/freq?token=' + get_tokens().join(',');
 });
 
 // history
 var idata;
-var itok = ['graphene', 'nanotube', 'crispr'];
 function resize() {
     if (idata == undefined) {
         plot_tokens(itok);
@@ -201,5 +201,5 @@ function resize() {
 }
 
 // initial
-$(window).resize(resize);
-$(document).ready(function() { plot_tokens(itok); });
+window.addEventListener('resize', resize);
+document.addEventListener('DOMContentLoaded', _ => { plot_tokens(itok) });

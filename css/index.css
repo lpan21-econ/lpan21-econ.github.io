@@ -111,6 +111,7 @@ img.small {
 
 .mec-name-text {
     font-size: 22px;
+    font-weight: 900;
     margin-bottom: 5px;
 }
 
@@ -207,7 +208,7 @@ img.small {
 }
 
 .paper.expanded {
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
 }
 
 .paper-caret {
@@ -223,6 +224,10 @@ img.small {
     text-align: left;
     font-size: 14px;
     line-height: 120%;
+}
+
+.paper.expanded > .popup {
+    display: block;
 }
 
 /* projects */
