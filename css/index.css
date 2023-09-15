@@ -14,7 +14,6 @@
     --main-bg-color: #1D1E20;
     --main-fg-color: #C4C4C5;
     --main-md-color: #2E2E33;
-    --main-md0-color: #4E4E53;
     --main-inner-color: #D1D1D133;
     --main-link-color: #4C72B0;
     --main-cool-white: #D1D1D1;
@@ -205,6 +204,7 @@ img.small {
     padding: 5px;
     border-radius: 3px;
     background-color: var(--main-md-color);
+
 }
 
 .paper.expanded {

@@ -3,8 +3,9 @@ addEventListener("DOMContentLoaded", _ => {
     expand.forEach(elem => {
         elem.addEventListener('click', event => {
             const text = window.getSelection().toString();
-            const tag = event.target.tagName.toLowerCase();
-            if ((text.length == 0) && (tag != 'a')) {
+            const isTag = event.target.tagName.toLowerCase() == 'a';
+            const isPop = event.target.classList.contains('popup');
+            if ((text.length == 0) && !isTag && !isPop) {
                 expand.forEach(elem1 => {
                     if (elem1 != elem) {
                         elem1.classList.remove('expanded');
