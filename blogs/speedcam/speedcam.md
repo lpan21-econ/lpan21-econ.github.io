@@ -4,7 +4,7 @@ by [Doug Hanley](/), published 2021-01-09
 
 Being a new parent in the time of COVID this past year meant I spent a good amount of time looking out the window, in this case a rather large window that affords a nice view of the street without. It also meant I had a newfound alertness for potential safety hazards, and I started wondering if the cars passing by weren't going a little too fast. Here in Pittsburgh, we live on a one-way street that originates from a 35 mph thoroughfare, only a few houses down, and the speed limit on our street is 25 mph.
 
-! [caption=none|width=75] (speedcam/window_scene_small.jpg)
+!img [width=65|url=speedcam/window_scene_small.jpg]
 
 I always remembered seeing the highway patrol using their "radar guns" to enforce speed limits (or raise revenue), which I'm assuming operate on some sort of Doppler effect. They would position themselves at the most acute possible angle, presumably to measure an apparent speed as close as possible to the target vehicle's actual speed, and perhaps to obscure their presence from the driver until it is too late to slow down.
 
@@ -18,7 +18,7 @@ There are roughly two steps to the algorithm: (1) convert frames from the camera
 
 I do the first step by using the stock [YOLOv5](https://github.com/ultralytics/yolov5) from Ultralytics, specifically the largest `yolov5x` variant (though even the smallest `yolov5s` can still do the job). It's possible to fine tune these models using one's own hand classified, but I don't really have time for this and it works pretty well as is. This algorithm returns a list of matches, with each constituting a label ("car"), a coordinate box (normalized to $[0,1]^2$), and confidence level on the match (in $[0,1]$). So the main parameter we have to work with here is a threshold for the confidence level `qual_cutoff` for what constitutes a true match. Because funky stuff tends to happen at the edges of the frame, I also include `edge_cutoff` that rejects matches that are too near to the frame edge.
 
-! [caption=none|width=75] (speedcam/car_snapshot.png)
+!img [width=75|url=speedcam/car_snapshot.png]
 
 Once we have a match, this information is reduced down to a real vector and assessed using a Kalman filter. This vector includes 7 elements in total: the coordinates of the box center, the height and width of the box, and the average RGB color values of the box. The Kalman filter is initialized with a hard-coded, diagonal covariance matrix. In addition, the measurement errors are hard-coded and diagonal as well. Thus for an existing Kalman track, we get a predicted distribution of positions at any given time. ^[Just to be clear on terminology, a "match" an object in a single frame, and a "track" is a series of matches that we have deemed correspond to the same object.]
 
@@ -36,7 +36,7 @@ $$* \log \tilde{d}_{ij} = \exp(-\alpha \Delta) \cdot \log \hat{d}_{ij}
 
 Finally, we impose a cutoff `match_cutoff`, meaning we discard any pairs with distance higher than this cutoff. Then we are left with a list of $(i,j,\tilde{d}_{ij})$ triplets. It's possible that a given $i$ has multiple potential $j$ matches. So we sort this list in increasing order by $\tilde{d}_{ij}$ and assign matches in that order, discarding any $(i,j)$ pairs for which $i$ already has a match. At the end, we are also left with some unmatched $j$'s, and these are our brand new tracks. For the matched tracks, we update $(\mu_i,\Omega_i)$ with $x_j$ using Kalman filter logic. A track is deemed over when it doesn't get an update for more than `match_timeout` seconds (I use 1.5 here). Here's an example track
 
-! [caption=none|width=75] (speedcam/car_track.gif)
+!img [width=75|url=speedcam/car_track.gif]
 
 # Speedometer
 
@@ -60,10 +60,10 @@ Now that we can track the speed of passing cars, we can run the tracking setup f
 
 I ran the tracker for one morning to see how things might vary over time, with particular attention on rush hour. Looking at the data, the average speed is almost exactly 15 mph for each hour. Here are the speed distributions by hour (the bands are kernel densities)
 
-! [caption=none|width=75] (speedcam/hourly_speed.svg)
+!img [width=75|url=speedcam/hourly_speed.svg]
 
 So only one speeder! I guess that's good? In terms of raw counts, at least for this one day, we're actually seeing more traffic in the 11AM hour than any of the earlier rush hour times. Not sure what to make of it, but here's the data
 
-! [caption=none|width=75] (speedcam/hourly_counts.svg)
+!img [width=75|url=speedcam/hourly_counts.svg]
 
 Well, that's all for now! I suppose I should be happy that people generally aren't going too fast. Still, the ever increasing size of American vehicles, combined with often aggressive driving on the part of motorists nonetheless makes me worry. Certainly, I can investigate the former with this setup. The latter would be harder, but maybe doable?

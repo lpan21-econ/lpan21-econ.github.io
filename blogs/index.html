@@ -5,22 +5,22 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="icon" href="/prod/elltwo/static/favicon/elltwo.svg" />
-
-<link rel="stylesheet" href="/prod/elltwo/dist/css/article.css" />
-<link rel="stylesheet" href="/prod/elltwo/dist/themes/white.css" />
-
-<script src="/prod/elltwo/dist/libs/jquery.min.js" ></script>
+<link rel="stylesheet" href="/spirit/dist/css/markum.css" />
+<link rel="stylesheet" href="/spirit/dist/css/light.css" />
 
 <title>Blogs</title>
 
 <style>
-.env__title .title {
-    text-align: left;
+body {
+    margin: 0;
 }
-
-.env__title {
-    margin-bottom: 0px !important;
+#bg {
+    background-color: var(--spirit-background);
+}
+#content {
+    max-width: 750px;
+    margin: auto;
+    padding: 100px 0;
 }
 </style>
 
@@ -29,45 +29,48 @@
 <body>
 
 <div id="bg">
-<div id="content" class="container"></div>
+<div id="content" class="spirit"></div>
 </div>
 
 <script type="module">
 
-import { loadMarkdown } from '/prod/elltwo/dist/js/extern.js'
+import { exportHtml } from '/spirit/dist/js/export.js'
 
 let urlParams = new URLSearchParams(window.location.search);
 let src = urlParams.get('src') ?? 'index.md';
 
-if (src !== null) {
-    loadMarkdown({
-        url: src,
-        macros: {
-            '\\eps': '\\varepsilon',
-            '\\p': '\\prime',
-            '\\fr': '\\frac{#1}{#2}',
-            '\\pfr': '\\left(\\frac{#1}{#2}\\right)',
-            '\\bfr': '\\left[\\frac{#1}{#2}\\right]',
-            '\\cfr': '\\left\\{\\frac{#1}{#2}\\right\\}',
-            '\\der': '\\frac{d#1}{d#2}',
-            '\\pder': '\\frac{\\partial #1}{\\partial #2}',
-            '\\eder': '\\frac{\\varepsilon #1}{\\varepsilon #2}',
-            '\\E': '\\mathbb{E}\\br{#1}',
-            '\\gr': '\\frac{\\dot{#1}}{#1}',
-            '\\Ra': '\\Rightarrow',
-            '\\ra': '\\rightarrow',
-            '\\Ras': '\\ \\Rightarrow\\ ',
-            '\\ras': '\\ \\rightarrow\\ ',
-            '\\Raq': '\\quad\\Rightarrow\\quad',
-            '\\raq': '\\quad\\rightarrow\\quad',
-            '\\pr': '\\left(#1\\right)',
-            '\\br': '\\left[#1\\right]',
-            '\\cb': '\\left\\{#1\\right\\}',
-            '\\qand': '\\quad\\text{and}\\quad',
-            '\\where': '\\quad\\text{where}\\quad'
-        },
-    });
-}
+// katex macros
+let macros = {
+    '\\eps': '\\varepsilon',
+    '\\p': '\\prime',
+    '\\fr': '\\frac{#1}{#2}',
+    '\\pfr': '\\left(\\frac{#1}{#2}\\right)',
+    '\\bfr': '\\left[\\frac{#1}{#2}\\right]',
+    '\\cfr': '\\left\\{\\frac{#1}{#2}\\right\\}',
+    '\\der': '\\frac{d#1}{d#2}',
+    '\\pder': '\\frac{\\partial #1}{\\partial #2}',
+    '\\eder': '\\frac{\\varepsilon #1}{\\varepsilon #2}',
+    '\\E': '\\mathbb{E}\\br{#1}',
+    '\\gr': '\\frac{\\dot{#1}}{#1}',
+    '\\Ra': '\\Rightarrow',
+    '\\ra': '\\rightarrow',
+    '\\Ras': '\\ \\Rightarrow\\ ',
+    '\\ras': '\\ \\rightarrow\\ ',
+    '\\Raq': '\\quad\\Rightarrow\\quad',
+    '\\raq': '\\quad\\rightarrow\\quad',
+    '\\pr': '\\left(#1\\right)',
+    '\\br': '\\left[#1\\right]',
+    '\\cb': '\\left\\{#1\\right\\}',
+    '\\qand': '\\quad\\text{and}\\quad',
+    '\\where': '\\quad\\text{where}\\quad'
+};
+
+// get markdown file
+let conent = document.getElementById('content');
+let resp = await fetch(src);
+let markdown = await resp.text();
+let html = await exportHtml(markdown, {bare: true, macros});
+conent.innerHTML = html;
 
 </script>
 
