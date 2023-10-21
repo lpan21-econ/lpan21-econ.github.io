@@ -1,6 +1,6 @@
 /* top level */
 
-@import url('source-sans-pro.css');
+@import url('../prod/fonts/ibmplexsans.css');
 
 * {
     box-sizing: border-box;
@@ -18,8 +18,8 @@
     --main-link-color: #4C72B0;
     --main-cool-white: #D1D1D1;
     --main-cool-blue: #4284F2;
-    --main-font-family: 'Cantarell';
-    --main-font-size: 17px;
+    --main-font-family: 'IBMPlexSans';
+    --main-font-size: 18px;
     --main-line-height: 25px;
 }
 
@@ -36,19 +36,19 @@ body {
 }
 
 #header {
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     padding-bottom: 10px;
 }
 
 #portrait {
-    flex-basis: 30%;
+    flex-basis: 25%;
     flex-grow: 0;
 }
 
 #biograph {
-    flex-basis: 65%;
+    flex-basis: 70%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -124,17 +124,19 @@ img.small {
 .mec-stats-box {
     margin-left: 5px;
     line-height: 28px;
+    width: 100%;
 }
 
 .mec-stats-line {
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 5px;
     margin-right: 5px;
     border-radius: 4px;
-    background-color: var(--main-md-color);
     padding-left: 7px;
     padding-top: 5px;
     padding-bottom: 5px;
+    white-space: nowrap;
+    background-color: var(--main-md-color);
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -307,7 +309,7 @@ img.small {
     }
 
     .mec-stat-tag {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .cv {

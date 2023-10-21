@@ -7,3 +7,6 @@
 [submodule "gum.js"]
 	path = prod/gum.js
 	url = https://github.com/iamlemec/gum.js
+[submodule "prod/spirit"]
+	path = prod/spirit
+	url = git@github.com:iamlemec/spirit

@@ -12,7 +12,7 @@ Anyway, I wanted to do this in a more perpendicular manner, and I didn't have a 
 
 You can find all the underlying code for this project on GitHub at [iamlemec/speedcam](https://github.com/iamlemec/speedcam). I try to describe the algorithm in full below, but there are invariably some details I leave out, like how to flatten images coming from a fisheye lens in real time.
 
-# Algorithm
+#* Algorithm
 
 There are roughly two steps to the algorithm: (1) convert frames from the camera into labelled coordinate boxes ("car" at [0.2, 0.2, 0.4, 0.3]); (2) track these matches coherently over time using a [Kalman filter](https://en.wikipedia.org/wiki/Kalman_filter). There are a number of parameters that we can fiddle with for each of these steps.
 
@@ -38,7 +38,7 @@ Finally, we impose a cutoff `match_cutoff`, meaning we discard any pairs with di
 
 !img [width=75|url=speedcam/car_track.gif]
 
-# Speedometer
+#* Speedometer
 
 The motivating factor here was to track car speeds, so let's get to that. The eventual output of the track detection process is, for each track, a time series of the 7 variables tracked by the Kalman filter, in addition to the timestamp for each frame, which we store when it is received. But these are in normalized coordinate space (i.e., 0 to 1). We need to map these into the physical space that we observe. To do this, we need to get a sense of the size of the scene we're observing, and in particular, the full width of the perpendicular road surface that cars travel on. I went out and did that, and it turns out its about 13.48 meters here. We can then infer the height from the aspect ratio of the video stream. ^[Well, this isn't exactly right, since you can see I'm observing the scene from a slight downward angle, but it should be close enough, and vertical speeds shouldn't be that large!]
 
@@ -54,7 +54,7 @@ $$* v = \sqrt{v_x^2+v_y^2} \qquad \qquad \sigma_v = \sqrt{\pfr{v_x}{v}^2\sigma_{
 
 Hooray! We have a speed estimate. For the video track above, the resulting estimate is 19.0 ± 0.4 mph, so not a speeder.
 
-# Statistics
+#* Statistics
 
 Now that we can track the speed of passing cars, we can run the tracking setup for a while and see some overall statistics. First, we'd naturally be interested in the distribution of speeds. How fast are people going? How many people are speeding? We might also be interested how this varies by time of day. And just the raw counts of cars throughout the day would be good to know.
 
