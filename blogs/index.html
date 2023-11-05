@@ -46,7 +46,7 @@ body {
 
 <script type="module">
 
-import { exportHtml } from '/spirit/dist/js/export.js'
+import { Context, parseDocument } from '/spirit/dist/js/markum.js'
 
 let urlParams = new URLSearchParams(window.location.search);
 let src = urlParams.get('src') ?? 'index.md';
@@ -78,11 +78,21 @@ let macros = {
 };
 
 // get markdown file
-let conent = document.getElementById('content');
-let resp = await fetch(src);
-let markdown = await resp.text();
-let html = await exportHtml(markdown, {bare: true, macros});
-conent.innerHTML = html;
+let response = await fetch(src);
+let markdown = await response.text();
+
+// parse spirit document
+let tree = parseDocument(markdown);
+let ctx = new Context();
+await tree.refs(ctx);
+let body = await tree.html(ctx);
+let name = await ctx.title.inner();
+
+// apply to page
+let content = document.getElementById('content');
+let [title] = document.getElementsByTagName('title');
+content.innerHTML = body;
+title.textContent = `${name} | Doug Hanley`;
 
 </script>
 
