@@ -111,7 +111,7 @@ if (meta != null) {
     let resp2 = await fetch(meta);
     let metadata = await resp2.text();
     let [head] = document.getElementsByTagName('head');
-    head.innerHTML += metadata;
+    head.innerHTML = metadata + head.innerHTML;
 }
 
 </script>
