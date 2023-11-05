@@ -2,6 +2,6 @@
 
 *by [Doug Hanley](/)*
 
-[Making a Webcam Speedometer](?src=speedcam/speedcam.md) (2021-01-09)
+[Making a Webcam Speedometer](?post=speedcam) (2021-01-09)
 
-[Text Embedding at Scale](?src=embed/embed.md) (2023-11-05)
+[Text Embedding at Scale](?post=embed) (2023-11-05)

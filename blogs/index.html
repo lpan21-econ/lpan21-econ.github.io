@@ -50,16 +50,16 @@ import { Context, parseDocument } from '/spirit/dist/js/markum.js'
 
 // get parameters
 let urlParams = new URLSearchParams(window.location.search);
-let src = urlParams.get('src');
+let post = urlParams.get('post');
 
 // get full urls
 let cont = null, meta = null;
-if (src == null) {
+if (post == null) {
     cont = 'index.md';
     meta = null;
 } else {
-    cont = `${src}/index.md`;
-    meta = `${src}/meta.html`;
+    cont = `${post}/index.md`;
+    meta = `${post}/meta.html`;
 }
 
 // katex macros
