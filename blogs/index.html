@@ -48,8 +48,19 @@ body {
 
 import { Context, parseDocument } from '/spirit/dist/js/markum.js'
 
+// get parameters
 let urlParams = new URLSearchParams(window.location.search);
-let src = urlParams.get('src') ?? 'index.md';
+let src = urlParams.get('src');
+
+// get full urls
+let cont = null, meta = null;
+if (src == null) {
+    cont = 'index.md';
+    meta = null;
+} else {
+    cont = `${src}/index.md`;
+    meta = `${src}/meta.html`;
+}
 
 // katex macros
 let macros = {
@@ -78,8 +89,8 @@ let macros = {
 };
 
 // get markdown file
-let response = await fetch(src);
-let markdown = await response.text();
+let resp1 = await fetch(cont);
+let markdown = await resp1.text();
 
 // parse spirit document
 let tree = parseDocument(markdown);
@@ -93,6 +104,15 @@ let content = document.getElementById('content');
 let [title] = document.getElementsByTagName('title');
 content.innerHTML = body;
 title.textContent = `${name} | Doug Hanley`;
+
+// get metadata
+let metadata = '';
+if (meta != null) {
+    let resp2 = await fetch(meta);
+    let metadata = await resp2.text();
+    let [head] = document.getElementsByTagName('head');
+    head.innerHTML += metadata;
+}
 
 </script>
 

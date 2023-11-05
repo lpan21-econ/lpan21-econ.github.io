@@ -45,7 +45,7 @@ It's a little inefficient to compute millions of similarities for one lousy quer
 
 Because some of my research focuses on analyzing Wikipedia, I've focused on that as my main target for benchmarking. Also, it's generally useful and something people would naturally want to index and search through. Below is a speed-performance chart for some notable or high-ranking embedding models. The dot size is proportional to the number of model parameters. I've also included a point for the performance of OpenAI's primary embedding product `text-embedding-ada-002`. While I have no doubt of their internal capabilities, the numbers for this benchmark are purely a result of the API's  rate limit of 1 million tokens per minute.
 
-!gum
+!gum [width=80]
 let data = [
   {"Model":"all-MiniLM-L6-v2","Seqs":6064.483871,"Params":22.7,"MTEB":56.26,"xoff":0.0,"yoff":0.0},
   {"Model":"bge-small-en-v1.5","Seqs":3767.51503,"Params":33.4,"MTEB":62.17,"xoff":0.0,"yoff":0.0},
@@ -82,7 +82,7 @@ I've actually run it for a couple of different configurations, and the numbers l
 
 So let's look at what happens when you start compressing with quantization. Here, for the various models (at 256 max token length) I've run the [MTEB](https://github.com/embeddings-benchmark/mteb) retrieval benchmarks at different levels of quantization, namely half precision (16 bit) floating point and 8/4/2/1-bit integer quantization ^[Note that the previous scores were for all MTEB benchmarks, so they aren't directly comparable the ones here which are retrieval only. I'm mostly focused on retrieval anyway, and running all the benchmarks would have been too time-consuming. Finally, note that I also don't run the `MSMARCOv2` benchmark, as my measly 128GB of RAM wasn't enough.]. With this we can plot these scores versus the amount of memory needed for storage and get an idea of what the Pareto frontier looks like.
 
-!gum [width=75]
+!gum [width=80]
 let pal = x => interpolateHex('#1e88e5', '#ff0d57', x);
 let data = [
   {"Short":"bge-base","Color":1,"Bits":1,"MTEB":43.590584,"Memory":96,"xoff":0,"yoff":-0.25},
