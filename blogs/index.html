@@ -51,16 +51,7 @@ import { Context, parseDocument } from '/spirit/dist/js/markum.js'
 // get parameters
 let urlParams = new URLSearchParams(window.location.search);
 let post = urlParams.get('post');
-
-// get full urls
-let cont = null, meta = null;
-if (post == null) {
-    cont = 'index.md';
-    meta = null;
-} else {
-    cont = `${post}/index.md`;
-    meta = `${post}/meta.html`;
-}
+let cont = (post == null) ? 'index.md' : `${post}/index.md`;
 
 // katex macros
 let macros = {
@@ -104,15 +95,6 @@ let content = document.getElementById('content');
 let [title] = document.getElementsByTagName('title');
 content.innerHTML = body;
 title.textContent = `${name} | Doug Hanley`;
-
-// get metadata
-let metadata = '';
-if (meta != null) {
-    let resp2 = await fetch(meta);
-    let metadata = await resp2.text();
-    let [head] = document.getElementsByTagName('head');
-    head.innerHTML = metadata + head.innerHTML;
-}
 
 </script>
 
