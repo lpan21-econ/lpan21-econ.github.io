@@ -1,6 +1,6 @@
 #! Making a Webcam Speedometer
 
-by [Doug Hanley](/), published 2021-01-09
+*by [Doug Hanley](/), published 2021-01-09*
 
 Being a new parent in the time of COVID this past year meant I spent a good amount of time looking out the window, in this case a rather large window that affords a nice view of the street without. It also meant I had a newfound alertness for potential safety hazards, and I started wondering if the cars passing by weren't going a little too fast. Here in Pittsburgh, we live on a one-way street that originates from a 35 mph thoroughfare, only a few houses down, and the speed limit on our street is 25 mph.
 
